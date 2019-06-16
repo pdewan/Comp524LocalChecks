@@ -9,6 +9,8 @@ import org.junit.runners.Suite;
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
+import gradingTools.comp524.assignment1.testcases.CustomCommandIncrementalPromptTestCase;
+import gradingTools.comp524.assignment1.testcases.CustomCommandPromptTestCase;
 import gradingTools.comp524.assignment1.testcases.IncrementalInputPromptTestCase;
 import gradingTools.comp524.assignment1.testcases.PledgeTestCase;
 import gradingTools.comp524.assignment1.testcases.PromptTestCase;
@@ -20,6 +22,8 @@ import util.tags.DistributedTags;
 @Suite.SuiteClasses({
 	PromptTestCase.class,
 	IncrementalInputPromptTestCase.class,
+	CustomCommandPromptTestCase.class,
+	CustomCommandIncrementalPromptTestCase.class,
 	PledgeTestCase.class
 })
 	
@@ -33,7 +37,7 @@ public class Assignment1Suite {
 			BasicStaticConfigurationUtils.setUseProjectConfiguration(true);
 //			BasicStaticConfigurationUtils.setModule("Comp524");
 //			BasicStaticConfigurationUtils.setProblem("Assignment1");
-			BasicStaticConfigurationUtils.setModuleAndProblem(Assignment1Suite.class);
+//			BasicStaticConfigurationUtils.setModuleProblemAndTest(Assignment1Suite.class);
 
 			BasicJUnitUtils.interactiveTest(Assignment1Suite.class);
 
