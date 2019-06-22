@@ -5,4 +5,4 @@
  * @author dewan
  *
  */
-package gradingTools.comp524.assignment1;
+package gradingTools.comp524f19.assignment1;

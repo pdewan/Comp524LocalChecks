@@ -1,4 +1,4 @@
-package gradingTools.comp524.assignment1.testcases;
+package gradingTools.comp524f19.assignment1.testcases;
 
 import util.pipe.AnAbstractInputGenerator;
 

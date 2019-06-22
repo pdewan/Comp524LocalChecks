@@ -1,4 +1,4 @@
-package gradingTools.comp524.assignment1.testcases;
+package gradingTools.comp524f19.assignment1.testcases;
 
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
@@ -9,8 +9,8 @@ import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.utils.RunningProjectUtils;
 
-public class CustomCommandPromptTestCase extends PassFailJUnitTestCase {
-	public CustomCommandPromptTestCase() {
+public class PromptTestCase extends PassFailJUnitTestCase {
+	public PromptTestCase() {
 //		super("Prompt printer test case");
 	}
 
@@ -34,22 +34,17 @@ public class CustomCommandPromptTestCase extends PassFailJUnitTestCase {
 		try {
 
 			// Get the output when we have no input from the user
-//			RunningProject noInputRunningProject = RunningProjectUtils.runProject(project, 1);
-			RunningProject noInputRunningProject = CustomCommandIncrementalPromptTestCase.createCustomRunningProject(project, null);
-
+			RunningProject noInputRunningProject = RunningProjectUtils.runProject(project, 1);
 			String noInputPrompt = noInputRunningProject.await();
 
 			// Get the output when we have integer input from the user
-//			RunningProject integerInputRunningProject = RunningProjectUtils.runProject(project, 1,
-//					"1");
-			RunningProject integerInputRunningProject = CustomCommandIncrementalPromptTestCase.createCustomRunningProject(project, null, "1");
+			RunningProject integerInputRunningProject = RunningProjectUtils.runProject(project, 1,
+					"1");
 			String integerInputPrompt = integerInputRunningProject.await();
 			integerInputPrompt = integerInputPrompt.substring(noInputPrompt.length());
 
 			// Get the output when we have double input from the user
-//			RunningProject doubleInputRunningProject = RunningProjectUtils.runProject(project, 1,
-//					"1.4");
-			RunningProject doubleInputRunningProject = CustomCommandIncrementalPromptTestCase.createCustomRunningProject(project, null,
+			RunningProject doubleInputRunningProject = RunningProjectUtils.runProject(project, 1,
 					"1.4");
 			String doubleInputPrompt = doubleInputRunningProject.await();
 			doubleInputPrompt = doubleInputPrompt.substring(noInputPrompt.length());
