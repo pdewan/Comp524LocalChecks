@@ -15,20 +15,20 @@ import gradingTools.comp524f19.assignment1.testcases.IncrementalInputPromptTestC
 import gradingTools.comp524f19.assignment1.testcases.PledgeTestCase;
 import gradingTools.comp524f19.assignment1.testcases.PromptTestCase;
 import gradingTools.comp524f19.assignment1.testcases.ProperHeaderTestCase;
+import util.annotations.MaxValue;
 import util.tags.DistributedTags;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	PromptTestCase.class,
-	IncrementalInputPromptTestCase.class,
-	CustomCommandPromptTestCase.class,
-	CustomCommandIncrementalPromptTestCase.class,
+	PromptSuite.class,
+	CustomCommandSuite.class,
+//	CustomCommandIncrementalPromptTestCase.class,
 	PledgeTestCase.class
 })
 	
 
-	
+@MaxValue(50)
 public class Assignment1Suite {
 
 	public static void main (String[] args) {

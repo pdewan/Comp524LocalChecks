@@ -8,7 +8,8 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.utils.RunningProjectUtils;
-
+import util.annotations.MaxValue;
+@MaxValue(20)
 public class PromptTestCase extends PassFailJUnitTestCase {
 	public PromptTestCase() {
 //		super("Prompt printer test case");
