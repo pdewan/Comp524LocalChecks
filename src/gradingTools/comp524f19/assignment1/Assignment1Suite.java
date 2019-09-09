@@ -1,30 +1,24 @@
 package gradingTools.comp524f19.assignment1;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
-import gradingTools.comp524f19.assignment1.testcases.CustomCommandIncrementalPromptTestCase;
-import gradingTools.comp524f19.assignment1.testcases.CustomCommandPromptTestCase;
-import gradingTools.comp524f19.assignment1.testcases.IncrementalInputPromptTestCase;
-import gradingTools.comp524f19.assignment1.testcases.PledgeTestCase;
-import gradingTools.comp524f19.assignment1.testcases.PromptTestCase;
-import gradingTools.comp524f19.assignment1.testcases.ProperHeaderTestCase;
+import gradingTools.comp524f19.assignment1.requiredClasses.A1RequiredClassesSuite;
+import gradingTools.comp524f19.assignment1.testcases.ClassRegistryProvided;
+import gradingTools.comp524f19.assignment1.testcases.SExpressionClassProvided;
+import gradingTools.comp524f19.assignment1.testcases.toString.A1ToStringSuite;
+import gradingTools.comp524f19.assignment1.testcases.toString.BaseCaseSExpressionToStringChecker;
 import util.annotations.MaxValue;
-import util.tags.DistributedTags;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	PromptSuite.class,
-	CustomCommandSuite.class,
-//	CustomCommandIncrementalPromptTestCase.class,
-	PledgeTestCase.class
+	A1RequiredClassesSuite.class,
+	A1ToStringSuite.class
+	
 })
 	
 
