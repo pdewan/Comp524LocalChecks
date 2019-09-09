@@ -9,6 +9,8 @@ import grader.basics.project.BasicProjectIntrospection;
 import gradingTools.comp524f19.assignment1.requiredClasses.A1RequiredClassesSuite;
 import gradingTools.comp524f19.assignment1.testcases.ClassRegistryProvided;
 import gradingTools.comp524f19.assignment1.testcases.SExpressionClassProvided;
+import gradingTools.comp524f19.assignment1.testcases.load.A1LoadSuite;
+import gradingTools.comp524f19.assignment1.testcases.load.TestLispFileProvided;
 import gradingTools.comp524f19.assignment1.testcases.toString.A1ToStringSuite;
 import gradingTools.comp524f19.assignment1.testcases.toString.BaseCaseSExpressionToStringChecker;
 import util.annotations.MaxValue;
@@ -17,12 +19,14 @@ import util.annotations.MaxValue;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	A1RequiredClassesSuite.class,
-	A1ToStringSuite.class
+	A1ToStringSuite.class,
+	TestLispFileProvided.class,
+	A1LoadSuite.class
 	
 })
 	
 
-@MaxValue(50)
+//@MaxValue(50)
 public class Assignment1Suite {
 
 	public static void main (String[] args) {
