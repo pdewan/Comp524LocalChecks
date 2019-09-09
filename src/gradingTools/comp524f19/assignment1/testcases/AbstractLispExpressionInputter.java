@@ -20,6 +20,7 @@ import main.lisp.parser.terms.SExpression;
 
 public  abstract class AbstractLispExpressionInputter extends PassFailJUnitTestCase implements PropertyChangeListener{
 	protected List<SExpression> inputSExpressions = new ArrayList<SExpression>();
+	
 	protected List<SExpression> resultSExpressions = new ArrayList<SExpression>();
 	protected boolean initialized = false;
 	protected abstract String[] studentInputLines();
@@ -72,6 +73,11 @@ public  abstract class AbstractLispExpressionInputter extends PassFailJUnitTestC
     
     	
     }
-	
+    public List<SExpression> getInputSExpressions() {
+		return inputSExpressions;
+	}
+	public List<SExpression> getResultSExpressions() {
+		return resultSExpressions;
+	}
 
 }

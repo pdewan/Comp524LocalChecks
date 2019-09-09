@@ -17,6 +17,7 @@ import util.annotations.MaxValue;
 @Suite.SuiteClasses({
 	TestLispFileProvided.class,
 	LoadChecker.class,
+	ConsTestedChecker.class
 	
 })
 	
