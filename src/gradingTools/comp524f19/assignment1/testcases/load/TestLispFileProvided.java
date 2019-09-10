@@ -28,7 +28,7 @@ public class TestLispFileProvided extends PassFailJUnitTestCase{
 					}
 				}
 			}
-			return fail("No file ending with .lisp found in " + aProjectFolder);
+			return fail("No file ending with .lisp found in " + aProjectFolder.getCanonicalPath());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

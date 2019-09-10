@@ -27,7 +27,8 @@ public class ClassRegistryProvided extends PassFailJUnitTestCase {
 			throws NotAutomatableException, NotGradableException {		
 			classRegistry = (ClassRegistry) BasicProjectIntrospection.createInstanceOfPredefinedSupertype(REGISTRY_INTERFACE);
 			if (classRegistry == null)	{
-				return fail("No registry class");
+				
+				return fail("No registry class in classa path:" + System.getProperty("java.class.path"));
 			}
 			timingOutClassRegistryProxy = (ClassRegistry) BasicProjectIntrospection.createTimingOutProxy(REGISTRY_INTERFACE, classRegistry);
 			return pass();		
