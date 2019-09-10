@@ -2,23 +2,41 @@ package gradingTools.comp524f19.assignment1.testcases.load;
 
 import java.util.List;
 
+import com.sun.org.apache.xpath.internal.operations.And;
+
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import main.lisp.parser.terms.Atom;
+import main.lisp.parser.terms.IdentifierAtom;
 import main.lisp.parser.terms.SExpression;
 
 public abstract class AbstractFunctionTestedChecker extends PassFailJUnitTestCase {
 	protected abstract String functionName();
 	protected String check(SExpression anInputSExpression, SExpression aResultSExpression) {
 		String aFunctionName = functionName();
-		boolean aSuccess = aFunctionName.equals(anInputSExpression.getHead().toString());
-		if (!aSuccess) {
+		if(equal(anInputSExpression)) {
+			return "";
+		}
+		else {
 			return "Expecting in test file a call to " + aFunctionName;
 		}
-		return "";
+		
+		
+	}
+	protected boolean equal(SExpression anInputSExpression){
+		String aFunctionName = functionName();
+		if (anInputSExpression instanceof Atom)
+		{
+			return aFunctionName.equals(anInputSExpression.getHead().toString());
+		}
+		else {
+			return (equal(anInputSExpression.getHead()) || equal(anInputSExpression.getTail()));
+		}
+
 	}
 
 	@Override
