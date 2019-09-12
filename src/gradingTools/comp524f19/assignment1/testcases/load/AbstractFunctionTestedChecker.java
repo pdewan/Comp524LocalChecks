@@ -31,7 +31,7 @@ public abstract class AbstractFunctionTestedChecker extends PassFailJUnitTestCas
 		String aFunctionName = functionName();
 		if (anInputSExpression instanceof Atom)
 		{
-			return aFunctionName.equals(anInputSExpression.getHead().toString());
+			return aFunctionName.equals(anInputSExpression.toString());
 		}
 		else {
 			return (equal(anInputSExpression.getHead()) || equal(anInputSExpression.getTail()));
