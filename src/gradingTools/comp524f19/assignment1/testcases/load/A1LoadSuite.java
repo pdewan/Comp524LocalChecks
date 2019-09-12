@@ -21,10 +21,12 @@ import util.annotations.MaxValue;
 	QuoteTestedChecker.class,
 	ListTestedChecker.class,
 	EvalTestedChecker.class,
+	CondTestedChecker.class,
 	ConsTestedTwoResultsChecker.class,
 	QuoteTestedTwoResultsChecker.class,
 	ListTestedTwoResultsChecker.class,
-	EvalTestedTwoResultsChecker.class
+	EvalTestedTwoResultsChecker.class,
+	CondTestedResultsChecker.class
 	
 })
 	
