@@ -67,7 +67,11 @@ public  abstract class AbstractLispExpressionInputter extends PassFailJUnitTestC
     	}
 //    	newSExpression = null;
     	for (String aLine:aLines ) {
+    		try {
     		InterpreterModelSingleton.get().newInput(aLine);
+    		} catch (Exception e) {
+    			e.printStackTrace();
+    		}
     	}
 //    	return newSExpression;
     
