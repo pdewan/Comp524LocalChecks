@@ -17,7 +17,8 @@ import util.annotations.MaxValue;
 @Suite.SuiteClasses({
 	BaseCaseSExpressionToStringChecker.class,
 	BaseCaseListToStringChecker.class,
-	ListToStringChecker.class
+	ListToStringChecker.class,
+	ListToStringDeepChecker.class
 	
 })
 	
