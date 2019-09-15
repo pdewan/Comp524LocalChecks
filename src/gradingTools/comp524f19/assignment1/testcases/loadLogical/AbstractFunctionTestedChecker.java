@@ -49,6 +49,7 @@ public abstract class AbstractFunctionTestedChecker extends PassFailJUnitTestCas
 		for (int i = 0; i < anInputSExpressions.size(); i++) {
 			 aMessage = check(anInputSExpressions.get(i), aResultSExpressions.get(i));
 			 if (aMessage.isEmpty()) {
+				 System.out.println("Found a call to " + functionName() + " : " + anInputSExpressions.get(i).toString());
 				 return pass();
 			 }
 		}

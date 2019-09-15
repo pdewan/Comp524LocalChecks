@@ -97,13 +97,16 @@ public abstract class AbstractFunctionTestedCondChecker extends PassFailJUnitTes
 				 String headString = getString(search.getHead().getTail().getHead());
 				 if(tailString.equals(reString) && !flagl) {
 					 flagl = true;
+					 System.out.println("Found a result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with the last case " + reString);
 				 }
 				 else if(headString.equals(reString) && !flagf) {
 					 flagf = true;
+					 System.out.println("Found a result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with the first case " + reString);
 				 }
 				 else if(!flage&!headString.equals(reString)&!tailString.equals(reString))
 				 {
 					 flage = true;
+					 System.out.println("Found a result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with other case " + reString);
 					
 //					 search = search.getTail();
 //					 while(!(search.getTail() instanceof NilAtom)) {

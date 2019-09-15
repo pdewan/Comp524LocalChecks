@@ -54,11 +54,13 @@ public abstract class AbstractFunctionTestedTwoResultsChecker extends PassFailJU
 			 if (aMessage.isEmpty() && !flag) {
 				 firstResult = aResultSExpressions.get(i).toString();
 				 flag =  true;
+				 System.out.println("Found the first result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with result " + firstResult);
 			 }
 			 else if (aMessage.isEmpty() && flag) {
 				 String secondResult = aResultSExpressions.get(i).toString();
 				 if(!secondResult.equals(firstResult))
 				 {
+					 System.out.println("Found the second result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with result " + secondResult);
 					 return pass();
 				 }
 			}
