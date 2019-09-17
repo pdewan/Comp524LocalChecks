@@ -7,7 +7,7 @@
 	<classpathentry kind="lib" path="/GraderBasics/lib/commons-lang-2.6.jar"/>
 	<classpathentry kind="lib" path="/GraderBasics/lib/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/LispInterpreterRelease"/>
 	<classpathentry kind="lib" path="/GraderBasics/lib/oeall22.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/LispInterpreterRelease"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

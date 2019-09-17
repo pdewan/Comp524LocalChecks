@@ -15,6 +15,7 @@ import main.lisp.parser.terms.IdentifierAtom;
 import main.lisp.parser.terms.NilAtom;
 import main.lisp.parser.terms.SExpression;
 import sun.print.resources.serviceui;
+import util.trace.Tracer;
 
 public abstract class AbstractFunctionTestedCondChecker extends PassFailJUnitTestCase {
 	protected abstract String functionName();
@@ -97,16 +98,19 @@ public abstract class AbstractFunctionTestedCondChecker extends PassFailJUnitTes
 				 String headString = getString(search.getHead().getTail().getHead());
 				 if(tailString.equals(reString) && !flagl) {
 					 flagl = true;
-					 System.out.println("Found a result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with the last case " + reString);
+					 Tracer.info(this, "Found a result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with the last case " + reString );
+					 //System.out.println("Found a result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with the last case " + reString);
 				 }
 				 else if(headString.equals(reString) && !flagf) {
 					 flagf = true;
-					 System.out.println("Found a result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with the first case " + reString);
+					 Tracer.info(this, "Found a result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with the first case " + reString);
+					 //System.out.println("Found a result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with the first case " + reString);
 				 }
 				 else if(!flage&!headString.equals(reString)&!tailString.equals(reString))
 				 {
 					 flage = true;
-					 System.out.println("Found a result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with other case " + reString);
+					 Tracer.info(this, "Found a result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with other case " + reString);
+					 //System.out.println("Found a result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with other case " + reString);
 					
 //					 search = search.getTail();
 //					 while(!(search.getTail() instanceof NilAtom)) {

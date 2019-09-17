@@ -10,11 +10,13 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp524f19.assignment1.testcases.load.LoadChecker;
 import main.lisp.parser.terms.Atom;
 import main.lisp.parser.terms.IdentifierAtom;
 import main.lisp.parser.terms.SExpression;
+import util.trace.Tracer;
 
-public abstract class AbstractFunctionTestedTwoResultsChecker extends PassFailJUnitTestCase {
+public abstract class AbstractFunctionTestedLogicalChecker extends PassFailJUnitTestCase {
 	protected abstract String functionName();
 	protected String check(SExpression anInputSExpression, SExpression aResultSExpression) {
 		String aFunctionName = functionName();
@@ -46,26 +48,15 @@ public abstract class AbstractFunctionTestedTwoResultsChecker extends PassFailJU
 		List<SExpression> anInputSExpressions = aLoadChecker.getInputSExpressions();
 		List<SExpression> aResultSExpressions = aLoadChecker.getResultSExpressions();
 		String aMessage = null;
-		String firstResult = null;
-		String aFunctionName = functionName();
-		boolean flag = false;
-		for (int i = 0; i < anInputSExpressions.size()-1; i++) {
-			 aMessage = check(anInputSExpressions.get(i+1), aResultSExpressions.get(i));
-			 if (aMessage.isEmpty() && !flag) {
-				 firstResult = aResultSExpressions.get(i).toString();
-				 flag =  true;
-				 System.out.println("Found the first result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with result " + firstResult);
+		for (int i = 0; i < anInputSExpressions.size(); i++) {
+			 aMessage = check(anInputSExpressions.get(i), aResultSExpressions.get(i));
+			 if (aMessage.isEmpty()) {
+				 //System.out.println("Found a call to " + functionName() + " : " + anInputSExpressions.get(i).toString());
+				 Tracer.info(this, "Found a call to " + functionName() + " : " + anInputSExpressions.get(i).toString());
+				 return pass();
 			 }
-			 else if (aMessage.isEmpty() && flag) {
-				 String secondResult = aResultSExpressions.get(i).toString();
-				 if(!secondResult.equals(firstResult))
-				 {
-					 System.out.println("Found the second result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with result " + secondResult);
-					 return pass();
-				 }
-			}
 		}
-		return fail("Expecting in test file two results of " + aFunctionName);
+		return fail(aMessage);
 	}
 
 }

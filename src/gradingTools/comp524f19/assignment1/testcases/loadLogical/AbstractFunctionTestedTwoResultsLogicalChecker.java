@@ -1,4 +1,4 @@
-package gradingTools.comp524f19.assignment1.testcases.loadRelation;
+package gradingTools.comp524f19.assignment1.testcases.loadLogical;
 
 import java.util.List;
 
@@ -10,11 +10,13 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp524f19.assignment1.testcases.load.LoadChecker;
 import main.lisp.parser.terms.Atom;
 import main.lisp.parser.terms.IdentifierAtom;
 import main.lisp.parser.terms.SExpression;
+import util.trace.Tracer;
 
-public abstract class AbstractFunctionTestedTwoResultsChecker extends PassFailJUnitTestCase {
+public abstract class AbstractFunctionTestedTwoResultsLogicalChecker extends PassFailJUnitTestCase {
 	protected abstract String functionName();
 	protected String check(SExpression anInputSExpression, SExpression aResultSExpression) {
 		String aFunctionName = functionName();
@@ -54,13 +56,15 @@ public abstract class AbstractFunctionTestedTwoResultsChecker extends PassFailJU
 			 if (aMessage.isEmpty() && !flag) {
 				 firstResult = aResultSExpressions.get(i).toString();
 				 flag =  true;
-				 System.out.println("Found the first result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with result " + firstResult);
+				 Tracer.info(this, "Found the first result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with result " + firstResult);
+				 //System.out.println("Found the first result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with result " + firstResult);
 			 }
 			 else if (aMessage.isEmpty() && flag) {
 				 String secondResult = aResultSExpressions.get(i).toString();
 				 if(!secondResult.equals(firstResult))
 				 {
-					 System.out.println("Found the second result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with result " + secondResult);
+					 Tracer.info(this, "Found the second result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with result " + secondResult);
+					 //System.out.println("Found the second result of " + functionName() + " : " + anInputSExpressions.get(i+1).toString() + " with result " + secondResult);
 					 return pass();
 				 }
 			}

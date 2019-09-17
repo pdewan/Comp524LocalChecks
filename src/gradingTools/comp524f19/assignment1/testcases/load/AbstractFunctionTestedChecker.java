@@ -10,9 +10,11 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp524f19.assignment1.testcases.load.LoadChecker;
 import main.lisp.parser.terms.Atom;
 import main.lisp.parser.terms.IdentifierAtom;
 import main.lisp.parser.terms.SExpression;
+import util.trace.Tracer;
 
 public abstract class AbstractFunctionTestedChecker extends PassFailJUnitTestCase {
 	protected abstract String functionName();
@@ -49,7 +51,8 @@ public abstract class AbstractFunctionTestedChecker extends PassFailJUnitTestCas
 		for (int i = 0; i < anInputSExpressions.size(); i++) {
 			 aMessage = check(anInputSExpressions.get(i), aResultSExpressions.get(i));
 			 if (aMessage.isEmpty()) {
-				 System.out.println("Found a call to " + functionName() + " : " + anInputSExpressions.get(i).toString());
+				 //System.out.println("Found a call to " + functionName() + " : " + anInputSExpressions.get(i).toString());
+				 Tracer.info(this, "Found a call to " + functionName() + " : " + anInputSExpressions.get(i).toString());
 				 return pass();
 			 }
 		}

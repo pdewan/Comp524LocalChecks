@@ -17,6 +17,7 @@ import main.lisp.interpreter.InterpreterModelSingleton;
 import main.lisp.interpreter.ObservableLispInterpreter;
 import main.lisp.parser.terms.ExpressionFactory;
 import main.lisp.parser.terms.SExpression;
+import util.trace.Tracer;
 
 public  abstract class AbstractLispExpressionInputter extends PassFailJUnitTestCase implements PropertyChangeListener{
 	protected List<SExpression> inputSExpressions = new ArrayList<SExpression>();
@@ -30,8 +31,10 @@ public  abstract class AbstractLispExpressionInputter extends PassFailJUnitTestC
 		String aPropertyName = evt.getPropertyName();
 		if (ObservableLispInterpreter.EXPRESSION_PROPERTY == aPropertyName) {
 			inputSExpressions.add ((SExpression) evt.getNewValue());
+			Tracer.info(this, "Got input : " + inputSExpressions.get(inputSExpressions.size()-1).toString());
 		} else if (ObservableLispInterpreter.RESULT_PROPERTY == aPropertyName) {
 			resultSExpressions.add((SExpression) evt.getNewValue());
+			Tracer.info(this, "Got result : " + resultSExpressions.get(resultSExpressions.size()-1).toString());
 		}
 	}
 	public void evaluate() throws Throwable {
