@@ -6,7 +6,8 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import gradingTools.comp524f19.assignment1.testcases.AbstractLispExpressionResultChecker;
 import main.lisp.parser.terms.SExpression;
-
+import util.annotations.MaxValue;
+@MaxValue(10)
 public class ListToStringDeepChecker extends AbstractLispExpressionResultDeepChecker {
 	public static final String[] STUDENT_INPUT = {"(cons 5 (cons (cons (cons \"A\" \"6\") nil) (cons (cons 7 nil) nil)))"};
 	public static final String[] STUDENT_TO_STRING = {"(5 . (((A . 6) . NIL) . ((7 . NIL) . NIL)))"};
