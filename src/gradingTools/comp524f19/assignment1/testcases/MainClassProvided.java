@@ -40,7 +40,7 @@ public class MainClassProvided extends AbstractRegisteredClassProcessor {
 		    if (mainClass == null) {	
 		    	return fail ( aMethodName + " returns null in class registry");
 		    }	
-		   
+		    BasicProjectIntrospection.setMainClass(mainClass);
 			return pass();		
 		 } 		 catch (Exception e) {
 			 return fail (e.getMessage());
