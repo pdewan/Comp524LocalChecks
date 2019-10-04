@@ -14,7 +14,7 @@ import main.lisp.interpreter.InterpreterModelSingleton;
 public class InterpreterVisualizerMain {
 	public static void main(String[] args) {
 		InterpreterVisualizer anInterpreterVisualizer = new AnInterpreterVisualizer();
-		ObjectEditor.treeEdit(anInterpreterVisualizer);
+		ObjectEditor.edit(anInterpreterVisualizer);
 		Project aProject = CurrentProjectHolder.getOrCreateCurrentProject();
 
 		ClassRegistry aClassRegistry = (ClassRegistry) BasicProjectIntrospection.createInstanceOfPredefinedSupertype(ClassRegistryProvided.REGISTRY_INTERFACE);
