@@ -2,6 +2,9 @@ package gradingTools.comp524f19.assignment1.testcases.load;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
@@ -10,8 +13,12 @@ import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 
 public class TestLispFileProvided extends PassFailJUnitTestCase{
-	protected String lispFileName = null;
-	public String getLispFileName() {
+//	protected String lispFileName = null;
+//	public String getLispFileName() {
+//		return lispFileName;
+//	}
+	protected ArrayList<String> lispFileName= new ArrayList<String>();
+	public ArrayList<String> getLispFileName() {
 		return lispFileName;
 	}
 	@Override
@@ -23,10 +30,14 @@ public class TestLispFileProvided extends PassFailJUnitTestCase{
 				File[] aFiles = aProjectFolder.listFiles();
 				for (File aFile:aFiles) {
 					if (aFile.getName().endsWith(".lisp")) {
-							lispFileName = aFile.getCanonicalPath();
-							return pass();
+							lispFileName.add(aFile.getCanonicalPath());
+							//lispFileName = aFile.getCanonicalPath();
 					}
 				}
+			}
+			if(!lispFileName.isEmpty())
+			{
+				return pass();
 			}
 			return fail("No file ending with .lisp found in " + aProjectFolder.getCanonicalPath());
 		} catch (Exception e) {

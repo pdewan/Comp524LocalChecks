@@ -1,5 +1,7 @@
 package gradingTools.comp524f19.assignment1.testcases.load;
 
+import java.util.ArrayList;
+
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
@@ -25,8 +27,13 @@ public class LoadChecker extends AbstractLispExpressionLastResultChecker {
 	@Override
 	protected String[] studentInputLines() {
 		TestLispFileProvided aTestFileProvided = (TestLispFileProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(TestLispFileProvided.class);
-		String aLispFileName = aTestFileProvided.getLispFileName();
-		return new String[] {"(load \"" + aLispFileName + "\")"};
+		ArrayList<String> aLispFileName = aTestFileProvided.getLispFileName();
+		String aString = "";
+		for(String fname:aLispFileName)
+		{
+			aString = aString + "(load \"" + fname + "\")";
+		}
+		return new String[] {aString};
 	}
 	@Override
 	protected String[] graderInputLines() {
