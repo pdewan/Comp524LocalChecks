@@ -1,4 +1,4 @@
-package gradingTools.comp524f19.assignment2.testcases.LispCheckers;
+package gradingTools.comp524f19.assignment2.testcases.LispLambdaCheckers;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -11,12 +11,13 @@ import util.annotations.MaxValue;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	TestLispFileProvided.class,
-	LoadLispChecker.class
+	LispLambdaChecker.class,
+	LispLambdaChecker2.class
+	
 	
 })
 	
 
-public class A2LispSuite {
+public class A2LispLambdaSuite {
 	
 }
