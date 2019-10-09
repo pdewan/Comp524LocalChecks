@@ -62,10 +62,11 @@ public  abstract class AbstractLispExpressionInputter extends PassFailJUnitTestC
 //    		Class<? extends SExpression> anSExpressionClass = anSExpressionClassProcessor.getSExpressionClass();
     		MainClassProvided aMainClassProcessor = (MainClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(MainClassProvided.class);
 //   		 	ExpressionFactory.setClass(anSExpressionClass);
-   		 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
+//   		 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
     		Class aMainClass = aMainClassProcessor.getMainClass();
    		 	initialized = true;
    		 	BasicProjectExecution.invokeMain(aMainClass, emptyStrings, ".");
+   		 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
    		 	
     	}
 //    	newSExpression = null;

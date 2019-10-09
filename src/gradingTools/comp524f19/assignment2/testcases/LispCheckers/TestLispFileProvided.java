@@ -1,4 +1,4 @@
-package gradingTools.comp524f19.assignment1.testcases.load;
+package gradingTools.comp524f19.assignment2.testcases.LispCheckers;
 
 import java.io.File;
 import java.io.FileNotFoundException;
