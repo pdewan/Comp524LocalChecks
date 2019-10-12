@@ -1,11 +1,6 @@
 package gradingTools.comp524f19.assignment1.testcases.toString;
 
-import grader.basics.junit.NotAutomatableException;
-import grader.basics.junit.TestCaseResult;
-import grader.basics.project.NotGradableException;
-import grader.basics.project.Project;
 import gradingTools.comp524f19.assignment1.testcases.AbstractLispExpressionResultChecker;
-import main.lisp.parser.terms.SExpression;
 import util.annotations.MaxValue;
 @MaxValue(10)
 public class BaseCaseListToStringChecker extends AbstractLispExpressionResultChecker {

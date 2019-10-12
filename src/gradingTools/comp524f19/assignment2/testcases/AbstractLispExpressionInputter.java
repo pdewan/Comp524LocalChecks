@@ -8,14 +8,9 @@ import java.util.List;
 import grader.basics.execution.BasicProjectExecution;
 import grader.basics.execution.GradingMode;
 import grader.basics.junit.JUnitTestsEnvironment;
-import grader.basics.junit.NotAutomatableException;
-import grader.basics.junit.TestCaseResult;
-import grader.basics.project.NotGradableException;
-import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import main.lisp.interpreter.InterpreterModelSingleton;
 import main.lisp.interpreter.ObservableLispInterpreter;
-import main.lisp.parser.terms.ExpressionFactory;
 import main.lisp.parser.terms.SExpression;
 import util.trace.Tracer;
 

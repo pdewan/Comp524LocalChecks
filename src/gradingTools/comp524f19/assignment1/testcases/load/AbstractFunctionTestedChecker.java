@@ -2,17 +2,13 @@ package gradingTools.comp524f19.assignment1.testcases.load;
 
 import java.util.List;
 
-import com.sun.org.apache.xpath.internal.operations.And;
-
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp524f19.assignment1.testcases.load.LoadChecker;
 import main.lisp.parser.terms.Atom;
-import main.lisp.parser.terms.IdentifierAtom;
 import main.lisp.parser.terms.SExpression;
 import util.trace.Tracer;
 

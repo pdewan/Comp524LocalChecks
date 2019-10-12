@@ -1,7 +1,5 @@
 package gradingTools.comp524f19.assignment2.testcases;
 
-import java.util.List;
-
 import grader.basics.execution.BasicProjectExecution;
 import grader.basics.execution.GradingMode;
 import grader.basics.junit.NotAutomatableException;

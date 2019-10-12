@@ -15,8 +15,6 @@ import gradingTools.comp524f19.assignment2.testcases.LogicalCheckers.A2LogicalSu
 import gradingTools.comp524f19.assignment2.testcases.RelationalCheckers.A2RelationalSuite;
 import main.lisp.interpreter.InterpreterModelFactory;
 import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
-import util.annotations.MaxValue;
-import util.trace.Tracer;
 
 
 @RunWith(Suite.class)

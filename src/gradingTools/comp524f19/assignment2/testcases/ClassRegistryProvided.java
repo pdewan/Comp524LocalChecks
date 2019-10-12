@@ -1,6 +1,5 @@
 package gradingTools.comp524f19.assignment2.testcases;
 
-import grader.basics.execution.BasicProjectExecution;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.BasicProjectIntrospection;
@@ -8,7 +7,6 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import main.ClassRegistry;
-import util.annotations.MaxValue;
 //@MaxValue(10)
 public class ClassRegistryProvided extends PassFailJUnitTestCase {
 	public static final Class REGISTRY_INTERFACE = ClassRegistry.class;

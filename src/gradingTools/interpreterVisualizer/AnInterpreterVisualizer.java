@@ -6,8 +6,6 @@ import java.beans.PropertyChangeSupport;
 
 import main.lisp.interpreter.ObservableLispInterpreter;
 import main.lisp.parser.terms.SExpression;
-import util.annotations.Visible;
-import util.models.PropertyListenerRegisterer;
 
 public class AnInterpreterVisualizer implements InterpreterVisualizer{
 	SExpression inputSExpression;

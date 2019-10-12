@@ -2,8 +2,6 @@ package gradingTools.comp524f19.assignment1.testcases.load;
 
 import java.util.List;
 
-import com.sun.org.apache.xpath.internal.operations.And;
-
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
@@ -14,7 +12,6 @@ import main.lisp.parser.terms.Atom;
 import main.lisp.parser.terms.IdentifierAtom;
 import main.lisp.parser.terms.NilAtom;
 import main.lisp.parser.terms.SExpression;
-import sun.print.resources.serviceui;
 import util.trace.Tracer;
 
 public abstract class AbstractFunctionTestedCondChecker extends PassFailJUnitTestCase {

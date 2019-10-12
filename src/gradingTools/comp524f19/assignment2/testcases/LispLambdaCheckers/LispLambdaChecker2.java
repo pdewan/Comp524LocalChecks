@@ -1,13 +1,7 @@
 package gradingTools.comp524f19.assignment2.testcases.LispLambdaCheckers;
 
-import grader.basics.junit.NotAutomatableException;
-import grader.basics.junit.TestCaseResult;
-import grader.basics.project.NotGradableException;
-import grader.basics.project.Project;
 import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
-import main.lisp.parser.terms.SExpression;
 import util.annotations.Explanation;
-import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
 @Explanation("Checks if lambda works")

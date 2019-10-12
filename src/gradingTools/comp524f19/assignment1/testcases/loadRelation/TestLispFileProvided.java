@@ -1,7 +1,6 @@
 package gradingTools.comp524f19.assignment1.testcases.loadRelation;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
