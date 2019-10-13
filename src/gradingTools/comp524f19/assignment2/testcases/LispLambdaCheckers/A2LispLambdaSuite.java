@@ -7,7 +7,11 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	LispLambdaChecker.class,
-	LispLambdaChecker2.class
+	LispLambdaChecker2.class,
+	LispLambdaChecker3.class,
+	LoadLambdaChecker.class,
+	LoadLambdaChecker2.class,
+	LoadLambdaChecker3.class
 	
 	
 })

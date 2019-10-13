@@ -8,8 +8,8 @@ import util.annotations.MaxValue;
 public class LispToStringChecker extends AbstractLispExpressionResultChecker {
 	public static final String[] STUDENT_INPUT = {"(funcall toString (cons 1 Nil))"};
 	public static final String[] STUDENT_TO_STRING = {"\"(1)\""};
-	public static final String[] GRADER_INPUT = {"(or 3 nil)"};
-	public static final String[] GRADER_TO_STRING = {"3"};
+	public static final String[] GRADER_INPUT = {"(funcall toString (cons 1 (cons 2 NIL)))"};
+	public static final String[] GRADER_TO_STRING = {"\"(1 2)\""};
 	@Override
 	protected String[] expectedStudentOutput() {
 		return STUDENT_TO_STRING;

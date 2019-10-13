@@ -5,11 +5,11 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 @MaxValue(10)
 @Explanation("Checks if lambda works")
-public class LispLambdaChecker extends AbstractLispExpressionResultChecker {
-	public static final String[] STUDENT_INPUT = {"((lambda (a b) (+ a b)) 1 2)"};
-	public static final String[] STUDENT_TO_STRING = {"3"};
-	public static final String[] GRADER_INPUT = {"((lambda (a b) (list 3 4 a b)) 1 2)"};
-	public static final String[] GRADER_TO_STRING = {"(3 4 1 2)"};
+public class LispLambdaChecker3 extends AbstractLispExpressionResultChecker {
+	public static final String[] STUDENT_INPUT = {"((lambda () (eval 25)))"};
+	public static final String[] STUDENT_TO_STRING = {"25"};
+	public static final String[] GRADER_INPUT = {"((lambda () (quote (+ 1 2))))"};
+	public static final String[] GRADER_TO_STRING = {"(+ 1 2)"};
 	@Override
 	protected String[] expectedStudentOutput() {
 		return STUDENT_TO_STRING;
