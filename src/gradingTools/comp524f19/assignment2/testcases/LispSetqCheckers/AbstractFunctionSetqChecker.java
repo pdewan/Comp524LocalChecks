@@ -37,8 +37,16 @@ public abstract class AbstractFunctionSetqChecker extends PassFailJUnitTestCase 
 		{
 			return aFunctionName.equals(anInputSExpression.toString());
 		}
-		boolean funName = aFunctionName.equals(anInputSExpression.getHead().toString()) ;
+		boolean funName = aFunctionName.equals(anInputSExpression.getHead().toString());
+		if(!funName)
+		{
+			return false;
+		}
 		boolean headName =anArg0.equals(anInputSExpression.getTail().getHead().toString());
+		if(!headName)
+		{
+			return false;
+		}
 		boolean tailName = anArg1.equals(anInputSExpression.getTail().getTail().getHead().toString());
 		return (funName&&headName&&tailName);
 //		if (anInputSExpression instanceof Atom)
