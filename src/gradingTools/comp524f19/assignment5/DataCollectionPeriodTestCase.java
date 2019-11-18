@@ -8,7 +8,7 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.logs.DatedDifficultyContext;
+import gradingTools.logs.DifficultyContext;
 import gradingTools.logs.DifficultyCommandsExtractor;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
@@ -22,9 +22,11 @@ public class DataCollectionPeriodTestCase extends PassFailJUnitTestCase{
 			throws NotAutomatableException, NotGradableException {
 		DifficultyCommandsExtractor.init();
 		DifficultyCommandsExtractor.
-		fillDifficultyCommandsInProjectDirectory(project.getProjectFolder());
+//		fillDifficultyCommandsInProjectDirectory(project.getProjectFolder());
+		processLogsInProjectFolder(project.getProjectFolder());
+
 //		int numCommands = DifficultyCommandsExtractor.getDifficultyDates().size();
-		List<DatedDifficultyContext> aDifficultyLog = DifficultyCommandsExtractor.getDifficultyContext();
+		List<DifficultyContext> aDifficultyLog = DifficultyCommandsExtractor.getDifficultyContext();
 		Date aFirstDate = DifficultyCommandsExtractor.getFirstDate();
 		Date aLastDate =  DifficultyCommandsExtractor.getLastDate();
 		if (aFirstDate == null) {
