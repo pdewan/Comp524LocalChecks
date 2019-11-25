@@ -2,7 +2,8 @@ package gradingTools.comp524f19.assignment4;
 
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.project.BasicProjectIntrospection;
-import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionInputter;
+import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionInputterAndEvaluatorRegisterer;
+import gradingTools.comp524f19.assignment4.immutableJoiner.A4EarlyJoinImmutableJoinerTester;
 import util.trace.Tracer;
 
 
@@ -19,7 +20,9 @@ public class Assignment4TraceUtility {
 //			BasicStaticConfigurationUtils.setModule("Comp524");
 //			BasicStaticConfigurationUtils.setProblem("Assignment1");
 //			BasicStaticConfigurationUtils.setModuleProblemAndTest(Assignment1Suite.class);
-			Tracer.setKeywordPrintStatus(AbstractLispExpressionInputter.class, true);
+			Tracer.setKeywordPrintStatus(AbstractLispExpressionInputterAndEvaluatorRegisterer.class, true);
+			Tracer.setKeywordPrintStatus(A4EarlyJoinImmutableJoinerTester.class, true);
+
 
 
 

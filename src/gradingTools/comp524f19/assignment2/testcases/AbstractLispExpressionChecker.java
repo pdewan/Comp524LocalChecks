@@ -9,7 +9,7 @@ import grader.basics.project.Project;
 import gradingTools.interpreter.checkers.ADiffPatchChecker;
 import gradingTools.interpreter.checkers.CheckerResult;
 
-public abstract class AbstractLispExpressionChecker extends AbstractLispExpressionInputter {
+public abstract class AbstractLispExpressionChecker extends AbstractLispExpressionInputterAndEvaluatorRegisterer {
 	protected abstract String[] expectedStudentOutput();
 	protected abstract String[] expectedGraderOutput();
 	protected abstract String actualOutput();
