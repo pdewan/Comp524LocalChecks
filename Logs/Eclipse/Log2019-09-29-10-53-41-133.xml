@@ -1,0 +1,107 @@
+<Events startTimestamp="1569768821133" logVersion="1.0.0.1">
+  <Command __id="1293" _type="ShellCommand" date="Thu Oct 03 07:54:54 EDT 2019" timestamp="334873723" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1294" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Thu Oct 03 07:55:10 EDT 2019" timestamp="334889740" />
+  <Command __id="1295" _type="ShellCommand" date="Thu Oct 03 07:55:14 EDT 2019" timestamp="334893377" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1296" _type="EclipseCommand" commandID="" date="Thu Oct 03 07:55:14 EDT 2019" repeat="5" timestamp="334893440" timestamp2="334893454" />
+  <Command __id="1301" _type="ShellCommand" date="Thu Oct 03 07:55:17 EDT 2019" timestamp="334896581" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1302" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Thu Oct 03 07:55:24 EDT 2019" timestamp="334903533" />
+  <Command __id="1303" _type="EclipseCommand" commandID="" date="Thu Oct 03 07:55:26 EDT 2019" timestamp="334905225" />
+  <Command __id="1304" _type="ShellCommand" date="Thu Oct 03 07:55:27 EDT 2019" timestamp="334906243" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1305" _type="EclipseCommand" commandID="" date="Thu Oct 03 07:55:27 EDT 2019" repeat="9" timestamp="334906269" timestamp2="334908615" />
+  <Command __id="1314" _type="ShellCommand" date="Thu Oct 03 07:55:31 EDT 2019" timestamp="334910103" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1315" _type="EclipseCommand" commandID="" date="Thu Oct 03 07:55:32 EDT 2019" repeat="16" timestamp="334911542" timestamp2="334914781" />
+  <Command __id="1331" _type="EclipseCommand" commandID="" date="Thu Oct 03 07:55:38 EDT 2019" repeat="9" timestamp="334917466" timestamp2="334919207" />
+  <Command __id="1340" _type="ShellCommand" date="Thu Oct 03 07:55:41 EDT 2019" timestamp="334920524" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1341" _type="ShellCommand" date="Thu Oct 03 07:55:45 EDT 2019" timestamp="334924821" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1342" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Thu Oct 03 07:55:45 EDT 2019" timestamp="334924832" />
+  <Command __id="1343" _type="ShellCommand" date="Thu Oct 03 07:55:46 EDT 2019" timestamp="334925379" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1344" _type="EclipseCommand" commandID="" date="Thu Oct 03 07:55:46 EDT 2019" repeat="12" timestamp="334925444" timestamp2="334925566" />
+  <Command __id="1356" _type="ShellCommand" date="Thu Oct 03 07:55:58 EDT 2019" timestamp="334937514" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1357" _type="ShellCommand" date="Thu Oct 03 07:56:12 EDT 2019" timestamp="334951844" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1358" _type="ShellCommand" date="Thu Oct 03 07:56:30 EDT 2019" timestamp="334968896" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1359" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Commit" date="Thu Oct 03 07:56:30 EDT 2019" timestamp="334968909" />
+  <Command __id="1360" _type="ShellCommand" date="Thu Oct 03 07:56:49 EDT 2019" timestamp="334988054" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1361" _type="ShellCommand" date="Thu Oct 03 07:56:52 EDT 2019" timestamp="334991780" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1362" _type="ShellCommand" date="Thu Oct 03 07:57:03 EDT 2019" timestamp="335002136" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1363" _type="ShellCommand" date="Thu Oct 03 07:57:17 EDT 2019" timestamp="335016084" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1364" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Thu Oct 03 07:57:24 EDT 2019" timestamp="335023445" />
+  <Command __id="1365" _type="ShellCommand" date="Thu Oct 03 07:57:24 EDT 2019" timestamp="335023660" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1366" _type="ShellCommand" date="Thu Oct 03 07:57:26 EDT 2019" timestamp="335025451" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1368" _type="MoveCaretCommand" caretOffset="0" date="Thu Oct 03 07:58:51 EDT 2019" docOffset="0" timestamp="335110589" />
+  <Command __id="1369" _type="ShellCommand" date="Thu Oct 03 08:01:04 EDT 2019" timestamp="335243075" type="ECLIPSE_MINIMIZED" />
+  <Command __id="1370" _type="ShellCommand" date="Thu Oct 03 08:01:04 EDT 2019" timestamp="335243110" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1371" _type="ShellCommand" date="Thu Oct 03 09:17:31 EDT 2019" timestamp="339830834" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="1372" _type="ShellCommand" date="Thu Oct 03 09:17:32 EDT 2019" timestamp="339830896" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1374" _type="SelectTextCommand" caretOffset="1887" date="Thu Oct 03 09:17:39 EDT 2019" end="1887" start="1878" timestamp="339838497" />
+  <Command __id="1375" _type="ShellCommand" date="Thu Oct 03 09:18:12 EDT 2019" timestamp="339871811" type="ECLIPSE_MINIMIZED" />
+  <Command __id="1376" _type="ShellCommand" date="Thu Oct 03 09:18:12 EDT 2019" timestamp="339871816" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1377" _type="ShellCommand" date="Thu Oct 03 09:49:17 EDT 2019" timestamp="341736382" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="1378" _type="ShellCommand" date="Thu Oct 03 09:49:17 EDT 2019" timestamp="341736477" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1379" _type="MoveCaretCommand" caretOffset="1244" date="Thu Oct 03 09:49:28 EDT 2019" docOffset="1496" timestamp="341747578" />
+  <Command __id="1380" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.open.editor" date="Thu Oct 03 09:49:29 EDT 2019" timestamp="341748698" />
+  <Command __id="1381" _type="MoveCaretCommand" caretOffset="2908" date="Thu Oct 03 09:49:42 EDT 2019" docOffset="3160" timestamp="341761292" />
+  <Command __id="1382" _type="MoveCaretCommand" caretOffset="2901" date="Thu Oct 03 09:49:47 EDT 2019" docOffset="3153" timestamp="341765930" />
+  <Command __id="1383" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.open.editor" date="Thu Oct 03 09:49:48 EDT 2019" timestamp="341767104" />
+  <Command __id="1385" _type="MoveCaretCommand" caretOffset="0" date="Thu Oct 03 09:49:53 EDT 2019" docOffset="0" timestamp="341772283" />
+  <Command __id="1386" _type="ShellCommand" date="Thu Oct 03 09:50:04 EDT 2019" timestamp="341783350" type="ECLIPSE_MINIMIZED" />
+  <Command __id="1387" _type="ShellCommand" date="Thu Oct 03 09:50:04 EDT 2019" timestamp="341783356" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1388" _type="ShellCommand" date="Thu Oct 03 10:10:12 EDT 2019" timestamp="342991760" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="1389" _type="ShellCommand" date="Thu Oct 03 10:10:12 EDT 2019" timestamp="342991855" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1390" _type="ShellCommand" date="Thu Oct 03 10:10:51 EDT 2019" timestamp="343030339" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1391" _type="ShellCommand" date="Thu Oct 03 10:10:55 EDT 2019" timestamp="343034721" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1392" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Reset" date="Thu Oct 03 10:10:55 EDT 2019" timestamp="343034736" />
+  <Command __id="1393" _type="ShellCommand" date="Thu Oct 03 10:11:15 EDT 2019" timestamp="343054127" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1394" _type="ShellCommand" date="Thu Oct 03 10:12:42 EDT 2019" timestamp="343141797" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1395" _type="MoveCaretCommand" caretOffset="1275" date="Thu Oct 03 10:12:43 EDT 2019" docOffset="1558" timestamp="343141905" />
+  <Command __id="1396" _type="ShellCommand" date="Thu Oct 03 10:12:50 EDT 2019" timestamp="343148879" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1397" _type="ShellCommand" date="Thu Oct 03 10:12:53 EDT 2019" timestamp="343152614" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1398" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Thu Oct 03 10:12:53 EDT 2019" timestamp="343152626" />
+  <Command __id="1399" _type="ShellCommand" date="Thu Oct 03 10:12:54 EDT 2019" timestamp="343153410" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1400" _type="ShellCommand" date="Thu Oct 03 10:12:57 EDT 2019" timestamp="343156198" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1401" _type="EclipseCommand" commandID="" date="Thu Oct 03 10:13:06 EDT 2019" repeat="10" timestamp="343165107" timestamp2="343166075" />
+  <Command __id="1411" _type="ShellCommand" date="Thu Oct 03 10:13:15 EDT 2019" timestamp="343174158" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1412" _type="ShellCommand" date="Thu Oct 03 10:13:30 EDT 2019" timestamp="343189283" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1413" _type="EclipseCommand" commandID="org.eclipse.ui.project.properties" date="Thu Oct 03 10:13:30 EDT 2019" timestamp="343189301" />
+  <Command __id="1415" _type="MoveCaretCommand" caretOffset="0" date="Thu Oct 03 10:13:39 EDT 2019" docOffset="0" timestamp="343198427" />
+  <Command __id="1416" _type="MoveCaretCommand" caretOffset="740" date="Thu Oct 03 10:15:00 EDT 2019" docOffset="740" timestamp="343279390" />
+  <Command __id="1417" _type="MoveCaretCommand" caretOffset="788" date="Thu Oct 03 10:15:01 EDT 2019" docOffset="788" timestamp="343280427" />
+  <Command __id="1418" _type="MoveCaretCommand" caretOffset="323" date="Thu Oct 03 10:15:02 EDT 2019" docOffset="323" timestamp="343281530" />
+  <Command __id="1419" _type="EclipseCommand" commandID="" date="Thu Oct 03 10:15:13 EDT 2019" repeat="2" timestamp="343292612" timestamp2="343292763" />
+  <Command __id="1421" _type="MoveCaretCommand" caretOffset="634" date="Thu Oct 03 10:15:16 EDT 2019" docOffset="634" timestamp="343295549" />
+  <Command __id="1422" _type="SelectTextCommand" caretOffset="636" date="Thu Oct 03 10:15:16 EDT 2019" end="636" start="626" timestamp="343295730" />
+  <Command __id="1423" _type="SelectTextCommand" caretOffset="705" date="Thu Oct 03 10:15:17 EDT 2019" end="705" start="606" timestamp="343295964" />
+  <Command __id="1424" _type="MoveCaretCommand" caretOffset="633" date="Thu Oct 03 10:15:19 EDT 2019" docOffset="633" timestamp="343298371" />
+  <Command __id="1474" _type="ShellCommand" date="Thu Oct 03 15:38:30 EDT 2019" timestamp="362688958" type="ECLIPSE_MINIMIZED" />
+  <Command __id="1475" _type="ShellCommand" date="Thu Oct 03 15:38:30 EDT 2019" timestamp="362688971" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1476" _type="ShellCommand" date="Thu Oct 03 16:52:37 EDT 2019" timestamp="367136126" type="ECLIPSE_MINIMIZED" />
+  <Command __id="1477" _type="ShellCommand" date="Thu Oct 03 16:52:54 EDT 2019" timestamp="367153613" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="1478" _type="ShellCommand" date="Thu Oct 03 16:52:54 EDT 2019" timestamp="367153661" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1479" _type="ShellCommand" date="Thu Oct 03 16:52:59 EDT 2019" timestamp="367158051" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1480" _type="ShellCommand" date="Thu Oct 03 16:55:49 EDT 2019" timestamp="367328215" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1481" _type="ShellCommand" date="Thu Oct 03 16:55:54 EDT 2019" timestamp="367333232" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1482" _type="ShellCommand" date="Thu Oct 03 16:57:08 EDT 2019" timestamp="367407537" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1483" _type="EclipseCommand" commandID="org.eclipse.equinox.p2.ui.sdk.install" date="Thu Oct 03 16:57:08 EDT 2019" timestamp="367407566" />
+  <Command __id="1484" _type="ShellCommand" date="Thu Oct 03 16:57:14 EDT 2019" timestamp="367413001" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1485" _type="EclipseCommand" commandID="org.eclipse.ui.help.installationDialog" date="Thu Oct 03 16:57:36 EDT 2019" timestamp="367435385" />
+  <Command __id="1486" _type="ShellCommand" date="Thu Oct 03 16:57:39 EDT 2019" timestamp="367438426" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1487" _type="EclipseCommand" commandID="org.eclipse.equinox.p2.ui.sdk.install" date="Thu Oct 03 16:57:39 EDT 2019" timestamp="367438458" />
+  <Command __id="1488" _type="ShellCommand" date="Thu Oct 03 16:57:41 EDT 2019" timestamp="367440302" type="ECLIPSE_MINIMIZED" />
+  <Command __id="1489" _type="ShellCommand" date="Thu Oct 03 16:57:41 EDT 2019" timestamp="367440313" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1490" _type="ShellCommand" date="Thu Oct 03 17:20:08 EDT 2019" timestamp="368786953" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="1491" _type="ShellCommand" date="Thu Oct 03 17:20:08 EDT 2019" timestamp="368787061" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1492" _type="ShellCommand" date="Thu Oct 03 17:20:14 EDT 2019" timestamp="368793429" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1493" _type="ShellCommand" date="Thu Oct 03 17:20:16 EDT 2019" timestamp="368795720" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1494" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Thu Oct 03 17:20:16 EDT 2019" timestamp="368795736" />
+  <Command __id="1495" _type="ShellCommand" date="Thu Oct 03 17:20:17 EDT 2019" timestamp="368795956" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="1496" _type="ShellCommand" date="Thu Oct 03 17:20:18 EDT 2019" timestamp="368797518" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="1498" _type="MoveCaretCommand" caretOffset="451" date="Thu Oct 03 17:20:22 EDT 2019" docOffset="451" timestamp="368801739" />
+  <Command __id="3921" _type="FileOpenCommand" date="Fri Oct 04 12:02:40 EDT 2019" docASTNodeCount="241" docActiveCodeLength="2121" docExpressionCount="165" docLength="2175" projectName="comp110-grader" timestamp="436139706">
+    <filePath><![CDATA[D:\dewan_backup\Java\Grader\src\main\java\grader\settings\folders\AGraderFilesSetterModel.java]]></filePath>
+  </Command>
+  <Command __id="3922" _type="MoveCaretCommand" caretOffset="1384" date="Fri Oct 04 12:02:41 EDT 2019" docOffset="1666" timestamp="436139915" />
+  <Command __id="3923" _type="ShellCommand" date="Fri Oct 04 12:03:24 EDT 2019" timestamp="436183450" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="3924" _type="ShellCommand" date="Fri Oct 04 12:03:27 EDT 2019" timestamp="436185896" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="3925" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Fri Oct 04 12:03:27 EDT 2019" timestamp="436185908" />
+  <Command __id="3926" _type="ShellCommand" date="Fri Oct 04 12:03:27 EDT 2019" timestamp="436186093" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="3927" _type="ShellCommand" date="Fri Oct 04 12:03:29 EDT 2019" timestamp="436188038" type="ECLIPSE_GAINED_FOCUS" />
+</Events>

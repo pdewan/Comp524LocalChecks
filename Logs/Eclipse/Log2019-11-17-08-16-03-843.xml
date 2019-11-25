@@ -1,0 +1,302 @@
+<Events startTimestamp="1573996563843" logVersion="1.0.0.201910211318">
+  <Command __id="9213" _type="EclipseCommand" commandID="" date="Sun Nov 17 11:55:07 EST 2019" starttimestamp="1573996563843" timestamp="13143299" />
+  <Command __id="9215" _type="MoveCaretCommand" caretOffset="0" date="Sun Nov 17 11:55:07 EST 2019" docOffset="0" starttimestamp="1573996563843" timestamp="13143660" />
+  <Command __id="9216" _type="EclipseCommand" commandID="" date="Sun Nov 17 11:55:07 EST 2019" repeat="11" starttimestamp="1573996563843" timestamp="13143895" timestamp2="13144008" />
+  <Command __id="9228" _type="EclipseCommand" commandID="" date="Sun Nov 17 11:55:27 EST 2019" repeat="4" starttimestamp="1573996563843" timestamp="13163641" timestamp2="13163735" />
+  <Command __id="9199" _type="DiffBasedFileOpenCommand" date="Sun Nov 17 11:25:14 EST 2019" docASTNodeCount="1" docActiveCodeLength="1545" docExpressionCount="0" docLength="1545" projectName="PL_Java" starttimestamp="1573996563843" timestamp="11350724">
+    <filePath><![CDATA[D:\dewan_backup\Java\PLTeaching\PL_Java\DifficultiesOnly.txt]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[Mon Aug 05 11:46:50 EDT 2019(Surmountable)
+
+Mon Aug 05 11:46:55 EDT 2019(Insurmountable)
+
+Mon Aug 05 11:46:57 EDT 2019(Making_Progress)
+
+Mon Aug 05 11:50:29 EDT 2019(Making_Progress)
+
+Mon Aug 05 11:50:34 EDT 2019(Surmountable)
+
+Mon Aug 05 11:55:27 EDT 2019(Making_Progress)
+
+Mon Aug 05 11:55:30 EDT 2019(Surmountable)
+
+Tue Aug 06 01:56:04 EDT 2019(Making_Progress)
+
+Tue Aug 06 01:56:29 EDT 2019(Surmountable)
+
+Tue Aug 06 01:57:48 EDT 2019(Insurmountable)
+
+Tue Aug 06 02:11:06 EDT 2019(Surmountable)
+
+Tue Aug 06 02:12:08 EDT 2019(Insurmountable)
+
+Tue Aug 06 02:11:06 EDT 2019(Surmountable)
+
+Tue Aug 06 02:12:08 EDT 2019(Insurmountable)
+
+Tue Aug 06 02:11:06 EDT 2019(Surmountable)
+
+Tue Aug 06 02:12:08 EDT 2019(Insurmountable)
+
+Tue Aug 06 02:11:06 EDT 2019(Surmountable)
+
+Tue Aug 06 02:12:08 EDT 2019(Insurmountable)
+
+Sat Oct 26 12:56:23 EDT 2019(Making_Progress)
+
+Sat Nov 16 09:16:08 EST 2019(Surmountable)
+	The code does not seem to create multiple threads
+	Eager Evaluation
+	15
+
+Sat Nov 16 09:16:08 EST 2019(Surmountable)
+	The code does not seem to create multiple threads
+	Eager Evaluation
+	15
+
+Sat Nov 16 09:20:52 EST 2019(Making_Progress)
+
+Sat Nov 16 10:49:02 EST 2019(Making_Progress)
+
+Sat Nov 16 10:49:16 EST 2019(Making_Progress)
+
+Sat Nov 16 18:30:48 EST 2019(Surmountable)
+	Threads did not seem to be working
+	The TA helped identify the solution
+	Resolved
+	30
+
+Sat Nov 16 22:00:37 EST 2019(Surmountable)
+	The code does  not seem to create multiple threads
+	Eager Evaluation
+	API
+	Looked up solution online
+	15
+
+]]></snapshot>
+  </Command>
+  <Command __id="9200" _type="DiffBasedFileOpenCommand" date="Sun Nov 17 11:25:30 EST 2019" docASTNodeCount="52" docActiveCodeLength="381" docExpressionCount="34" docLength="381" projectName="PL_Java" starttimestamp="1573996563843" timestamp="11366644">
+    <filePath><![CDATA[D:\dewan_backup\Java\PLTeaching\PL_Java\src\tests\DifficultyCommandsDriver.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package tests;¶¶import java.io.File;¶import java.util.List;¶¶import gradingTools.logs.DifficultyCommandsExtractor;¶¶public class DifficultyCommandsDriver {¶	public static void main (String[] args) {¶		DifficultyCommandsExtractor.fillDifficultyCommandsInProjectDirectory(new File("."));¶		System.out.println(DifficultyCommandsExtractor.getDifficultyCommands());¶	}¶¶}¶")]]]></diff>
+  </Command>
+  <Command __id="9214" _type="DiffBasedFileOpenCommand" date="Sun Nov 17 11:55:07 EST 2019" docASTNodeCount="7" docActiveCodeLength="48" docExpressionCount="5" docLength="91" projectName="Comp524LocalChecks" starttimestamp="1573996563843" timestamp="13143488">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment5\package-info.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[/**
+ * 
+ */
+/**
+ * @author dewan
+ *
+ */
+package gradingTools.comp524f19.assignment5;]]></snapshot>
+  </Command>
+  <Command __id="9227" _type="DiffBasedFileOpenCommand" date="Sun Nov 17 11:55:27 EST 2019" docASTNodeCount="77" docActiveCodeLength="563" docExpressionCount="64" docLength="578" projectName="Comp524LocalChecks" starttimestamp="1573996563843" timestamp="13163607">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment1\requiredClasses\A1RequiredClassesSuite.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp524f19.assignment1.requiredClasses;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+import gradingTools.comp524f19.assignment1.testcases.ClassRegistryProvided;
+import gradingTools.comp524f19.assignment1.testcases.MainClassProvided;
+import gradingTools.comp524f19.assignment1.testcases.SExpressionClassProvided;
+
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+	ClassRegistryProvided.class,
+	SExpressionClassProvided.class,
+	MainClassProvided.class
+	
+})
+	
+
+//@MaxValue(50)
+public class A1RequiredClassesSuite {
+	
+}
+]]></snapshot>
+  </Command>
+  <Command __id="9232" _type="MoveCaretCommand" caretOffset="0" date="Sun Nov 17 11:55:27 EST 2019" docOffset="0" starttimestamp="1573996563843" timestamp="13163747" />
+  <Command __id="9233" _type="DiffBasedFileOpenCommand" date="Sun Nov 17 11:55:39 EST 2019" docASTNodeCount="160" docActiveCodeLength="1353" docExpressionCount="107" docLength="1368" projectName="Comp524LocalChecks" starttimestamp="1573996563843" timestamp="13175472">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment1\testcases\ClassRegistryProvided.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp524f19.assignment1.testcases;
+
+import grader.basics.junit.NotAutomatableException;
+import grader.basics.junit.TestCaseResult;
+import grader.basics.project.BasicProjectIntrospection;
+import grader.basics.project.NotGradableException;
+import grader.basics.project.Project;
+import grader.basics.testcase.PassFailJUnitTestCase;
+import main.ClassRegistry;
+//@MaxValue(10)
+public class ClassRegistryProvided extends PassFailJUnitTestCase {
+	public static final Class REGISTRY_INTERFACE = ClassRegistry.class;
+	public ClassRegistry classRegistry;
+	public ClassRegistry timingOutClassRegistryProxy;
+
+	public ClassRegistry getClassRegistry() {
+		return classRegistry;
+	}
+	public ClassRegistry getTimingOutClassRegistryProxy() {
+		return timingOutClassRegistryProxy;
+	}
+
+	@Override
+	public TestCaseResult test(Project project, boolean autoGrade)
+			throws NotAutomatableException, NotGradableException {		
+			classRegistry = (ClassRegistry) BasicProjectIntrospection.createInstanceOfPredefinedSupertype(REGISTRY_INTERFACE);
+			if (classRegistry == null)	{
+				
+				return fail("No registry class in classa path:" + System.getProperty("java.class.path"));
+			}
+			timingOutClassRegistryProxy = (ClassRegistry) BasicProjectIntrospection.createTimingOutProxy(REGISTRY_INTERFACE, classRegistry);
+			return pass();		
+	}
+
+}
+]]></snapshot>
+  </Command>
+  <Command __id="9234" _type="SelectTextCommand" caretOffset="252" date="Sun Nov 17 11:55:39 EST 2019" end="252" start="231" starttimestamp="1573996563843" timestamp="13175708" />
+  <Command __id="9235" _type="ShellCommand" date="Sun Nov 17 11:56:20 EST 2019" starttimestamp="1573996563843" timestamp="13216384" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="9236" _type="ShellCommand" date="Sun Nov 17 11:58:00 EST 2019" starttimestamp="1573996563843" timestamp="13316780" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="9237" _type="EclipseCommand" commandID="" date="Sun Nov 17 11:58:00 EST 2019" repeat="12" starttimestamp="1573996563843" timestamp="13316808" timestamp2="13317010" />
+  <Command __id="9249" _type="DiffBasedFileOpenCommand" date="Sun Nov 17 11:58:00 EST 2019" docASTNodeCount="10" docActiveCodeLength="92" docExpressionCount="6" docLength="92" projectName="Comp524LocalChecks" starttimestamp="1573996563843" timestamp="13317019">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment5\CommandsLoggedTestCase.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp524f19.assignment5;
+
+public class CommandsLoggedTestCase {
+
+}
+]]></snapshot>
+  </Command>
+  <Command __id="9250" _type="MoveCaretCommand" caretOffset="0" date="Sun Nov 17 11:58:01 EST 2019" docOffset="0" starttimestamp="1573996563843" timestamp="13317176" />
+  <Command __id="9251" _type="MoveCaretCommand" caretOffset="84" date="Sun Nov 17 11:58:03 EST 2019" docOffset="84" starttimestamp="1573996563843" timestamp="13319940" />
+  <Command __id="9252" _type="DiffBasedFileOpenCommand" date="Sun Nov 17 11:58:06 EST 2019" docASTNodeCount="77" docActiveCodeLength="563" docExpressionCount="64" docLength="578" projectName="Comp524LocalChecks" starttimestamp="1573996563843" timestamp="13322255">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment1\requiredClasses\A1RequiredClassesSuite.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package gradingTools.comp524f19.assignment1.requiredClasses;¶¶import org.junit.runner.RunWith;¶import org.junit.runners.Suite;¶¶import gradingTools.comp524f19.assignment1.testcases.ClassRegistryProvided;¶import gradingTools.comp524f19.assignment1.testcases.MainClassProvided;¶import gradingTools.comp524f19.assignment1.testcases.SExpressionClassProvided;¶¶¶@RunWith(Suite.class)¶@Suite.SuiteClasses({¶	ClassRegistryProvided.class,¶	SExpressionClassProvided.class,¶	MainClassProvided.class¶	¶})¶	¶¶//@MaxValue(50)¶public class A1RequiredClassesSuite {¶	¶}¶")]]]></diff>
+  </Command>
+  <Command __id="9253" _type="MoveCaretCommand" caretOffset="0" date="Sun Nov 17 11:58:06 EST 2019" docOffset="0" starttimestamp="1573996563843" timestamp="13322346" />
+  <Command __id="9254" _type="DiffBasedFileOpenCommand" date="Sun Nov 17 11:58:08 EST 2019" docASTNodeCount="160" docActiveCodeLength="1353" docExpressionCount="107" docLength="1368" projectName="Comp524LocalChecks" starttimestamp="1573996563843" timestamp="13324585">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment1\testcases\ClassRegistryProvided.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package gradingTools.comp524f19.assignment1.testcases;¶¶import grader.basics.junit.NotAutomatableException;¶import grader.basics.junit.TestCaseResult;¶import grader.basics.project.BasicProjectIntrospection;¶import grader.basics.project.NotGradableException;¶import grader.basics.project.Project;¶import grader.basics.testcase.PassFailJUnitTestCase;¶import main.ClassRegistry;¶//@MaxValue(10)¶public class ClassRegistryProvided extends PassFailJUnitTestCase {¶	public static final Class REGISTRY_INTERFACE = ClassRegistry.class;¶	public ClassRegistry classRegistry;¶	public ClassRegistry timingOutClassRegistryProxy;¶¶	public ClassRegistry getClassRegistry() {¶		return classRegistry;¶	}¶	public ClassRegistry getTimingOutClassRegistryProxy() {¶		return timingOutClassRegistryProxy;¶	}¶¶	@Override¶	public TestCaseResult test(Project project, boolean autoGrade)¶			throws NotAutomatableException, NotGradableException {		¶			classRegistry = (ClassRegistry) BasicProjectIntrospection.createInstanceOfPredefinedSupertype(REGISTRY_INTERFACE);¶			if (classRegistry == null)	{¶				¶				return fail("No registry class in classa path:" + System.getProperty("java.class.path"));¶			}¶			timingOutClassRegistryProxy = (ClassRegistry) BasicProjectIntrospection.createTimingOutProxy(REGISTRY_INTERFACE, classRegistry);¶			return pass();		¶	}¶¶}¶")]]]></diff>
+  </Command>
+  <Command __id="9255" _type="SelectTextCommand" caretOffset="252" date="Sun Nov 17 11:58:08 EST 2019" end="252" start="231" starttimestamp="1573996563843" timestamp="13324682" />
+  <Command __id="9256" _type="SelectTextCommand" caretOffset="192" date="Sun Nov 17 11:58:15 EST 2019" end="192" start="163" starttimestamp="1573996563843" timestamp="13331192" />
+  <Command __id="9257" _type="CopyCommand" date="Sun Nov 17 11:58:15 EST 2019" starttimestamp="1573996563843" timestamp="13331769" />
+  <Command __id="9258" _type="DiffBasedFileOpenCommand" date="Sun Nov 17 11:58:17 EST 2019" docASTNodeCount="10" docActiveCodeLength="92" docExpressionCount="6" docLength="92" projectName="Comp524LocalChecks" starttimestamp="1573996563843" timestamp="13333457">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment5\CommandsLoggedTestCase.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package gradingTools.comp524f19.assignment5;¶¶public class CommandsLoggedTestCase {¶¶}¶")]]]></diff>
+  </Command>
+  <Command __id="9265" _type="EclipseCommand" commandID="" date="Sun Nov 17 11:58:19 EST 2019" starttimestamp="1573996563843" timestamp="13335805" />
+  <Command __id="9266" _type="PasteCommand" date="Sun Nov 17 11:58:19 EST 2019" starttimestamp="1573996563843" timestamp="13335817" />
+  <Command __id="9267" _type="EclipseCommand" commandID="" date="Sun Nov 17 11:58:19 EST 2019" repeat="3" starttimestamp="1573996563843" timestamp="13335868" timestamp2="13335902" />
+  <Command __id="9270" _type="AssistCommand" assist_type="QUICK_ASSIST" auto_activated="false" date="Sun Nov 17 11:58:23 EST 2019" start_end="START" starttimestamp="1573996563843" timestamp="13339513" />
+  <DocumentChange __id="9260" _type="Insert" date="Sun Nov 17 11:58:19 EST 2019" docASTNodeCount="12" docActiveCodeLength="121" docExpressionCount="7" docLength="121" length="29" offset="84" starttimestamp="1573996563843" timestamp="13335739">
+    <text><![CDATA[extends PassFailJUnitTestCase]]></text>
+  </DocumentChange>
+  <DocumentChange __id="9261" _type="Delete" date="Sun Nov 17 11:58:19 EST 2019" docASTNodeCount="12" docActiveCodeLength="117" docExpressionCount="7" docLength="117" endLine="2" length="4" offset="44" startLine="0" starttimestamp="1573996563843" timestamp="13335798">
+    <text><![CDATA[
+
+]]></text>
+  </DocumentChange>
+  <DocumentChange __id="9262" _type="Insert" date="Sun Nov 17 11:58:19 EST 2019" docASTNodeCount="20" docActiveCodeLength="177" docExpressionCount="14" docLength="177" length="60" offset="44" repeat="3" starttimestamp="1573996563843" timestamp="13335799" timestamp2="13335800">
+    <text><![CDATA[
+
+import grader.basics.testcase.PassFailJUnitTestCase;
+
+]]></text>
+  </DocumentChange>
+  <DocumentChange __id="9275" _type="Insert" date="Sun Nov 17 11:58:25 EST 2019" docASTNodeCount="39" docActiveCodeLength="339" docExpressionCount="24" docLength="373" length="196" offset="170" repeat="4" starttimestamp="1573996563843" timestamp="13341313" timestamp2="13341314">
+    <text><![CDATA[
+
+	@Override
+	public TestCaseResult test(Project project, boolean autoGrade)
+			throws NotAutomatableException, NotGradableException {
+		// TODO Auto-generated method stub
+		return null;
+	}]]></text>
+  </DocumentChange>
+  <Command __id="9271" _type="EclipseCommand" commandID="AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction" date="Sun Nov 17 11:58:23 EST 2019" starttimestamp="1573996563843" timestamp="13339565" />
+  <Command __id="9272" _type="ShellCommand" date="Sun Nov 17 11:58:24 EST 2019" starttimestamp="1573996563843" timestamp="13341034" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="9273" _type="ShellCommand" date="Sun Nov 17 11:58:25 EST 2019" starttimestamp="1573996563843" timestamp="13341273" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="9274" _type="AssistCommand" assist_type="QUICK_ASSIST" auto_activated="false" date="Sun Nov 17 11:58:25 EST 2019" start_end="END" starttimestamp="1573996563843" timestamp="13341291" />
+  <DocumentChange __id="9279" _type="Insert" date="Sun Nov 17 11:58:25 EST 2019" docASTNodeCount="71" docActiveCodeLength="527" docExpressionCount="52" docLength="561" length="188" offset="48" repeat="8" starttimestamp="1573996563843" timestamp="13341314" timestamp2="13341375">
+    <text><![CDATA[import grader.basics.junit.NotAutomatableException;
+import grader.basics.junit.TestCaseResult;
+import grader.basics.project.NotGradableException;
+import grader.basics.project.Project;
+]]></text>
+  </DocumentChange>
+  <Command __id="9287" _type="SelectTextCommand" caretOffset="327" date="Sun Nov 17 11:58:25 EST 2019" end="327" start="305" starttimestamp="1573996563843" timestamp="13341390" />
+  <Command __id="9288" _type="MoveCaretCommand" caretOffset="517" date="Sun Nov 17 11:58:27 EST 2019" docOffset="517" starttimestamp="1573996563843" timestamp="13343641" />
+  <Command __id="9289" _type="SelectTextCommand" caretOffset="522" date="Sun Nov 17 11:58:27 EST 2019" end="522" start="513" starttimestamp="1573996563843" timestamp="13343855" />
+  <Command __id="9290" _type="SelectTextCommand" caretOffset="536" date="Sun Nov 17 11:58:27 EST 2019" end="536" start="498" starttimestamp="1573996563843" timestamp="13344117" />
+  <DocumentChange __id="9291" _type="Delete" date="Sun Nov 17 11:58:28 EST 2019" docASTNodeCount="71" docActiveCodeLength="523" docExpressionCount="52" docLength="523" endLine="14" length="38" offset="498" startLine="13" starttimestamp="1573996563843" timestamp="13345012">
+    <text><![CDATA[		// TODO Auto-generated method stub
+]]></text>
+  </DocumentChange>
+  <Command __id="9292" _type="EclipseCommand" commandID="org.eclipse.ui.edit.delete" date="Sun Nov 17 11:58:28 EST 2019" starttimestamp="1573996563843" timestamp="13345058" />
+  <Command __id="9293" _type="EclipseCommand" commandID="org.eclipse.ui.file.save" date="Sun Nov 17 11:58:29 EST 2019" starttimestamp="1573996563843" timestamp="13346089" />
+  <Command __id="9294" _type="EclipseCommand" commandID="" date="Sun Nov 17 11:58:30 EST 2019" repeat="12" starttimestamp="1573996563843" timestamp="13346226" timestamp2="13346441" />
+  <Command __id="9306" _type="DiffBasedFileOpenCommand" date="Sun Nov 17 11:58:49 EST 2019" docASTNodeCount="160" docActiveCodeLength="1353" docExpressionCount="107" docLength="1368" projectName="Comp524LocalChecks" starttimestamp="1573996563843" timestamp="13365180">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment1\testcases\ClassRegistryProvided.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package gradingTools.comp524f19.assignment1.testcases;¶¶import grader.basics.junit.NotAutomatableException;¶import grader.basics.junit.TestCaseResult;¶import grader.basics.project.BasicProjectIntrospection;¶import grader.basics.project.NotGradableException;¶import grader.basics.project.Project;¶import grader.basics.testcase.PassFailJUnitTestCase;¶import main.ClassRegistry;¶//@MaxValue(10)¶public class ClassRegistryProvided extends PassFailJUnitTestCase {¶	public static final Class REGISTRY_INTERFACE = ClassRegistry.class;¶	public ClassRegistry classRegistry;¶	public ClassRegistry timingOutClassRegistryProxy;¶¶	public ClassRegistry getClassRegistry() {¶		return classRegistry;¶	}¶	public ClassRegistry getTimingOutClassRegistryProxy() {¶		return timingOutClassRegistryProxy;¶	}¶¶	@Override¶	public TestCaseResult test(Project project, boolean autoGrade)¶			throws NotAutomatableException, NotGradableException {		¶			classRegistry = (ClassRegistry) BasicProjectIntrospection.createInstanceOfPredefinedSupertype(REGISTRY_INTERFACE);¶			if (classRegistry == null)	{¶				¶				return fail("No registry class in classa path:" + System.getProperty("java.class.path"));¶			}¶			timingOutClassRegistryProxy = (ClassRegistry) BasicProjectIntrospection.createTimingOutProxy(REGISTRY_INTERFACE, classRegistry);¶			return pass();		¶	}¶¶}¶")]]]></diff>
+  </Command>
+  <Command __id="9307" _type="SelectTextCommand" caretOffset="192" date="Sun Nov 17 11:58:49 EST 2019" end="192" start="163" starttimestamp="1573996563843" timestamp="13365268" />
+  <Command __id="9308" _type="DiffBasedFileOpenCommand" date="Sun Nov 17 11:59:23 EST 2019" docASTNodeCount="71" docActiveCodeLength="523" docExpressionCount="52" docLength="523" projectName="Comp524LocalChecks" starttimestamp="1573996563843" timestamp="13399792">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment5\CommandsLoggedTestCase.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package gradingTools.comp524f19.assignment5;¶¶"), Diff(DELETE,"public class CommandsLoggedTestCase {"), Diff(INSERT,"import grader.basics.junit.NotAutomatableException;¶import grader.basics.junit.TestCaseResult;¶import grader.basics.project.NotGradableException;¶import grader.basics.project.Project;¶import grader.basics.testcase.PassFailJUnitTestCase;¶¶public class CommandsLoggedTestCase extends PassFailJUnitTestCase{¶¶	@Override¶	public TestCaseResult test(Project project, boolean autoGrade)¶			throws NotAutomatableException, NotGradableException {¶		return null;¶	}"), Diff(EQUAL,"¶¶}¶")]]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp524f19.assignment5;
+
+import grader.basics.junit.NotAutomatableException;
+import grader.basics.junit.TestCaseResult;
+import grader.basics.project.NotGradableException;
+import grader.basics.project.Project;
+import grader.basics.testcase.PassFailJUnitTestCase;
+
+public class CommandsLoggedTestCase extends PassFailJUnitTestCase{
+
+	@Override
+	public TestCaseResult test(Project project, boolean autoGrade)
+			throws NotAutomatableException, NotGradableException {
+		return null;
+	}
+
+}
+]]></snapshot>
+  </Command>
+  <Command __id="9309" _type="MoveCaretCommand" caretOffset="498" date="Sun Nov 17 11:59:23 EST 2019" docOffset="498" starttimestamp="1573996563843" timestamp="13399892" />
+  <Command __id="9310" _type="MoveCaretCommand" caretOffset="360" date="Sun Nov 17 11:59:27 EST 2019" docOffset="360" starttimestamp="1573996563843" timestamp="13403418" />
+  <DocumentChange __id="9311" _type="Insert" date="Sun Nov 17 11:59:28 EST 2019" docASTNodeCount="73" docActiveCodeLength="537" docExpressionCount="52" docLength="537" length="14" offset="360" repeat="14" starttimestamp="1573996563843" timestamp="13404378" timestamp2="13407274">
+    <text><![CDATA[	public static]]></text>
+  </DocumentChange>
+  <Command __id="9312" _type="InsertStringCommand" date="Sun Nov 17 11:59:28 EST 2019" repeat="14" starttimestamp="1573996563843" timestamp="13404398" timestamp2="13407279">
+    <data><![CDATA[	public static]]></data>
+  </Command>
+  <DocumentChange __id="9339" _type="Insert" date="Sun Nov 17 11:59:45 EST 2019" docASTNodeCount="73" docActiveCodeLength="547" docExpressionCount="52" docLength="547" length="10" offset="374" repeat="10" starttimestamp="1573996563843" timestamp="13421241" timestamp2="13427144">
+    <text><![CDATA[ int NUM_C]]></text>
+  </DocumentChange>
+  <Command __id="9340" _type="InsertStringCommand" date="Sun Nov 17 11:59:45 EST 2019" repeat="10" starttimestamp="1573996563843" timestamp="13421286" timestamp2="13427150">
+    <data><![CDATA[ int NUM_C]]></data>
+  </Command>
+  <DocumentChange __id="9359" _type="Delete" date="Sun Nov 17 11:59:51 EST 2019" docASTNodeCount="73" docActiveCodeLength="542" docExpressionCount="52" docLength="542" endLine="9" length="5" offset="379" repeat="5" startLine="9" starttimestamp="1573996563843" timestamp="13427772" timestamp2="13428434">
+    <text><![CDATA[NUM_C]]></text>
+  </DocumentChange>
+  <Command __id="9360" _type="EclipseCommand" commandID="eventLogger.styledTextCommand.DELETE_PREVIOUS" date="Sun Nov 17 11:59:51 EST 2019" repeat="5" starttimestamp="1573996563843" timestamp="13427790" timestamp2="13428436" />
+  <DocumentChange __id="9369" _type="Insert" date="Sun Nov 17 11:59:52 EST 2019" docASTNodeCount="73" docActiveCodeLength="554" docExpressionCount="52" docLength="554" length="12" offset="379" repeat="12" starttimestamp="1573996563843" timestamp="13429146" timestamp2="13432741">
+    <text><![CDATA[MIN_NUM_COMM]]></text>
+  </DocumentChange>
+  <Command __id="9370" _type="InsertStringCommand" date="Sun Nov 17 11:59:53 EST 2019" repeat="12" starttimestamp="1573996563843" timestamp="13429183" timestamp2="13432750">
+    <data><![CDATA[MIN_NUM_COMM]]></data>
+  </Command>
+  <DocumentChange __id="9393" _type="Delete" date="Sun Nov 17 11:59:57 EST 2019" docASTNodeCount="71" docActiveCodeLength="524" docExpressionCount="52" docLength="524" endLine="9" length="30" offset="361" repeat="30" startLine="9" starttimestamp="1573996563843" timestamp="13433362" timestamp2="13436070">
+    <text><![CDATA[public static int MIN_NUM_COMM]]></text>
+  </DocumentChange>
+  <Command __id="9394" _type="EclipseCommand" commandID="eventLogger.styledTextCommand.DELETE_PREVIOUS" date="Sun Nov 17 11:59:57 EST 2019" repeat="30" starttimestamp="1573996563843" timestamp="13433386" timestamp2="13436073" />
+  <Command __id="9453" _type="EclipseCommand" commandID="org.eclipse.ui.file.save" date="Sun Nov 17 12:00:05 EST 2019" starttimestamp="1573996563843" timestamp="13442056" />
+  <Command __id="9454" _type="EclipseCommand" commandID="" date="Sun Nov 17 12:00:05 EST 2019" repeat="16" starttimestamp="1573996563843" timestamp="13442142" timestamp2="13443797" />

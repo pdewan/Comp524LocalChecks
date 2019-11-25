@@ -1,0 +1,28 @@
+<Events startTimestamp="1566575676922" logVersion="1.0.0.1">
+  <Command __id="7059" _type="MoveCaretCommand" caretOffset="81" date="Sat Aug 24 17:33:41 EDT 2019" docOffset="81" timestamp="106744957" />
+  <Command __id="7061" _type="InsertStringCommand" date="Sat Aug 24 17:33:44 EDT 2019" timestamp="106747616" timestamp2="106747616">
+    <data><![CDATA[ ]]></data>
+  </Command>
+  <Command __id="7067" _type="PasteCommand" date="Sat Aug 24 17:33:45 EDT 2019" timestamp="106748161" />
+  <Command __id="7068" _type="EclipseCommand" commandID="org.eclipse.ui.file.save" date="Sat Aug 24 17:33:46 EDT 2019" timestamp="106749929" />
+  <Command __id="7069" _type="AssistCommand" assist_type="QUICK_ASSIST" auto_activated="false" date="Sat Aug 24 17:33:59 EDT 2019" start_end="START" timestamp="106762086" />
+  <Command __id="7070" _type="EclipseCommand" commandID="AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction" date="Sat Aug 24 17:33:59 EDT 2019" timestamp="106762152" />
+  <Command __id="7071" _type="ShellCommand" date="Sat Aug 24 17:34:00 EDT 2019" timestamp="106763821" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="7072" _type="ShellCommand" date="Sat Aug 24 17:34:00 EDT 2019" timestamp="106764057" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="7073" _type="AssistCommand" assist_type="QUICK_ASSIST" auto_activated="false" date="Sat Aug 24 17:34:01 EDT 2019" start_end="END" timestamp="106764082" />
+  <Command __id="7086" _type="SelectTextCommand" caretOffset="325" date="Sat Aug 24 17:34:01 EDT 2019" end="325" start="303" timestamp="106764151" />
+  <Command __id="7087" _type="MoveCaretCommand" caretOffset="519" date="Sat Aug 24 17:34:02 EDT 2019" docOffset="519" timestamp="106765936" />
+  <Command __id="7088" _type="SelectTextCommand" caretOffset="521" date="Sat Aug 24 17:34:03 EDT 2019" end="521" start="512" timestamp="106766137" />
+  <Command __id="7089" _type="SelectTextCommand" caretOffset="535" date="Sat Aug 24 17:34:03 EDT 2019" end="535" start="497" timestamp="106766351" />
+  <Command __id="7091" _type="EclipseCommand" commandID="org.eclipse.ui.edit.delete" date="Sat Aug 24 17:34:04 EDT 2019" timestamp="106767081" />
+  <Command __id="7092" _type="EclipseCommand" commandID="org.eclipse.ui.file.save" date="Sat Aug 24 17:34:06 EDT 2019" timestamp="106769561" />
+  <Command __id="7093" _type="ShellCommand" date="Sat Aug 24 17:34:22 EDT 2019" timestamp="106785091" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="7094" _type="AssistCommand" assist_type="CONTENT_ASSIST" auto_activated="false" date="Sat Aug 24 17:34:29 EDT 2019" start_end="END" timestamp="106792484" />
+  <Command __id="7095" _type="AssistCommand" assist_type="QUICK_ASSIST" auto_activated="false" date="Sat Aug 24 17:34:29 EDT 2019" start_end="END" timestamp="106792484" />
+  <Command __id="7096" _type="ShellCommand" date="Sat Aug 24 17:34:29 EDT 2019" timestamp="106792722" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="7097" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.rename.element" date="Sat Aug 24 17:34:29 EDT 2019" timestamp="106792737" />
+  <Command __id="7098" _type="ShellCommand" date="Sat Aug 24 17:34:32 EDT 2019" timestamp="106795443" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="7099" _type="ShellCommand" date="Sat Aug 24 17:35:13 EDT 2019" timestamp="106836528" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="7101" _type="MoveCaretCommand" caretOffset="2231" date="Sat Aug 24 17:36:24 EDT 2019" docOffset="3198" timestamp="106907765" />
+  <Command __id="7103" _type="MoveCaretCommand" caretOffset="416" date="Sat Aug 24 17:37:01 EDT 2019" docOffset="559" timestamp="106944605" />
+</Events>

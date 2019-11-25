@@ -1,0 +1,457 @@
+<Events startTimestamp="1572816345508" logVersion="1.0.0.201910211318">
+  <Command __id="199" _type="ShellCommand" date="Sun Nov 03 18:12:38 EST 2019" starttimestamp="1572816345508" timestamp="6413448" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="200" _type="ShellCommand" date="Sun Nov 03 18:12:40 EST 2019" starttimestamp="1572816345508" timestamp="6415382" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="201" _type="ShellCommand" date="Sun Nov 03 18:12:42 EST 2019" starttimestamp="1572816345508" timestamp="6416676" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="202" _type="ShellCommand" date="Sun Nov 03 18:13:19 EST 2019" starttimestamp="1572816345508" timestamp="6453509" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="203" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Sun Nov 03 18:13:45 EST 2019" starttimestamp="1572816345508" timestamp="6479628" />
+  <Command __id="204" _type="EclipseCommand" commandID="" date="Sun Nov 03 18:13:46 EST 2019" starttimestamp="1572816345508" timestamp="6480979" />
+  <Command __id="205" _type="ShellCommand" date="Sun Nov 03 18:13:46 EST 2019" starttimestamp="1572816345508" timestamp="6480997" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="206" _type="EclipseCommand" commandID="" date="Sun Nov 03 18:13:48 EST 2019" repeat="11" starttimestamp="1572816345508" timestamp="6483043" timestamp2="6484664" />
+  <Command __id="269" _type="EclipseCommand" commandID="" date="Sun Nov 03 18:15:31 EST 2019" repeat="36" starttimestamp="1572816345508" timestamp="6586477" timestamp2="6586927" />
+  <Command __id="305" _type="MoveCaretCommand" caretOffset="243" date="Sun Nov 03 18:15:43 EST 2019" docOffset="316" starttimestamp="1572816345508" timestamp="6597548" />
+  <Command __id="307" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.open.editor" date="Sun Nov 03 18:15:44 EST 2019" starttimestamp="1572816345508" timestamp="6598906" />
+  <Command __id="308" _type="SelectTextCommand" caretOffset="172" date="Sun Nov 03 18:15:44 EST 2019" end="172" start="137" starttimestamp="1572816345508" timestamp="6598957" />
+  <Command __id="190" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 16:42:51 EST 2019" docASTNodeCount="511" docActiveCodeLength="3111" docExpressionCount="329" docLength="3403" projectName="LispInterpreterRelease" starttimestamp="1572816345508" timestamp="1026188">
+    <filePath><![CDATA[D:\dewan_backup\Java\Java-lisp-interpreter\src\main\lisp\evaluator\environment\AbstractEnvironment.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package main.lisp.evaluator.environment;¶¶import java.util.List;¶import java.util.Map;¶import java.util.Optional;¶¶import main.lisp.evaluator.Environment;¶import main.lisp.evaluator.function.Function;¶import main.lisp.parser.terms.IdentifierAtom;¶import main.lisp.parser.terms.SExpression;¶import util.trace.Tracer;¶¶public abstract class AbstractEnvironment implements Environment {¶	¶	private final CopyableScope scope;¶	private final Environment parent;¶	¶	// must have public constructor that calls this in your version¶	// called by factory, must be accessible¶	protected AbstractEnvironment() {¶		this(null);¶	}¶¶	// must have constructor that calls this in your version¶	// called in your version to make child¶	protected AbstractEnvironment(Environment parent) {¶		this(parent, new BasicScope());¶	}¶	¶	// must have constructor that calls this in your version¶	// called in your version to make copy¶	protected AbstractEnvironment(Environment parent, CopyableScope scope) {¶		this.scope = scope;¶		this.parent = parent;¶		Tracer.info(AbstractEnvironment.class, "New environment \nparent =\n" + parent + (parent == null ? "\n" : "") +"local scope = \n" + scope);¶	}¶	¶	@Override¶	public void put(IdentifierAtom id, SExpression value) {¶		scope.put(id, value);¶		Tracer.info(this, "Variable '" + id + "' set to '" + value + "' in environment:\n" + this);¶	}¶¶	@Override¶	public void putFun(IdentifierAtom id, Function value) {¶		scope.putFun(id, value);¶		Tracer.info(this, "Function '" + id + "' set to '" + value + "' in environment:\n" + this);¶	}¶¶	@Override¶	public void makeNameSpecial(IdentifierAtom id) {¶		String idValue = id.getValue();¶		scope.makeNameSpecial(id);¶		Tracer.info(this, "Name '" + idValue + "' marked dynamic");¶	}¶¶	@Override¶	public void makeLocalSpecial(IdentifierAtom id) {¶		String idValue = id.getValue();¶		scope.makeLocalSpecial(id);¶		Tracer.info(this, "Variable '" + idValue + "' marked dynamic in environment:\n" + this);¶	}¶¶	@Override¶	public boolean isSpecial(IdentifierAtom id) {¶		String idValue = id.getValue();¶		if (scope.getSpecialNames().contains(idValue)) {¶			return true;¶		} else if (scope.getLocalSpecialNames().contains(idValue)) {¶			return true;¶		} else if (scope.get(id).isPresent()) {¶			return false;¶		} else if (parent != null) {¶			return parent.isSpecial(id);¶		} else {¶			return false;¶		}¶	}¶	¶	@Override¶	public Environment getParent() {¶		return parent;¶	}¶¶	@Override¶	public Map<String, SExpression> getValueMap() {¶		return scope.getValueMap();¶	}¶¶	@Override¶	public Map<String, Function> getFunctionMap() {¶		return scope.getFunctionMap();¶	}¶¶	@Override¶	public List<String> getSpecialNames() {¶		return scope.getSpecialNames();¶	}¶¶	@Override¶	public List<String> getLocalSpecialNames() {¶		return scope.getLocalSpecialNames();¶	}¶	¶	protected CopyableScope getScope() {¶		return scope;¶	}¶¶	@Override¶	public Optional<SExpression> get(IdentifierAtom id) {¶		return scope.get(id);¶	}¶¶	@Override¶	public Optional<Function> getFun(IdentifierAtom id) {¶		return scope.getFun(id);¶	}¶¶	@Override¶	public String toString() {¶		StringBuilder sb = new StringBuilder();¶		sb.append(scope.toString());¶		if (getParent() != null) {¶			sb.append(getParent().toString());¶		}¶		return sb.toString();¶	}¶}¶")]]]></diff>
+  </Command>
+  <Command __id="265" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 18:15:20 EST 2019" docASTNodeCount="82" docActiveCodeLength="659" docExpressionCount="67" docLength="659" projectName="Comp524LocalChecks" starttimestamp="1572816345508" timestamp="6575491">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment3\testcases\FunctionExpressionsCheckers\A3FunctionExpressionsSuite.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp524f19.assignment3.testcases.FunctionExpressionsCheckers;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+import gradingTools.comp524f19.assignment2.testcases.LispFunctionCheckers.LoadLispChecker;
+import gradingTools.comp524f19.assignment2.testcases.LispFunctionCheckers.TestLispFileProvided;
+
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+	TestLispFileProvided.class,
+	LoadLispChecker.class,
+	FunExpTraverseGenChecker.class,
+	FunExpTraverseGenChecker2.class,
+	FunExpGeneratedNumAtomChecker.class,
+	FunExpGeneratedToStringChecker.class
+
+	
+})
+	
+
+public class A3FunctionExpressionsSuite {
+	
+}
+]]></snapshot>
+  </Command>
+  <Command __id="267" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 18:15:29 EST 2019" docASTNodeCount="129" docActiveCodeLength="1017" docExpressionCount="69" docLength="1051" projectName="Comp524LocalChecks" starttimestamp="1572816345508" timestamp="6584309">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment3\testcases\FunctionExpressionsCheckers\FunExpGeneratedNumAtomChecker.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp524f19.assignment3.testcases.FunctionExpressionsCheckers;
+
+import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
+import util.annotations.Explanation;
+import util.annotations.MaxValue;
+@MaxValue(10)
+public class FunExpGeneratedNumAtomChecker extends AbstractLispExpressionResultChecker {
+	public static final String[] STUDENT_INPUT = {"(funcall funExpGeneratedNumAtoms (list 2 (cons 4 5)))"};
+	public static final String[] STUDENT_TO_STRING = {"4"};
+	public static final String[] GRADER_INPUT = {"(funcall isList (cons 5 6))"};
+	public static final String[] GRADER_TO_STRING = {"NIL"};
+	@Override
+	protected String[] expectedStudentOutput() {
+		return STUDENT_TO_STRING;
+	}
+	@Override
+	protected String[] expectedGraderOutput() {
+		return GRADER_TO_STRING;
+	}
+	@Override
+	protected String[] studentInputLines() {
+		return STUDENT_INPUT;
+	}
+	@Override
+	protected String[] graderInputLines() {
+		// TODO Auto-generated method stub
+		return GRADER_INPUT;
+	}
+
+	
+}
+]]></snapshot>
+  </Command>
+  <Command __id="306" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 18:15:44 EST 2019" docASTNodeCount="34" docActiveCodeLength="348" docExpressionCount="22" docLength="700" projectName="Comp524LocalChecks" starttimestamp="1572816345508" timestamp="6598836">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment2\testcases\AbstractLispExpressionResultChecker.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp524f19.assignment2.testcases;
+
+import grader.basics.execution.BasicProjectExecution;
+
+public abstract class AbstractLispExpressionResultChecker extends AbstractLispExpressionChecker {
+	protected  String actualOutput() {
+		return BasicProjectExecution.toString(resultSExpressions);
+	}
+
+//	@Override
+//	public TestCaseResult test(Project project, boolean autoGrade)
+//			throws NotAutomatableException, NotGradableException {
+//		try {
+////		SExpression anExpression = evaluate("(cons 5 2)");
+//			return (compareOutput(resultSExpressions));
+//			
+//		} catch (Throwable e) {
+//			e.printStackTrace();
+//			return fail(e.getMessage());
+//		}
+//		
+//	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="309" _type="MoveCaretCommand" caretOffset="181" date="Sun Nov 03 18:15:55 EST 2019" docOffset="181" starttimestamp="1572816345508" timestamp="6610434" />
+  <Command __id="310" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 18:15:56 EST 2019" docASTNodeCount="225" docActiveCodeLength="1727" docExpressionCount="149" docLength="1907" projectName="Comp524LocalChecks" starttimestamp="1572816345508" timestamp="6610797">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment2\testcases\AbstractLispExpressionChecker.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp524f19.assignment2.testcases;
+
+import grader.basics.execution.BasicProjectExecution;
+import grader.basics.execution.GradingMode;
+import grader.basics.junit.NotAutomatableException;
+import grader.basics.junit.TestCaseResult;
+import grader.basics.project.NotGradableException;
+import grader.basics.project.Project;
+import gradingTools.interpreter.checkers.ADiffPatchChecker;
+import gradingTools.interpreter.checkers.CheckerResult;
+
+public abstract class AbstractLispExpressionChecker extends AbstractLispExpressionInputter {
+	protected abstract String[] expectedStudentOutput();
+	protected abstract String[] expectedGraderOutput();
+	protected abstract String actualOutput();
+	protected TestCaseResult compareOutput() {
+		try {
+//			SExpression anExpression = evaluate("(cons 5 2)");
+				evaluate();
+//				String anActualOutput = BasicProjectExecution.toString(anOutput);
+				String anActualOutput = actualOutput();
+
+				String anExpectedOutput;
+				if (GradingMode.getGraderRun()) {
+					anExpectedOutput = BasicProjectExecution.toString(expectedGraderOutput());
+				} else {
+					anExpectedOutput = BasicProjectExecution.toString(expectedStudentOutput());
+				}
+				CheckerResult aDiffResult = ADiffPatchChecker.check(anExpectedOutput, anActualOutput);
+				if (aDiffResult.isSucceeded()) {
+					return pass();
+				}
+				return fail("Expected strings:" + anExpectedOutput + "actual string " + anActualOutput);			
+			} catch (Throwable e) {
+				e.printStackTrace();
+				return fail(e.getMessage());
+			}
+	}
+	@Override
+	public TestCaseResult test(Project project, boolean autoGrade)
+			throws NotAutomatableException, NotGradableException {
+		try {
+//		SExpression anExpression = evaluate("(cons 5 2)");
+			return (compareOutput());
+			
+		} catch (Throwable e) {
+			e.printStackTrace();
+			return fail(e.getMessage());
+		}
+		
+	}
+	
+}
+]]></snapshot>
+  </Command>
+  <Command __id="311" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.open.editor" date="Sun Nov 03 18:15:56 EST 2019" starttimestamp="1572816345508" timestamp="6610966" />
+  <Command __id="312" _type="SelectTextCommand" caretOffset="166" date="Sun Nov 03 18:15:56 EST 2019" end="166" start="137" starttimestamp="1572816345508" timestamp="6611059" />
+  <Command __id="313" _type="MoveCaretCommand" caretOffset="175" date="Sun Nov 03 18:16:11 EST 2019" docOffset="526" starttimestamp="1572816345508" timestamp="6625922" />
+  <Command __id="314" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 18:16:12 EST 2019" docASTNodeCount="416" docActiveCodeLength="2951" docExpressionCount="267" docLength="3487" projectName="Comp524LocalChecks" starttimestamp="1572816345508" timestamp="6626956">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment2\testcases\AbstractLispExpressionInputter.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp524f19.assignment2.testcases;
+
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.ArrayList;
+import java.util.List;
+
+import grader.basics.execution.BasicProjectExecution;
+import grader.basics.execution.GradingMode;
+import grader.basics.junit.JUnitTestsEnvironment;
+import grader.basics.testcase.PassFailJUnitTestCase;
+import main.lisp.interpreter.InterpreterModelSingleton;
+import main.lisp.interpreter.ObservableLispInterpreter;
+import main.lisp.parser.terms.SExpression;
+import util.trace.Tracer;
+
+public  abstract class AbstractLispExpressionInputter extends PassFailJUnitTestCase implements PropertyChangeListener{
+	protected List<SExpression> inputSExpressions = new ArrayList<SExpression>();
+	
+	protected List<SExpression> resultSExpressions = new ArrayList<SExpression>();
+	protected boolean initialized = false;
+	protected abstract String[] studentInputLines();
+	protected abstract String[] graderInputLines();	
+	@Override
+	public void propertyChange(PropertyChangeEvent evt) {
+		String aPropertyName = evt.getPropertyName();
+		if (ObservableLispInterpreter.EXPRESSION_PROPERTY == aPropertyName) {
+			inputSExpressions.add ((SExpression) evt.getNewValue());
+			Tracer.info(this, "Got input : " + inputSExpressions.get(inputSExpressions.size()-1).toString());
+		} else if (ObservableLispInterpreter.RESULT_PROPERTY == aPropertyName) {
+			resultSExpressions.add((SExpression) evt.getNewValue());
+			Tracer.info(this, "Got result : " + resultSExpressions.get(resultSExpressions.size()-1).toString());
+		}
+	}
+	public void evaluate() throws Throwable {
+		String[] anInput = null;
+		if (GradingMode.getGraderRun()) {
+			anInput = graderInputLines();
+		} else {
+			anInput = studentInputLines();
+		}
+		evaluate(anInput);
+	}
+	protected String[] oneLine = {""};
+    public void evaluate(String aLine) throws Throwable {
+    	oneLine[0] = aLine;
+    	evaluate(oneLine);
+    }
+    public static String[] emptyStrings = {};
+
+    public void evaluate(String[] aLines) throws Throwable {
+    	// make sure the class is registered with the factory.
+		 
+    	
+    	if (!initialized) {
+//        	SExpressionClassProvided anSExpressionClassProcessor = (SExpressionClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SExpressionClassProvided.class);
+//    		Class<? extends SExpression> anSExpressionClass = anSExpressionClassProcessor.getSExpressionClass();
+    		MainClassProvided aMainClassProcessor = (MainClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(MainClassProvided.class);
+//   		 	ExpressionFactory.setClass(anSExpressionClass);
+//   		 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
+    		Class aMainClass = aMainClassProcessor.getMainClass();
+   		 	initialized = true;
+   		 	BasicProjectExecution.invokeMain(aMainClass, emptyStrings, ".");
+   		 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
+   		 	
+    	}
+//    	newSExpression = null;
+    	for (String aLine:aLines ) {
+    		try {
+    		InterpreterModelSingleton.get().newInput(aLine);
+    		} catch (Exception e) {
+    			e.printStackTrace();
+    		}
+    	}
+//    	return newSExpression;
+    
+    	
+    }
+    public List<SExpression> getInputSExpressions() {
+		return inputSExpressions;
+	}
+	public List<SExpression> getResultSExpressions() {
+		return resultSExpressions;
+	}
+
+}
+]]></snapshot>
+  </Command>
+  <Command __id="315" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.open.editor" date="Sun Nov 03 18:16:12 EST 2019" starttimestamp="1572816345508" timestamp="6627057" />
+  <Command __id="316" _type="SelectTextCommand" caretOffset="153" date="Sun Nov 03 18:16:12 EST 2019" end="153" start="123" starttimestamp="1572816345508" timestamp="6627212" />
+  <Command __id="317" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 18:16:41 EST 2019" docASTNodeCount="129" docActiveCodeLength="1017" docExpressionCount="69" docLength="1051" projectName="Comp524LocalChecks" starttimestamp="1572816345508" timestamp="6655925">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment3\testcases\FunctionExpressionsCheckers\FunExpGeneratedNumAtomChecker.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package gradingTools.comp524f19.assignment3.testcases.FunctionExpressionsCheckers;¶¶import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;¶import util.annotations.Explanation;¶import util.annotations.MaxValue;¶@MaxValue(10)¶public class FunExpGeneratedNumAtomChecker extends AbstractLispExpressionResultChecker {¶	public static final String[] STUDENT_INPUT = {"(funcall funExpGeneratedNumAtoms (list 2 (cons 4 5)))"};¶	public static final String[] STUDENT_TO_STRING = {"4"};¶	public static final String[] GRADER_INPUT = {"(funcall isList (cons 5 6))"};¶	public static final String[] GRADER_TO_STRING = {"NIL"};¶	@Override¶	protected String[] expectedStudentOutput() {¶		return STUDENT_TO_STRING;¶	}¶	@Override¶	protected String[] expectedGraderOutput() {¶		return GRADER_TO_STRING;¶	}¶	@Override¶	protected String[] studentInputLines() {¶		return STUDENT_INPUT;¶	}¶	@Override¶	protected String[] graderInputLines() {¶		// TODO Auto-generated method stub¶		return GRADER_INPUT;¶	}¶¶	¶}¶")]]]></diff>
+  </Command>
+  <Command __id="318" _type="MoveCaretCommand" caretOffset="243" date="Sun Nov 03 18:16:41 EST 2019" docOffset="316" starttimestamp="1572816345508" timestamp="6656077" />
+  <Command __id="319" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 18:16:51 EST 2019" docASTNodeCount="34" docActiveCodeLength="348" docExpressionCount="22" docLength="700" projectName="Comp524LocalChecks" starttimestamp="1572816345508" timestamp="6666087">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment2\testcases\AbstractLispExpressionResultChecker.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package gradingTools.comp524f19.assignment2.testcases;¶¶import grader.basics.execution.BasicProjectExecution;¶¶public abstract class AbstractLispExpressionResultChecker extends AbstractLispExpressionChecker {¶	protected  String actualOutput() {¶		return BasicProjectExecution.toString(resultSExpressions);¶	}¶¶//	@Override¶//	public TestCaseResult test(Project project, boolean autoGrade)¶//			throws NotAutomatableException, NotGradableException {¶//		try {¶////		SExpression anExpression = evaluate("(cons 5 2)");¶//			return (compareOutput(resultSExpressions));¶//			¶//		} catch (Throwable e) {¶//			e.printStackTrace();¶//			return fail(e.getMessage());¶//		}¶//		¶//	}¶}¶")]]]></diff>
+  </Command>
+  <Command __id="320" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.open.editor" date="Sun Nov 03 18:16:51 EST 2019" starttimestamp="1572816345508" timestamp="6666182" />
+  <Command __id="321" _type="SelectTextCommand" caretOffset="172" date="Sun Nov 03 18:16:51 EST 2019" end="172" start="137" starttimestamp="1572816345508" timestamp="6666264" />
+  <Command __id="322" _type="MoveCaretCommand" caretOffset="181" date="Sun Nov 03 18:17:02 EST 2019" docOffset="181" starttimestamp="1572816345508" timestamp="6676598" />
+  <Command __id="323" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 18:17:03 EST 2019" docASTNodeCount="225" docActiveCodeLength="1727" docExpressionCount="149" docLength="1907" projectName="Comp524LocalChecks" starttimestamp="1572816345508" timestamp="6677527">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment2\testcases\AbstractLispExpressionChecker.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package gradingTools.comp524f19.assignment2.testcases;¶¶import grader.basics.execution.BasicProjectExecution;¶import grader.basics.execution.GradingMode;¶import grader.basics.junit.NotAutomatableException;¶import grader.basics.junit.TestCaseResult;¶import grader.basics.project.NotGradableException;¶import grader.basics.project.Project;¶import gradingTools.interpreter.checkers.ADiffPatchChecker;¶import gradingTools.interpreter.checkers.CheckerResult;¶¶public abstract class AbstractLispExpressionChecker extends AbstractLispExpressionInputter {¶	protected abstract String[] expectedStudentOutput();¶	protected abstract String[] expectedGraderOutput();¶	protected abstract String actualOutput();¶	protected TestCaseResult compareOutput() {¶		try {¶//			SExpression anExpression = evaluate("(cons 5 2)");¶				evaluate();¶//				String anActualOutput = BasicProjectExecution.toString(anOutput);¶				String anActualOutput = actualOutput();¶¶				String anExpectedOutput;¶				if (GradingMode.getGraderRun()) {¶					anExpectedOutput = BasicProjectExecution.toString(expectedGraderOutput());¶				} else {¶					anExpectedOutput = BasicProjectExecution.toString(expectedStudentOutput());¶				}¶				CheckerResult aDiffResult = ADiffPatchChecker.check(anExpectedOutput, anActualOutput);¶				if (aDiffResult.isSucceeded()) {¶					return pass();¶				}¶				return fail("Expected strings:" + anExpectedOutput + "actual string " + anActualOutput);			¶			} catch (Throwable e) {¶				e.printStackTrace();¶				return fail(e.getMessage());¶			}¶	}¶	@Override¶	public TestCaseResult test(Project project, boolean autoGrade)¶			throws NotAutomatableException, NotGradableException {¶		try {¶//		SExpression anExpression = evaluate("(cons 5 2)");¶			return (compareOutput());¶			¶		} catch (Throwable e) {¶			e.printStackTrace();¶			return fail(e.getMessage());¶		}¶		¶	}¶	¶}¶")]]]></diff>
+  </Command>
+  <Command __id="324" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.open.editor" date="Sun Nov 03 18:17:03 EST 2019" starttimestamp="1572816345508" timestamp="6677653" />
+  <Command __id="325" _type="SelectTextCommand" caretOffset="166" date="Sun Nov 03 18:17:03 EST 2019" end="166" start="137" starttimestamp="1572816345508" timestamp="6677834" />
+  <Command __id="326" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 18:17:50 EST 2019" docASTNodeCount="305" docActiveCodeLength="2114" docExpressionCount="217" docLength="2220" projectName="Comp524LocalChecks" starttimestamp="1572816345508" timestamp="6724694">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment1\testcases\loadLogical\AbstractFunctionTestedLogicalChecker.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp524f19.assignment1.testcases.loadLogical;
+
+import java.util.List;
+
+import grader.basics.junit.JUnitTestsEnvironment;
+import grader.basics.junit.NotAutomatableException;
+import grader.basics.junit.TestCaseResult;
+import grader.basics.project.NotGradableException;
+import grader.basics.project.Project;
+import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp524f19.assignment1.testcases.load.LoadChecker;
+import main.lisp.parser.terms.Atom;
+import main.lisp.parser.terms.SExpression;
+import util.trace.Tracer;
+
+public abstract class AbstractFunctionTestedLogicalChecker extends PassFailJUnitTestCase {
+	protected abstract String functionName();
+	protected String check(SExpression anInputSExpression, SExpression aResultSExpression) {
+		String aFunctionName = functionName();
+		if(equal(anInputSExpression)) {
+			return "";
+		}
+		else {
+			return "Expecting in test file a call to " + aFunctionName;
+		}
+		
+		
+	}
+	protected boolean equal(SExpression anInputSExpression){
+		String aFunctionName = functionName();
+		if (anInputSExpression instanceof Atom)
+		{
+			return aFunctionName.equals(anInputSExpression.toString());
+		}
+		else {
+			return (equal(anInputSExpression.getHead()) || equal(anInputSExpression.getTail()));
+		}
+
+	}
+
+	@Override
+	public TestCaseResult test(Project project, boolean autoGrade)
+			throws NotAutomatableException, NotGradableException {
+		LoadChecker aLoadChecker = (LoadChecker) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(LoadChecker.class);
+		List<SExpression> anInputSExpressions = aLoadChecker.getInputSExpressions();
+		List<SExpression> aResultSExpressions = aLoadChecker.getResultSExpressions();
+		String aMessage = null;
+		for (int i = 0; i < anInputSExpressions.size(); i++) {
+			 aMessage = check(anInputSExpressions.get(i), aResultSExpressions.get(i));
+			 if (aMessage.isEmpty()) {
+				 //System.out.println("Found a call to " + functionName() + " : " + anInputSExpressions.get(i).toString());
+				 Tracer.info(this, "Found a call to " + functionName() + " : " + anInputSExpressions.get(i).toString());
+				 return pass();
+			 }
+		}
+		return fail(aMessage);
+	}
+
+}
+]]></snapshot>
+  </Command>
+  <Command __id="327" _type="MoveCaretCommand" caretOffset="0" date="Sun Nov 03 18:17:50 EST 2019" docOffset="0" starttimestamp="1572816345508" timestamp="6724855" />
+  <Command __id="333" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace" date="Sun Nov 03 18:18:59 EST 2019" starttimestamp="1572816345508" timestamp="6794136" />
+  <Command __id="334" _type="ShellCommand" date="Sun Nov 03 18:19:28 EST 2019" starttimestamp="1572816345508" timestamp="6823341" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="335" _type="ShellCommand" date="Sun Nov 03 18:19:30 EST 2019" starttimestamp="1572816345508" timestamp="6825407" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="337" _type="MoveCaretCommand" caretOffset="243" date="Sun Nov 03 18:19:33 EST 2019" docOffset="316" starttimestamp="1572816345508" timestamp="6828315" />
+  <Command __id="338" _type="EclipseCommand" commandID="AUTOGEN:::org.eclipse.jdt.internal.ui.CompilationUnitEditor.ruler.actions/org.eclipse.jdt.internal.ui.javaeditor.JavaSelectRulerAction" date="Sun Nov 03 18:20:36 EST 2019" starttimestamp="1572816345508" timestamp="6890687" />
+  <Command __id="340" _type="MoveCaretCommand" caretOffset="0" date="Sun Nov 03 18:20:56 EST 2019" docOffset="0" starttimestamp="1572816345508" timestamp="6911110" />
+  <Command __id="341" _type="MoveCaretCommand" caretOffset="214" date="Sun Nov 03 18:21:02 EST 2019" docOffset="249" starttimestamp="1572816345508" timestamp="6916806" />
+  <Command __id="342" _type="SelectTextCommand" caretOffset="250" date="Sun Nov 03 18:21:02 EST 2019" end="250" start="214" starttimestamp="1572816345508" timestamp="6917197" />
+  <Command __id="328" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 18:17:59 EST 2019" docASTNodeCount="121" docActiveCodeLength="978" docExpressionCount="73" docLength="1075" projectName="Comp524LocalChecks" starttimestamp="1572816345508" timestamp="6734167">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment1\testcases\loadLogical\LoadChecker.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp524f19.assignment1.testcases.loadLogical;
+
+import grader.basics.junit.JUnitTestsEnvironment;
+import gradingTools.comp524f19.assignment1.testcases.AbstractLispExpressionLastResultChecker;
+
+public class LoadChecker extends AbstractLispExpressionLastResultChecker {
+	public static final String[] STUDENT_OUtPUT = {"T"};
+//	public static final String[] GRADER_TO_STRING = {"(2 . 5)"};
+	@Override
+	protected String[] expectedStudentOutput() {
+		return STUDENT_OUtPUT;
+		
+	}
+	@Override
+	protected String[] expectedGraderOutput() {
+		return expectedStudentOutput();
+	}
+	@Override
+	protected String[] studentInputLines() {
+		TestLispFileProvided aTestFileProvided = (TestLispFileProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(TestLispFileProvided.class);
+		String aLispFileName = aTestFileProvided.getLispFileName();
+		return new String[] {"(load \"" + aLispFileName + "\")"};
+	}
+	@Override
+	protected String[] graderInputLines() {
+		// TODO Auto-generated method stub
+		return studentInputLines();
+	}
+
+	
+}
+]]></snapshot>
+  </Command>
+  <Command __id="336" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 18:19:33 EST 2019" docASTNodeCount="129" docActiveCodeLength="1017" docExpressionCount="69" docLength="1051" projectName="Comp524LocalChecks" starttimestamp="1572816345508" timestamp="6828201">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment3\testcases\FunctionExpressionsCheckers\FunExpGeneratedNumAtomChecker.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package gradingTools.comp524f19.assignment3.testcases.FunctionExpressionsCheckers;¶¶import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;¶import util.annotations.Explanation;¶import util.annotations.MaxValue;¶@MaxValue(10)¶public class FunExpGeneratedNumAtomChecker extends AbstractLispExpressionResultChecker {¶	public static final String[] STUDENT_INPUT = {"(funcall funExpGeneratedNumAtoms (list 2 (cons 4 5)))"};¶	public static final String[] STUDENT_TO_STRING = {"4"};¶	public static final String[] GRADER_INPUT = {"(funcall isList (cons 5 6))"};¶	public static final String[] GRADER_TO_STRING = {"NIL"};¶	@Override¶	protected String[] expectedStudentOutput() {¶		return STUDENT_TO_STRING;¶	}¶	@Override¶	protected String[] expectedGraderOutput() {¶		return GRADER_TO_STRING;¶	}¶	@Override¶	protected String[] studentInputLines() {¶		return STUDENT_INPUT;¶	}¶	@Override¶	protected String[] graderInputLines() {¶		// TODO Auto-generated method stub¶		return GRADER_INPUT;¶	}¶¶	¶}¶")]]]></diff>
+  </Command>
+  <Command __id="339" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 18:20:56 EST 2019" docASTNodeCount="44" docActiveCodeLength="367" docExpressionCount="32" docLength="367" projectName="Comp524LocalChecks" starttimestamp="1572816345508" timestamp="6910994">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment1\testcases\loadLogical\OrTestedChecker.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp524f19.assignment1.testcases.loadLogical;
+
+import util.annotations.Explanation;
+import util.annotations.MaxValue;
+@Explanation("Checks if test file has a call to or")
+@MaxValue(10)
+public class OrTestedChecker extends AbstractFunctionTestedLogicalChecker {
+
+	@Override
+	protected String functionName() {
+		return "OR";
+	}
+
+	
+}
+]]></snapshot>
+  </Command>
+  <Command __id="343" _type="DiffBasedFileOpenCommand" date="Sun Nov 03 18:21:03 EST 2019" docASTNodeCount="305" docActiveCodeLength="2114" docExpressionCount="217" docLength="2220" projectName="Comp524LocalChecks" starttimestamp="1572816345508" timestamp="6917748">
+    <filePath><![CDATA[D:\dewan_backup\Java\Comp524LocalChecks\src\gradingTools\comp524f19\assignment1\testcases\loadLogical\AbstractFunctionTestedLogicalChecker.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package gradingTools.comp524f19.assignment1.testcases.loadLogical;¶¶import java.util.List;¶¶import grader.basics.junit.JUnitTestsEnvironment;¶import grader.basics.junit.NotAutomatableException;¶import grader.basics.junit.TestCaseResult;¶import grader.basics.project.NotGradableException;¶import grader.basics.project.Project;¶import grader.basics.testcase.PassFailJUnitTestCase;¶import gradingTools.comp524f19.assignment1.testcases.load.LoadChecker;¶import main.lisp.parser.terms.Atom;¶import main.lisp.parser.terms.SExpression;¶import util.trace.Tracer;¶¶public abstract class AbstractFunctionTestedLogicalChecker extends PassFailJUnitTestCase {¶	protected abstract String functionName();¶	protected String check(SExpression anInputSExpression, SExpression aResultSExpression) {¶		String aFunctionName = functionName();¶		if(equal(anInputSExpression)) {¶			return "";¶		}¶		else {¶			return "Expecting in test file a call to " + aFunctionName;¶		}¶		¶		¶	}¶	protected boolean equal(SExpression anInputSExpression){¶		String aFunctionName = functionName();¶		if (anInputSExpression instanceof Atom)¶		{¶			return aFunctionName.equals(anInputSExpression.toString());¶		}¶		else {¶			return (equal(anInputSExpression.getHead()) || equal(anInputSExpression.getTail()));¶		}¶¶	}¶¶	@Override¶	public TestCaseResult test(Project project, boolean autoGrade)¶			throws NotAutomatableException, NotGradableException {¶		LoadChecker aLoadChecker = (LoadChecker) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(LoadChecker.class);¶		List<SExpression> anInputSExpressions = aLoadChecker.getInputSExpressions();¶		List<SExpression> aResultSExpressions = aLoadChecker.getResultSExpressions();¶		String aMessage = null;¶		for (int i = 0; i < anInputSExpressions.size(); i++) {¶			 aMessage = check(anInputSExpressions.get(i), aResultSExpressions.get(i));¶			 if (aMessage.isEmpty()) {¶				 //System.out.println("Found a call to " + functionName() + " : " + anInputSExpressions.get(i).toString());¶				 Tracer.info(this, "Found a call to " + functionName() + " : " + anInputSExpressions.get(i).toString());¶				 return pass();¶			 }¶		}¶		return fail(aMessage);¶	}¶¶}¶")]]]></diff>
+  </Command>
+  <Command __id="344" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.open.editor" date="Sun Nov 03 18:21:03 EST 2019" starttimestamp="1572816345508" timestamp="6917809" />
+  <Command __id="345" _type="SelectTextCommand" caretOffset="154" date="Sun Nov 03 18:21:03 EST 2019" end="154" start="118" starttimestamp="1572816345508" timestamp="6918036" />
+  <Command __id="346" _type="MoveCaretCommand" caretOffset="1042" date="Sun Nov 03 18:21:31 EST 2019" docOffset="1517" starttimestamp="1572816345508" timestamp="6946130" />
+  <Command __id="347" _type="EclipseCommand" commandID="org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace" date="Sun Nov 03 18:21:35 EST 2019" starttimestamp="1572816345508" timestamp="6950410" />
+  <Command __id="349" _type="SelectTextCommand" caretOffset="2157" date="Sun Nov 03 18:21:46 EST 2019" end="2157" start="2098" starttimestamp="1572816345508" timestamp="6960959" />
+  <Command __id="350" _type="MoveCaretCommand" caretOffset="2033" date="Sun Nov 03 18:22:22 EST 2019" docOffset="2521" starttimestamp="1572816345508" timestamp="6996756" />
+  <Command __id="351" _type="SelectTextCommand" caretOffset="2053" date="Sun Nov 03 18:22:22 EST 2019" end="2053" start="2033" starttimestamp="1572816345508" timestamp="6996999" />
+  <Command __id="352" _type="SelectTextCommand" caretOffset="2160" date="Sun Nov 03 18:22:22 EST 2019" end="2160" start="2010" starttimestamp="1572816345508" timestamp="6997254" />
+  <Command __id="353" _type="CopyCommand" date="Sun Nov 03 18:22:23 EST 2019" starttimestamp="1572816345508" timestamp="6998389" />
+  <Command __id="355" _type="SelectTextCommand" caretOffset="1796" date="Sun Nov 03 18:22:56 EST 2019" end="1796" start="1739" starttimestamp="1572816345508" timestamp="7031076" />
+  <Command __id="356" _type="MoveCaretCommand" caretOffset="1781" date="Sun Nov 03 18:23:11 EST 2019" docOffset="2276" starttimestamp="1572816345508" timestamp="7046045" />
+  <Command __id="357" _type="SelectTextCommand" caretOffset="1789" date="Sun Nov 03 18:23:11 EST 2019" end="1789" start="1774" starttimestamp="1572816345508" timestamp="7046285" />
+  <Command __id="358" _type="SelectTextCommand" caretOffset="1799" date="Sun Nov 03 18:23:12 EST 2019" end="1799" start="1666" starttimestamp="1572816345508" timestamp="7046519" />
+  <Command __id="359" _type="CopyCommand" date="Sun Nov 03 18:23:12 EST 2019" starttimestamp="1572816345508" timestamp="7047443" />
+  <Command __id="360" _type="ShellCommand" date="Sun Nov 03 18:23:21 EST 2019" starttimestamp="1572816345508" timestamp="7056383" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="361" _type="ShellCommand" date="Sun Nov 03 23:37:03 EST 2019" starttimestamp="1572816345508" timestamp="25878263" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="5447" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Fri Nov 15 17:34:51 EST 2019" starttimestamp="1572816345508" timestamp="1040945992" />
+  <Command __id="5448" _type="ShellCommand" date="Fri Nov 15 17:34:53 EST 2019" starttimestamp="1572816345508" timestamp="1040947651" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="5449" _type="ShellCommand" date="Fri Nov 15 17:35:01 EST 2019" starttimestamp="1572816345508" timestamp="1040955882" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="5450" _type="ShellCommand" date="Fri Nov 15 17:35:11 EST 2019" starttimestamp="1572816345508" timestamp="1040965860" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="5459" _type="EclipseCommand" commandID="" date="Fri Nov 15 17:35:58 EST 2019" repeat="4" starttimestamp="1572816345508" timestamp="1041012750" timestamp2="1041013221" />
+  <Command __id="5463" _type="ShellCommand" date="Fri Nov 15 17:36:11 EST 2019" starttimestamp="1572816345508" timestamp="1041025866" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="5464" _type="EclipseCommand" commandID="org.eclipse.ui.file.export" date="Fri Nov 15 17:36:11 EST 2019" repeat="2" starttimestamp="1572816345508" timestamp="1041025887" timestamp2="1041025887" />
+  <Command __id="5466" _type="ShellCommand" date="Fri Nov 15 17:36:14 EST 2019" starttimestamp="1572816345508" timestamp="1041029412" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="5467" _type="ShellCommand" date="Fri Nov 15 17:36:43 EST 2019" starttimestamp="1572816345508" timestamp="1041057508" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="5468" _type="CopyCommand" date="Fri Nov 15 17:36:51 EST 2019" starttimestamp="1572816345508" timestamp="1041066441" />
+  <Command __id="5469" _type="ShellCommand" date="Fri Nov 15 17:36:54 EST 2019" starttimestamp="1572816345508" timestamp="1041069454" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="5470" _type="ShellCommand" date="Fri Nov 15 17:40:13 EST 2019" starttimestamp="1572816345508" timestamp="1041267896" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="5494" _type="ShellCommand" date="Sat Nov 16 11:10:08 EST 2019" starttimestamp="1572816345508" timestamp="1104262985" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="5495" _type="ShellCommand" date="Sat Nov 16 11:10:34 EST 2019" starttimestamp="1572816345508" timestamp="1104289140" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="5496" _type="ShellCommand" date="Sat Nov 16 11:10:37 EST 2019" starttimestamp="1572816345508" timestamp="1104291993" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="5497" _type="ShellCommand" date="Sat Nov 16 11:11:37 EST 2019" starttimestamp="1572816345508" timestamp="1104352487" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="5534" _type="ShellCommand" date="Sat Nov 16 18:27:00 EST 2019" starttimestamp="1572816345508" timestamp="1130475088" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="5535" _type="ShellCommand" date="Sat Nov 16 18:27:01 EST 2019" starttimestamp="1572816345508" timestamp="1130475624" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="5536" _type="ShellCommand" date="Sat Nov 16 18:27:12 EST 2019" starttimestamp="1572816345508" timestamp="1130486688" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="5537" _type="ShellCommand" date="Sat Nov 16 18:27:12 EST 2019" starttimestamp="1572816345508" timestamp="1130486955" type="ECLIPSE_GAINED_FOCUS" />

@@ -1,0 +1,85 @@
+<Events startTimestamp="1566749585802" logVersion="1.0.0.1">
+  <Command __id="8757" _type="RunCommand" date="Sun Aug 25 15:06:51 EDT 2019" kind="HitBreakPoint" projectName="(Unknown)" timestamp="10426001" type="Run" />
+  <Command __id="8758" _type="EHExceptionCommand" date="Sun Aug 25 15:06:52 EDT 2019" timestamp="10426401" type="Exception">
+    <outputString><![CDATA[ObjectEditor(Version 22, built on Thu Dec 06 16:26:09 EST 2018). Copyright Prasun Dewan, 2012, All rights reserved. US Patent Appl. No.: 12/532,327
+]]></outputString>
+  </Command>
+  <Command __id="8759" _type="ShellCommand" date="Sun Aug 25 15:06:53 EDT 2019" timestamp="10427239" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="8760" _type="EHExceptionCommand" date="Sun Aug 25 15:06:57 EDT 2019" timestamp="10431901" type="Exception">
+    <outputString><![CDATA[W*** Received notification(s) for unknown (possibly invisible or unrecognized atomic-shape) property: TestRunStarted of object: PromptSuite[25.0 pts](grader.basics.junit.AGradableJUnitSuite@1c807b1d). Ignoring notification.
+I***(TestCaseResult) ### gradingTools.comp524f19.assignment1.testcases.PromptTestCase: 1.0
+]]></outputString>
+  </Command>
+  <Command __id="8761" _type="ShellCommand" date="Sun Aug 25 15:06:57 EDT 2019" timestamp="10431912" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="8762" _type="RunCommand" date="Sun Aug 25 15:06:57 EDT 2019" kind="HitBreakPoint" projectName="(Unknown)" timestamp="10432048" type="Run" />
+  <Command __id="8764" _type="MoveCaretCommand" caretOffset="1100" date="Sun Aug 25 15:06:59 EDT 2019" docOffset="1473" timestamp="10433495" />
+  <Command __id="8765" _type="EclipseCommand" commandID="org.eclipse.debug.ui.commands.Resume" date="Sun Aug 25 15:07:01 EDT 2019" timestamp="10435909" />
+  <Command __id="8766" _type="RunCommand" date="Sun Aug 25 15:07:01 EDT 2019" kind="StepInto" projectName="(Unknown)" timestamp="10435910" type="Run" />
+  <Command __id="8767" _type="RunCommand" date="Sun Aug 25 15:07:01 EDT 2019" kind="HitBreakPoint" projectName="(Unknown)" timestamp="10435946" type="Run" />
+  <Command __id="8768" _type="EHExceptionCommand" date="Sun Aug 25 15:07:01 EDT 2019" timestamp="10436016" type="Exception">
+    <outputString><![CDATA[I***(BasicProcessRunner) Running command:D:\dewan_backup\Java\eclipse\test-c\Debug\test-c.exe
+I***(BasicProcessRunner) Running in folder: D:\dewan_backup\Java\eclipse\test-c\Debug
+I***(BasicProcessRunner)  Process started: D:\dewan_backup\Java\eclipse\test-c\Debug\test-c.exe folder: D:\dewan_backup\Java\eclipse\test-c\Debug entry point: null class path: D:\dewan_backup\Java\PLTeaching\PL_Java\bin;D:\dewan_backup\Java\Comp524LocalChecks\target\classes;D:\dewan_backup\Java\GraderBasics\target\classes;D:\dewan_backup\Java\lib\oeall22.jar;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-configuration-1.9.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-lang-2.6.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-logging-1.1.1.jar;G:\My Drive\Java\lib\Herrmes\lib\weka3_6.jar
+]]></outputString>
+  </Command>
+  <Command __id="8769" _type="RunCommand" date="Sun Aug 25 15:07:01 EDT 2019" kind="HitBreakPoint" projectName="(Unknown)" timestamp="10436030" type="Run" />
+  <Command __id="8770" _type="RunCommand" date="Sun Aug 25 15:07:01 EDT 2019" kind="HitBreakPoint" projectName="(Unknown)" timestamp="10436032" type="Run" />
+  <Command __id="8771" _type="EHExceptionCommand" date="Sun Aug 25 15:07:01 EDT 2019" timestamp="10436112" type="Exception">
+    <outputString><![CDATA[I***(ARunnerInputStreamProcessor) Provided Input:
+I***(BasicRunningProject) 1566760021841:Received output from main: Please input an integer
+Premature end of file before int was input, exiting
+I***(BasicRunningProject) 1566760021843:Processing line from main: Please input an integer
+I***(BasicProcessRunner)  Process finished; folder: D:\dewan_backup\Java\eclipse\test-c\Debug entry point: null class path: D:\dewan_backup\Java\PLTeaching\PL_Java\bin;D:\dewan_backup\Java\Comp524LocalChecks\target\classes;D:\dewan_backup\Java\GraderBasics\target\classes;D:\dewan_backup\Java\lib\oeall22.jar;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-configuration-1.9.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-lang-2.6.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-logging-1.1.1.jar;G:\My Drive\Java\lib\Herrmes\lib\weka3_6.jar
+I***(BasicRunningProject) Thread[AWT-EventQueue-0,6,main] sleeping for ms:2000 waiting for pending output from threads 
+]]></outputString>
+  </Command>
+  <Command __id="8772" _type="RunCommand" date="Sun Aug 25 15:07:03 EDT 2019" kind="HitBreakPoint" projectName="(Unknown)" timestamp="10438047" type="Run" />
+  <Command __id="8773" _type="RunCommand" date="Sun Aug 25 15:07:03 EDT 2019" kind="HitBreakPoint" projectName="(Unknown)" timestamp="10438068" type="Run" />
+  <Command __id="8774" _type="RunCommand" date="Sun Aug 25 15:07:03 EDT 2019" kind="HitBreakPoint" projectName="(Unknown)" timestamp="10438071" type="Run" />
+  <Command __id="8775" _type="EHExceptionCommand" date="Sun Aug 25 15:07:03 EDT 2019" timestamp="10438136" type="Exception">
+    <outputString><![CDATA[I***(BasicProcessRunner) Running command:D:\dewan_backup\Java\eclipse\test-c\Debug\test-c.exe
+I***(BasicProcessRunner) Running in folder: D:\dewan_backup\Java\eclipse\test-c\Debug
+I***(BasicProcessRunner)  Process started: D:\dewan_backup\Java\eclipse\test-c\Debug\test-c.exe folder: D:\dewan_backup\Java\eclipse\test-c\Debug entry point: null class path: D:\dewan_backup\Java\PLTeaching\PL_Java\bin;D:\dewan_backup\Java\Comp524LocalChecks\target\classes;D:\dewan_backup\Java\GraderBasics\target\classes;D:\dewan_backup\Java\lib\oeall22.jar;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-configuration-1.9.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-lang-2.6.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-logging-1.1.1.jar;G:\My Drive\Java\lib\Herrmes\lib\weka3_6.jar
+I***(ARunnerInputStreamProcessor) Provided Input:1
+I***(BasicRunningProject) 1566760023895:Received output from main: Please input an integer
+I***(BasicRunningProject) 1566760023895:Processing line from main: Please input an integer
+I***(BasicRunningProject) 1566760023895:Received output from main: Please input a decimal
+Premature end of file before decimal was input, exitingI***(BasicRunningProject) 1566760023896:Processing line from main: Please input a decimal
+I***(BasicProcessRunner)  Process finished; folder: D:\dewan_backup\Java\eclipse\test-c\Debug entry point: null class path: D:\dewan_backup\Java\PLTeaching\PL_Java\bin;D:\dewan_backup\Java\Comp524LocalChecks\target\classes;D:\dewan_backup\Java\GraderBasics\target\classes;D:\dewan_backup\Java\lib\oeall22.jar;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-configuration-1.9.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-lang-2.6.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-logging-1.1.1.jar;G:\My Drive\Java\lib\Herrmes\lib\weka3_6.jar
+I***(BasicRunningProject) Thread[AWT-EventQueue-0,6,main] sleeping for ms:2000 waiting for pending output from threads 
+
+]]></outputString>
+  </Command>
+  <Command __id="8776" _type="ShellCommand" date="Sun Aug 25 15:07:04 EDT 2019" timestamp="10439194" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="8777" _type="RunCommand" date="Sun Aug 25 15:07:05 EDT 2019" kind="HitBreakPoint" projectName="(Unknown)" timestamp="10440097" type="Run" />
+  <Command __id="8778" _type="RunCommand" date="Sun Aug 25 15:07:05 EDT 2019" kind="HitBreakPoint" projectName="(Unknown)" timestamp="10440114" type="Run" />
+  <Command __id="8779" _type="RunCommand" date="Sun Aug 25 15:07:05 EDT 2019" kind="HitBreakPoint" projectName="(Unknown)" timestamp="10440116" type="Run" />
+  <Command __id="8780" _type="EHExceptionCommand" date="Sun Aug 25 15:07:06 EDT 2019" timestamp="10440200" type="Exception">
+    <outputString><![CDATA[I***(BasicProcessRunner) Running command:D:\dewan_backup\Java\eclipse\test-c\Debug\test-c.exe
+I***(BasicProcessRunner) Running in folder: D:\dewan_backup\Java\eclipse\test-c\Debug
+I***(BasicProcessRunner)  Process started: D:\dewan_backup\Java\eclipse\test-c\Debug\test-c.exe folder: D:\dewan_backup\Java\eclipse\test-c\Debug entry point: null class path: D:\dewan_backup\Java\PLTeaching\PL_Java\bin;D:\dewan_backup\Java\Comp524LocalChecks\target\classes;D:\dewan_backup\Java\GraderBasics\target\classes;D:\dewan_backup\Java\lib\oeall22.jar;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-configuration-1.9.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-lang-2.6.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-logging-1.1.1.jar;G:\My Drive\Java\lib\Herrmes\lib\weka3_6.jar
+I***(ARunnerInputStreamProcessor) Provided Input:1.4
+I***(BasicRunningProject) 1566760025938:Received output from main: Please input an integer
+I***(BasicRunningProject) 1566760025938:Processing line from main: Please input an integer
+I***(BasicRunningProject) 1566760025938:Received output from main: Please input a decimal
+I***(BasicRunningProject) 1566760025938:Processing line from main: Please input a decimal
+I***(BasicRunningProject) 1566760025938:Received output from main: The int addition:1
+I***(BasicRunningProject) 1566760025938:Processing line from main: The int addition:1
+I***(BasicRunningProject) 1566760025938:Received output from main: The double addition:1.400000
+I***(BasicRunningProject) 1566760025938:Processing line from main: The double addition:1.400000
+I***(BasicRunningProject) 1566760025939:Received output from main: The int multiplication:0
+I***(BasicRunningProject) 1566760025939:Processing line from main: The int multiplication:0
+I***(BasicRunningProject) 1566760025939:Received output from main: The double multiplication:0.400000
+I***(BasicProcessRunner)  Process finished; folder: D:\dewan_backup\Java\eclipse\test-c\Debug entry point: null class path: D:\dewan_backup\Java\PLTeaching\PL_Java\bin;D:\dewan_backup\Java\Comp524LocalChecks\target\classes;D:\dewan_backup\Java\GraderBasics\target\classes;D:\dewan_backup\Java\lib\oeall22.jar;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-configuration-1.9.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-lang-2.6.jar;D:\dewan_backup\Java\GraderBasics\lib\commons-logging-1.1.1.jar;G:\My Drive\Java\lib\Herrmes\lib\weka3_6.jar
+I***(BasicRunningProject) 1566760025939:Processing line from main: The double multiplication:0.400000
+I***(BasicRunningProject) Thread[AWT-EventQueue-0,6,main] sleeping for ms:2000 waiting for pending output from threads 
+]]></outputString>
+  </Command>
+  <Command __id="8781" _type="EHExceptionCommand" date="Sun Aug 25 15:07:07 EDT 2019" timestamp="10442189" type="Exception">
+    <outputString><![CDATA[I***(TestCaseResult) ### anonymous: 1.0
+I***(TestCaseResult) ### anonymous: 0.0
+I***(TestCaseResult) ### anonymous: 1.0
+I***(TestCaseResult) ### anonymous: 1.0
+]]></outputString>
+  </Command>
+</Events>

@@ -1,0 +1,135 @@
+<Events startTimestamp="1570373103048" logVersion="1.0.0.1">
+  <Command __id="17" _type="MoveCaretCommand" caretOffset="0" date="Sun Oct 06 11:09:52 EDT 2019" docOffset="0" timestamp="1489852" />
+  <Command __id="18" _type="SelectTextCommand" caretOffset="140" date="Sun Oct 06 11:10:09 EDT 2019" end="140" start="0" timestamp="1506895" />
+  <Command __id="19" _type="CopyCommand" date="Sun Oct 06 11:10:10 EDT 2019" timestamp="1507931" />
+  <Command __id="20" _type="ShellCommand" date="Sun Oct 06 11:10:21 EDT 2019" timestamp="1517988" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="21" _type="ShellCommand" date="Sun Oct 06 11:11:19 EDT 2019" timestamp="1576231" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="22" _type="ShellCommand" date="Sun Oct 06 11:11:21 EDT 2019" timestamp="1578148" type="ECLIPSE_MINIMIZED" />
+  <Command __id="23" _type="ShellCommand" date="Sun Oct 06 11:11:21 EDT 2019" timestamp="1578157" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="24" _type="ShellCommand" date="Sun Oct 06 13:09:13 EDT 2019" timestamp="8650012" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="25" _type="ShellCommand" date="Sun Oct 06 13:09:13 EDT 2019" timestamp="8650117" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="26" _type="ShellCommand" date="Sun Oct 06 13:10:40 EDT 2019" timestamp="8737873" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="27" _type="ShellCommand" date="Sun Oct 06 13:11:33 EDT 2019" timestamp="8790018" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="28" _type="ShellCommand" date="Sun Oct 06 13:12:10 EDT 2019" timestamp="8827428" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="29" _type="ShellCommand" date="Sun Oct 06 13:12:39 EDT 2019" timestamp="8856784" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="30" _type="ShellCommand" date="Sun Oct 06 13:13:14 EDT 2019" timestamp="8891422" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="31" _type="ShellCommand" date="Sun Oct 06 14:10:14 EDT 2019" timestamp="12310978" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="32" _type="ShellCommand" date="Sun Oct 06 14:11:18 EDT 2019" timestamp="12375375" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="33" _type="ShellCommand" date="Sun Oct 06 14:11:21 EDT 2019" timestamp="12378099" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="34" _type="EclipseCommand" commandID="org.eclipse.search.ui.openFileSearchPage" date="Sun Oct 06 14:11:21 EDT 2019" timestamp="12378117" />
+  <Command __id="35" _type="ShellCommand" date="Sun Oct 06 14:11:28 EDT 2019" timestamp="12385611" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="36" _type="ShellCommand" date="Sun Oct 06 14:12:03 EDT 2019" timestamp="12420739" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="37" _type="EclipseCommand" commandID="org.eclipse.ui.project.properties" date="Sun Oct 06 14:12:03 EDT 2019" timestamp="12420787" />
+  <Command __id="43" _type="ShellCommand" date="Sun Oct 06 14:12:18 EDT 2019" timestamp="12435438" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="44" _type="ShellCommand" date="Sun Oct 06 14:12:18 EDT 2019" timestamp="12435649" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="50" _type="ShellCommand" date="Sun Oct 06 14:12:23 EDT 2019" timestamp="12440397" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="51" _type="ShellCommand" date="Sun Oct 06 14:12:23 EDT 2019" timestamp="12440413" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="54" _type="RunCommand" date="Sun Oct 06 14:12:29 EDT 2019" kind="HitBreakPoint" projectName="LispInterpreterDevel-3" timestamp="12446818" type="Run" />
+  <Command __id="55" _type="RunCommand" date="Sun Oct 06 14:12:29 EDT 2019" kind="HitBreakPoint" projectName="LispInterpreterDevel-3" timestamp="12446819" type="Run" />
+  <Command __id="58" _type="EHExceptionCommand" date="Sun Oct 06 14:12:30 EDT 2019" timestamp="12447097" type="Exception">
+    <outputString><![CDATA[I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.custom.QuitEvaluator@7bb11784 for quit
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.custom.PrintEvaluator@7006c658 for print
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.custom.ErrorEvaluator@47fd17e3 for error
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.custom.PrognEvaluator@3aa9e816 for progn
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.custom.vars.SetqEvaluator@1ae369b7 for setq
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.custom.vars.LetEvaluator@34340fab for let
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.custom.vars.DefvarEvaluator@2b80d80f for defvar
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.custom.vars.DefparameterEvaluator@2eee9593 for defparameter
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.custom.vars.DefunEvaluator@546a03af for defun
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.custom.vars.LambdaEvaluator@28864e92 for lambda
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.custom.vars.FunctionEvaluator@6ad5c04e for function
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.custom.vars.FuncallEvaluator@725bef66 for funcall
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.basic.SumEvaluator@ea4a92b for +
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.basic.DifferenceEvaluator@47f37ef1 for -
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.basic.ProductEvaluator@71c7db30 for *
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.basic.QuotientEvaluator@4563e9ab for /
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.basic.CarEvaluator@5e025e70 for car
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.basic.CdrEvaluator@45c8e616 for cdr
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.basic.ConsEvaluator@66d33a for cons
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.basic.AtomEvaluator@7e0babb1 for atom
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.basic.NullEvaluator@5ba23b66 for null
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.basic.EqEvaluator@c818063 for eq
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.basic.EqualsEvaluator@75bd9247 for =
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.basic.NotEqualsEvaluator@7dc36524 for /=
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.utility.QuitEvaluator@5a39699c for quit
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.utility.PrintEvaluator@56cbfb61 for print
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.utility.ErrorEvaluator@d041cf for error
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.utility.PrognEvaluator@1b0375b3 for progn
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.utility.DeclareEvaluator@2d209079 for declare
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.string.CharEvaluator@6b71769e for char
+]]></outputString>
+  </Command>
+  <Command __id="59" _type="EHExceptionCommand" date="Sun Oct 06 14:12:30 EDT 2019" timestamp="12447646" type="Exception">
+    <outputString><![CDATA[I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.string.ConcatenateEvaluator@e580929 for concatenate
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.string.WriteToStringEvaluator@7c75222b for write-to-string
+I***(BasicOperationManager) Registering evaluator main.lisp.evaluator.string.StrlenEvaluator@27f674d for strlen
+]]></outputString>
+  </Command>
+  <Command __id="60" _type="RunCommand" date="Sun Oct 06 14:12:34 EDT 2019" kind="HitBreakPoint" projectName="LispInterpreterDevel-3" timestamp="12451190" type="Run" />
+  <Command __id="61" _type="RunCommand" date="Sun Oct 06 14:12:34 EDT 2019" kind="HitBreakPoint" projectName="LispInterpreterDevel-3" timestamp="12451199" type="Run" />
+  <Command __id="62" _type="ShellCommand" date="Sun Oct 06 14:13:00 EDT 2019" timestamp="12477545" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="63" _type="ShellCommand" date="Sun Oct 06 14:13:18 EDT 2019" timestamp="12494988" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="64" _type="EclipseCommand" commandID="org.eclipse.ui.file.export" date="Sun Oct 06 14:13:18 EDT 2019" repeat="2" timestamp="12495004" timestamp2="12495005" />
+  <Command __id="66" _type="ShellCommand" date="Sun Oct 06 14:13:19 EDT 2019" timestamp="12496823" type="ECLIPSE_MINIMIZED" />
+  <Command __id="67" _type="ShellCommand" date="Sun Oct 06 14:13:19 EDT 2019" timestamp="12496828" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="68" _type="ShellCommand" date="Sun Oct 06 14:14:42 EDT 2019" timestamp="12579219" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="69" _type="ShellCommand" date="Sun Oct 06 14:14:42 EDT 2019" timestamp="12579304" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="70" _type="EclipseCommand" commandID="org.eclipse.ui.file.refresh" date="Sun Oct 06 14:14:57 EDT 2019" timestamp="12594511" />
+  <Command __id="75" _type="ShellCommand" date="Sun Oct 06 14:15:28 EDT 2019" timestamp="12625725" type="ECLIPSE_MINIMIZED" />
+  <Command __id="76" _type="ShellCommand" date="Sun Oct 06 14:15:28 EDT 2019" timestamp="12625733" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="77" _type="ShellCommand" date="Sun Oct 06 20:01:55 EDT 2019" timestamp="33412324" type="ECLIPSE_MAXIMIZED" />
+  <Command __id="78" _type="ShellCommand" date="Sun Oct 06 20:01:55 EDT 2019" timestamp="33412358" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="79" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Sun Oct 06 20:02:21 EDT 2019" timestamp="33438708" />
+  <Command __id="80" _type="ShellCommand" date="Sun Oct 06 20:02:22 EDT 2019" timestamp="33439843" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="89" _type="ShellCommand" date="Sun Oct 06 20:02:27 EDT 2019" timestamp="33444801" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="90" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Sun Oct 06 20:03:09 EDT 2019" timestamp="33486549" />
+  <Command __id="91" _type="ShellCommand" date="Sun Oct 06 20:03:09 EDT 2019" timestamp="33486798" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="431" _type="ShellCommand" date="Mon Oct 07 13:43:40 EDT 2019" timestamp="97117214" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="432" _type="ShellCommand" date="Mon Oct 07 13:43:58 EDT 2019" timestamp="97135669" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="433" _type="ShellCommand" date="Mon Oct 07 13:44:20 EDT 2019" timestamp="97157425" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="434" _type="CopyCommand" date="Mon Oct 07 13:44:29 EDT 2019" timestamp="97166098" />
+  <Command __id="435" _type="ShellCommand" date="Mon Oct 07 13:44:29 EDT 2019" timestamp="97166935" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="436" _type="ShellCommand" date="Mon Oct 07 13:44:48 EDT 2019" timestamp="97185370" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="437" _type="ShellCommand" date="Mon Oct 07 13:44:56 EDT 2019" timestamp="97193078" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="438" _type="ShellCommand" date="Mon Oct 07 13:45:01 EDT 2019" timestamp="97198881" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="439" _type="CopyCommand" date="Mon Oct 07 13:45:08 EDT 2019" timestamp="97204966" />
+  <Command __id="440" _type="ShellCommand" date="Mon Oct 07 13:45:08 EDT 2019" timestamp="97205809" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="441" _type="ShellCommand" date="Mon Oct 07 13:45:30 EDT 2019" timestamp="97227724" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="442" _type="ShellCommand" date="Mon Oct 07 13:46:32 EDT 2019" timestamp="97289526" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="443" _type="ShellCommand" date="Mon Oct 07 13:46:44 EDT 2019" timestamp="97301186" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="444" _type="ShellCommand" date="Mon Oct 07 13:47:20 EDT 2019" timestamp="97337226" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="445" _type="ShellCommand" date="Mon Oct 07 13:47:37 EDT 2019" timestamp="97354047" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="446" _type="CopyCommand" date="Mon Oct 07 13:48:54 EDT 2019" timestamp="97431754" />
+  <Command __id="447" _type="ShellCommand" date="Mon Oct 07 13:48:58 EDT 2019" timestamp="97435801" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="448" _type="ShellCommand" date="Mon Oct 07 13:52:39 EDT 2019" timestamp="97656843" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="449" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Mon Oct 07 13:53:15 EDT 2019" timestamp="97692861" />
+  <Command __id="450" _type="ShellCommand" date="Mon Oct 07 13:53:16 EDT 2019" timestamp="97693474" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="459" _type="ShellCommand" date="Mon Oct 07 13:53:18 EDT 2019" timestamp="97695943" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="464" _type="ShellCommand" date="Mon Oct 07 13:54:46 EDT 2019" timestamp="97783922" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="465" _type="ShellCommand" date="Mon Oct 07 13:55:02 EDT 2019" timestamp="97799129" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="466" _type="EclipseCommand" commandID="org.eclipse.ui.file.export" date="Mon Oct 07 13:55:02 EDT 2019" repeat="2" timestamp="97799148" timestamp2="97799148" />
+  <Command __id="790" _type="ShellCommand" date="Sat Oct 12 10:51:50 EDT 2019" timestamp="518807297" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="791" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Commit" date="Sat Oct 12 10:51:50 EDT 2019" timestamp="518807324" />
+  <Command __id="799" _type="ShellCommand" date="Sat Oct 12 10:52:13 EDT 2019" timestamp="518830082" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="800" _type="ShellCommand" date="Sat Oct 12 10:52:15 EDT 2019" timestamp="518832245" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="801" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Pull" date="Sat Oct 12 10:52:15 EDT 2019" timestamp="518832271" />
+  <Command __id="802" _type="RunCommand" date="Sat Oct 12 10:52:18 EDT 2019" kind="HitBreakPoint" projectName="(Unknown)" timestamp="518835027" type="Debug" />
+  <Command __id="803" _type="RunCommand" date="Sat Oct 12 10:52:18 EDT 2019" kind="HitBreakPoint" projectName="(Unknown)" timestamp="518835027" type="Debug" />
+  <Command __id="804" _type="RunCommand" date="Sat Oct 12 10:52:18 EDT 2019" kind="HitBreakPoint" projectName="LispInterpreterDevel-3" timestamp="518835027" type="Run" />
+  <Command __id="805" _type="ShellCommand" date="Sat Oct 12 10:52:18 EDT 2019" timestamp="518835734" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="832" _type="ShellCommand" date="Sat Oct 12 10:52:30 EDT 2019" timestamp="518847699" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="833" _type="ShellCommand" date="Sat Oct 12 10:54:13 EDT 2019" timestamp="518950613" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="834" _type="ShellCommand" date="Sat Oct 12 10:54:43 EDT 2019" timestamp="518980132" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="835" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Commit" date="Sat Oct 12 10:54:43 EDT 2019" timestamp="518980176" />
+  <Command __id="836" _type="ShellCommand" date="Sat Oct 12 10:54:47 EDT 2019" timestamp="518984555" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="837" _type="ShellCommand" date="Sat Oct 12 10:54:50 EDT 2019" timestamp="518987083" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="838" _type="ShellCommand" date="Sat Oct 12 10:55:03 EDT 2019" timestamp="519000479" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="839" _type="ShellCommand" date="Sat Oct 12 10:55:07 EDT 2019" timestamp="519004435" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="840" _type="EclipseCommand" commandID="org.eclipse.egit.ui.team.Commit" date="Sat Oct 12 10:55:07 EDT 2019" timestamp="519004454" />
+  <Command __id="841" _type="ShellCommand" date="Sat Oct 12 10:55:13 EDT 2019" timestamp="519010214" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="842" _type="ShellCommand" date="Sat Oct 12 10:55:33 EDT 2019" timestamp="519030857" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="843" _type="EclipseCommand" commandID="org.eclipse.ui.file.export" date="Sat Oct 12 10:55:33 EDT 2019" repeat="2" timestamp="519030878" timestamp2="519030878" />
+  <Command __id="845" _type="ShellCommand" date="Sat Oct 12 10:55:36 EDT 2019" timestamp="519033497" type="ECLIPSE_MINIMIZED" />
+  <Command __id="846" _type="ShellCommand" date="Sat Oct 12 10:55:36 EDT 2019" timestamp="519033504" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="847" _type="ShellCommand" date="Sat Oct 12 10:56:30 EDT 2019" timestamp="519087514" type="ECLIPSE_MAXIMIZED" />
+</Events>
