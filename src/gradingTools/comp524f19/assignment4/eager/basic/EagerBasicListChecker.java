@@ -1,4 +1,4 @@
-package gradingTools.comp524f19.assignment4.immutableJoiner;
+package gradingTools.comp524f19.assignment4.eager.basic;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -19,7 +19,7 @@ import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(20)
 @IsExtra(true)
-public class EagerListChecker extends AbstractLispExpressionResultChecker {
+public class EagerBasicListChecker extends AbstractLispExpressionResultChecker {
 	public static final String[] STUDENT_INPUT = 
 //		{"(funcall curriedNumAtoms (list 2 (cons 4 5)))"};
 		{

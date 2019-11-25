@@ -1,4 +1,4 @@
-package gradingTools.comp524f19.assignment4.immutableJoiner;
+package gradingTools.comp524f19.assignment4.eager.basic;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -19,7 +19,7 @@ import util.annotations.MaxValue;
 import util.misc.ThreadSupport;
 import util.trace.Tracer;
 @MaxValue(20)
-public class A4LateJoinImmutableJoinerTester extends A4EarlyJoinImmutableJoinerTester {
+public class A4LateJoinBasicJoinerTester extends A4EarlyJoinBasicJoinerTester {
 	
 	
 

@@ -1,4 +1,4 @@
-package gradingTools.comp524f19.assignment4.immutableJoiner;
+package gradingTools.comp524f19.assignment4.eager.basic;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -12,14 +12,14 @@ import main.lisp.evaluator.parallel.pool.ThreadPoolWorker;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	A4EarlyJoinImmutableJoinerTester.class,
-	A4LateJoinImmutableJoinerTester.class,
-	EagerListChecker.class
+	A4EarlyJoinBasicJoinerTester.class,
+	A4LateJoinBasicJoinerTester.class,
+	EagerBasicListChecker.class
 	
 })
 	
 
 //@MaxValue(50)
-public class A4ImmutableJoinerSuite {
+public class A4IEagerBasicSuite {
 	
 }
