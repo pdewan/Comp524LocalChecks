@@ -12,6 +12,7 @@ import gradingTools.comp524f19.assignment4.eager.basic.A4IEagerBasicSuite;
 import gradingTools.comp524f19.assignment4.requiredClasses.A4RequiredClassesSuite;
 import gradingTools.comp524f19.assignment4.testcases.CurryCheckers.A4CurrySuite;
 import gradingTools.comp524f19.assignment4.testcases.CurryFreeVariablesCheckers.A4CurryFreeVariableSuite;
+import gradingTools.comp524f19.assignment4.testcases.CurryableFunction.A4CurryableFunctionSuite;
 import gradingTools.comp524f19.assignment4.testcases.DefunCheckers.A4DefunSuite;
 import gradingTools.comp524f19.assignment4.testcases.FunFreeVariablesCheckers.A4FunFreeVariableSuite;
 import gradingTools.comp524f19.assignment4.testcases.QuotedCheckers.A4QuotedSuite;
@@ -28,6 +29,7 @@ import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 	A4QuotedSuite.class,
 	A4FunFreeVariableSuite.class,
 	A4CurryFreeVariableSuite.class,
+	A4CurryableFunctionSuite.class,
 	A4IEagerBasicSuite.class,
 	DistributedBasicTest.class
 })

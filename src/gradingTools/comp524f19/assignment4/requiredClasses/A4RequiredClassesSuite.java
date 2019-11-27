@@ -20,6 +20,7 @@ import main.lisp.evaluator.parallel.pool.ThreadPoolWorker;
 	OperationRegistryProvided.class,
 	TestLispFileProvided.class,
 	LoadLispChecker.class,
+	LoadFile.class,
 	ImmmutableJoinerClassProvided.class,
 	MutableJoinerClassProvided.class,
 	ThreadPoolClassProvided.class,
