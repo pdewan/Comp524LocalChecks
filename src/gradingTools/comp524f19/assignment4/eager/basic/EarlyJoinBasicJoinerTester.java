@@ -1,5 +1,7 @@
 package gradingTools.comp524f19.assignment4.eager.basic;
 
+import static org.junit.Assert.assertTrue;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -20,13 +22,13 @@ import util.misc.ThreadSupport;
 import util.trace.Tracer;
 
 @MaxValue(20)
-public class A4EarlyJoinBasicJoinerTester extends PassFailJUnitTestCase {
+public class EarlyJoinBasicJoinerTester extends PassFailJUnitTestCase {
 	
-	Joiner joiner;
-	int joinerCount = 4;
-	int taskCount = 0;
-	long slaveTimeout;
-	long masterTimeout;
+	protected Joiner joiner;
+	protected int joinerCount = 4;
+	protected int taskCount = 0;
+	protected long slaveTimeout;
+	protected long masterTimeout;
 	protected Joiner timingOutJoiner;
 
 	protected void setTimeouts() {
@@ -35,6 +37,14 @@ public class A4EarlyJoinBasicJoinerTester extends PassFailJUnitTestCase {
 	}
 	
 	protected TestCaseResult doJoinTest() {
+//		for (int i =0; i < joinerCount; i++) {
+//			new Thread (()-> {doSlaveTask();}).start();
+//		}
+//		return doMasterTask();
+		return parallelInc();
+		
+	}
+	protected TestCaseResult parallelInc() {
 		for (int i =0; i < joinerCount; i++) {
 			new Thread (()-> {doSlaveTask();}).start();
 		}
@@ -71,18 +81,15 @@ public class A4EarlyJoinBasicJoinerTester extends PassFailJUnitTestCase {
 		return fail("taskCount:" + taskCount + " joinerCount:" + joinerCount);
 
 	}
-
-	@Override
-	public TestCaseResult test(Project project, boolean autoGrade)
-			throws NotAutomatableException, NotGradableException {
+	
+	protected void createJoiner() {
 		ImmmutableJoinerClassProvided aCheckClass = (ImmmutableJoinerClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ImmmutableJoinerClassProvided.class);
 		if (aCheckClass == null) {
-			return fail("No check class found");
+			assertTrue("No check class found", false);
 		}
 		Class aJoinerClass = aCheckClass.getImmutableJoinerClass();
 		if (aJoinerClass == null) {
-			return fail("No Joiner class found");
-
+			assertTrue("No Joiner class found", false);
 		}
 		Class[] aConstructorArgTypes = {Integer.TYPE};
 		try {
@@ -93,10 +100,38 @@ public class A4EarlyJoinBasicJoinerTester extends PassFailJUnitTestCase {
 
 		
 		} catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			return fail("No constructor with single int argument in joiner class:" + aJoinerClass);
+			assertTrue("No constructor with single int argument in joiner class:" + aJoinerClass, false);
 		}
+	}
+
+	@Override
+	public TestCaseResult test(Project project, boolean autoGrade)
+			throws NotAutomatableException, NotGradableException {
+		createJoiner();
 		setTimeouts();
-		return doJoinTest();
+		TestCaseResult retVal = doJoinTest();
+		return retVal;
+//		ImmmutableJoinerClassProvided aCheckClass = (ImmmutableJoinerClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ImmmutableJoinerClassProvided.class);
+//		if (aCheckClass == null) {
+//			return fail("No check class found");
+//		}
+//		Class aJoinerClass = aCheckClass.getImmutableJoinerClass();
+//		if (aJoinerClass == null) {
+//			return fail("No Joiner class found");
+//
+//		}
+//		Class[] aConstructorArgTypes = {Integer.TYPE};
+//		try {
+//			Constructor aJoinerConstructor = aJoinerClass.getConstructor(aConstructorArgTypes);
+//		     Object[] anArgs = {joinerCount};
+//			joiner = (Joiner) aJoinerConstructor.newInstance(anArgs);
+//			timingOutJoiner = 	(Joiner) BasicProjectIntrospection.createTimingOutProxy(Joiner.class, joiner);
+//
+//		
+//		} catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+//			return fail("No constructor with single int argument in joiner class:" + aJoinerClass);
+//		}
+		
 	}
 
 }

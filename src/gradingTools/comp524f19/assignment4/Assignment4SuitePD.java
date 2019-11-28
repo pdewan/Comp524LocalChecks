@@ -36,7 +36,7 @@ import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 	
 
 //@MaxValue(50)
-public class Assignment4Suite extends Assignment1Suite{
+public class Assignment4SuitePD extends Assignment1Suite{
 	static int processTimeOut = 5;
 
 	public static int getProcessTimeOut() {
@@ -57,7 +57,7 @@ public class Assignment4Suite extends Assignment1Suite{
 //			BasicStaticConfigurationUtils.setProblem("assignment2");
 //			BasicStaticConfigurationUtils.setModuleProblemAndTest(assignment2Suite.class);
 			Assignment4TraceUtility.setTracing();
-			BasicJUnitUtils.interactiveTest(Assignment4Suite.class);
+			BasicJUnitUtils.interactiveTest(Assignment4SuitePD.class);
 
 
 		} catch (Exception e) {

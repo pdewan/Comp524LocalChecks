@@ -12,14 +12,14 @@ import main.lisp.evaluator.parallel.pool.ThreadPoolWorker;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	A4EarlyJoinBasicJoinerTester.class,
-	A4LateJoinBasicJoinerTester.class,
+	EarlyJoinBasicJoinerTester.class,
+	LateJoinBasicJoinerTester.class,
 	EagerBasicListChecker.class
 	
 })
 	
 
 //@MaxValue(50)
-public class A4IEagerBasicSuite {
+public class EagerBasicSuite {
 	
 }
