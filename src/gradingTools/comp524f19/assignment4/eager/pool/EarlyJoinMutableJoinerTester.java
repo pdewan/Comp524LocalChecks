@@ -33,6 +33,7 @@ public class EarlyJoinMutableJoinerTester extends EarlyJoinBasicJoinerTester {
 		if (!aFirstResult.isPass()) {
 			return aFirstResult;
 		}
+		taskCount = 0;
 		return parallelInc();
 		
 	}
@@ -42,7 +43,7 @@ public class EarlyJoinMutableJoinerTester extends EarlyJoinBasicJoinerTester {
 	}
 	@Override
 	protected void createJoiner() {
-		MutableJoinerClassProvided aCheckClass = (MutableJoinerClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ImmmutableJoinerClassProvided.class);
+		MutableJoinerClassProvided aCheckClass = (MutableJoinerClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(MutableJoinerClassProvided.class);
 		if (aCheckClass == null) {
 			assertTrue("No check class found", false);
 		}
@@ -50,7 +51,7 @@ public class EarlyJoinMutableJoinerTester extends EarlyJoinBasicJoinerTester {
 		if (aJoinerClass == null) {
 			assertTrue("No Joiner class found", false);
 		}
-		Class[] aConstructorArgTypes = {Integer.TYPE};
+		Class[] aConstructorArgTypes = {};
 		try {
 			Constructor aJoinerConstructor = aJoinerClass.getConstructor(aConstructorArgTypes);
 		     Object[] anArgs = {};
