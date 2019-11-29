@@ -8,18 +8,20 @@ import gradingTools.comp524f19.assignment2.testcases.MainClassProvided;
 import gradingTools.comp524f19.assignment2.testcases.OperationRegistryProvided;
 import gradingTools.comp524f19.assignment2.testcases.SExpressionClassProvided;
 import main.lisp.evaluator.parallel.pool.ThreadPoolWorker;
+import util.annotations.MaxValue;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	EarlyJoinBasicJoinerTester.class,
 	LateJoinBasicJoinerTester.class,
-	EagerBasicListChecker.class
+	EagerBasicListChecker.class,
+	SynchronizedEnvironment.class
 	
 })
 	
 
-//@MaxValue(50)
+@MaxValue(5)
 public class EagerBasicSuite {
 	
 }

@@ -72,11 +72,7 @@ public class EagerBasicListChecker extends AbstractLispExpressionResultChecker {
 		// TODO Auto-generated method stub
 		return GRADER_INPUT;
 	}
-	protected TestCaseResult compareOutput() {		
-		TestCaseResult aResult = super.compareOutput();
-		if (!aResult.isPass()) {
-			return aResult;
-		}
+	protected TestCaseResult checkPrintThreads() {
 		Set<String> aThreadNames = new HashSet();
 		String aMainThreadName = null;
 		for (SExpression anEvaluatorResult:evaluatorResults) {
@@ -95,6 +91,31 @@ public class EagerBasicListChecker extends AbstractLispExpressionResultChecker {
 			return fail ("Expected # Eval threads:" + 2 + " Actual Eval threads:" + aThreadNames);
 		}
 		return pass();
+	}
+	protected TestCaseResult compareOutput() {		
+		TestCaseResult aResult = super.compareOutput();
+		if (!aResult.isPass()) {
+			return aResult;
+		}
+		return checkPrintThreads();
+//		Set<String> aThreadNames = new HashSet();
+//		String aMainThreadName = null;
+//		for (SExpression anEvaluatorResult:evaluatorResults) {
+//			String aThreadName = anEvaluatorResult.toString();
+//			if (!aThreadName.contains("Eval")) {
+//				aMainThreadName = aThreadName;
+//			} else {
+//				aThreadNames.add(anEvaluatorResult.toString());	
+//			}
+//		}
+//		int aNumChildThreads = aThreadNames.size();
+//		if (aMainThreadName == null) {
+//			return fail("Thread name without substring, Eval, did not printThread");
+//		}
+//		if (aNumChildThreads != 2) {
+//			return fail ("Expected # Eval threads:" + 2 + " Actual Eval threads:" + aThreadNames);
+//		}
+//		return pass();
 				
 	}
 	

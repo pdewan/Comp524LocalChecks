@@ -12,7 +12,11 @@ import main.lisp.evaluator.parallel.pool.ThreadPoolWorker;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	EarlyJoinMutableJoinerTester.class,
+	EarlyJoinMutableJoiner.class,
+	LateJoinMutableJoiner.class,
+	ThreadPoolDefined.class,
+	DoParallelPool.class,
+	EagerPoolListChecker.class
 //	LateJoinBasicJoinerTester.class,
 //	EagerBasicListChecker.class
 	

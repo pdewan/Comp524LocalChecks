@@ -133,6 +133,9 @@ public class DistributedBasicTest extends MainMethodForkerTest {
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setWaitForResort(false);
 //		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryPointCommand();
 		classRegistry = aConfigurationProvided.getTimingOutClassRegistryProxy();
+		if (classRegistry == null) {
+			assertTrue("No class registry", false);
+		}
 		setupProcesses();
 //		setupProcesses(	classRegistry.getServerMain().getName(),
 //				classRegistry.getClientMain().getName());

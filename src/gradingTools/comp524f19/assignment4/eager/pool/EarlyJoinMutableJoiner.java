@@ -24,8 +24,8 @@ import util.annotations.MaxValue;
 import util.misc.ThreadSupport;
 import util.trace.Tracer;
 
-@MaxValue(20)
-public class EarlyJoinMutableJoinerTester extends EarlyJoinBasicJoinerTester {
+@MaxValue(5)
+public class EarlyJoinMutableJoiner extends EarlyJoinBasicJoinerTester {
 	protected MutableJoiner mutableTimingOutJoiner;
 	protected TestCaseResult doJoinTest() {
 
