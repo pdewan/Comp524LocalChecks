@@ -21,7 +21,6 @@ import util.annotations.MaxValue;
 })
 	
 
-@MaxValue(5)
 public class EagerBasicSuite {
 	
 }
