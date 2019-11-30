@@ -42,11 +42,30 @@ public class EagerPoolNestedAnd extends EagerPoolChecker {
 		     ")",
 		    
 		  ")",
+	   ")" ,
+	   "(and",
+	 	"(progn" ,
+	 	 	"(printThread)", 
+	 		"(> 5 0)",
+	 	 ")",
+		 "(and ",
+		    "(progn" ,
+			     "(printThread)", 
+			     "(< 5 0)", 
+		     ")",
+		   "(progn " ,
+			    "(sleep 100)" , 
+			    "(printThread)",  
+			     "(> 5 0)", 
+		     ")",
+		    
+		  ")",
 	   ")"     
 		};
 
 	public static final String[] STUDENT_TO_STRING = {
 			"\"EAGER\"",
+			"NIL",
 			"NIL",
 			"NIL"
 			};

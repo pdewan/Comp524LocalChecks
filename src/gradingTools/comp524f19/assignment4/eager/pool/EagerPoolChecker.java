@@ -30,7 +30,7 @@ import util.trace.Tracer;
 
 public abstract class EagerPoolChecker extends AbstractLispExpressionResultChecker {
 	protected int poolCountAferDoParallel;
-	public static long WAIT_FOR_OUTPUT_TIME = 200;
+	public static long WAIT_FOR_OUTPUT_TIME = 500;
 	
 	protected abstract int numExpectedChildThreads();
 

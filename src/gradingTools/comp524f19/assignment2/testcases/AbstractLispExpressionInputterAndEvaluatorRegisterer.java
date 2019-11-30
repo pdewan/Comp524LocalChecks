@@ -28,7 +28,7 @@ public  abstract class AbstractLispExpressionInputterAndEvaluatorRegisterer exte
 	protected List<SExpression> evaluatorInputs = new ArrayList<SExpression>();
 	protected List<SExpression> evaluatorResults = new ArrayList<SExpression>();
 
-	protected boolean initialized = false;
+	protected static boolean initialized = false;
 	protected abstract String[] studentInputLines();
 	protected abstract String[] graderInputLines();	
 	protected  Set<String> listenableEvaluators() {
@@ -70,12 +70,14 @@ public  abstract class AbstractLispExpressionInputterAndEvaluatorRegisterer exte
     	for (String anEvaluatorName:listenableEvaluators()) {
     		Evaluator anEvaluator = anOperationManager.getEvaluator(anEvaluatorName);
     		if (anEvaluator != null && anEvaluator instanceof AbstractEvaluator) {
+    			((AbstractEvaluator) anEvaluator).clearPropertyChangeListeners();
     			((AbstractEvaluator) anEvaluator).addPropertyChangeListener(this);
     		}
 
     	}
     }
-    protected void callMainAndRegister(String[] aLines) throws Throwable {
+   
+    protected void callMain(String[] aLines) throws Throwable {
     	MainClassProvided aMainClassProcessor = (MainClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(MainClassProvided.class);
 //	 	ExpressionFactory.setClass(anSExpressionClass);
 //	 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
@@ -84,8 +86,8 @@ public  abstract class AbstractLispExpressionInputterAndEvaluatorRegisterer exte
 	 	BasicProjectExecution.invokeMain(aMainClass, emptyStrings, ".");
 //		Evaluator anEvaluator = BuiltinOperationManagerSingleton.get().getEvaluator("print");
 
-	 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
-	 	registerWithEvaluators();
+//	 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
+//	 	registerWithEvaluators();
     }
     protected void provideInput(String[] aLines) {
     	for (String aLine:aLines ) {
@@ -101,7 +103,7 @@ public  abstract class AbstractLispExpressionInputterAndEvaluatorRegisterer exte
 		 
     	
     	if (!initialized) {
-    		callMainAndRegister(aLines);
+    		callMain(aLines);
 ////        	SExpressionClassProvided anSExpressionClassProcessor = (SExpressionClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SExpressionClassProvided.class);
 ////    		Class<? extends SExpression> anSExpressionClass = anSExpressionClassProcessor.getSExpressionClass();
 //    		MainClassProvided aMainClassProcessor = (MainClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(MainClassProvided.class);
@@ -115,6 +117,11 @@ public  abstract class AbstractLispExpressionInputterAndEvaluatorRegisterer exte
 //   		 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
    		 	
     	}
+    	InterpreterModelSingleton.get().clearPropertyChangeListeners();
+	 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
+	 	registerWithEvaluators();
+
+
     	provideInput(aLines);
 //    	newSExpression = null;
 //    	for (String aLine:aLines ) {

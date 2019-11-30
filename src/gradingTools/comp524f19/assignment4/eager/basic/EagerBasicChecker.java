@@ -22,7 +22,7 @@ import util.trace.Tracer;
 
 public abstract class EagerBasicChecker extends AbstractLispExpressionResultChecker {
 	
-	public static long WAIT_FOR_OUTPUT_TIME = 200;
+	public static long WAIT_FOR_OUTPUT_TIME = 500;
 	protected abstract int numExpectedChildThreads();
 	protected TestCaseResult checkPrintThreads() {
 		Tracer.info(this, "Waiting for threads output for ms: " + WAIT_FOR_OUTPUT_TIME);
