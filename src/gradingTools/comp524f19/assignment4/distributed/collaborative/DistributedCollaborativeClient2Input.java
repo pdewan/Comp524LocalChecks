@@ -7,11 +7,10 @@ import gradingTools.comp524f19.assignment4.distributed.basic.DistributedBasicCli
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @IsExtra(true)
-@MaxValue(50)
-public class DistributedCollaborative extends DistributedBasicClientInput{
-	public static final String CLIENT_1 = CLIENT + " 1";
+@MaxValue(40)
+public class DistributedCollaborativeClient2Input extends DistributedBasicClientInput{
 	public static final String CLIENT_2 = CLIENT + " 2";
-	public void setupProcessTeam() {
+	protected void setupProcessTeam() {
 		
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList(PROCESS_TEAM));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses(PROCESS_TEAM, 
@@ -20,27 +19,22 @@ public class DistributedCollaborative extends DistributedBasicClientInput{
 				Arrays.asList(SERVER, CLIENT_1, CLIENT_2));
 		
 	}
-	
-	public  void setupClients() {
+	@Override
+	protected  void setupClients() {
 		setupClient(CLIENT_1, classRegistry.getClientMain().getName());
 		setupClient(CLIENT_2, classRegistry.getClientMain().getName());
-		processInputs.put(CLIENT_2, CLIENT_INPUT);
+//		initialProcessInputs.put(CLIENT_2, FIRST_PROCESS_INPUT + END_INPUT);
 	}
-	protected boolean isValidOutput() {
-		for (String anOutput:OUTPUTS) {
-			if (!output.contains(SERVER +":"+anOutput)) {
-				assertTrue(SERVER + " does not have output:" + anOutput, false);
-			}
-			if (!output.contains(CLIENT_1 +":"+anOutput)) {
-				assertTrue(CLIENT_1 + " does not have output:" + anOutput, false);
+	protected void setupInitialInputs() {
+		initialProcessInputs.put(CLIENT_2, FIRST_PROCESS_INPUT + END_INPUT);
 
-			}
-			if (!output.contains(CLIENT_2 +":"+anOutput)) {
-				assertTrue(CLIENT_2 + " does not have output:" + anOutput, false);
+	}
+	protected void checkBroadcast(String anOutput) {
+		super.checkBroadcast(anOutput);		
+		if (!output.contains(CLIENT_2 +":"+anOutput)) {
+			assertTrue(CLIENT_2 + " does not have output:" + anOutput, false);
 
-			}			
 		}
-		return true;
 	}
-
+	
 }

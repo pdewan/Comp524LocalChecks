@@ -12,7 +12,7 @@ import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.BasicProjectIntrospection;
 import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
-import gradingTools.comp524f19.assignment4.eager.basic.EagerBasicListChecker;
+import gradingTools.comp524f19.assignment4.eager.basic.EagerBasicList;
 import gradingTools.interpreter.checkers.ADiffPatchChecker;
 import gradingTools.interpreter.checkers.CheckerResult;
 import main.lisp.evaluator.BuiltinOperationManagerSingleton;
@@ -26,7 +26,7 @@ import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(25)
 @IsExtra(true)
-public class EagerPoolListChecker extends EagerBasicListChecker {
+public class EagerPoolList extends EagerPoolChecker {
 	public static final String[] STUDENT_INPUT = 
 //		{"(funcall curriedNumAtoms (list 2 (cons 4 5)))"};
 		{
@@ -144,6 +144,10 @@ public class EagerPoolListChecker extends EagerBasicListChecker {
 		return super.compareOutput();
 		
 				
+	}
+	@Override
+	protected int numExpectedChildThreads() {
+		return 2;
 	}
 	
 }

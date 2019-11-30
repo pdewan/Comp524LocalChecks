@@ -1,16 +1,15 @@
 package gradingTools.comp524f19.assignment4;
 
 import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
-import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.execution.BasicProjectExecution;
 import grader.basics.junit.BasicJUnitUtils;
-import grader.basics.project.BasicProjectIntrospection;
 import gradingTools.comp524f19.assignment1.Assignment1Suite;
-import gradingTools.comp524f19.assignment4.distributed.DistributedSuite;
-import gradingTools.comp524f19.assignment4.distributed.basic.DistributedBasicClientInput;
-import gradingTools.comp524f19.assignment4.distributed.collaborative.DistributedCollaborative;
+import gradingTools.comp524f19.assignment4.distributed.basic.DistributedBasicSuite;
+import gradingTools.comp524f19.assignment4.distributed.collaborative.DistributedCollaborativeSuite;
 import gradingTools.comp524f19.assignment4.eager.basic.EagerBasicSuite;
+import gradingTools.comp524f19.assignment4.eager.basic.logical.EagerBasicLogicalSuite;
 import gradingTools.comp524f19.assignment4.eager.pool.EagerPoolSuite;
 import gradingTools.comp524f19.assignment4.requiredClasses.A4RequiredClassesSuite;
 import gradingTools.comp524f19.assignment4.testcases.CurryCheckers.A4CurrySuite;
@@ -19,8 +18,6 @@ import gradingTools.comp524f19.assignment4.testcases.CurryableFunction.A4Curryab
 import gradingTools.comp524f19.assignment4.testcases.DefunCheckers.A4DefunSuite;
 import gradingTools.comp524f19.assignment4.testcases.FunFreeVariablesCheckers.A4FunFreeVariableSuite;
 import gradingTools.comp524f19.assignment4.testcases.QuotedCheckers.A4QuotedSuite;
-
-import org.junit.runners.Suite;
 import main.lisp.interpreter.InterpreterModelFactory;
 import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 
@@ -34,8 +31,10 @@ import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 	A4CurryFreeVariableSuite.class,
 	A4CurryableFunctionSuite.class,
 	EagerBasicSuite.class,
+	EagerBasicLogicalSuite.class,
 	EagerPoolSuite.class,
-	DistributedSuite.class,
+	DistributedBasicSuite.class,
+	DistributedCollaborativeSuite.class
 })
 	
 

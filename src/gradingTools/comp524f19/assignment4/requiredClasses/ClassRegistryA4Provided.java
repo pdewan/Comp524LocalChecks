@@ -20,6 +20,9 @@ public class ClassRegistryA4Provided extends PassFailJUnitTestCase {
 	public ClassRegistryA4 getTimingOutClassRegistryProxy() {
 		return timingOutClassRegistryProxy;
 	}
+	protected Class registryClass() {
+		return REGISTRY_INTERFACE;
+	}
 
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade)
@@ -27,7 +30,7 @@ public class ClassRegistryA4Provided extends PassFailJUnitTestCase {
 			classRegistry = (ClassRegistryA4) BasicProjectIntrospection.createInstanceOfPredefinedSupertype(REGISTRY_INTERFACE);
 			if (classRegistry == null)	{
 				
-				return fail("No A4 registry class in class path:" + System.getProperty("java.class.path"));
+				return fail("No class implementing:" + registryClass().getCanonicalName() + " in class path:" + System.getProperty("java.class.path"));
 			}
 			timingOutClassRegistryProxy = (ClassRegistryA4) BasicProjectIntrospection.createTimingOutProxy(REGISTRY_INTERFACE, classRegistry);
 			return pass();		

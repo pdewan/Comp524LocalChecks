@@ -1,4 +1,4 @@
-package gradingTools.comp524f19.assignment4.eager.basic;
+package gradingTools.comp524f19.assignment4.eager.basic.logical;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -12,21 +12,23 @@ import gradingTools.comp524f19.assignment4.eager.basic.logical.EagerBasicNestedA
 import gradingTools.comp524f19.assignment4.eager.basic.logical.EagerBasicNestedOr;
 import gradingTools.comp524f19.assignment4.eager.basic.logical.EagerBasicOr;
 import main.lisp.evaluator.parallel.pool.ThreadPoolWorker;
+import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	EarlyJoinBasicJoiner.class,
-	LateJoinBasicJoiner.class,
-	SynchronizedEnvironment.class,	
-	EagerBasicList.class,
-	EagerBasicNestedList.class,
+	
+	EagerBasicAnd.class,
+	EagerBasicOr.class,
+	EagerBasicNestedAnd.class,
+	EagerBasicNestedOr.class,
+
 	
 	
 })
 	
-
-public class EagerBasicSuite {
+@IsExtra(true)
+public class EagerBasicLogicalSuite {
 	
 }

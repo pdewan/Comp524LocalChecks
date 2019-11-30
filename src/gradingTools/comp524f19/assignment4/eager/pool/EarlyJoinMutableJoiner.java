@@ -14,7 +14,7 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp524f19.assignment1.testcases.MainClassProvided;
-import gradingTools.comp524f19.assignment4.eager.basic.EarlyJoinBasicJoinerTester;
+import gradingTools.comp524f19.assignment4.eager.basic.EarlyJoinBasicJoiner;
 import gradingTools.comp524f19.assignment4.requiredClasses.ImmmutableJoinerClassProvided;
 import gradingTools.comp524f19.assignment4.requiredClasses.MutableJoinerClassProvided;
 import main.ClassRegistry;
@@ -25,7 +25,7 @@ import util.misc.ThreadSupport;
 import util.trace.Tracer;
 
 @MaxValue(5)
-public class EarlyJoinMutableJoiner extends EarlyJoinBasicJoinerTester {
+public class EarlyJoinMutableJoiner extends EarlyJoinBasicJoiner {
 	protected MutableJoiner mutableTimingOutJoiner;
 	protected TestCaseResult doJoinTest() {
 

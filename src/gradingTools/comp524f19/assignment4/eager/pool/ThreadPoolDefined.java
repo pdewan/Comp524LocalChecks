@@ -7,7 +7,7 @@ import grader.basics.project.BasicProjectIntrospection;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp524f19.assignment4.eager.basic.EagerBasicListChecker;
+import gradingTools.comp524f19.assignment4.eager.basic.EagerBasicList;
 import main.ClassRegistry;
 import main.lisp.evaluator.parallel.pool.NullThreadPool;
 import main.lisp.evaluator.parallel.pool.ThreadPool;
@@ -26,7 +26,7 @@ public class ThreadPoolDefined extends PassFailJUnitTestCase {
 	public TestCaseResult test(Project project, boolean autoGrade)
 			throws NotAutomatableException, NotGradableException {
 		// run main before checking thread singleton
-		JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(EagerBasicListChecker.class);
+		JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(EagerBasicList.class);
 		ThreadPool aThreadPool = ThreadPoolSingleton.get();
 		if (aThreadPool == null) {
 			return fail("ThreadPoolSingleton.get() returns null");

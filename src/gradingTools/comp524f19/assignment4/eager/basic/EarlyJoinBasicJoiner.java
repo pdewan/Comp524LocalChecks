@@ -22,7 +22,7 @@ import util.misc.ThreadSupport;
 import util.trace.Tracer;
 
 @MaxValue(20)
-public class EarlyJoinBasicJoinerTester extends PassFailJUnitTestCase {
+public class EarlyJoinBasicJoiner extends PassFailJUnitTestCase {
 	
 	protected Joiner joiner;
 	protected int joinerCount = 4;

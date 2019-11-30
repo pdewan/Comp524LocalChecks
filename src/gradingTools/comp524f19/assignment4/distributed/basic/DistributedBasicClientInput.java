@@ -8,6 +8,7 @@ import java.util.Map;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.execution.BasicRunningProject;
+import grader.basics.execution.ThreeProcessInputGenerator;
 import grader.basics.junit.JUnitTestsEnvironment;
 import gradingTools.comp524f19.assignment4.Assignment4Suite;
 import gradingTools.comp524f19.assignment4.requiredClasses.ClassRegistryA4Provided;
@@ -24,13 +25,17 @@ public class DistributedBasicClientInput extends MainMethodForkerTest {
 	public static final String PROCESS_TEAM = "Lisp Interpreter Team";
 	public static final String SERVER = "Lisp Interpreter Server";
 	public static final String CLIENT = "Lisp Interpreter Client";
+	public static final String CLIENT_1 = CLIENT + " 1";
 
 	
 	public static final List<String> CLIENT_ARGS = Arrays.asList(new String[] {"localhost", "9100"});
 	public static final List<String> SERVER_ARGS = Arrays.asList(new String[] {"9100"});
-	public static final String CLIENT_INPUT = "(+ 1 2)\n (- 2 1)\n(quit)";
-	public static final String[] OUTPUTS = {"3", "1"};
-	public static final Map<String, String> processInputs = new HashMap(); 
+	public static final String FIRST_PROCESS_INPUT = "(+ 1 2)\n (- 2 1)\n";
+	public static final String END_INPUT = "(quit)";
+
+	public static final String[] FIRST_PROCESS_OUTPUTS = {"3", "1"};
+	public static final String FIRST_PROCESS_LAST_OUTPUT =  FIRST_PROCESS_OUTPUTS[FIRST_PROCESS_OUTPUTS.length - 1];
+	public static final Map<String, String> initialProcessInputs = new HashMap(); 
 
 	protected ClassRegistryA4 classRegistry;
 //	public static void setupProcesses(String aServerClassName, String aClientClassName, boolean isTwoClients) {
@@ -60,20 +65,21 @@ public class DistributedBasicClientInput extends MainMethodForkerTest {
 //			setGraderResourceReleaseTime(CLIENT_2, 7000);
 ////		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
 //	}
-	public void setupProcesses() {
+	protected void setupProcesses() {
 		setDefaults();
 		setupServer();
 		setupClients();
+		setupInitialInputs();
 		setupProcessTeam();
 //		resetDefaults();
 	}
-	public void setupProcessTeam() {
+	protected void setupProcessTeam() {
 		
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList(PROCESS_TEAM));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses(PROCESS_TEAM, 
 				Arrays.asList(SERVER));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcesses(PROCESS_TEAM, 
-				Arrays.asList(SERVER, CLIENT));
+				Arrays.asList(SERVER, CLIENT_1));
 		
 	}
 	public static void setDefaults() {
@@ -82,35 +88,39 @@ public class DistributedBasicClientInput extends MainMethodForkerTest {
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderWaitForResort(false);
 		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryPointCommand();
 	}
-	public  void resetDefaults() {
+	protected  void resetDefaults() {
 		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryTagCommand();
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().resetProcessTeams();
 
 	}
-	public  void setupProcess(String aProcessName, String aProcessClass) {
+	protected  void setupProcess(String aProcessName, String aProcessClass) {
 	
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryPoint(
 				aProcessName , aProcessClass);		
 	}
-	public  void setupServer() {
+	protected  void setupServer() {
 		Class aServerMain = classRegistry.getServerMain();
 		setupServer(SERVER, aServerMain.getName());
 	}
-	public  void setupClients() {
-		setupClient(CLIENT, classRegistry.getClientMain().getName());
-		processInputs.put(CLIENT, CLIENT_INPUT);
+	protected void setupInitialInputs() {
+		initialProcessInputs.put(CLIENT_1, FIRST_PROCESS_INPUT+END_INPUT);
+
 	}
-	public  void setupServer(String aServerName, String aServerClassName) {
+	protected  void setupClients() {
+		setupClient(CLIENT_1, classRegistry.getClientMain().getName());
+//		initialProcessInputs.put(CLIENT_1, FIRST_PROCESS_INPUT+END_INPUT);
+	}
+	protected  void setupServer(String aServerName, String aServerClassName) {
 		setupProcess(aServerName, aServerClassName);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses(PROCESS_TEAM, 
 				Arrays.asList(aServerName));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
 		setArgs(aServerName, SERVER_ARGS);
-		processInputs.put(SERVER, "");
+		initialProcessInputs.put(SERVER, "");
 
 		
 	}
-	public  void setupClient(String aClientName, String aClientClassName) {
+	protected  void setupClient(String aClientName, String aClientClassName) {
 		setupProcess(aClientName, aClientClassName);
 	
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
@@ -151,24 +161,34 @@ public class DistributedBasicClientInput extends MainMethodForkerTest {
 				Assignment4Suite.getProcessTimeOut(),
 //				new BasicInputGenerator(null, null, null, null, null, null),
 				createInputGenerator(),
-				processInputs);
+				initialProcessInputs);
 		interactiveInputProject.await();
 		resetDefaults();
 
 
 	}
 	protected InputGenerator createInputGenerator() {
-		return new BasicInputGenerator(null, null, null, null, null, null, null);
+		return new ThreeProcessInputGenerator();
+	}
+	protected void checkBroadcast(String anOutput) {
+		if (!output.contains(SERVER +":"+anOutput)) {
+			assertTrue(SERVER + " does not have output:" + anOutput, false);
+		}
+		if (!output.contains(CLIENT_1 +":"+anOutput)) {
+			assertTrue(CLIENT_1 + " does not have output:" + anOutput, false);
+
+		}
 	}
 	protected boolean isValidOutput() {
-		for (String anOutput:OUTPUTS) {
-			if (!output.contains(SERVER +":"+anOutput)) {
-				assertTrue(SERVER + " does not have output:" + anOutput, false);
-			}
-			if (!output.contains(CLIENT +":"+anOutput)) {
-				assertTrue(CLIENT + " does not have output:" + anOutput, false);
-
-			}
+		for (String anOutput:FIRST_PROCESS_OUTPUTS) {
+			checkBroadcast(anOutput);
+//			if (!output.contains(SERVER +":"+anOutput)) {
+//				assertTrue(SERVER + " does not have output:" + anOutput, false);
+//			}
+//			if (!output.contains(CLIENT +":"+anOutput)) {
+//				assertTrue(CLIENT + " does not have output:" + anOutput, false);
+//
+//			}
 
 			
 		}

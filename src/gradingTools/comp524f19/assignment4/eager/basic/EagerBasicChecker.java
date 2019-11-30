@@ -17,62 +17,16 @@ import main.lisp.parser.terms.SExpression;
 import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(20)
-@IsExtra(true)
-public class EagerBasicListChecker extends AbstractLispExpressionResultChecker {
-	public static final String[] STUDENT_INPUT = 
-//		{"(funcall curriedNumAtoms (list 2 (cons 4 5)))"};
-		{
-	 "(setEvalMode \"EAGER\")",
-	 "(setEagerPool NIL)",
-	 "(list ",
-		    "(progn" ,
-		     "(printThread)", 
-		     "(+ 1 2)", 
-		     ")",
-		   "(progn " ,
-		    "(sleep 100)" , 
-		    "(printThread)",  
-		     "(- 2 1)", 
-		     ")",
-		    "(progn",
-		     "(sleep 100)", 
-		      "(printThread)",
-		     "(- 2 1)", 
-		     ")",
-		  ")"
-		};
+import util.misc.ThreadSupport;
+import util.trace.Tracer;
 
-	public static final String[] STUDENT_TO_STRING = {
-			"\"EAGER\"",
-			"NIL",
-			"(3 1 1)"
-			};
-	public static final String[] GRADER_INPUT = {"(funcall isList (cons 5 6))"};
-	public static final String[] GRADER_TO_STRING = {"NIL"};
-	protected  Set<String> listenableEvaluators() {
-//		return Set.of(new String[] {"printThread"});
-		return new HashSet<>(Arrays.asList(new String[] {"printThread"}));
-
-	}
-	@Override
-	protected String[] expectedStudentOutput() {
-		return STUDENT_TO_STRING;
-	}
-	@Override
-	protected String[] expectedGraderOutput() {
-		return GRADER_TO_STRING;
-	}
-	@Override
-	protected String[] studentInputLines() {
-		return STUDENT_INPUT;
-	}
-	@Override
-	protected String[] graderInputLines() {
-		// TODO Auto-generated method stub
-		return GRADER_INPUT;
-	}
+public abstract class EagerBasicChecker extends AbstractLispExpressionResultChecker {
+	
+	public static long WAIT_FOR_OUTPUT_TIME = 200;
+	protected abstract int numExpectedChildThreads();
 	protected TestCaseResult checkPrintThreads() {
+		Tracer.info(this, "Waiting for threads output for ms: " + WAIT_FOR_OUTPUT_TIME);
+		ThreadSupport.sleep(WAIT_FOR_OUTPUT_TIME);
 		Set<String> aThreadNames = new HashSet();
 		String aMainThreadName = null;
 		for (SExpression anEvaluatorResult:evaluatorResults) {
@@ -87,7 +41,8 @@ public class EagerBasicListChecker extends AbstractLispExpressionResultChecker {
 		if (aMainThreadName == null) {
 			return fail("Parent thread (thread name without substring, Eval) did not printThread");
 		}
-		if (aNumChildThreads != 2) {
+		int aNumExpectedThreads = numExpectedChildThreads();
+		if (aNumChildThreads != aNumExpectedThreads) {
 			return fail ("Expected # Eval threads:" + 2 + " Actual Eval threads:" + aThreadNames);
 		}
 		return pass();

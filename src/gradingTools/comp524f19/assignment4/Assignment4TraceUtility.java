@@ -1,10 +1,11 @@
 package gradingTools.comp524f19.assignment4;
 
 import grader.basics.config.BasicStaticConfigurationUtils;
+import grader.basics.execution.ThreeProcessInputGenerator;
 import grader.basics.project.BasicProjectIntrospection;
 import gradingTools.comp524f19.assignment1.Assignment1TraceUtility;
 import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionInputterAndEvaluatorRegisterer;
-import gradingTools.comp524f19.assignment4.eager.basic.EarlyJoinBasicJoinerTester;
+import gradingTools.comp524f19.assignment4.eager.basic.EarlyJoinBasicJoiner;
 import gradingTools.comp524f19.assignment4.eager.pool.EarlyJoinMutableJoiner;
 import util.trace.Tracer;
 
@@ -24,8 +25,10 @@ public class Assignment4TraceUtility {
 //			BasicStaticConfigurationUtils.setModuleProblemAndTest(Assignment1Suite.class);
 			Assignment1TraceUtility.setTracing();
 			Tracer.setKeywordPrintStatus(AbstractLispExpressionInputterAndEvaluatorRegisterer.class, true);
-			Tracer.setKeywordPrintStatus(EarlyJoinBasicJoinerTester.class, true);
+			Tracer.setKeywordPrintStatus(EarlyJoinBasicJoiner.class, true);
 			Tracer.setKeywordPrintStatus(EarlyJoinMutableJoiner.class, true);
+			Tracer.setKeywordPrintStatus(ThreeProcessInputGenerator.class, true);
+
 
 
 

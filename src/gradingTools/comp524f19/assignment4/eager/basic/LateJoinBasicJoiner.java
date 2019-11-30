@@ -19,7 +19,7 @@ import util.annotations.MaxValue;
 import util.misc.ThreadSupport;
 import util.trace.Tracer;
 @MaxValue(20)
-public class LateJoinBasicJoinerTester extends EarlyJoinBasicJoinerTester {
+public class LateJoinBasicJoiner extends EarlyJoinBasicJoiner {
 	
 	
 

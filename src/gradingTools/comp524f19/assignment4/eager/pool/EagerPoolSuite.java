@@ -16,7 +16,11 @@ import main.lisp.evaluator.parallel.pool.ThreadPoolWorker;
 	LateJoinMutableJoiner.class,
 	ThreadPoolDefined.class,
 	DoParallelPool.class,
-	EagerPoolListChecker.class
+	EagerPoolList.class,
+	EagerPoolNestedList.class,
+	EagerPoolNestedAnd.class,
+	EagerPoolNestedOr.class,
+
 //	LateJoinBasicJoinerTester.class,
 //	EagerBasicListChecker.class
 	
