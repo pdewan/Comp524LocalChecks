@@ -16,23 +16,22 @@ import gradingTools.utils.RunningProjectUtils;
 import main.ClassRegistryA4;
 import util.annotations.MaxValue;
 @MaxValue(40)
-public class DistributedBasicTest extends MainMethodForkerTest {
-	public DistributedBasicTest() {
+public class DistributedBasic extends MainMethodForkerTest {
+	public DistributedBasic() {
 //		BasicProjectExecution.setProcessTimeOut(Assignment0Suite.getProcessTimeOut());
 	}
 	public static final String PROCESS_TEAM = "Lisp Interpreter Team";
 	public static final String SERVER = "Lisp Interpreter Server";
 	public static final String CLIENT = "Lisp Interpreter Client";
 
-	public static final String CLIENT_1 = CLIENT + " 1";
-	public static final String CLIENT_2 = CLIENT + " 2";
+	
 	public static final List<String> CLIENT_ARGS = Arrays.asList(new String[] {"localhost", "9100"});
 	public static final List<String> SERVER_ARGS = Arrays.asList(new String[] {"9100"});
 	public static final String CLIENT_INPUT = "(+ 1 2)\n (- 2 1)\n(quit)";
 	public static final String[] OUTPUTS = {"3", "1"};
 	public static final Map<String, String> processInputs = new HashMap(); 
 
-	 ClassRegistryA4 classRegistry;
+	protected ClassRegistryA4 classRegistry;
 //	public static void setupProcesses(String aServerClassName, String aClientClassName, boolean isTwoClients) {
 //		BasicRunningProject.setProcessTeamOutputSleepTime(15000);
 //
@@ -162,7 +161,7 @@ public class DistributedBasicTest extends MainMethodForkerTest {
 				assertTrue(SERVER + " does not have output:" + anOutput, false);
 			}
 			if (!output.contains(CLIENT +":"+anOutput)) {
-				assertTrue(CLIENT + " does not havve output:" + anOutput, false);
+				assertTrue(CLIENT + " does not have output:" + anOutput, false);
 
 			}
 

@@ -7,7 +7,9 @@ import grader.basics.execution.BasicProjectExecution;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
 import gradingTools.comp524f19.assignment1.Assignment1Suite;
-import gradingTools.comp524f19.assignment4.distributed.basic.DistributedBasicTest;
+import gradingTools.comp524f19.assignment4.distributed.DistributedSuite;
+import gradingTools.comp524f19.assignment4.distributed.basic.DistributedBasic;
+import gradingTools.comp524f19.assignment4.distributed.collaborative.DistributedCollaborative;
 import gradingTools.comp524f19.assignment4.eager.basic.EagerBasicSuite;
 import gradingTools.comp524f19.assignment4.eager.pool.EagerPoolSuite;
 import gradingTools.comp524f19.assignment4.requiredClasses.A4RequiredClassesSuite;
@@ -33,7 +35,7 @@ import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 	A4CurryableFunctionSuite.class,
 	EagerBasicSuite.class,
 	EagerPoolSuite.class,
-	DistributedBasicTest.class
+	DistributedSuite.class,
 })
 	
 

@@ -85,7 +85,7 @@ public class EagerBasicListChecker extends AbstractLispExpressionResultChecker {
 		}
 		int aNumChildThreads = aThreadNames.size();
 		if (aMainThreadName == null) {
-			return fail("Thread name without substring, Eval, did not printThread");
+			return fail("Parent thread (thread name without substring, Eval) did not printThread");
 		}
 		if (aNumChildThreads != 2) {
 			return fail ("Expected # Eval threads:" + 2 + " Actual Eval threads:" + aThreadNames);
