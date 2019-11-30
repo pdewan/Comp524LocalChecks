@@ -8,7 +8,7 @@ import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
 import gradingTools.comp524f19.assignment1.Assignment1Suite;
 import gradingTools.comp524f19.assignment4.distributed.DistributedSuite;
-import gradingTools.comp524f19.assignment4.distributed.basic.DistributedBasic;
+import gradingTools.comp524f19.assignment4.distributed.basic.DistributedBasicClientInput;
 import gradingTools.comp524f19.assignment4.distributed.collaborative.DistributedCollaborative;
 import gradingTools.comp524f19.assignment4.eager.basic.EagerBasicSuite;
 import gradingTools.comp524f19.assignment4.eager.pool.EagerPoolSuite;

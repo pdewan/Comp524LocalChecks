@@ -15,9 +15,10 @@ import gradingTools.shared.testcases.MainMethodForkerTest;
 import gradingTools.utils.RunningProjectUtils;
 import main.ClassRegistryA4;
 import util.annotations.MaxValue;
+import util.pipe.InputGenerator;
 @MaxValue(40)
-public class DistributedBasic extends MainMethodForkerTest {
-	public DistributedBasic() {
+public class DistributedBasicClientInput extends MainMethodForkerTest {
+	public DistributedBasicClientInput() {
 //		BasicProjectExecution.setProcessTimeOut(Assignment0Suite.getProcessTimeOut());
 	}
 	public static final String PROCESS_TEAM = "Lisp Interpreter Team";
@@ -148,12 +149,16 @@ public class DistributedBasic extends MainMethodForkerTest {
 				
 				runProject(project, 
 				Assignment4Suite.getProcessTimeOut(),
-				new BasicInputGenerator(null),
+//				new BasicInputGenerator(null, null, null, null, null, null),
+				createInputGenerator(),
 				processInputs);
 		interactiveInputProject.await();
 		resetDefaults();
 
 
+	}
+	protected InputGenerator createInputGenerator() {
+		return new BasicInputGenerator(null, null, null, null, null, null, null);
 	}
 	protected boolean isValidOutput() {
 		for (String anOutput:OUTPUTS) {

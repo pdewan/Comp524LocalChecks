@@ -3,12 +3,12 @@ package gradingTools.comp524f19.assignment4.distributed.collaborative;
 import java.util.Arrays;
 
 import grader.basics.config.BasicExecutionSpecificationSelector;
-import gradingTools.comp524f19.assignment4.distributed.basic.DistributedBasic;
+import gradingTools.comp524f19.assignment4.distributed.basic.DistributedBasicClientInput;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @IsExtra(true)
 @MaxValue(50)
-public class DistributedCollaborative extends DistributedBasic{
+public class DistributedCollaborative extends DistributedBasicClientInput{
 	public static final String CLIENT_1 = CLIENT + " 1";
 	public static final String CLIENT_2 = CLIENT + " 2";
 	public void setupProcessTeam() {
