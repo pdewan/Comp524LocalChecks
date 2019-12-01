@@ -9,6 +9,7 @@ import grader.basics.project.BasicProjectIntrospection;
 import gradingTools.comp524f19.assignment1.Assignment1Suite;
 import gradingTools.comp524f19.assignment4.distributed.basic.DistributedBasicClientInput;
 import gradingTools.comp524f19.assignment4.eager.basic.EagerBasicSuite;
+import gradingTools.comp524f19.assignment4.lazy.LazinessSensitiveFunSuite;
 import gradingTools.comp524f19.assignment4.requiredClasses.A4RequiredClassesSuite;
 import gradingTools.comp524f19.assignment4.testcases.CurryCheckers.A4CurrySuite;
 import gradingTools.comp524f19.assignment4.testcases.CurryFreeVariablesCheckers.A4CurryFreeVariableSuite;
@@ -16,6 +17,7 @@ import gradingTools.comp524f19.assignment4.testcases.CurryableFunction.A4Curryab
 import gradingTools.comp524f19.assignment4.testcases.DefunCheckers.A4DefunSuite;
 import gradingTools.comp524f19.assignment4.testcases.FunFreeVariablesCheckers.A4FunFreeVariableSuite;
 import gradingTools.comp524f19.assignment4.testcases.QuotedCheckers.A4QuotedSuite;
+import gradingTools.comp524f19.assignment4.testcases.SideEffectsCheckers.A4SideEffectsSuite;
 
 import org.junit.runners.Suite;
 import main.lisp.interpreter.InterpreterModelFactory;
@@ -31,7 +33,9 @@ import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 	A4CurryFreeVariableSuite.class,
 	A4CurryableFunctionSuite.class,
 	EagerBasicSuite.class,
-	DistributedBasicClientInput.class
+	DistributedBasicClientInput.class,
+	A4SideEffectsSuite.class,
+	LazinessSensitiveFunSuite.class
 })
 	
 
