@@ -62,7 +62,7 @@ public class EarlyJoinMutableJoiner extends EarlyJoinBasicJoiner {
 
 		
 		} catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			assertTrue("No constructor with single int argument in joiner class:" + aJoinerClass, false);
+			assertTrue("No argumentless constructor in joiner class:" + aJoinerClass, false);
 		}
 	}
 }

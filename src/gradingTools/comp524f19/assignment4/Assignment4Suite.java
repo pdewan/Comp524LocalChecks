@@ -11,6 +11,7 @@ import gradingTools.comp524f19.assignment4.distributed.collaborative.Distributed
 import gradingTools.comp524f19.assignment4.eager.basic.EagerBasicSuite;
 import gradingTools.comp524f19.assignment4.eager.basic.logical.EagerBasicLogicalSuite;
 import gradingTools.comp524f19.assignment4.eager.pool.EagerPoolSuite;
+import gradingTools.comp524f19.assignment4.lazy.LazinessSensitiveFunSuite;
 import gradingTools.comp524f19.assignment4.requiredClasses.A4RequiredClassesSuite;
 import gradingTools.comp524f19.assignment4.testcases.CurryCheckers.A4CurrySuite;
 import gradingTools.comp524f19.assignment4.testcases.CurryFreeVariablesCheckers.A4CurryFreeVariableSuite;
@@ -18,6 +19,7 @@ import gradingTools.comp524f19.assignment4.testcases.CurryableFunction.A4Curryab
 import gradingTools.comp524f19.assignment4.testcases.DefunCheckers.A4DefunSuite;
 import gradingTools.comp524f19.assignment4.testcases.FunFreeVariablesCheckers.A4FunFreeVariableSuite;
 import gradingTools.comp524f19.assignment4.testcases.QuotedCheckers.A4QuotedSuite;
+import gradingTools.comp524f19.assignment4.testcases.SideEffectsCheckers.A4SideEffectsSuite;
 import main.lisp.interpreter.InterpreterModelFactory;
 import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 
@@ -34,7 +36,9 @@ import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 	EagerBasicLogicalSuite.class,
 	EagerPoolSuite.class,
 	DistributedBasicSuite.class,
-	DistributedCollaborativeSuite.class
+	DistributedCollaborativeSuite.class,
+	A4SideEffectsSuite.class,
+	LazinessSensitiveFunSuite.class
 })
 	
 
