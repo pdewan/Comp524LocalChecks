@@ -47,11 +47,11 @@ public class EagerBasicAnd extends EagerBasicChecker {
 			};
 	public static final String[] GRADER_INPUT = {"(funcall isList (cons 5 6))"};
 	public static final String[] GRADER_TO_STRING = {"NIL"};
-	protected  Set<String> listenableEvaluators() {
-//		return Set.of(new String[] {"printThread"});
-		return new HashSet<>(Arrays.asList(new String[] {"printThread"}));
-
-	}
+//	protected  Set<String> listenableEvaluators() {
+////		return Set.of(new String[] {"printThread"});
+//		return new HashSet<>(Arrays.asList(new String[] {"printThread"}));
+//
+//	}
 	@Override
 	protected String[] expectedStudentOutput() {
 		return STUDENT_TO_STRING;

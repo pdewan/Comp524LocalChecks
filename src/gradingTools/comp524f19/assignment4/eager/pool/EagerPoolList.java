@@ -48,22 +48,22 @@ public class EagerPoolList extends EagerPoolChecker {
 		     "(- 2 1)", 
 	     ")",
 	  ")",
-	  "(list ",
-	    "(progn" ,
-		     "(printThread)", 
-		     "(+ 1 2)", 
-	     ")",
-	   "(progn " ,
-		    "(sleep 100)" , 
-		    "(printThread)",  
-		     "(- 2 1)", 
-	     ")",
-	    "(progn",
-		     "(sleep 100)", 
-		      "(printThread)",
-		     "(- 2 1)", 
-	     ")",
-	  ")"
+//	  "(list ",
+//	    "(progn" ,
+//		     "(printThread)", 
+//		     "(+ 1 2)", 
+//	     ")",
+//	   "(progn " ,
+//		    "(sleep 100)" , 
+//		    "(printThread)",  
+//		     "(- 2 1)", 
+//	     ")",
+//	    "(progn",
+//		     "(sleep 100)", 
+//		      "(printThread)",
+//		     "(- 2 1)", 
+//	     ")",
+//	  ")"
 //	 "(list ",
 //		    "(progn" ,
 //		     "(printThread)", 
@@ -102,7 +102,7 @@ public class EagerPoolList extends EagerPoolChecker {
 			"\"EAGER\"",
 			"T",
 			"(3 1 1)",
-			"(3 1 1)"
+//			"(3 1 1)"
 			};
 	public static final String[] GRADER_INPUT = {"(funcall isList (cons 5 6))"};
 	public static final String[] GRADER_TO_STRING = {"NIL"};

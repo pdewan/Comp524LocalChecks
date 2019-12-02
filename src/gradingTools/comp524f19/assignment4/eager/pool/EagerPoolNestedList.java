@@ -43,31 +43,31 @@ public class EagerPoolNestedList extends EagerPoolList {
 			     ")",
 		     ")",
 		  ")",
-		  "(list ",
-		    "(progn" ,
-			     "(printThread)", 
-			     "(+ 1 2)", 
-		     ")",
-		     "(list",
-			   "(progn " ,
-				    "(sleep 100)" , 
-				    "(printThread)",  
-				     "(- 2 1)", 
-			     ")",
-			    "(progn",
-				     "(sleep 100)", 
-				      "(printThread)",
-				     "(- 2 1)", 
-			     ")",
-		     ")",
-		  ")"
+//		  "(list ",
+//		    "(progn" ,
+//			     "(printThread)", 
+//			     "(+ 1 2)", 
+//		     ")",
+//		     "(list",
+//			   "(progn " ,
+//				    "(sleep 100)" , 
+//				    "(printThread)",  
+//				     "(- 2 1)", 
+//			     ")",
+//			    "(progn",
+//				     "(sleep 100)", 
+//				      "(printThread)",
+//				     "(- 2 1)", 
+//			     ")",
+//		     ")",
+//		  ")"
 		};
 
 	public static final String[] STUDENT_TO_STRING = {
 			"\"EAGER\"",
 			"T",
 			"(3 (1 1))",
-			"(3 (1 1))"
+//			"(3 (1 1))"
 			};
 	
 

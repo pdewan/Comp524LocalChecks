@@ -28,12 +28,14 @@ import util.annotations.MaxValue;
 import util.misc.ThreadSupport;
 import util.trace.Tracer;
 
-public abstract class EagerPoolChecker extends AbstractLispExpressionResultChecker {
+public abstract class EagerPoolChecker extends EagerBasicChecker {
 	protected int poolCountAferDoParallel;
-	public static long WAIT_FOR_OUTPUT_TIME = 500;
+//	public static long WAIT_FOR_OUTPUT_TIME = 2000;
 	
 	protected abstract int numExpectedChildThreads();
-
+//	protected String[] listenableEvaluatorsArray() {
+//		return new String[] {"printThread"};
+//	}
 	public static int getWorkerNumberFromThreadToString(String aThreadToString) {
 		try {
 			String aWorkerNumberSubstring = StringUtils.substringBetween(aThreadToString, AbstractThreadPool.WORKER_THREAD_NAME_PREFIX, ",");

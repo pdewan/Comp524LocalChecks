@@ -31,8 +31,11 @@ public  abstract class AbstractLispExpressionInputterAndEvaluatorRegisterer exte
 	protected static boolean initialized = false;
 	protected abstract String[] studentInputLines();
 	protected abstract String[] graderInputLines();	
+	protected String[] listenableEvaluatorsArray() {
+		return emptyStrings;
+	}
 	protected  Set<String> listenableEvaluators() {
-		return new HashSet<>(Arrays.asList(emptyStrings));
+		return new HashSet<>(Arrays.asList(listenableEvaluatorsArray()));
 	}
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
@@ -45,6 +48,8 @@ public  abstract class AbstractLispExpressionInputterAndEvaluatorRegisterer exte
 			Tracer.info(this, "Got result : " + resultSExpressions.get(resultSExpressions.size()-1).toString());
 		} else {
 			if (listenableEvaluators().contains(aPropertyName)) {
+				Tracer.info(this, "Got evalautor event : "+ evt);
+
 				evaluatorInputs.add((SExpression) evt.getOldValue());
 				evaluatorResults.add((SExpression) evt.getNewValue());
 			}

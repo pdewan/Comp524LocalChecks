@@ -24,7 +24,7 @@ public class EagerPoolNestedAnd extends EagerPoolChecker {
 //		{"(funcall curriedNumAtoms (list 2 (cons 4 5)))"};
 		{
 	 "(setEvalMode \"EAGER\")",
-	 "(setEagerPool NIL)",
+	 "(setEagerPool T)",
 	 "(and",
 	 	"(progn" ,
 	 	 	"(printThread)", 
@@ -43,31 +43,31 @@ public class EagerPoolNestedAnd extends EagerPoolChecker {
 		    
 		  ")",
 	   ")" ,
-	   "(and",
-	 	"(progn" ,
-	 	 	"(printThread)", 
-	 		"(> 5 0)",
-	 	 ")",
-		 "(and ",
-		    "(progn" ,
-			     "(printThread)", 
-			     "(< 5 0)", 
-		     ")",
-		   "(progn " ,
-			    "(sleep 100)" , 
-			    "(printThread)",  
-			     "(> 5 0)", 
-		     ")",
-		    
-		  ")",
-	   ")"     
+//	   "(and",
+//	 	"(progn" ,
+//	 	 	"(printThread)", 
+//	 		"(> 5 0)",
+//	 	 ")",
+//		 "(and ",
+//		    "(progn" ,
+//			     "(printThread)", 
+//			     "(< 5 0)", 
+//		     ")",
+//		   "(progn " ,
+//			    "(sleep 100)" , 
+//			    "(printThread)",  
+//			     "(> 5 0)", 
+//		     ")",
+//		    
+//		  ")",
+//	   ")"     
 		};
 
 	public static final String[] STUDENT_TO_STRING = {
 			"\"EAGER\"",
+			"T",
 			"NIL",
-			"NIL",
-			"NIL"
+//			"NIL"
 			};
 	public static final String[] GRADER_INPUT = {"(funcall isList (cons 5 6))"};
 	public static final String[] GRADER_TO_STRING = {"NIL"};
