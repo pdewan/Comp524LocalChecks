@@ -2,6 +2,7 @@ package gradingTools.comp524f19.assignment2.testcases.LispFunctionCheckers;
 
 import grader.basics.junit.JUnitTestsEnvironment;
 import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionLastResultChecker;
+import util.trace.Tracer;
 
 public class LoadLispChecker extends AbstractLispExpressionLastResultChecker {
 //	public static final String[] STUDENT_OUtPUT = {"\"(2 3 4)\""};
@@ -20,6 +21,7 @@ public class LoadLispChecker extends AbstractLispExpressionLastResultChecker {
 	protected String[] studentInputLines() {
 		TestLispFileProvided aTestFileProvided = (TestLispFileProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(TestLispFileProvided.class);
 		String aLispFileName = aTestFileProvided.getLispFileName();
+		Tracer.info(this, "Loading file:" + aLispFileName);
 		return new String[] {"(load \"" + aLispFileName + "\")"};//,"(funcall toStringAsList (List 2 3 4))"};
 	}
 	@Override

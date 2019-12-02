@@ -7,6 +7,7 @@ import gradingTools.comp524f19.assignment1.Assignment1TraceUtility;
 import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionInputterAndEvaluatorRegisterer;
 import gradingTools.comp524f19.assignment4.eager.basic.EarlyJoinBasicJoiner;
 import gradingTools.comp524f19.assignment4.eager.pool.EarlyJoinMutableJoiner;
+import gradingTools.comp524f19.assignment4.requiredClasses.LoadLispChecker;
 import util.trace.Tracer;
 
 
@@ -28,6 +29,8 @@ public class Assignment4TraceUtility {
 			Tracer.setKeywordPrintStatus(EarlyJoinBasicJoiner.class, true);
 			Tracer.setKeywordPrintStatus(EarlyJoinMutableJoiner.class, true);
 			Tracer.setKeywordPrintStatus(ThreeProcessInputGenerator.class, true);
+			Tracer.setKeywordPrintStatus(LoadLispChecker.class, true);
+
 
 
 
