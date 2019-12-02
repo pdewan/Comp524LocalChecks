@@ -6,15 +6,21 @@ import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
 @IsExtra(true)
-public class LazinessSensitiveFunChecker3 extends AbstractLispExpressionResultChecker {
+public class LazinessSensitiveFunChecker3 extends AbstractEvaluatorAndResultChecker {
 	public static final String[] STUDENT_INPUT = {"(setevalmode \"NORMAL\")", "(car (funcall listMToN 2 5))"};
 	public static final String[] STUDENT_TO_STRING = {
 			"\"NORMAL\"",
+//			"2",
+//			"3",
+//			"4",
+//			"5",
+			"2"
+			};
+	public static final String[] STUDENT_EXPECTED_EVALUATOR_STRINGS = {
 			"2",
 			"3",
 			"4",
-			"5",
-			"2"
+			"5"
 			};
 	public static final String[] GRADER_INPUT = {"(funcall isList (cons 5 6))"};
 	public static final String[] GRADER_TO_STRING = {"NIL"};
@@ -35,6 +41,13 @@ public class LazinessSensitiveFunChecker3 extends AbstractLispExpressionResultCh
 		// TODO Auto-generated method stub
 		return GRADER_INPUT;
 	}
-
+	protected String[] listenableEvaluatorsArray() {
+		return new String[] {"print"};
+	}
+	@Override
+	protected String[] expectedEvaluatorOutput() {
+		// TODO Auto-generated method stub
+		return STUDENT_EXPECTED_EVALUATOR_STRINGS;
+	}
 	
 }

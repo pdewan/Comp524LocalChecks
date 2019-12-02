@@ -10,10 +10,10 @@ import grader.basics.project.Project;
 import gradingTools.comp524f19.assignment4.requiredClasses.LoadLispChecker;
 import gradingTools.interpreter.checkers.ADiffPatchChecker;
 import gradingTools.interpreter.checkers.CheckerResult;
-
+// why is this class different from that in A1?
 public abstract class AbstractLispExpressionChecker extends AbstractLispExpressionInputterAndEvaluatorRegisterer {
 	protected abstract String[] expectedStudentOutput();
-	protected abstract String[] expectedGraderOutput();
+	protected abstract String[] expectedGraderOutput();	
 	protected abstract String actualOutput();
 	protected TestCaseResult compareOutput() {
 		try {
