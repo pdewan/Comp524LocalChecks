@@ -10,8 +10,8 @@ import util.annotations.IsExtra;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	LazinessSensitiveFunChecker3.class,
-	LazinessSensitiveFunChecker4.class
+	ListMToNNormalEval.class,
+	ListMToNLazyEval.class
 
 	
 })

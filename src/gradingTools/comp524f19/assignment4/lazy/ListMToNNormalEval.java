@@ -6,7 +6,7 @@ import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
 @IsExtra(true)
-public class LazinessSensitiveFunChecker3 extends AbstractEvaluatorAndResultChecker {
+public class ListMToNNormalEval extends AbstractEvaluatorAndResultChecker {
 	public static final String[] STUDENT_INPUT = {"(setevalmode \"NORMAL\")", "(car (funcall listMToN 2 5))"};
 	public static final String[] STUDENT_TO_STRING = {
 			"\"NORMAL\"",
