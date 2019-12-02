@@ -4,7 +4,7 @@ import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResul
 import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(10)
+@MaxValue(20)
 @IsExtra(true)
 public class ListMToNCarNormalEval extends AbstractEvaluatorAndResultChecker {
 	public static final String[] STUDENT_INPUT = {"(setevalmode \"NORMAL\")", "(car (funcall listMToN 2 5))"};

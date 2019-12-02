@@ -5,6 +5,7 @@ import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
+@IsExtra(true)
 public class QuotedSymbolChecker1 extends AbstractLispExpressionResultChecker {
 	public static final String[] STUDENT_INPUT = {"(funcall (quote curryableTraverse) one sum (list 2 (cons 4 5)))"};
 	public static final String[] STUDENT_TO_STRING = {"4"};

@@ -17,7 +17,7 @@ import util.annotations.IsExtra;
 	
 })
 	
-
+@IsExtra(true)
 public class A4QuotedSuite {
 	
 }
