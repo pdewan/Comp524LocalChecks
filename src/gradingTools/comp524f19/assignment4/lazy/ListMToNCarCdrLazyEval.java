@@ -6,15 +6,16 @@ import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
 @IsExtra(true)
-public class ListMToNLazyEval extends AbstractEvaluatorAndResultChecker {
-	public static final String[] STUDENT_INPUT = {"(setevalmode \"LAZY\")", "(car (funcall listMToN 2 5))"};
+public class ListMToNCarCdrLazyEval extends AbstractEvaluatorAndResultChecker {
+	public static final String[] STUDENT_INPUT = {"(setevalmode \"LAZY\")", "(car (car (cdr (funcall listMToN 2 5))))"};
 	public static final String[] STUDENT_TO_STRING = {
 			"\"LAZY\"",
 //			"2",
-			"2"
+			"3"
 			};
 	public static final String[] STUDENT_EXPECTED_EVALUATOR_STRINGS = {
-			"2"
+			"2",
+			"3"
 			};
 	public static final String[] GRADER_INPUT = {"(funcall isList (cons 5 6))"};
 	public static final String[] GRADER_TO_STRING = {"NIL"};

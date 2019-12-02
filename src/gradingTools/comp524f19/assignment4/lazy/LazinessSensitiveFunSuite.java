@@ -10,8 +10,10 @@ import util.annotations.IsExtra;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	ListMToNNormalEval.class,
-	ListMToNLazyEval.class
+	ListMToNCarNormalEval.class,
+	ListMToNCarLazyEval.class,
+	ListMToNCdrLazyEval.class,
+	ListMToNCarCdrLazyEval.class
 
 	
 })
