@@ -17,7 +17,7 @@ import main.lisp.evaluator.parallel.pool.ThreadPoolWorker;
 	ClassRegistryA4Provided.class,
 	SExpressionClassProvided.class,
 	MainClassProvided.class,
-	OperationRegistryProvided.class,
+//	OperationRegistryProvided.class,
 	TestLispFileProvided.class,
 	LoadLispChecker.class,
 	LoadFile.class,
