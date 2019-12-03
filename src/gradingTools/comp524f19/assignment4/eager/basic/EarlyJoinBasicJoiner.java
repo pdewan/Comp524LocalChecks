@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
@@ -100,7 +101,9 @@ public class EarlyJoinBasicJoiner extends PassFailJUnitTestCase {
 
 		
 		} catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			assertTrue("No constructor with single int argument in joiner class:" + aJoinerClass, false);
+			Constructor[] aConstructors = aJoinerClass.getConstructors();
+			String aConstructoraString = Arrays.toString(aConstructors);
+			assertTrue("No constructor with single int argument in joiner class:" + aJoinerClass + "constructors found:" + aConstructoraString, false);
 		}
 	}
 
