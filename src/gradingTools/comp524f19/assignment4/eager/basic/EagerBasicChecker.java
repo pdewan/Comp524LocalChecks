@@ -28,8 +28,8 @@ public abstract class EagerBasicChecker extends AbstractLispExpressionResultChec
 		return new String[] {"printThread"};
 	}
 	protected TestCaseResult checkPrintThreads() {
-		Tracer.info(this, "Waiting for threads output for ms: " + WAIT_FOR_OUTPUT_TIME);
-		ThreadSupport.sleep(WAIT_FOR_OUTPUT_TIME);
+//		Tracer.info(this, "Waiting for threads output for ms: " + WAIT_FOR_OUTPUT_TIME);
+//		ThreadSupport.sleep(WAIT_FOR_OUTPUT_TIME);
 		Set<String> aThreadNames = new HashSet();
 		String aMainThreadName = null;
 		for (SExpression anEvaluatorResult:evaluatorResults) {
