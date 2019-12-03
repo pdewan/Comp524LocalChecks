@@ -103,7 +103,7 @@ public class EarlyJoinBasicJoiner extends PassFailJUnitTestCase {
 		} catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 			Constructor[] aConstructors = aJoinerClass.getConstructors();
 			String aConstructoraString = Arrays.toString(aConstructors);
-			assertTrue("No constructor with single int argument in joiner class:" + aJoinerClass + "constructors found:" + aConstructoraString, false);
+			assertTrue("No public constructor with single int argument in joiner class:" + aJoinerClass + "constructors found:" + aConstructoraString, false);
 		}
 	}
 
