@@ -50,6 +50,9 @@ public abstract class AbstractFunctionTestedCondChecker extends PassFailJUnitTes
 	
 	protected String getString(SExpression anInputSExpression)
 	{
+		if (anInputSExpression instanceof Atom) {
+			return anInputSExpression.toString();
+		} else
 		if(anInputSExpression.getHead() instanceof IdentifierAtom)
 		{
 			return anInputSExpression.eval(null).toString();
