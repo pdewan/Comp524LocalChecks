@@ -22,6 +22,8 @@ import gradingTools.comp524f20.assignment0_3.testcases.SMLGreetingLoadAndRun;
 import gradingTools.comp524f20.assignment0_4.testcases.LispGreetingLoadAndRun;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceMainProvided;
 import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
+import gradingTools.shared.testcases.suites.InterpreterSuite;
+import gradingTools.shared.testcases.suites.SMLInterpreterSuite;
 
 
 @RunWith(Suite.class)
@@ -33,7 +35,9 @@ import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 	
 
 //@MaxValue(50)
-public class F20Assignment0_3Suite {
+public class F20Assignment0_3Suite extends SMLInterpreterSuite {
+	
+
 
 	public static void main (String[] args) {
 		try {

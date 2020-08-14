@@ -38,7 +38,8 @@ import gradingTools.shared.testcases.openmp.scannedTree.SNode;
 import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
-
+import util.annotations.MaxValue;
+@MaxValue(10)
 public class SMLGreetingLoadAndRun extends GreetingRun {
 	public static final int TIME_OUT_SECS = 1; // secs
 	protected SubstringSequenceChecker checker = new AGreetingChecker();	
@@ -46,15 +47,15 @@ public class SMLGreetingLoadAndRun extends GreetingRun {
 	public SMLGreetingLoadAndRun() {
 	}
 	protected RunningProject createRunningProject (Project aProject) {
-		String aSourceFolder = aProject.getSourceFolder().getAbsolutePath();
-		String aTestFile = aSourceFolder + "\\Greeting.sml";
-		File aFile = new File(aTestFile);
-		if (!aFile.exists()) {
-			System.err.println(aFile + " does not exist.");
-			return null;
-		}
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryPoint(aTestFile);
-		RunningProject aRunningProject = RunningProjectUtils.runProject(aProject, TIME_OUT_SECS, "greeting();", "OS.Process.exit(OS.Process.success);");
+//		String aSourceFolder = aProject.getSourceFolder().getAbsolutePath();
+//		String aTestFile = aSourceFolder + "\\Greeting.sml";
+//		File aFile = new File(aTestFile);
+//		if (!aFile.exists()) {
+//			System.err.println(aFile + " does not exist.");
+//			return null;
+//		}
+//		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryPoint(aTestFile);
+		RunningProject aRunningProject = RunningProjectUtils.runProjectandWithMainFile (aProject, "Greeting.sml",  TIME_OUT_SECS, "greeting();", "OS.Process.exit(OS.Process.success);");
 		return aRunningProject;
 	}
 	

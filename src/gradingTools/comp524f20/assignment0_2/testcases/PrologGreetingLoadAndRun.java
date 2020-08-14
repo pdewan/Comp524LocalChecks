@@ -37,7 +37,8 @@ import gradingTools.shared.testcases.openmp.scannedTree.SNode;
 import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
-
+import util.annotations.MaxValue;
+@MaxValue(10)
 public class PrologGreetingLoadAndRun extends GreetingRun {
 	public static final int TIME_OUT_SECS = 1; // secs
 	protected SubstringSequenceChecker checker = new AGreetingChecker();	
@@ -45,10 +46,12 @@ public class PrologGreetingLoadAndRun extends GreetingRun {
 	public PrologGreetingLoadAndRun() {
 	}
 	protected RunningProject createRunningProject (Project aProject) {
-		String aSourceFolder = aProject.getSourceFolder().getAbsolutePath();
-		String aTestFile = aSourceFolder + "\\Greeting.pl";
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryPoint(aTestFile);
-		RunningProject aRunningProject = RunningProjectUtils.runProject(aProject, TIME_OUT_SECS, "greeting().", "halt.");
+//		String aSourceFolder = aProject.getSourceFolder().getAbsolutePath();
+//		String aTestFile = aSourceFolder + "\\Greeting.pl";
+//		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryPoint(aTestFile);
+//		RunningProject aRunningProject = RunningProjectUtils.runProject(aProject, TIME_OUT_SECS, "greeting().", "halt.");
+		RunningProject aRunningProject = RunningProjectUtils.runProjectandWithMainFile(aProject, "Greeting.pl", TIME_OUT_SECS, "greeting().", "halt.");
+
 		return aRunningProject;
 	}
 	
