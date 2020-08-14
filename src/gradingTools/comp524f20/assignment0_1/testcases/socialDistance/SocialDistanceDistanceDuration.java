@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment1.lisp.testcases;
+package gradingTools.comp524f20.assignment0_1.testcases.socialDistance;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,12 +9,15 @@ import java.util.regex.Pattern;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
+import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.project.source.ABasicTextManager;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp524f19.assignment1.testcases.MainClassProvided;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceMainProvided;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 import gradingTools.shared.testcases.openmp.OpenMPPragma;
 import gradingTools.shared.testcases.openmp.OpenMPUtils;
@@ -31,13 +34,69 @@ import gradingTools.shared.testcases.openmp.scannedTree.SNode;
 import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
-
-public class LispTestCase extends PassFailJUnitTestCase {
+import util.annotations.MaxValue;
+@MaxValue(25)
+public class SocialDistanceDistanceDuration extends PassFailJUnitTestCase {
 	public static final int TIME_OUT_SECS = 1; // secs
-	protected SubstringSequenceChecker checker = new ASequentialSumChecker();	
+	protected SubstringSequenceChecker checker = new ADistanceDurationChecker();	
+	
+	public static final String[] INPUT = {
+			"15.0", "6.0", "1.0", "1.0", "0",
+			"14.0", "6.0", "1.0", "1.0", "0",
+			"16.0", "6.0", "1.0", "1.0", "0",
+			
+			"15.0", "5.0", "1.0", "1.0", "0",
+			"15.0", "7.0", "1.0", "1.0", "0",
+			
+			"15.0", "12.0", "0.5", "1.0", "0",			
+			"15.0", "13.0", "0.5", "1.0", "0",
+			"15.0", "14.0", "0.5", "1.0", "0",
 
-	public LispTestCase() {
+			
+			"15.0", "12.0", "1.0", "0.5", "0",
+			"15.0", "13.0", "1.0", "0.5",  "0",
+			"15.0", "14.0", "1.0", "0.5",  "0",
+			
+			"15.0", "24.0",  "0.5", "0.5", "0",
+			"15.0", "23.0",  "0.5", "0.5", "0",
+			"15.0", "25.0",  "0.5", "0.5", "0",
+			
+			"15.0", "52.0",  "0.5", "0.5", "1",
+			"15.0", "51.0",  "0.5", "0.5", "1",
+			"15.0", "53.0",  "0.5", "0.5", "1",
+			
+			"15.0", "108.0",  "0.5", "0.5", "1",
+			"15.0", "107.0",  "0.5", "0.5", "1",
+			"15.0", "109.0",  "0.5", "0.5", "1",
+			
+			
+
+
+
+
+
+			"-5.0"
+
+			
+	};
+	
+	protected  String output = null;
+
+	public String getOutput() {
+		return output;
 	}
+
+
+
+
+	
+
+
+
+
+	public SocialDistanceDistanceDuration() {
+	}
+
 
 	
 
@@ -45,42 +104,14 @@ public class LispTestCase extends PassFailJUnitTestCase {
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		try {
-			String aSourceFolder = project.getSourceFolder().getAbsolutePath();
-			String aTestFile = aSourceFolder + "\\test.lisp";
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryPoint(aTestFile);
-			RunningProject aRunningProject = RunningProjectUtils.runProject(project, TIME_OUT_SECS);
-			String anOutput = aRunningProject.await();
+			SocialDistanceMainProvided aSocialDistanceMainProvided = (SocialDistanceMainProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceMainProvided.class);
+    		Class aSocialDistanceMain = aSocialDistanceMainProvided.getSocialDistanceMain();
+			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryPoint(aSocialDistanceMain.getName());
+			RunningProject aRunningProject = RunningProjectUtils.runProject(project, TIME_OUT_SECS, INPUT);
+			output = aRunningProject.await();
 			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			boolean aRetval = checker.check(aLinesMatcher, LinesMatchKind.ONE_TIME_LINE, Pattern.DOTALL);
-			String aSource = project.getSource();
-//			Map<String, StringBuffer> aFileNameToContents = ABasicTextManager.extractFileContents(aSource);
-//			for (String aFileName:aFileNameToContents.keySet()) {
-//				StringBuffer aFileContents = aFileNameToContents.get(aFileName);
-////				List<OpenMPPragma> anOpenMPPragmas = OpenMPUtils.getOpemMPPragmas(aFileContents);
-//				SNode anSNode = OMPSNodeUtils.getSNode(aFileName, aFileContents);
-//				System.out.println("file name:" + aFileName);
-//				System.out.println("pragmas:" + anSNode);
-//			}
-			RootOfProgramSNode aRootOfProgramSNode = OMPSNodeUtils.getRootOfProgramSNode(aSource);
-			Set<AssignmentSNode> anAssignments = OMPSNodeUtils.assignmentsToSharedVariables(aRootOfProgramSNode);
-			Set<AssignmentSNode> anAssignmentsToSharedArrays = OMPSNodeUtils.assignmentsToSharedArrays(aRootOfProgramSNode);
-			Set<AssignmentSNode> anAssignmentsToParallelCriticalSharedVariables = OMPSNodeUtils.assignmentsToParallelCriticalSharedVariables(aRootOfProgramSNode);
-			Set<AssignmentSNode> anAssignmentsToNonParallelCriticalSharedVariables  = OMPSNodeUtils.assignmentsToNonParallelCriticalSharedVariables(aRootOfProgramSNode);
-			Set<AssignmentSNode> anAssignmentsToParallelNonCriticalSharedVariables = OMPSNodeUtils.assignmentsToParallelNonCriticalSharedVariables(aRootOfProgramSNode);
-			Set<OMPParallelSNode> anOMPParallelSNodes = OMPSNodeUtils.ompParallelSNodes(aRootOfProgramSNode);
-			Set<ForSNode> aForSNodes = OMPSNodeUtils.forSNodes(aRootOfProgramSNode);
-			Set<OMPForSNode> anOMPForSNodes = OMPSNodeUtils.ompForSNodes(aRootOfProgramSNode);
-			Set<OMPForSNode> anOMPReducingForSNodes = OMPSNodeUtils.ompReducingForNodes(aRootOfProgramSNode);
-			for (OMPForSNode anOMPForSNode:anOMPReducingForSNodes) {
-				Set<AssignmentSNode> anAssignmentsToReducingForNode = OMPSNodeUtils.assignmentsToOMPReducingForNode(anOMPForSNode);
-				if (anAssignmentsToReducingForNode.isEmpty()) {
-					System.err.println(anOMPForSNode + " does not have assignment to:" + anOMPForSNode.getReductionVariable());
-				}
-			}
-
-
 			
-
 
 			String anExpectedLines = Arrays.toString(checker.getSubstrings());
 

@@ -1,18 +1,17 @@
-package gradingTools.comp524f20.assignment1.lisp.testcases;
+package gradingTools.comp524f20.assignment0_1.testcases;
 
 import gradingTools.shared.testcases.ASubstringSequenceChecker;
 
-public class ASequentialSumChecker extends ASubstringSequenceChecker{
+public class AGreetingChecker extends ASubstringSequenceChecker{
 	//make sure receives from both clients take place, need to ensure alternatibg, cannot with regular expressions
 	public  final String[] MY_SUBSTRINGS = {
-			toRegex("sum_sequential"),
-			toRegex("499500"),
-			toRegex("Took"),
-			toRegex("thread"),
+			toRegex("ello"),
+			toRegex("oodbye"),
+			
 
 		
 	};
-	public ASequentialSumChecker() {
+	public AGreetingChecker() {
 		init( MY_SUBSTRINGS);
 	}
 	
