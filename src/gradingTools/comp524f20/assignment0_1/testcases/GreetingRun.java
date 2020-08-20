@@ -45,6 +45,10 @@ public class GreetingRun extends PassFailJUnitTestCase {
 	protected RunningProject createRunningProject (Project aProject) {
 		GreetingMainProvided aHelloWorkdClassProvided = (GreetingMainProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(GreetingMainProvided.class);
 		Class aHelloClass = aHelloWorkdClassProvided.getGreetingMain();
+		if (aHelloClass == null) {
+			System.err.println("Cannot run test, no main class");
+			return null;
+		}
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryPoint(aHelloClass.getName());
 		RunningProject aRunningProject = RunningProjectUtils.runProject(aProject, TIME_OUT_SECS);
 		return aRunningProject;
