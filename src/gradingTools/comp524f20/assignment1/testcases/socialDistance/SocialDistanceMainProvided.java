@@ -34,7 +34,7 @@ public class SocialDistanceMainProvided extends PassFailJUnitTestCase {
 			    	return fail ("No class registry");
 			    }
 //			sExpressionClass = (Class<? extends SExpression>) callGetterOnClassRegistry(aMethodName);
-			socialDistanceMain = aClassRegistry.getSocialDistanceMain();   
+			socialDistanceMain = aClassRegistry.getSocialDistanceBasicMain();   
 		    if (socialDistanceMain == null) {	
 		    	return fail ("getSocialDistanceMain returns null in class registry");
 		    }	

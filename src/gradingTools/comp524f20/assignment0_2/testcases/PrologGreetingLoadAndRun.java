@@ -46,6 +46,8 @@ public class PrologGreetingLoadAndRun extends GreetingRun {
 	public PrologGreetingLoadAndRun() {
 	}
 	protected RunningProject createRunningProject (Project aProject) {
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.PROLOG_LANGUAGE);
+
 //		String aSourceFolder = aProject.getSourceFolder().getAbsolutePath();
 //		String aTestFile = aSourceFolder + "\\Greeting.pl";
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryPoint(aTestFile);

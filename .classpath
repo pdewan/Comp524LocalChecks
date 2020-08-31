@@ -12,5 +12,7 @@
 	<classpathentry kind="lib" path="/GraderBasics/lib/opencsv-2.3.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/VirtualToolkit"/>
 	<classpathentry kind="lib" path="/GraderBasics/lib/oeall22.jar" sourcepath="/util/src"/>
+	<classpathentry kind="lib" path="/GraderBasics/lib/checkstyle-8.33-all.jar"/>
+	<classpathentry kind="lib" path="/GraderBasics/lib/UNCChecks-8.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
