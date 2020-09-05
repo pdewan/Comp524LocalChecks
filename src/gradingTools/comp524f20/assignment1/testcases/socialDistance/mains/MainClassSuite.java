@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment1;
+package gradingTools.comp524f20.assignment1.testcases.socialDistance.mains;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -19,31 +19,26 @@ import gradingTools.comp524f20.assignment0_1.testcases.GreetingRun;
 import gradingTools.comp524f20.assignment0_1.testcases.socialDistance.SocialDistanceMainRuns;
 import gradingTools.comp524f20.assignment0_4.testcases.LispGreetingLoadAndRun;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceMainProvided;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.BasicMainTest;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.MainClassSuite;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.RequiredClassesSuite;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceClassRegistryProvided;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.UtilityClassSuite;
 import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	RequiredClassesSuite.class,
-	UtilityClassSuite.class,
-	MainClassSuite.class
+	BasicMainTest.class,
+
+	
 	
 })
 	
 
 //@MaxValue(50)
-public class F20Assignment1Suite {
+public class MainClassSuite {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(F20Assignment1Suite.class);
+			BasicJUnitUtils.interactiveTest(MainClassSuite.class);
 
 
 		} catch (Exception e) {

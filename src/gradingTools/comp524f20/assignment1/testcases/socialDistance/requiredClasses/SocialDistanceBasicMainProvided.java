@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment1.testcases.socialDistance;
+package gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses;
 
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
@@ -9,16 +9,15 @@ import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp524f20.assignment0_1.GreetingClassRegistry;
 import gradingTools.comp524f20.assignment0_1.GreetingClassRegistryProvided;
 import gradingTools.comp524f20.assignment1.SocialDistanceClassRegistry;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceClassRegistryProvided;
 import main.ClassRegistry;
 import main.lisp.parser.terms.BasicExpression;
 import main.lisp.parser.terms.SExpression;
 import util.annotations.MaxValue;
 @MaxValue(2)
-public class SocialDistanceMainProvided extends PassFailJUnitTestCase {
-	public Class socialDistanceMain;
+public class SocialDistanceBasicMainProvided extends PassFailJUnitTestCase {
+	protected Class socialDistanceMain;
 
-	public Class getSocialDistanceMain() {
+	public Class getRequiredClass() {
 		return socialDistanceMain;
 	}
 	
@@ -27,14 +26,14 @@ public class SocialDistanceMainProvided extends PassFailJUnitTestCase {
 			throws NotAutomatableException, NotGradableException {	
 		 
 		 try {
-			 SocialDistanceClassRegistryProvided aClassRegistryProvided = (SocialDistanceClassRegistryProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(GreetingClassRegistryProvided.class);
+			 SocialDistanceClassRegistryProvided aClassRegistryProvided = (SocialDistanceClassRegistryProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceClassRegistryProvided.class);
 				
 				SocialDistanceClassRegistry aClassRegistry = aClassRegistryProvided.getTimingOutClassRegistryProxy();  
 			    if (aClassRegistry == null) {
 			    	return fail ("No class registry");
 			    }
 //			sExpressionClass = (Class<? extends SExpression>) callGetterOnClassRegistry(aMethodName);
-			socialDistanceMain = aClassRegistry.getSocialDistanceMain();   
+			socialDistanceMain = aClassRegistry.getSocialDistanceMVCBasicMain();   
 		    if (socialDistanceMain == null) {	
 		    	return fail ("getSocialDistanceMain returns null in class registry");
 		    }	

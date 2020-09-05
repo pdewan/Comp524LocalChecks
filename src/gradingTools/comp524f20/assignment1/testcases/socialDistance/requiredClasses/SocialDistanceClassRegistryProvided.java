@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment1;
+package gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses;
 
 import java.io.File;
 
@@ -8,6 +8,7 @@ import grader.basics.project.BasicProjectIntrospection;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp524f20.assignment1.SocialDistanceClassRegistry;
 import gradingTools.shared.testcases.utils.ConfigurationWriter;
 import main.ClassRegistry;
 import util.annotations.MaxValue;
