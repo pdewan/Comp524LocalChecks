@@ -40,7 +40,7 @@ import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import main.ClassRegistry;
 import util.annotations.MaxValue;
-public abstract class AbstractThreeParameterSafetyTest extends AbstractStaticFunctionCallTest {
+public abstract class AbstractThreeParameterSafetyTest extends AbstractSocialDistanceUitilityStaticFunctionCallTest {
 	public static final int TIME_OUT_SECS = 1; // secs
 	static Object[][] inputCombinations = {
 			{13, 30, 20},

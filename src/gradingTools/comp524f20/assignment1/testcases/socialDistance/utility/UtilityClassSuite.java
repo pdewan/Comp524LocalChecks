@@ -26,7 +26,8 @@ import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 @Suite.SuiteClasses({
 	GivenSafetyTest.class,
 	InterpolatedSafetyTest.class,
-	DerivedSafetyTest.class
+	DerivedSafetyTest.class,
+	PrintGeneratedCombinationTest.class
 	
 	
 })

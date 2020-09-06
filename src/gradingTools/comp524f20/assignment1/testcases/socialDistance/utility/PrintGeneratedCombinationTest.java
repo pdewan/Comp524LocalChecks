@@ -7,9 +7,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import grader.basics.config.BasicExecutionSpecification;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.execution.BasicProjectExecution;
 import grader.basics.execution.NotRunnableException;
+import grader.basics.execution.ResultWithOutput;
 import grader.basics.execution.RunningProject;
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
@@ -40,17 +42,62 @@ import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import main.ClassRegistry;
 import util.annotations.MaxValue;
-public abstract class AbstractStaticFunctionCallTest extends PassFailJUnitTestCase {
-	public static final int TIME_OUT_SECS = 1; // secs
+import util.trace.Tracer;
+public class PrintGeneratedCombinationTest extends PassFailJUnitTestCase {
+	public static final int TIME_OUT_MSECS = 300; // secs
 	
-	protected abstract Object[][] getArguments();
-	protected abstract Object[] getResults();
+	protected final String methodName = "printGeneratedCombinationDerivedSafety";
+	protected static  String verifyingMethodName = "isDerivedSafe";
+	protected static Class[] NO_ARG_TYPES = {};
+	protected static Class[] VERIFYING_ARG_TYPES = {Integer.TYPE, Integer.TYPE, Integer.TYPE};
+
+	protected static Object[] NO_ARGS = {};
 
 
-	public AbstractStaticFunctionCallTest() {
+
+	public PrintGeneratedCombinationTest() {
+	}
+	protected  String methodName() {
+		return methodName;
+	}
+	
+	protected  String verifyingMethodName() {
+		return verifyingMethodName;
+	}
+	
+	protected  Class[] argumentTypes() {
+		return NO_ARG_TYPES;
+	}
+	
+	protected  Class[] verifyingArgumentTypes() {
+		return VERIFYING_ARG_TYPES;
+	}
+	
+	
+	protected  Object[] getArguments() {
+		return NO_ARGS;
 	}
 
-	protected abstract String methodName();
+	protected boolean verify (String anOutput, Class aStaticClass, Method aVerifyingMethod) throws Throwable {
+		String[] anOutputComponents = anOutput.split(",");
+		if (anOutputComponents.length != 4) {
+//			System.err.println("Output does not have 4 command separated components");
+			throw new NotGradableException("Output does not have 4 command separated components");
+		}
+		Integer aDistance = Integer.parseInt(anOutputComponents[0]);
+		Integer aDuration = Integer.parseInt(anOutputComponents[1]);
+		Integer anExhalationLevel =  Integer.parseInt(anOutputComponents[2]);
+		Object[] anArgs = {aDistance, aDuration, anExhalationLevel};
+		Boolean aResult = (Boolean) BasicProjectExecution.timedInvoke(aStaticClass, aVerifyingMethod, anArgs, TIME_OUT_MSECS);
+		Boolean anActualResult = Boolean.parseBoolean(anOutputComponents[2]);
+		boolean aReturnValue = aResult.equals(anActualResult);
+		if (!aReturnValue) {
+			Tracer.info("Expected result:" + aResult + " not equal to actual result:" + anActualResult);
+
+		}
+		return aReturnValue;
+	}
+	
 	
 
 	@Override
@@ -58,34 +105,45 @@ public abstract class AbstractStaticFunctionCallTest extends PassFailJUnitTestCa
 			NotGradableException {
 		try {
 			SocialDistanceUtilityProvided aSocialDistanceUilityProvided = (SocialDistanceUtilityProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceUtilityProvided.class);
-			Class aUilityClass = aSocialDistanceUilityProvided.getRequiredClass();
+			Class aUtilityClass = aSocialDistanceUilityProvided.getRequiredClass();
 			
 //			SocialDistanceClassRegistry aClassRegistry = aClassRegistryProvided.getTimingOutClassRegistryProxy();  
-		    if (aUilityClass == null) {
+		    if (aUtilityClass == null) {
 		    	return fail ("No utility class");
 		    }
-		    Class[] aParameterTypes = {Integer.TYPE, Integer.TYPE, Integer.TYPE};
-		    Method aMethod = aUilityClass.getMethod(methodName(), aParameterTypes);
-		    Object[][] anArguments = getArguments();
-		    Object[] aResults = getResults();
-		    int aNumSuccesses = 0;
-		    for (int anIndex = 0; anIndex < anArguments.length; anIndex++ ) {
-		    	Object[] anInputCombination = anArguments[anIndex];
-		    	Object anExpectedResult = aResults[anIndex];
-			    Boolean aRetVal =  (Boolean) BasicProjectExecution.timedInvoke(aUilityClass, aMethod, anInputCombination, TIME_OUT_SECS);
-			    if (!anExpectedResult.equals(aRetVal )) {
-		    		System.out.println("Expected retVal with args " + Arrays.toString(anInputCombination) + " did not return " + anExpectedResult);
-			    } else {
-			    	aNumSuccesses++;
-			    }
-
+		    Class[] aParameterTypes = argumentTypes();
+		    Method aMethod = aUtilityClass.getMethod(methodName(), aParameterTypes);
+		    Object[] anArguments = getArguments();
+		    ResultWithOutput aResultWithOutput1 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
+		    
+		    String anOutput1 = aResultWithOutput1.getOutput();
+		    if (anOutput1 == null || anOutput1.isEmpty() ) {
+		    	return fail("No Output");
 		    }
-		    double aPercentage = ((double) aNumSuccesses)/aResults.length;
-		    return aPercentage == 1?pass():partialPass(aPercentage, aNumSuccesses + " tests passed out of " +   aResults.length);  
+		    
+//		    String[] anOutputLines = anOutput.split("\n");
+		    ResultWithOutput aResultWithOutput2 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
 
-		  
+		    String anOutput2 = aResultWithOutput2.getOutput();
+		    if (anOutput1 == null || anOutput2.isEmpty()) {
+		    	System.err.println("No output");
+		    }
+		    
+		    if (anOutput1.equals(anOutput2)) {
+		    	System.err.println("Two successive calls return same output");
+		    }
+		    Method aVerifyingMethod =  aUtilityClass.getMethod(verifyingMethodName(), verifyingArgumentTypes()); 
+//		    Boolean aFirstValPassed = verify(anOutput1,aUtilityClass, aVerifyingMethod);
+		    
+		    if (verify(anOutput1,aUtilityClass, aVerifyingMethod) && verify(anOutput2, aUtilityClass, aVerifyingMethod)) {
+		    	return pass();
+		    }
+		    return fail("One or more outputs of " + methodName() + " not consistent with result of method:" + verifyingMethodName);
+//		    String[] anOutputLines = anOutput.split("\n");
+		    
 
 		} catch ( Throwable e) {
+			System.err.println(e);
 			throw new NotGradableException();
 		}
 	}
