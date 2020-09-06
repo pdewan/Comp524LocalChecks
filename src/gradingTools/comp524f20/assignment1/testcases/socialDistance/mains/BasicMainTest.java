@@ -17,7 +17,7 @@ import grader.basics.project.Project;
 import grader.basics.project.source.ABasicTextManager;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp524f19.assignment1.testcases.MainClassProvided;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceMainProvided;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceUtilityTesterMainProvided;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceBasicMainProvided;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 import gradingTools.shared.testcases.openmp.OpenMPPragma;
@@ -44,9 +44,10 @@ public class BasicMainTest extends PassFailJUnitTestCase {
 
 	public BasicMainTest() {
 	}
+
 	static String[] inputs = {
-			"15", "30", "10", 
-			"15", "20", "30",
+			"13", "30", "20", 
+			"14", "29", "19",
 			"-1"
 	};
 

@@ -18,14 +18,14 @@ import gradingTools.comp524f20.assignment0_1.testcases.GreetingMainProvided;
 import gradingTools.comp524f20.assignment0_1.testcases.GreetingRun;
 import gradingTools.comp524f20.assignment0_1.testcases.socialDistance.SocialDistanceMainRuns;
 import gradingTools.comp524f20.assignment0_4.testcases.LispGreetingLoadAndRun;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceMainProvided;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceUtilityTesterMainProvided;
 import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	SocialDistanceClassRegistryProvided.class,
-	SocialDistanceMainProvided.class,
+	SocialDistanceUtilityTesterMainProvided.class,
 	SocialDistanceUtilityProvided.class,
 	SocialDistanceBasicMainProvided.class,
 	

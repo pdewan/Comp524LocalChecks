@@ -17,7 +17,7 @@ import grader.basics.project.Project;
 import grader.basics.project.source.ABasicTextManager;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp524f19.assignment1.testcases.MainClassProvided;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceMainProvided;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceUtilityTesterMainProvided;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 import gradingTools.shared.testcases.openmp.OpenMPPragma;
 import gradingTools.shared.testcases.openmp.OpenMPUtils;
@@ -104,7 +104,7 @@ public class SocialDistanceMainRuns extends PassFailJUnitTestCase {
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		try {
-			SocialDistanceMainProvided aSocialDistanceMainProvided = (SocialDistanceMainProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceMainProvided.class);
+			SocialDistanceUtilityTesterMainProvided aSocialDistanceMainProvided = (SocialDistanceUtilityTesterMainProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceUtilityTesterMainProvided.class);
     		Class aSocialDistanceMain = aSocialDistanceMainProvided.getSocialDistanceMain();
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryPoint(aSocialDistanceMain.getName());
 			RunningProject aRunningProject = RunningProjectUtils.runProject(project, TIME_OUT_SECS, INPUT);

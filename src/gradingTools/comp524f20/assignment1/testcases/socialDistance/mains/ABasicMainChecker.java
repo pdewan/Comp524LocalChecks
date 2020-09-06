@@ -5,8 +5,8 @@ import gradingTools.shared.testcases.ASubstringSequenceChecker;
 public class ABasicMainChecker extends ASubstringSequenceChecker{
 	//make sure receives from both clients take place, need to ensure alternatibg, cannot with regular expressions
 	public  final String[] MY_SUBSTRINGS = {
-			"^[Ss]afe",
-			"^[Nn]ot [Ss]afe",
+			"^[Ss]afe.*",
+			"^[Nn]ot [Ss]afe.*",
 			
 			
 

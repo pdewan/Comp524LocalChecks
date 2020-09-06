@@ -43,8 +43,8 @@ import util.annotations.MaxValue;
 public abstract class AbstractThreeParameterSafetyTest extends AbstractStaticFunctionCallTest {
 	public static final int TIME_OUT_SECS = 1; // secs
 	static Object[][] inputCombinations = {
-			{6, 15, 30},
-			{6, 15, 10}		
+			{13, 30, 20},
+			{14, 29, 19}		
 	};
 	static Object[] results = {
 			true,

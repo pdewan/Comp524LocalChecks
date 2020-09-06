@@ -15,7 +15,7 @@ import main.lisp.parser.terms.BasicExpression;
 import main.lisp.parser.terms.SExpression;
 import util.annotations.MaxValue;
 @MaxValue(2)
-public class SocialDistanceMainProvided extends PassFailJUnitTestCase {
+public class SocialDistanceUtilityTesterMainProvided extends PassFailJUnitTestCase {
 	public Class socialDistanceMain;
 
 	public Class getSocialDistanceMain() {

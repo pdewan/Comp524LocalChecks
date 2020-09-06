@@ -18,13 +18,16 @@ import gradingTools.comp524f20.assignment0_1.testcases.GreetingMainProvided;
 import gradingTools.comp524f20.assignment0_1.testcases.GreetingRun;
 import gradingTools.comp524f20.assignment0_1.testcases.socialDistance.SocialDistanceMainRuns;
 import gradingTools.comp524f20.assignment0_4.testcases.LispGreetingLoadAndRun;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceMainProvided;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceUtilityTesterMainProvided;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.BasicMainTest;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.MainClassSuite;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.RequiredClassesSuite;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceClassRegistryProvided;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.UtilityClassSuite;
 import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
+import util.trace.TraceableWarning;
+import util.trace.Tracer;
+import util.trace.uigen.UnknownPropertyNotification;
 
 
 @RunWith(Suite.class)
@@ -41,6 +44,7 @@ public class F20Assignment1Suite {
 
 	public static void main (String[] args) {
 		try {
+			TraceableWarning.doNotWarn(UnknownPropertyNotification.class);
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
 			BasicJUnitUtils.interactiveTest(F20Assignment1Suite.class);
