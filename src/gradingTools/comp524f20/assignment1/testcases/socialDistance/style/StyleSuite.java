@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment1;
+package gradingTools.comp524f20.assignment1.testcases.socialDistance.style;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -19,37 +19,25 @@ import gradingTools.comp524f20.assignment0_1.testcases.GreetingRun;
 import gradingTools.comp524f20.assignment0_1.testcases.socialDistance.SocialDistanceMainRuns;
 import gradingTools.comp524f20.assignment0_4.testcases.LispGreetingLoadAndRun;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceUtilityTesterMainProvided;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.BasicMainTest;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.MainClassSuite;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.RequiredClassesSuite;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceClassRegistryProvided;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.StyleSuite;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.UtilityClassSuite;
 import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
-import util.trace.TraceableWarning;
-import util.trace.Tracer;
-import util.trace.uigen.UnknownPropertyNotification;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	RequiredClassesSuite.class,
-	UtilityClassSuite.class,
-	MainClassSuite.class,
-	StyleSuite.class
+	SocialDistanceNoCheckstyleWarnings.class
+	
 	
 })
 	
 
 //@MaxValue(50)
-public class F20Assignment1Suite {
+public class StyleSuite {
 
 	public static void main (String[] args) {
 		try {
-			TraceableWarning.doNotWarn(UnknownPropertyNotification.class);
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(F20Assignment1Suite.class);
+			BasicJUnitUtils.interactiveTest(StyleSuite.class);
 
 
 		} catch (Exception e) {

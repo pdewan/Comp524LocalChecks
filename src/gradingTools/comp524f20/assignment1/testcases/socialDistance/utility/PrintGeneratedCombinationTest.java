@@ -43,6 +43,7 @@ import gradingTools.utils.RunningProjectUtils;
 import main.ClassRegistry;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
+@MaxValue(6)
 public class PrintGeneratedCombinationTest extends PassFailJUnitTestCase {
 	public static final int TIME_OUT_MSECS = 300; // secs
 	
