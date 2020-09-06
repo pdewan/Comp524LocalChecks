@@ -27,14 +27,14 @@ public class SocialDistanceMainProvided extends PassFailJUnitTestCase {
 			throws NotAutomatableException, NotGradableException {	
 		 
 		 try {
-			 SocialDistanceClassRegistryProvided aClassRegistryProvided = (SocialDistanceClassRegistryProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(GreetingClassRegistryProvided.class);
+			 SocialDistanceClassRegistryProvided aClassRegistryProvided = (SocialDistanceClassRegistryProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceClassRegistryProvided.class);
 				
 				SocialDistanceClassRegistry aClassRegistry = aClassRegistryProvided.getTimingOutClassRegistryProxy();  
 			    if (aClassRegistry == null) {
 			    	return fail ("No class registry");
 			    }
 //			sExpressionClass = (Class<? extends SExpression>) callGetterOnClassRegistry(aMethodName);
-			socialDistanceMain = aClassRegistry.getSocialDistanceMain();   
+			socialDistanceMain = aClassRegistry.getSocialDistanceUilityTesterMain();   
 		    if (socialDistanceMain == null) {	
 		    	return fail ("getSocialDistanceMain returns null in class registry");
 		    }	

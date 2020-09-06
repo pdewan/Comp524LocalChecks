@@ -2,7 +2,7 @@ package gradingTools.comp524f20.assignment1;
 
 public interface SocialDistanceClassRegistry {
 	public Class<?> getBasicSocialDistanceUtility();
-	public Class<?> getSocialDistanceMain();
+	public Class<?> getSocialDistanceUilityTesterMain();
 	public Class<?> getSocialDistanceMVCBasicMain();
 	public Class<?> getSocialDistanceMVCInterpolatingMain();
 	public Class<?> getSocialDistanceMVCDerivingMain();
