@@ -45,14 +45,13 @@ public abstract class AbstractSocialDistanceUitilityStaticFunctionCallTest exten
 	
 	protected abstract Object[][] getArguments();
 	protected abstract Object[] getResults();
-
+	protected abstract Class[] getParameterTypes();
 
 	public AbstractSocialDistanceUitilityStaticFunctionCallTest() {
 	}
 
 	protected abstract String methodName();
 	
-
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
@@ -64,7 +63,7 @@ public abstract class AbstractSocialDistanceUitilityStaticFunctionCallTest exten
 		    if (aUilityClass == null) {
 		    	return fail ("No utility class");
 		    }
-		    Class[] aParameterTypes = {Integer.TYPE, Integer.TYPE, Integer.TYPE};
+		    Class[] aParameterTypes = getParameterTypes();
 		    Method aMethod = aUilityClass.getMethod(methodName(), aParameterTypes);
 		    Object[][] anArguments = getArguments();
 		    Object[] aResults = getResults();

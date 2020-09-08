@@ -1,0 +1,3 @@
+Id,Prediction,Date,File,StartTime,ElapsedTime,BusyTime,Commands,editOrInsertPercentage,debugPercentage,navigationPercentage,focusPercentage,removePercentage,editPercentage,COMMAND_RATE,NAVIGATION_RATE,DEBUG_RATE,FOCUS_RATE,EDIT_RATE,REMOVE_RATE,INSERT_RATE,webLinkTimes,Web Page Visits
+1,,Thu Sep 03 10:45:18 EDT 2020,GreetingCheckstyle.java,1599144318249,155225,0,(F)2(I)1(F)3,0.16666666666666666,0.0,0.0,83.33333333333334,0.0,0.0,0.03870967741935484,0.0,0.0,0.03225806451612903,0.0,0.0,0.0064516129032258064,0.0,[]
+,/modelData/A0UserStudy2010.arff,Thu Sep 03 10:45:18 EDT 2020,GreetingCheckstyle.java, 1599144318249

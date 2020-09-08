@@ -25,8 +25,8 @@ import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	BasicMainTest.class,
-
-	
+	InterpolatingMainTest.class,
+	DerivingMainTest.class
 	
 })
 	

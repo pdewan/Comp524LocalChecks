@@ -1,0 +1,37 @@
+<Events startTimestamp="1599232551352" logVersion="1.0.0.202008151525">
+  <Command __id="24" _type="DiffBasedFileOpenCommand" date="Fri Sep 04 11:15:51 EDT 2020" docASTNodeCount="109" docActiveCodeLength="781" docExpressionCount="78" docLength="1245" projectName="Comp524AllChecks" starttimestamp="1599232319908" timestamp="231136">
+    <filePath><![CDATA[C:\Users\ajwortas\git\Comp524AllChecks\src\gradingTools\Comp524Driver.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools;
+
+import bus.uigen.ObjectEditor;
+import grader.config.ExecutionSpecificationSelector;
+import grader.trace.GraderTraceUtility;
+import trace.grader.basics.GraderBasicsTraceUtility;
+import util.trace.MessagePrefixKind;
+import util.trace.TraceableWarning;
+import util.trace.Tracer;
+import util.trace.uigen.UnknownPropertyNotification;
+
+public class Comp524Driver {
+	public static void main (String[] args) {
+//		ObjectEditor.setDenseMagnification(1.0);
+		ExecutionSpecificationSelector.getExecutionSpecification().setGraderModule("Comp524f20");
+//		ExecutionSpecificationSelector.getExecutionSpecification().setGraderProblemDownloadPath("foo");
+//		ExecutionSpecificationSelector.getExecutionSpecification().setUseProjectConfiguration(true); // duplicating what is in the ASuite
+		Tracer.showInfo(true);
+//		TraceableWarning.doNotWarn(UnknownPropertyNotification.class);
+
+//		Tracer.setMessagePrefixKind(MessagePrefixKind.FULL_CLASS_NAME);
+		GraderBasicsTraceUtility.setBufferTracedMessages(false);
+		Driver.main(args);
+		
+		for(String s : args) {
+			if (s.matches("-.*?[hH][eE][aA][dD][lL][eE][sS]{2}.*")) { // any variety of -.*headless.* with any capitalization
+				System.exit(0);
+			}
+		}
+	}
+}]]></snapshot>
+  </Command>
+</Events>

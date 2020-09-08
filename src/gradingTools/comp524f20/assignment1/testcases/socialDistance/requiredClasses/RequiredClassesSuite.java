@@ -28,8 +28,8 @@ import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 	SocialDistanceUtilityTesterMainProvided.class,
 	SocialDistanceUtilityProvided.class,
 	SocialDistanceBasicMainProvided.class,
-	
-	
+	SocialDistanceInterpolatingMainProvided.class,
+	SocialDistanceDerivingMainProvided.class
 })
 	
 

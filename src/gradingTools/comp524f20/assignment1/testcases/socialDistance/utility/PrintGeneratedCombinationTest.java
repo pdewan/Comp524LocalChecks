@@ -44,63 +44,19 @@ import main.ClassRegistry;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
 @MaxValue(6)
-public class PrintGeneratedCombinationTest extends PassFailJUnitTestCase {
+public class PrintGeneratedCombinationTest extends AbstractPrintDerivedSafetyValidator {
 	public static final int TIME_OUT_MSECS = 300; // secs
 	
 	protected final String methodName = "printGeneratedCombinationDerivedSafety";
-	protected static  String verifyingMethodName = "isDerivedSafe";
-	protected static Class[] NO_ARG_TYPES = {};
-	protected static Class[] VERIFYING_ARG_TYPES = {Integer.TYPE, Integer.TYPE, Integer.TYPE};
-
-	protected static Object[] NO_ARGS = {};
-
 
 
 	public PrintGeneratedCombinationTest() {
 	}
+	@Override
 	protected  String methodName() {
 		return methodName;
 	}
 	
-	protected  String verifyingMethodName() {
-		return verifyingMethodName;
-	}
-	
-	protected  Class[] argumentTypes() {
-		return NO_ARG_TYPES;
-	}
-	
-	protected  Class[] verifyingArgumentTypes() {
-		return VERIFYING_ARG_TYPES;
-	}
-	
-	
-	protected  Object[] getArguments() {
-		return NO_ARGS;
-	}
-
-	protected boolean verify (String anOutput, Class aStaticClass, Method aVerifyingMethod) throws Throwable {
-		String[] anOutputComponents = anOutput.split(",");
-		if (anOutputComponents.length != 4) {
-//			System.err.println("Output does not have 4 command separated components");
-			throw new NotGradableException("Output does not have 4 command separated components");
-		}
-		Integer aDistance = Integer.parseInt(anOutputComponents[0]);
-		Integer aDuration = Integer.parseInt(anOutputComponents[1]);
-		Integer anExhalationLevel =  Integer.parseInt(anOutputComponents[2]);
-		Object[] anArgs = {aDistance, aDuration, anExhalationLevel};
-		Boolean aResult = (Boolean) BasicProjectExecution.timedInvoke(aStaticClass, aVerifyingMethod, anArgs, TIME_OUT_MSECS);
-		Boolean anActualResult = Boolean.parseBoolean(anOutputComponents[2]);
-		boolean aReturnValue = aResult.equals(anActualResult);
-		if (!aReturnValue) {
-			Tracer.info("Expected result:" + aResult + " not equal to actual result:" + anActualResult);
-
-		}
-		return aReturnValue;
-	}
-	
-	
-
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
@@ -126,12 +82,12 @@ public class PrintGeneratedCombinationTest extends PassFailJUnitTestCase {
 		    ResultWithOutput aResultWithOutput2 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
 
 		    String anOutput2 = aResultWithOutput2.getOutput();
-		    if (anOutput1 == null || anOutput2.isEmpty()) {
-		    	System.err.println("No output");
+		    if (anOutput2 == null || anOutput2.isEmpty()) {
+		    	return fail("No Output");
 		    }
 		    
 		    if (anOutput1.equals(anOutput2)) {
-		    	System.err.println("Two successive calls return same output");
+		    	return fail("Two successive calls return same output");
 		    }
 		    Method aVerifyingMethod =  aUtilityClass.getMethod(verifyingMethodName(), verifyingArgumentTypes()); 
 //		    Boolean aFirstValPassed = verify(anOutput1,aUtilityClass, aVerifyingMethod);

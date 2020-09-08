@@ -35,7 +35,7 @@ public class SocialDistanceBasicMainProvided extends PassFailJUnitTestCase {
 //			sExpressionClass = (Class<? extends SExpression>) callGetterOnClassRegistry(aMethodName);
 			socialDistanceMain = aClassRegistry.getSocialDistanceMVCBasicMain();   
 		    if (socialDistanceMain == null) {	
-		    	return fail ("getSocialDistanceMain returns null in class registry");
+		    	return fail ("getSocialDistanceMVCBasicMain returns null in class registry");
 		    }	
 		    
 			return pass();		

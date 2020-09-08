@@ -1,0 +1,591 @@
+<Events startTimestamp="1599145186571" logVersion="1.0.0.202008151525">
+  <Command __id="8" _type="EclipseCommand" commandID="" date="Thu Sep 03 10:59:55 EDT 2020" starttimestamp="1599145186571" timestamp="9045" />
+  <Command __id="21" _type="EclipseCommand" commandID="" date="Thu Sep 03 11:01:25 EDT 2020" starttimestamp="1599145186571" timestamp="98906" />
+  <Command __id="23" _type="EclipseCommand" commandID="" date="Thu Sep 03 11:01:29 EDT 2020" starttimestamp="1599145186571" timestamp="102433" />
+  <Command __id="25" _type="MoveCaretCommand" caretOffset="2146" date="Thu Sep 03 11:03:42 EDT 2020" docOffset="2146" starttimestamp="1599145186571" timestamp="236400" />
+  <Command __id="26" _type="ShellCommand" date="Thu Sep 03 11:04:16 EDT 2020" starttimestamp="1599145186571" timestamp="270005" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="27" _type="ShellCommand" date="Thu Sep 03 11:07:54 EDT 2020" starttimestamp="1599145186571" timestamp="487445" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="28" _type="EclipseCommand" commandID="org.eclipse.ui.file.properties" date="Thu Sep 03 11:07:54 EDT 2020" starttimestamp="1599145186571" timestamp="487464" />
+  <Command __id="29" _type="ShellCommand" date="Thu Sep 03 11:08:14 EDT 2020" starttimestamp="1599145186571" timestamp="507995" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="30" _type="ShellCommand" date="Thu Sep 03 11:08:58 EDT 2020" starttimestamp="1599145186571" timestamp="551613" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="31" _type="ShellCommand" date="Thu Sep 03 11:09:10 EDT 2020" starttimestamp="1599145186571" timestamp="563573" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="32" _type="ShellCommand" date="Thu Sep 03 11:09:14 EDT 2020" starttimestamp="1599145186571" timestamp="567862" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="33" _type="EclipseCommand" commandID="org.eclipse.ui.perspectives.showPerspective" date="Thu Sep 03 11:09:14 EDT 2020" starttimestamp="1599145186571" timestamp="567885" />
+  <Command __id="34" _type="EclipseCommand" commandID="org.eclipse.ui.perspectives.showPerspective" date="Thu Sep 03 11:09:14 EDT 2020" starttimestamp="1599145186571" timestamp="567885" />
+  <Command __id="35" _type="ShellCommand" date="Thu Sep 03 11:09:18 EDT 2020" starttimestamp="1599145186571" timestamp="571887" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="36" _type="PasteCommand" date="Thu Sep 03 11:10:10 EDT 2020" starttimestamp="1599145186571" timestamp="624136" />
+  <Command __id="37" _type="ShellCommand" date="Thu Sep 03 11:10:23 EDT 2020" starttimestamp="1599145186571" timestamp="637212" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="38" _type="EclipseCommand" commandID="org.eclipse.equinox.p2.ui.sdk.install" date="Thu Sep 03 11:10:23 EDT 2020" starttimestamp="1599145186571" timestamp="637258" />
+  <Command __id="39" _type="ShellCommand" date="Thu Sep 03 11:10:30 EDT 2020" starttimestamp="1599145186571" timestamp="644046" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="40" _type="ShellCommand" date="Thu Sep 03 11:10:36 EDT 2020" starttimestamp="1599145186571" timestamp="649509" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="41" _type="EclipseCommand" commandID="org.eclipse.ui.views.showView" date="Thu Sep 03 11:10:36 EDT 2020" starttimestamp="1599145186571" timestamp="649530" />
+  <Command __id="42" _type="EclipseCommand" commandID="org.eclipse.ui.views.showView" date="Thu Sep 03 11:10:36 EDT 2020" starttimestamp="1599145186571" timestamp="649532" />
+  <Command __id="43" _type="ShellCommand" date="Thu Sep 03 11:10:40 EDT 2020" starttimestamp="1599145186571" timestamp="654062" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="46" _type="ShellCommand" date="Thu Sep 03 11:13:37 EDT 2020" starttimestamp="1599145186571" timestamp="830611" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="47" _type="ShellCommand" date="Thu Sep 03 11:15:04 EDT 2020" starttimestamp="1599145186571" timestamp="918332" type="ECLIPSE_LOST_FOCUS" />
+  <Command __id="24" _type="DiffBasedFileOpenCommand" date="Thu Sep 03 11:03:42 EDT 2020" docASTNodeCount="386" docActiveCodeLength="2625" docExpressionCount="320" docLength="4884" projectName="Comp524LocalChecks" starttimestamp="1599145186571" timestamp="236259">
+    <filePath><![CDATA[C:\Users\ajwortas\git\Comp524LocalChecks\src\gradingTools\comp524f20\assignment0_1\testcases\GreetingCheckstyle.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp524f20.assignment0_1.testcases;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.regex.Pattern;
+
+import grader.basics.config.BasicExecutionSpecificationSelector;
+import grader.basics.execution.NotRunnableException;
+import grader.basics.execution.RunningProject;
+import grader.basics.junit.JUnitTestsEnvironment;
+import grader.basics.junit.NotAutomatableException;
+import grader.basics.junit.TestCaseResult;
+import grader.basics.project.NotGradableException;
+import grader.basics.project.Project;
+import grader.basics.project.source.ABasicTextManager;
+import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp524f19.assignment1.testcases.MainClassProvided;
+import gradingTools.shared.testcases.SubstringSequenceChecker;
+import gradingTools.shared.testcases.openmp.OpenMPPragma;
+import gradingTools.shared.testcases.openmp.OpenMPUtils;
+import gradingTools.shared.testcases.openmp.scannedTree.AssignmentSNode;
+import gradingTools.shared.testcases.openmp.scannedTree.ExternalMethodSNode;
+import gradingTools.shared.testcases.openmp.scannedTree.ForSNode;
+import gradingTools.shared.testcases.openmp.scannedTree.MethodSNode;
+import gradingTools.shared.testcases.openmp.scannedTree.OMPForSNode;
+import gradingTools.shared.testcases.openmp.scannedTree.OMPParallelSNode;
+import gradingTools.shared.testcases.openmp.scannedTree.OMPSNodeUtils;
+import gradingTools.shared.testcases.openmp.scannedTree.RootOfFileSNode;
+import gradingTools.shared.testcases.openmp.scannedTree.RootOfProgramSNode;
+import gradingTools.shared.testcases.openmp.scannedTree.SNode;
+import gradingTools.shared.testcases.utils.LinesMatchKind;
+import gradingTools.shared.testcases.utils.LinesMatcher;
+import gradingTools.utils.RunningProjectUtils;
+import util.annotations.MaxValue;
+@MaxValue(0)
+public class GreetingCheckstyle extends PassFailJUnitTestCase {
+	public static final int TIME_OUT_SECS = 1; // secs
+	protected SubstringSequenceChecker checker = new AGreetingChecker();	
+
+	public GreetingCheckstyle() {
+	}
+
+	
+
+	@Override
+	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
+			NotGradableException {
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+		setCheckStyleConfiguration("unc_checks_524_A0_1.xml");
+		String aText = project.getCheckstyleText();
+		System.out.println("Checkstyle text:\n" + aText);
+		return pass();
+		
+			
+
+		
+	}
+//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {
+//		for (SNode anSNode:aRootOfFileSNode.getChildren()) {
+//			if (anSNode instanceof ExternalMethodSNode) {
+//				processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);
+//			}
+//		}
+//	}
+//	public static void processExternalMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {
+//		MethodSNode aMethodSNode = aRootOfProgramSNode.getExternalToInternalMethod().get(anExternalMethodSNode.toString());
+//		if (aMethodSNode == null) {
+//			aMethodSNode = findMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, anExternalMethodSNode);
+//			if (aMethodSNode != null) {
+//				aRootOfProgramSNode.getExternalToInternalMethod().put(anExternalMethodSNode.toString(),aMethodSNode );
+//			}
+//		}
+//		if (aMethodSNode != null) {
+//			anExternalMethodSNode.setActualMethodSNode(aMethodSNode);
+//		}
+//	}
+//	public static MethodSNode findMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {
+////		MethodSNode foundMethodSNode = null;
+//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {
+//			if (aFileName.equals(aRootOfFileSNode.getFileName()))
+//				continue;
+//			
+//			RootOfFileSNode aSearchedRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);
+//			 for (SNode anSNode:aSearchedRootOfFileSNode.getChildren()) {
+//				if (anSNode instanceof MethodSNode && !(anSNode instanceof ExternalMethodSNode)) {
+//					if (anSNode.toString().equals(anExternalMethodSNode)) {
+//						return (MethodSNode) anSNode;
+//						
+//					}
+////					processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);
+//				}
+//			}
+//		}
+//		return null;
+//	}
+//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode) {
+//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {
+//			RootOfFileSNode aRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);
+//			processExternalMethodSNodes(aRootOfProgramSNode, aRootOfFileSNode);
+//			
+//		}
+//
+//	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="37" _type="DiffBasedFileOpenCommand" date="Thu Sep 03 11:20:31 EDT 2020" docASTNodeCount="1134" docActiveCodeLength="8643" docExpressionCount="748" docLength="12478" projectName="comp110-grader" starttimestamp="1599146295260" timestamp="136488">
+    <filePath><![CDATA[C:\Users\ajwortas\git\Grader\src\main\java\framework\project\OriginalStandardProject.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package framework.project;
+
+import framework.execution.ARunningProject;
+import framework.execution.InteractiveConsoleProcessRunner;
+import framework.execution.ProcessRunner;
+import framework.execution.ReflectionRunner;
+import grader.basics.execution.NotRunnableException;
+import grader.basics.execution.RunningProject;
+import grader.basics.project.BasicProjectIntrospection;
+import grader.basics.project.ClassesManager;
+import grader.basics.project.Project;
+import grader.basics.project.source.BasicTextManager;
+import grader.basics.settings.BasicGradingEnvironment;
+import grader.basics.trace.BinaryFolderMade;
+import grader.basics.trace.BinaryFolderNotFound;
+import grader.basics.trace.ProjectFolderNotFound;
+import grader.basics.trace.SourceFolderAssumed;
+import grader.basics.trace.SourceFolderNotFound;
+import grader.basics.util.DirectoryUtils;
+import grader.basics.util.Option;
+import grader.sakai.project.SakaiProject;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import util.trace.TraceableLog;
+import util.trace.TraceableLogFactory;
+//import scala.Option;
+import util.pipe.InputGenerator;
+
+/**
+ * A "standard" project. That is, an IDE-based java project.
+ */
+public class OriginalStandardProject implements FatProject {
+    
+
+    private File directory;
+    private File sourceFolder;
+    private Option<ClassesManager> classesManager;
+    private TraceableLog traceableLog;
+    boolean noSrc;
+    protected SakaiProject project;
+
+    /**
+     * Basic constructor
+     *
+     * @param aDirectory The location of the project
+     * @param name      The name of the project, such as "Assignment1"
+     * @throws FileNotFoundException
+     */
+//    public StandardProject(File directory, String name) throws FileNotFoundException {
+//        // Find the folder. We could be there or it could be in a different folder
+//    	if (directory == null) return;
+//        Option<File> src = DirectoryUtils.locateFolder(directory, "src");
+//        if (src.isEmpty()) {
+//          throw new FileNotFoundException("No src folder");
+////
+////        	noSrc = true;
+////        	sourceFolder = directory;
+////        	this.directory = sourceFolder;
+//        } else {
+//        sourceFolder = src.get();
+//        this.directory = src.get().getParentFile();
+//        }
+//
+//        try {
+//            File sourceFolder = new File(this.directory, "src");
+//            File buildFolder = getBuildFolder("main." + name);
+//            classesManager = Option.apply((ClassesManager) new ProjectClassesManager(buildFolder, sourceFolder));
+//        } catch (Exception e) {
+//            classesManager = Option.empty();
+//        }
+//
+//        // Create the traceable log
+//        traceableLog = TraceableLogFactory.getTraceableLog();
+//
+//    }
+//	public StandardProject(SakaiProject project, File aDirectory, String name) throws FileNotFoundException {
+//		
+//	}
+    // rewriting Josh's code
+    public OriginalStandardProject(SakaiProject aProject, File aDirectory, String name) throws FileNotFoundException {
+        // Find the folder. We could be there or it could be in a different folder
+    	if (aDirectory == null) {
+            throw new FileNotFoundException("No directory given");
+        }
+    	project = aProject;
+    	directory = aDirectory;
+//        Option<File> src = DirectoryUtils.locateFolder(aDirectory, "src");
+        Option<File> src = DirectoryUtils.locateFolder(aDirectory, Project.SOURCE);
+
+        if (src.isEmpty()) {
+        	System.out.println(SourceFolderNotFound.newCase(aDirectory.getAbsolutePath(), this).getMessage());
+
+        	Set<File> sourceFiles = DirectoryUtils.getSourceFiles(aDirectory, null);
+        	if (!sourceFiles.isEmpty()) {
+                    File aSourceFile = sourceFiles.iterator().next();
+                    sourceFolder = aSourceFile.getParentFile(); // assuming no packages!
+                    this.directory = sourceFolder.getParentFile();
+                    SourceFolderAssumed.newCase(sourceFolder.getAbsolutePath(), this);
+        	} else {
+                    System.out.println(ProjectFolderNotFound.newCase(aDirectory.getAbsolutePath(), this).getMessage());
+                    throw new FileNotFoundException("No source files found");
+        	}
+        	noSrc = true;
+//                throw new FileNotFoundException("No src folder");
+//        	sourceFolder = aDirectory;
+//        	this.directory = sourceFolder;
+        } else {
+            sourceFolder = src.get();
+            this.directory = src.get().getParentFile();
+        }
+        
+
+        try {
+//            File sourceFolder = new File(this.directory, "src");
+            File buildFolder = getBuildFolder("main." + name);
+//            if (AProject.isMakeClassDescriptions())
+            classesManager = Option.apply((ClassesManager) new ProjectClassesManager(this, project, buildFolder, sourceFolder, null));
+        } catch (Exception e) {
+        	e.printStackTrace();
+            classesManager = Option.empty();
+        }
+
+        // Create the traceable log
+        traceableLog = TraceableLogFactory.getTraceableLog();
+    }
+
+    /**
+     * This figures out where the build folder is, taking into account variations due to IDE
+     *
+     * @param preferredClass The name of the class that has the main method, such as "main.Assignment1"
+     * @return The build folder
+     * @throws FileNotFoundException
+     */
+    public File getBuildFolder(String preferredClass) throws FileNotFoundException {
+//        Option<File> out = DirectoryUtils.locateFolder(directory, "out");
+        Option<File> out = DirectoryUtils.locateFolder(directory, Project.BINARY_2);
+//        if (out.isEmpty())
+//        	out = DirectoryUtils.locateFolder(directory, Project.BINARY_0);
+
+        
+
+//        Option<File> bin = DirectoryUtils.locateFolder(directory, "bin");
+        Option<File> bin = DirectoryUtils.locateFolder(directory,  Project.BINARY_0); // just to handle grader itself, as it has execuot.c
+        if (bin.isEmpty())
+//        Option<File> bin = DirectoryUtils.locateFolder(directory,  Project.BINARY);
+        	bin = DirectoryUtils.locateFolder(directory,  Project.BINARY);
+        if (bin.isEmpty())
+//          Option<File> bin = DirectoryUtils.locateFolder(directory,  Project.BINARY);
+          	bin = DirectoryUtils.locateFolder(directory,  Project.BINARY_3);
+        if (bin.isEmpty())
+//          Option<File> bin = DirectoryUtils.locateFolder(directory,  Project.BINARY);
+          	bin = DirectoryUtils.locateFolder(directory,  Project.BINARY_2);
+
+
+
+        // If there is no 'out' or 'bin' folder then give up
+        if (out.isEmpty() && bin.isEmpty()) {
+        	if (noSrc) {
+                    return sourceFolder;
+                } 
+//            throw new FileNotFoundException();
+        	BinaryFolderNotFound.newCase(directory.getAbsolutePath(), this);
+        	File retVal = new File(directory, Project.BINARY);
+        	retVal.mkdirs();
+//        	project.getClassLoader().setBinaryFileSystemFolderName(retVal.getAbsolutePath());
+        	BinaryFolderMade.newCase(retVal.getAbsolutePath(), this);
+        	return retVal.getAbsoluteFile();
+        	
+        } else {
+            // There can be more folders under it, so look around some more
+            // But first check the class name to see what we are looking for
+            File dir = null;
+            if (out.isDefined()) {
+                dir = out.get();
+            }
+            if (bin.isDefined()) {
+                dir = bin.get();
+            }
+            if (preferredClass == null || preferredClass.isEmpty()) {
+                return dir;
+            }
+
+            if (preferredClass.contains(".")) {
+                Option<File> packageDir = DirectoryUtils.locateFolder(dir, preferredClass.split("\\.")[0]);
+                if (packageDir.isDefined()) {
+                    return packageDir.get().getParentFile();
+                } else {
+                    return dir;
+                }
+            } else {
+                return dir;
+            }
+        }
+    }
+
+    @Override
+    public TraceableLog getTraceableLog() {
+        return traceableLog;
+    }
+
+    @Override
+    public ARunningProject start(String input) throws NotRunnableException {
+        return new ReflectionRunner(this).run(input);
+    }
+
+    @Override
+    public RunningProject launch(String input) throws NotRunnableException {
+        return new ProcessRunner(this).run(input);
+    }
+
+    @Override
+    public RunningProject start(String input, int timeout) throws NotRunnableException {
+        return new ReflectionRunner(this).run(input, timeout);
+    }
+
+    @Override
+    public RunningProject launch(InputGenerator anOutputBasedInputGenerator, String input, int timeout) throws NotRunnableException {
+        return new ProcessRunner(this).run(anOutputBasedInputGenerator, input, timeout);
+    }
+    @Override
+    public RunningProject launch(InputGenerator anOutputBasedInputGenerator, Map<String, String> aProcessToInput, int timeout) throws NotRunnableException {
+        return new ProcessRunner(this).run(anOutputBasedInputGenerator, aProcessToInput, timeout);
+    }
+    
+    @Override
+    public RunningProject launch( String input, int timeout) throws NotRunnableException {
+        return new ProcessRunner(this).run(input, timeout);
+    }
+    @Override
+    public RunningProject launch( String input, String[] anArgs, int timeout) throws NotRunnableException {
+        return new ProcessRunner(this).run(input, anArgs, timeout);
+    }
+
+    @Override
+    public ARunningProject launchInteractive() throws NotRunnableException {
+    	ARunningProject retVal = new InteractiveConsoleProcessRunner(this).run("");
+//    	retVal.createFeatureTranscript();
+    	return retVal;
+//        return new InteractiveConsoleProcessRunner(this).run("");
+    }
+    @Override
+    public ARunningProject launchInteractive(String[] args) throws NotRunnableException {
+    	ARunningProject retVal = new InteractiveConsoleProcessRunner(this).run("", args);
+//    	retVal.createFeatureTranscript();
+    	return retVal;
+//        return new InteractiveConsoleProcessRunner(this).run("");
+    }
+
+    @Override
+    public Option<ClassesManager> getClassesManager() {
+        return classesManager;
+    }
+
+    @Override
+    public File getSourceFolder() {
+        return sourceFolder;
+    }
+    public static void main (String[] args) {
+    	try {
+			BasicGradingEnvironment.get().setLoadClasses(true);
+			Project aProject = new OriginalStandardProject(null, new File("."), null);
+			Class aClass = BasicProjectIntrospection.findClass(aProject, "ACartesianPoint");
+			System.out.println (aClass);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+
+	@Override
+	public boolean isInfinite() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void setInfinite(boolean newVal) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public File getProjectFolder() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public File getBuildFolder() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public File getObjectFolder() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BasicTextManager getTextManager() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getSource() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getCurrentInput() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setCurrentInput(String currentInput) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public StringBuffer getCurrentOutput() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void clearOutput() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setCurrentOutput(StringBuffer currentOutput) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<File> getSourceFiles() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
+]]></snapshot>
+  </Command>
+  <Command __id="42" _type="DiffBasedFileOpenCommand" date="Thu Sep 03 11:20:50 EDT 2020" docASTNodeCount="1134" docActiveCodeLength="8643" docExpressionCount="748" docLength="12478" projectName="comp110-grader" starttimestamp="1599146295260" timestamp="155633">
+    <filePath><![CDATA[C:\Users\ajwortas\git\Grader\src\main\java\framework\project\OriginalStandardProject.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package framework.project;¶¶import framework.execution.ARunningProject;¶import framework.execution.InteractiveConsoleProcessRunner;¶import framework.execution.ProcessRunner;¶import framework.execution.ReflectionRunner;¶import grader.basics.execution.NotRunnableException;¶import grader.basics.execution.RunningProject;¶import grader.basics.project.BasicProjectIntrospection;¶import grader.basics.project.ClassesManager;¶import grader.basics.project.Project;¶import grader.basics.project.source.BasicTextManager;¶import grader.basics.settings.BasicGradingEnvironment;¶import grader.basics.trace.BinaryFolderMade;¶import grader.basics.trace.BinaryFolderNotFound;¶import grader.basics.trace.ProjectFolderNotFound;¶import grader.basics.trace.SourceFolderAssumed;¶import grader.basics.trace.SourceFolderNotFound;¶import grader.basics.util.DirectoryUtils;¶import grader.basics.util.Option;¶import grader.sakai.project.SakaiProject;¶¶import java.io.File;¶import java.io.FileNotFoundException;¶import java.util.List;¶import java.util.Map;¶import java.util.Set;¶¶import util.trace.TraceableLog;¶import util.trace.TraceableLogFactory;¶//import scala.Option;¶import util.pipe.InputGenerator;¶¶/**¶ * A "standard" project. That is, an IDE-based java project.¶ */¶public class OriginalStandardProject implements FatProject {¶    ¶¶    private File directory;¶    private File sourceFolder;¶    private Option<ClassesManager> classesManager;¶    private TraceableLog traceableLog;¶    boolean noSrc;¶    protected SakaiProject project;¶¶    /**¶     * Basic constructor¶     *¶     * @param aDirectory The location of the project¶     * @param name      The name of the project, such as "Assignment1"¶     * @throws FileNotFoundException¶     */¶//    public StandardProject(File directory, String name) throws FileNotFoundException {¶//        // Find the folder. We could be there or it could be in a different folder¶//    	if (directory == null) return;¶//        Option<File> src = DirectoryUtils.locateFolder(directory, "src");¶//        if (src.isEmpty()) {¶//          throw new FileNotFoundException("No src folder");¶////¶////        	noSrc = true;¶////        	sourceFolder = directory;¶////        	this.directory = sourceFolder;¶//        } else {¶//        sourceFolder = src.get();¶//        this.directory = src.get().getParentFile();¶//        }¶//¶//        try {¶//            File sourceFolder = new File(this.directory, "src");¶//            File buildFolder = getBuildFolder("main." + name);¶//            classesManager = Option.apply((ClassesManager) new ProjectClassesManager(buildFolder, sourceFolder));¶//        } catch (Exception e) {¶//            classesManager = Option.empty();¶//        }¶//¶//        // Create the traceable log¶//        traceableLog = TraceableLogFactory.getTraceableLog();¶//¶//    }¶//	public StandardProject(SakaiProject project, File aDirectory, String name) throws FileNotFoundException {¶//		¶//	}¶    // rewriting Josh's code¶    public OriginalStandardProject(SakaiProject aProject, File aDirectory, String name) throws FileNotFoundException {¶        // Find the folder. We could be there or it could be in a different folder¶    	if (aDirectory == null) {¶            throw new FileNotFoundException("No directory given");¶        }¶    	project = aProject;¶    	directory = aDirectory;¶//        Option<File> src = DirectoryUtils.locateFolder(aDirectory, "src");¶        Option<File> src = DirectoryUtils.locateFolder(aDirectory, Project.SOURCE);¶¶        if (src.isEmpty()) {¶        	System.out.println(SourceFolderNotFound.newCase(aDirectory.getAbsolutePath(), this).getMessage());¶¶        	Set<File> sourceFiles = DirectoryUtils.getSourceFiles(aDirectory, null);¶        	if (!sourceFiles.isEmpty()) {¶                    File aSourceFile = sourceFiles.iterator().next();¶                    sourceFolder = aSourceFile.getParentFile(); // assuming no packages!¶                    this.directory = sourceFolder.getParentFile();¶                    SourceFolderAssumed.newCase(sourceFolder.getAbsolutePath(), this);¶        	} else {¶                    System.out.println(ProjectFolderNotFound.newCase(aDirectory.getAbsolutePath(), this).getMessage());¶                    throw new FileNotFoundException("No source files found");¶        	}¶        	noSrc = true;¶//                throw new FileNotFoundException("No src folder");¶//        	sourceFolder = aDirectory;¶//        	this.directory = sourceFolder;¶        } else {¶            sourceFolder = src.get();¶            this.directory = src.get().getParentFile();¶        }¶        ¶¶        try {¶//            File sourceFolder = new File(this.directory, "src");¶            File buildFolder = getBuildFolder("main." + name);¶//            if (AProject.isMakeClassDescriptions())¶            classesManager = Option.apply((ClassesManager) new ProjectClassesManager(this, project, buildFolder, sourceFolder, null));¶        } catch (Exception e) {¶        	e.printStackTrace();¶            classesManager = Option.empty();¶        }¶¶        // Create the traceable log¶        traceableLog = TraceableLogFactory.getTraceableLog();¶    }¶¶    /**¶     * This figures out where the build folder is, taking into account variations due to IDE¶     *¶     * @param preferredClass The name of the class that has the main method, such as "main.Assignment1"¶     * @return The build folder¶     * @throws FileNotFoundException¶     */¶    public File getBuildFolder(String preferredClass) throws FileNotFoundException {¶//        Option<File> out = DirectoryUtils.locateFolder(directory, "out");¶        Option<File> out = DirectoryUtils.locateFolder(directory, Project.BINARY_2);¶//        if (out.isEmpty())¶//        	out = DirectoryUtils.locateFolder(directory, Project.BINARY_0);¶¶        ¶¶//        Option<File> bin = DirectoryUtils.locateFolder(directory, "bin");¶        Option<File> bin = DirectoryUtils.locateFolder(directory,  Project.BINARY_0); // just to handle grader itself, as it has execuot.c¶        if (bin.isEmpty())¶//        Option<File> bin = DirectoryUtils.locateFolder(directory,  Project.BINARY);¶        	bin = DirectoryUtils.locateFolder(directory,  Project.BINARY);¶        if (bin.isEmpty())¶//          Option<File> bin = DirectoryUtils.locateFolder(directory,  Project.BINARY);¶          	bin = DirectoryUtils.locateFolder(directory,  Project.BINARY_3);¶        if (bin.isEmpty())¶//          Option<File> bin = DirectoryUtils.locateFolder(directory,  Project.BINARY);¶          	bin = DirectoryUtils.locateFolder(directory,  Project.BINARY_2);¶¶¶¶        // If there is no 'out' or 'bin' folder then give up¶        if (out.isEmpty() && bin.isEmpty()) {¶        	if (noSrc) {¶                    return sourceFolder;¶                } ¶//            throw new FileNotFoundException();¶        	BinaryFolderNotFound.newCase(directory.getAbsolutePath(), this);¶        	File retVal = new File(directory, Project.BINARY);¶        	retVal.mkdirs();¶//        	project.getClassLoader().setBinaryFileSystemFolderName(retVal.getAbsolutePath());¶        	BinaryFolderMade.newCase(retVal.getAbsolutePath(), this);¶        	return retVal.getAbsoluteFile();¶        	¶        } else {¶            // There can be more folders under it, so look around some more¶            // But first check the class name to see what we are looking for¶            File dir = null;¶            if (out.isDefined()) {¶                dir = out.get();¶            }¶            if (bin.isDefined()) {¶                dir = bin.get();¶            }¶            if (preferredClass == null || preferredClass.isEmpty()) {¶                return dir;¶            }¶¶            if (preferredClass.contains(".")) {¶                Option<File> packageDir = DirectoryUtils.locateFolder(dir, preferredClass.split("\\.")[0]);¶                if (packageDir.isDefined()) {¶                    return packageDir.get().getParentFile();¶                } else {¶                    return dir;¶                }¶            } else {¶                return dir;¶            }¶        }¶    }¶¶    @Override¶    public TraceableLog getTraceableLog() {¶        return traceableLog;¶    }¶¶    @Override¶    public ARunningProject start(String input) throws NotRunnableException {¶        return new ReflectionRunner(this).run(input);¶    }¶¶    @Override¶    public RunningProject launch(String input) throws NotRunnableException {¶        return new ProcessRunner(this).run(input);¶    }¶¶    @Override¶    public RunningProject start(String input, int timeout) throws NotRunnableException {¶        return new ReflectionRunner(this).run(input, timeout);¶    }¶¶    @Override¶    public RunningProject launch(InputGenerator anOutputBasedInputGenerator, String input, int timeout) throws NotRunnableException {¶        return new ProcessRunner(this).run(anOutputBasedInputGenerator, input, timeout);¶    }¶    @Override¶    public RunningProject launch(InputGenerator anOutputBasedInputGenerator, Map<String, String> aProcessToInput, int timeout) throws NotRunnableException {¶        return new ProcessRunner(this).run(anOutputBasedInputGenerator, aProcessToInput, timeout);¶    }¶    ¶    @Override¶    public RunningProject launch( String input, int timeout) throws NotRunnableException {¶        return new ProcessRunner(this).run(input, timeout);¶    }¶    @Override¶    public RunningProject launch( String input, String[] anArgs, int timeout) throws NotRunnableException {¶        return new ProcessRunner(this).run(input, anArgs, timeout);¶    }¶¶    @Override¶    public ARunningProject launchInteractive() throws NotRunnableException {¶    	ARunningProject retVal = new InteractiveConsoleProcessRunner(this).run("");¶//    	retVal.createFeatureTranscript();¶    	return retVal;¶//        return new InteractiveConsoleProcessRunner(this).run("");¶    }¶    @Override¶    public ARunningProject launchInteractive(String[] args) throws NotRunnableException {¶    	ARunningProject retVal = new InteractiveConsoleProcessRunner(this).run("", args);¶//    	retVal.createFeatureTranscript();¶    	return retVal;¶//        return new InteractiveConsoleProcessRunner(this).run("");¶    }¶¶    @Override¶    public Option<ClassesManager> getClassesManager() {¶        return classesManager;¶    }¶¶    @Override¶    public File getSourceFolder() {¶        return sourceFolder;¶    }¶    public static void main (String[] args) {¶    	try {¶			BasicGradingEnvironment.get().setLoadClasses(true);¶			Project aProject = new OriginalStandardProject(null, new File("."), null);¶			Class aClass = BasicProjectIntrospection.findClass(aProject, "ACartesianPoint");¶			System.out.println (aClass);¶		} catch (FileNotFoundException e) {¶			// TODO Auto-generated catch block¶			e.printStackTrace();¶		}¶    }¶¶	@Override¶	public boolean isInfinite() {¶		// TODO Auto-generated method stub¶		return false;¶	}¶¶	@Override¶	public void setInfinite(boolean newVal) {¶		// TODO Auto-generated method stub¶		¶	}¶¶	@Override¶	public File getProjectFolder() {¶		// TODO Auto-generated method stub¶		return null;¶	}¶¶	@Override¶	public File getBuildFolder() {¶		// TODO Auto-generated method stub¶		return null;¶	}¶¶	@Override¶	public File getObjectFolder() {¶		// TODO Auto-generated method stub¶		return null;¶	}¶¶	@Override¶	public BasicTextManager getTextManager() {¶		// TODO Auto-generated method stub¶		return null;¶	}¶¶	@Override¶	public String getSource() {¶		// TODO Auto-generated method stub¶		return null;¶	}¶¶	@Override¶	public String getCurrentInput() {¶		// TODO Auto-generated method stub¶		return null;¶	}¶¶	@Override¶	public void setCurrentInput(String currentInput) {¶		// TODO Auto-generated method stub¶		¶	}¶¶	@Override¶	public StringBuffer getCurrentOutput() {¶		// TODO Auto-generated method stub¶		return null;¶	}¶¶	@Override¶	public void clearOutput() {¶		// TODO Auto-generated method stub¶		¶	}¶¶	@Override¶	public void setCurrentOutput(StringBuffer currentOutput) {¶		// TODO Auto-generated method stub¶		¶	}¶¶	@Override¶	public List<File> getSourceFiles() {¶		// TODO Auto-generated method stub¶		return null;¶	}¶}¶")]]]></diff>
+  </Command>
+  <Command __id="44" _type="DiffBasedFileOpenCommand" date="Thu Sep 03 11:21:04 EDT 2020" docASTNodeCount="386" docActiveCodeLength="2625" docExpressionCount="320" docLength="4884" projectName="Comp524LocalChecks" starttimestamp="1599146295260" timestamp="168781">
+    <filePath><![CDATA[C:\Users\ajwortas\git\Comp524LocalChecks\src\gradingTools\comp524f20\assignment0_1\testcases\GreetingCheckstyle.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package gradingTools.comp524f20.assignment0_1.testcases;¶¶import java.util.Arrays;¶import java.util.List;¶import java.util.Map;¶import java.util.Set;¶import java.util.regex.Pattern;¶¶import grader.basics.config.BasicExecutionSpecificationSelector;¶import grader.basics.execution.NotRunnableException;¶import grader.basics.execution.RunningProject;¶import grader.basics.junit.JUnitTestsEnvironment;¶import grader.basics.junit.NotAutomatableException;¶import grader.basics.junit.TestCaseResult;¶import grader.basics.project.NotGradableException;¶import grader.basics.project.Project;¶import grader.basics.project.source.ABasicTextManager;¶import grader.basics.testcase.PassFailJUnitTestCase;¶import gradingTools.comp524f19.assignment1.testcases.MainClassProvided;¶import gradingTools.shared.testcases.SubstringSequenceChecker;¶import gradingTools.shared.testcases.openmp.OpenMPPragma;¶import gradingTools.shared.testcases.openmp.OpenMPUtils;¶import gradingTools.shared.testcases.openmp.scannedTree.AssignmentSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.ExternalMethodSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.ForSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.MethodSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.OMPForSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.OMPParallelSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.OMPSNodeUtils;¶import gradingTools.shared.testcases.openmp.scannedTree.RootOfFileSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.RootOfProgramSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.SNode;¶import gradingTools.shared.testcases.utils.LinesMatchKind;¶import gradingTools.shared.testcases.utils.LinesMatcher;¶import gradingTools.utils.RunningProjectUtils;¶import util.annotations.MaxValue;¶@MaxValue(0)¶public class GreetingCheckstyle extends PassFailJUnitTestCase {¶	public static final int TIME_OUT_SECS = 1; // secs¶	protected SubstringSequenceChecker checker = new AGreetingChecker();	¶¶	public GreetingCheckstyle() {¶	}¶¶	¶¶	@Override¶	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,¶			NotGradableException {¶		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().¶		setCheckStyleConfiguration("unc_checks_524_A0_1.xml");¶		String aText = project.getCheckstyleText();¶		System.out.println("Checkstyle text:\n" + aText);¶		return pass();¶		¶			¶¶		¶	}¶//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {¶//		for (SNode anSNode:aRootOfFileSNode.getChildren()) {¶//			if (anSNode instanceof ExternalMethodSNode) {¶//				processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);¶//			}¶//		}¶//	}¶//	public static void processExternalMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {¶//		MethodSNode aMethodSNode = aRootOfProgramSNode.getExternalToInternalMethod().get(anExternalMethodSNode.toString());¶//		if (aMethodSNode == null) {¶//			aMethodSNode = findMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, anExternalMethodSNode);¶//			if (aMethodSNode != null) {¶//				aRootOfProgramSNode.getExternalToInternalMethod().put(anExternalMethodSNode.toString(),aMethodSNode );¶//			}¶//		}¶//		if (aMethodSNode != null) {¶//			anExternalMethodSNode.setActualMethodSNode(aMethodSNode);¶//		}¶//	}¶//	public static MethodSNode findMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {¶////		MethodSNode foundMethodSNode = null;¶//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {¶//			if (aFileName.equals(aRootOfFileSNode.getFileName()))¶//				continue;¶//			¶//			RootOfFileSNode aSearchedRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);¶//			 for (SNode anSNode:aSearchedRootOfFileSNode.getChildren()) {¶//				if (anSNode instanceof MethodSNode && !(anSNode instanceof ExternalMethodSNode)) {¶//					if (anSNode.toString().equals(anExternalMethodSNode)) {¶//						return (MethodSNode) anSNode;¶//						¶//					}¶////					processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);¶//				}¶//			}¶//		}¶//		return null;¶//	}¶//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode) {¶//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {¶//			RootOfFileSNode aRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);¶//			processExternalMethodSNodes(aRootOfProgramSNode, aRootOfFileSNode);¶//			¶//		}¶//¶//	}¶}¶")]]]></diff>
+  </Command>
+  <Command __id="58" _type="DiffBasedFileOpenCommand" date="Thu Sep 03 11:23:39 EDT 2020" docASTNodeCount="211" docActiveCodeLength="2859" docExpressionCount="159" docLength="3055" projectName="Comp401AllChecks" starttimestamp="1599146295260" timestamp="324458">
+    <filePath><![CDATA[C:\Users\ajwortas\git\Comp401AllChecks\src\gradingTools\comp401f16\assignment1\Assignment1Requirements.java]]></filePath>
+    <diff><![CDATA[null]]></diff>
+    <snapshot><![CDATA[package gradingTools.comp401f16.assignment1;
+
+import grader.basics.execution.GradingMode;
+import grader.junit.AJUnitProjectRequirements;
+import gradingTools.comp401f15.assignment1.testcases.ImageEnclosedTestCase;
+import gradingTools.comp401f16.assignment1.testcases.Assignment1Suite;
+import gradingTools.sharedTestCase.checkstyle.CheckstyleMethodCalledTestCase;
+import gradingTools.sharedTestCase.checkstyle.CheckStyleIllegalImportOrCallTestCase;
+
+
+public class Assignment1Requirements extends AJUnitProjectRequirements {
+	public static final String MAIN_SUBSTRING = "main.Assignment";
+	public static final String ITERATOR_SUSTRING = "ScanningIterator";
+    public Assignment1Requirements() {
+    	addDueDate("09/01/2016 00:59:00", 1.05); // wed before
+    	addDueDate("09/03/2016 00:59:00", 1); // fri due
+    	addDueDate("09/06/2016 00:59:00", 0.95);// mon after due
+    	addDueDate("09/10/2016 00:59:00", 0.85); // fri after due
+    	addDueDate("12/12/2016 00:59:00", 0.8); // infinity
+    	
+        // Functionality
+    	addJUnitTestSuite(Assignment1Suite.class);
+    	GradingMode.setGraderRun(true);
+    	
+    	// Method calls
+    	addFeature("Required Methods Called in Main or Iterator", 15, 
+//    	   		new CheckstyleMethodDefinedTestCase("Parser", 	"@parseNumber:\\*->\\*"),
+    	   		new CheckstyleMethodCalledTestCase(
+    	   				"main.Assignment", 
+    	   				"processInput:->void"),
+    	   		new CheckstyleMethodCalledTestCase(
+    	    	   		"main.Assignment",    	    	   		
+    	    	   		"indexOf:String;char;int->int"),
+    	    	 new CheckstyleMethodCalledTestCase(
+    	    	    	"main.Assignment",  		
+    	    	   		"scanString:String->void"    	    	   		
+    	    	   		)
+    	    	
+    	); 
+    	// Method calls
+    	addFeature("IndexOf  Called in Iterator", 5, true,
+
+    	    	 new CheckstyleMethodCalledTestCase(
+    	    	    	"ScanningIterator",    	    	   		
+    	    	    	 "indexOf:String;char;int->int"));    	
+    	addFeature("indexOfNot Called in Main", 3, true,
+    	   		new CheckstyleMethodCalledTestCase(
+    	    	   		"main.Assignment",    	    	   		
+    	    	   		"indexOfNot:String;char;int->int")    	    	 
+    			
+    	    	 );
+    	addFeature("IndexOfNot Called in Iterator", 3, true,
+    	   		   	    	 
+    			new CheckstyleMethodCalledTestCase(
+    	   				"ScanningIterator",    	    	   		
+    	    	   		"indexOfNot:String;char;int->int")
+    	    	 );
+    	addFeature("Iterator Methods Called in Main", 10, true,
+    	   		new CheckstyleMethodCalledTestCase(
+    	   				"main.Assignment", 
+    	   				"!hasNext:->boolean"),
+    	   		new CheckstyleMethodCalledTestCase(
+    	    	   		"main.Assignment",    	    	   		
+    	    	   		"!next:->String"));
+    	
+        addFeature("Screenshots enclosed", 5, new ImageEnclosedTestCase());
+        addManualFeature("Screenshots show tests", 10, false);
+        addRestriction("Illegal import or call", 25, new CheckStyleIllegalImportOrCallTestCase());
+        
+
+
+    }
+}
+]]></snapshot>
+  </Command>
+  <Command __id="60" _type="DiffBasedFileOpenCommand" date="Thu Sep 03 11:23:59 EDT 2020" docASTNodeCount="386" docActiveCodeLength="2625" docExpressionCount="320" docLength="4884" projectName="Comp524LocalChecks" starttimestamp="1599146295260" timestamp="344143">
+    <filePath><![CDATA[C:\Users\ajwortas\git\Comp524LocalChecks\src\gradingTools\comp524f20\assignment0_1\testcases\GreetingCheckstyle.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package gradingTools.comp524f20.assignment0_1.testcases;¶¶import java.util.Arrays;¶import java.util.List;¶import java.util.Map;¶import java.util.Set;¶import java.util.regex.Pattern;¶¶import grader.basics.config.BasicExecutionSpecificationSelector;¶import grader.basics.execution.NotRunnableException;¶import grader.basics.execution.RunningProject;¶import grader.basics.junit.JUnitTestsEnvironment;¶import grader.basics.junit.NotAutomatableException;¶import grader.basics.junit.TestCaseResult;¶import grader.basics.project.NotGradableException;¶import grader.basics.project.Project;¶import grader.basics.project.source.ABasicTextManager;¶import grader.basics.testcase.PassFailJUnitTestCase;¶import gradingTools.comp524f19.assignment1.testcases.MainClassProvided;¶import gradingTools.shared.testcases.SubstringSequenceChecker;¶import gradingTools.shared.testcases.openmp.OpenMPPragma;¶import gradingTools.shared.testcases.openmp.OpenMPUtils;¶import gradingTools.shared.testcases.openmp.scannedTree.AssignmentSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.ExternalMethodSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.ForSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.MethodSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.OMPForSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.OMPParallelSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.OMPSNodeUtils;¶import gradingTools.shared.testcases.openmp.scannedTree.RootOfFileSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.RootOfProgramSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.SNode;¶import gradingTools.shared.testcases.utils.LinesMatchKind;¶import gradingTools.shared.testcases.utils.LinesMatcher;¶import gradingTools.utils.RunningProjectUtils;¶import util.annotations.MaxValue;¶@MaxValue(0)¶public class GreetingCheckstyle extends PassFailJUnitTestCase {¶	public static final int TIME_OUT_SECS = 1; // secs¶	protected SubstringSequenceChecker checker = new AGreetingChecker();	¶¶	public GreetingCheckstyle() {¶	}¶¶	¶¶	@Override¶	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,¶			NotGradableException {¶		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().¶		setCheckStyleConfiguration("unc_checks_524_A0_1.xml");¶		String aText = project.getCheckstyleText();¶		System.out.println("Checkstyle text:\n" + aText);¶		return pass();¶		¶			¶¶		¶	}¶//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {¶//		for (SNode anSNode:aRootOfFileSNode.getChildren()) {¶//			if (anSNode instanceof ExternalMethodSNode) {¶//				processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);¶//			}¶//		}¶//	}¶//	public static void processExternalMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {¶//		MethodSNode aMethodSNode = aRootOfProgramSNode.getExternalToInternalMethod().get(anExternalMethodSNode.toString());¶//		if (aMethodSNode == null) {¶//			aMethodSNode = findMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, anExternalMethodSNode);¶//			if (aMethodSNode != null) {¶//				aRootOfProgramSNode.getExternalToInternalMethod().put(anExternalMethodSNode.toString(),aMethodSNode );¶//			}¶//		}¶//		if (aMethodSNode != null) {¶//			anExternalMethodSNode.setActualMethodSNode(aMethodSNode);¶//		}¶//	}¶//	public static MethodSNode findMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {¶////		MethodSNode foundMethodSNode = null;¶//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {¶//			if (aFileName.equals(aRootOfFileSNode.getFileName()))¶//				continue;¶//			¶//			RootOfFileSNode aSearchedRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);¶//			 for (SNode anSNode:aSearchedRootOfFileSNode.getChildren()) {¶//				if (anSNode instanceof MethodSNode && !(anSNode instanceof ExternalMethodSNode)) {¶//					if (anSNode.toString().equals(anExternalMethodSNode)) {¶//						return (MethodSNode) anSNode;¶//						¶//					}¶////					processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);¶//				}¶//			}¶//		}¶//		return null;¶//	}¶//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode) {¶//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {¶//			RootOfFileSNode aRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);¶//			processExternalMethodSNodes(aRootOfProgramSNode, aRootOfFileSNode);¶//			¶//		}¶//¶//	}¶}¶")]]]></diff>
+  </Command>
+  <Command __id="74" _type="DiffBasedFileOpenCommand" date="Thu Sep 03 11:28:57 EDT 2020" docASTNodeCount="386" docActiveCodeLength="2625" docExpressionCount="320" docLength="4884" projectName="Comp524LocalChecks" starttimestamp="1599146295260" timestamp="642238">
+    <filePath><![CDATA[C:\Users\ajwortas\git\Comp524LocalChecks\src\gradingTools\comp524f20\assignment0_1\testcases\GreetingCheckstyle.java]]></filePath>
+    <diff><![CDATA[[Diff(EQUAL,"package gradingTools.comp524f20.assignment0_1.testcases;¶¶import java.util.Arrays;¶import java.util.List;¶import java.util.Map;¶import java.util.Set;¶import java.util.regex.Pattern;¶¶import grader.basics.config.BasicExecutionSpecificationSelector;¶import grader.basics.execution.NotRunnableException;¶import grader.basics.execution.RunningProject;¶import grader.basics.junit.JUnitTestsEnvironment;¶import grader.basics.junit.NotAutomatableException;¶import grader.basics.junit.TestCaseResult;¶import grader.basics.project.NotGradableException;¶import grader.basics.project.Project;¶import grader.basics.project.source.ABasicTextManager;¶import grader.basics.testcase.PassFailJUnitTestCase;¶import gradingTools.comp524f19.assignment1.testcases.MainClassProvided;¶import gradingTools.shared.testcases.SubstringSequenceChecker;¶import gradingTools.shared.testcases.openmp.OpenMPPragma;¶import gradingTools.shared.testcases.openmp.OpenMPUtils;¶import gradingTools.shared.testcases.openmp.scannedTree.AssignmentSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.ExternalMethodSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.ForSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.MethodSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.OMPForSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.OMPParallelSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.OMPSNodeUtils;¶import gradingTools.shared.testcases.openmp.scannedTree.RootOfFileSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.RootOfProgramSNode;¶import gradingTools.shared.testcases.openmp.scannedTree.SNode;¶import gradingTools.shared.testcases.utils.LinesMatchKind;¶import gradingTools.shared.testcases.utils.LinesMatcher;¶import gradingTools.utils.RunningProjectUtils;¶import util.annotations.MaxValue;¶@MaxValue(0)¶public class GreetingCheckstyle extends PassFailJUnitTestCase {¶	public static final int TIME_OUT_SECS = 1; // secs¶	protected SubstringSequenceChecker checker = new AGreetingChecker();	¶¶	public GreetingCheckstyle() {¶	}¶¶	¶¶	@Override¶	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,¶			NotGradableException {¶		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().¶		setCheckStyleConfiguration("unc_checks_524_A0_1.xml");¶		String aText = project.getCheckstyleText();¶		System.out.println("Checkstyle text:\n" + aText);¶		return pass();¶		¶			¶¶		¶	}¶//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {¶//		for (SNode anSNode:aRootOfFileSNode.getChildren()) {¶//			if (anSNode instanceof ExternalMethodSNode) {¶//				processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);¶//			}¶//		}¶//	}¶//	public static void processExternalMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {¶//		MethodSNode aMethodSNode = aRootOfProgramSNode.getExternalToInternalMethod().get(anExternalMethodSNode.toString());¶//		if (aMethodSNode == null) {¶//			aMethodSNode = findMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, anExternalMethodSNode);¶//			if (aMethodSNode != null) {¶//				aRootOfProgramSNode.getExternalToInternalMethod().put(anExternalMethodSNode.toString(),aMethodSNode );¶//			}¶//		}¶//		if (aMethodSNode != null) {¶//			anExternalMethodSNode.setActualMethodSNode(aMethodSNode);¶//		}¶//	}¶//	public static MethodSNode findMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {¶////		MethodSNode foundMethodSNode = null;¶//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {¶//			if (aFileName.equals(aRootOfFileSNode.getFileName()))¶//				continue;¶//			¶//			RootOfFileSNode aSearchedRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);¶//			 for (SNode anSNode:aSearchedRootOfFileSNode.getChildren()) {¶//				if (anSNode instanceof MethodSNode && !(anSNode instanceof ExternalMethodSNode)) {¶//					if (anSNode.toString().equals(anExternalMethodSNode)) {¶//						return (MethodSNode) anSNode;¶//						¶//					}¶////					processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);¶//				}¶//			}¶//		}¶//		return null;¶//	}¶//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode) {¶//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {¶//			RootOfFileSNode aRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);¶//			processExternalMethodSNodes(aRootOfProgramSNode, aRootOfFileSNode);¶//			¶//		}¶//¶//	}¶}¶")]]]></diff>
+  </Command>
+  <Command __id="73" _type="ShellCommand" date="Thu Sep 03 11:28:41 EDT 2020" starttimestamp="1599146295260" timestamp="626118" type="ECLIPSE_GAINED_FOCUS" />
+  <Command __id="76" _type="MoveCaretCommand" caretOffset="0" date="Thu Sep 03 11:29:21 EDT 2020" docOffset="0" starttimestamp="1599146295260" timestamp="665947" />
+  <Command __id="77" _type="ShellCommand" date="Thu Sep 03 11:38:01 EDT 2020" starttimestamp="1599146295260" timestamp="1186143" type="ECLIPSE_LOST_FOCUS" />
+</Events>

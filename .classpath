@@ -3,16 +3,20 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/GraderBasics"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="/GraderBasics/lib/commons-configuration-1.9.jar"/>
-	<classpathentry kind="lib" path="/GraderBasics/lib/commons-lang-2.6.jar"/>
-	<classpathentry kind="lib" path="/GraderBasics/lib/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_251">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/LispInterpreterRelease"/>
-	<classpathentry kind="lib" path="/GraderBasics/lib/diff_match_patch-current.jar"/>
-	<classpathentry kind="lib" path="/GraderBasics/lib/opencsv-2.3.jar"/>
-	<classpathentry kind="lib" path="/GraderBasics/lib/oeall22.jar" sourcepath="/util/src"/>
-	<classpathentry kind="lib" path="/GraderBasics/lib/checkstyle-8.33-all.jar"/>
-	<classpathentry kind="lib" path="/GraderBasics/lib/UNCChecks-8.jar"/>
-	<classpathentry kind="lib" path="G:/My Drive/Java/lib/Herrmes/lib/weka3_6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ajwortas/OneDrive/Dewan_Jars/524_LA/checkstyle-8.33-all.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ajwortas/OneDrive/Dewan_Jars/524_LA/commons-configuration-1.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ajwortas/OneDrive/Dewan_Jars/524_LA/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ajwortas/OneDrive/Dewan_Jars/524_LA/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ajwortas/OneDrive/Dewan_Jars/524_LA/diff_match_patch-current.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ajwortas/OneDrive/Dewan_Jars/524_LA/oeall22.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ajwortas/OneDrive/Dewan_Jars/524_LA/opencsv-2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ajwortas/OneDrive/Dewan_Jars/524_LA/UNCChecks-8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ajwortas/OneDrive/Dewan_Jars/524_LA/weka3_6.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -41,13 +41,26 @@ public class BasicMainTest extends PassFailJUnitTestCase {
 	public static final int TIME_OUT_SECS = 1; // secs
 	protected SubstringSequenceChecker checker = new ABasicMainChecker();	
 	
+	private static final String SMALL_DISTANCE="6",MEDIUM_DISTANCE="13",LARGE_DISTANCE="27";
+	private static final String SMALL_DURATION="15",MEDIUM_DURATION="30",LARGE_DURATION="120";
+	private static final String SMALL_EXHALATION="10",MEDIUM_EXHALATION="30",LARGE_EXHALATION="50";
 
 	public BasicMainTest() {
 	}
 
 	static String[] inputs = {
-			"13", "30", "20", 
-			"14", "29", "19",
+			
+			"10","10","10",
+			
+			MEDIUM_DISTANCE,MEDIUM_DURATION,MEDIUM_EXHALATION, //1
+			SMALL_DISTANCE,MEDIUM_DURATION,SMALL_EXHALATION,
+			LARGE_DISTANCE,MEDIUM_DURATION,LARGE_EXHALATION, //all after here false for given
+			
+			SMALL_DISTANCE,SMALL_DURATION,SMALL_EXHALATION, //3
+			SMALL_DISTANCE,"16",SMALL_EXHALATION,
+			"5","14","9",
+			LARGE_DISTANCE,LARGE_DURATION,LARGE_EXHALATION,//false values
+			
 			"-1"
 	};
 
@@ -77,7 +90,7 @@ public class BasicMainTest extends PassFailJUnitTestCase {
 			if (aRunningProject == null) {
 				return fail ("Could not create project. See console messages.");
 			}
-
+			//test
 			String anOutput = aRunningProject.await();
 			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			boolean aRetval = checker.check(aLinesMatcher, LinesMatchKind.ONE_TIME_LINE, Pattern.DOTALL);
