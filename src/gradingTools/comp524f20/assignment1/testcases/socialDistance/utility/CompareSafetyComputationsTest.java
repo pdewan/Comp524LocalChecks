@@ -7,9 +7,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import grader.basics.config.BasicExecutionSpecification;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.execution.BasicProjectExecution;
 import grader.basics.execution.NotRunnableException;
+import grader.basics.execution.ResultWithOutput;
 import grader.basics.execution.RunningProject;
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
@@ -40,75 +42,109 @@ import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import main.ClassRegistry;
 import util.annotations.MaxValue;
-public class IsInferredSafeTest extends PassFailJUnitTestCase {
-	public static final int TIME_OUT_MSECS = 100; // secs
+import util.trace.Tracer;
+@MaxValue(6)
+public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyValidator {
+	public static final int TIME_OUT_MSECS = 300; // secs
 	
-	protected Class[] parameterTypes= {Integer.TYPE,Integer.TYPE,Integer.TYPE};
-	protected Object[][] arguments={
-		{1,1,1},
-		{255,255,255},
-		
-	};
-	protected Object[] results={
-		true,
-		false,
+	protected final String derivedMethodName = "isDerivedSafe";
+	protected final String inferredMethodName = "isInferredSafe";
 	
-	};
+	public CompareSafetyComputationsTest() {
+	}	
 	
-	protected String methodName="isInferredSafe";
-	
-	protected Object[] getResult() {
-		return results;
+	protected  String derivedMethodName() {
+		return derivedMethodName;
 	}
 	
-	protected Object[][] getArguments(){
-		return arguments;		
-	};
-	protected Class[] getParameterTypes() {
-		return parameterTypes;
-	};
-
-	public IsInferredSafeTest() {
-	}
-
-	
+	@Override
 	protected String methodName() {
-		return methodName;
-	};
+		return inferredMethodName;
+	}
+	
+	protected  String inferredMethodName() {
+		return inferredMethodName;
+	}
+
+	
+	protected boolean isOutputValid(String[] anOutputLines,Class aUtilityClass,Method aDerivedVerifyingMethod,Method aInferredVerifyingMethod) throws Throwable {
+		
+		for(int i=0;i<anOutputLines.length;i++) {
+			if(i==0) 
+				if(anOutputLines[i].matches("[Dd]istance,[Dd]uration,[Ee]xhalation,[Dd]erived,[Ii]nferred\n*?"))
+					continue;
+				else {
+					System.out.println("Initial line does not match required format: [Dd]istance,[Dd]uration,[Ee]xhalation,[Dd]erived,[Ii]nferred");
+					return false;
+				}
+			String [] anOutputComponents=anOutputLines[i].split(",");
+			if(anOutputComponents.length!=5)
+				throw new NotGradableException("Output does not have 5 command separated components");
+			
+			String dataValues=anOutputComponents[0]+","+anOutputComponents[1]+","+anOutputComponents[2]+",";
+			if(!(verify(dataValues+anOutputComponents[4],aUtilityClass,aDerivedVerifyingMethod)
+			    &verify(dataValues+anOutputComponents[5],aUtilityClass,aInferredVerifyingMethod)))
+				return false;
+			
+			
+		}
+		
+		
+	    return true;
+	}
 	
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		try {
 			SocialDistanceUtilityProvided aSocialDistanceUilityProvided = (SocialDistanceUtilityProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceUtilityProvided.class);
-			Class aUilityClass = aSocialDistanceUilityProvided.getRequiredClass();
+			Class aUtilityClass = aSocialDistanceUilityProvided.getRequiredClass();
 			
 //			SocialDistanceClassRegistry aClassRegistry = aClassRegistryProvided.getTimingOutClassRegistryProxy();  
-		    if (aUilityClass == null) {
+		    if (aUtilityClass == null) {
 		    	return fail ("No utility class");
 		    }
-		    Class[] aParameterTypes = getParameterTypes();
-		    Method aMethod = aUilityClass.getMethod(methodName(), aParameterTypes);
-		    Object[][] anArguments = getArguments();
-		    Object[] aResults=getResult();
-		    int aNumSuccesses = 0;
-		    for (int anIndex = 0; anIndex < anArguments.length; anIndex++ ) {
-		    	Object[] anInputCombination = anArguments[anIndex];
-		    	Object anExpectedResult = aResults[anIndex];
-			    Boolean aRetVal =  (Boolean) BasicProjectExecution.timedInvoke(aUilityClass, aMethod, anInputCombination, TIME_OUT_MSECS);
-			    
-			    if (!anExpectedResult.equals(aRetVal )) {
-		    		System.out.println("Expected retVal with args " + Arrays.toString(anInputCombination) + " did not return " + anExpectedResult);
-			    } else {
-			    	aNumSuccesses++;
-			    }
-
+		    Class[] aParameterTypes = argumentTypes();
+		    Method aMethod = aUtilityClass.getMethod(methodName(), aParameterTypes);
+		    Object[] anArguments = getArguments();
+		    ResultWithOutput aResultWithOutput1 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
+		    
+		    String anOutput1 = aResultWithOutput1.getOutput();
+		    if (anOutput1 == null || anOutput1.isEmpty() ) {
+		    	return fail("No Output");
 		    }
-		    double aPercentage = ((double) aNumSuccesses)/aResults.length;
-		    return aPercentage == 1?pass():partialPass(aPercentage, aNumSuccesses + " tests passed out of " +   aResults.length);  
-
+		    
+		    String [] anOutputLines1 = anOutput1.split("\n");
+		    if (anOutputLines1.length != 11) {
+		    	return fail("Output does not match desired line length");
+		    }
+		    
+		    ResultWithOutput aResultWithOutput2 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
+		    
+		    String anOutput2 = aResultWithOutput2.getOutput();
+		    if (anOutput2 == null || anOutput2.isEmpty() ) {
+		    	return fail("No Output");
+		    }
+		    
+		    String [] anOutputLines2 = anOutput2.split("\n");
+		    if (anOutputLines2.length != 11) {
+		    	return fail("Output does not match desired line length");
+		    }
+		    
+		    if (anOutput1.equals(anOutput2)) {
+		    	return fail("Two successive calls return same output");
+		    }
+		   
+		    Method aVerifyingMethodDerived =  aUtilityClass.getMethod(derivedMethodName(), verifyingArgumentTypes()); 
+		    Method aVerifyingMethodInferred=  aUtilityClass.getMethod(inferredMethodName(), verifyingArgumentTypes());
+		    
+		    boolean passing=isOutputValid(anOutputLines1,aUtilityClass,aVerifyingMethodDerived,aVerifyingMethodInferred)
+		    			  &&isOutputValid(anOutputLines2,aUtilityClass,aVerifyingMethodDerived,aVerifyingMethodInferred);
+		    
+		    return passing?pass():fail("View console output for more information");
 
 		} catch ( Throwable e) {
+			System.err.println(e);
 			throw new NotGradableException();
 		}
 	}
@@ -158,4 +194,6 @@ public class IsInferredSafeTest extends PassFailJUnitTestCase {
 //		}
 //
 //	}
+
+
 }

@@ -29,7 +29,7 @@ import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 	IsInterpolatedTwoParameterSafetyTest.class,
 	IsInterpolatedOneParameterSafetyTest.class,
 	DerivedSafetyTest.class,
-	PrintGeneratedCombinationTest.class,
+	PrintGeneratedCombinationDerivedSafetyTest.class,
 	PrintGivenAndGeneratedCombinationTest.class,
 	GenerateSafeDistancesAndDurationsTest.class,
 	PrintSafeDistancesAndDurationsTest.class

@@ -7,9 +7,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import grader.basics.config.BasicExecutionSpecification;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.execution.BasicProjectExecution;
 import grader.basics.execution.NotRunnableException;
+import grader.basics.execution.ResultWithOutput;
 import grader.basics.execution.RunningProject;
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
@@ -40,75 +42,65 @@ import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import main.ClassRegistry;
 import util.annotations.MaxValue;
-public class IsInferredSafeTest extends PassFailJUnitTestCase {
-	public static final int TIME_OUT_MSECS = 100; // secs
+import util.trace.Tracer;
+@MaxValue(6)
+public class PrintGeneratedCombinationInferredSafetyTest extends AbstractPrintDerivedSafetyValidator {
+	public static final int TIME_OUT_MSECS = 300; // secs
 	
-	protected Class[] parameterTypes= {Integer.TYPE,Integer.TYPE,Integer.TYPE};
-	protected Object[][] arguments={
-		{1,1,1},
-		{255,255,255},
-		
-	};
-	protected Object[] results={
-		true,
-		false,
-	
-	};
-	
-	protected String methodName="isInferredSafe";
-	
-	protected Object[] getResult() {
-		return results;
-	}
-	
-	protected Object[][] getArguments(){
-		return arguments;		
-	};
-	protected Class[] getParameterTypes() {
-		return parameterTypes;
-	};
+	protected final String methodName = "printGeneratedCombinationInferredSafety";
 
-	public IsInferredSafeTest() {
-	}
 
-	
-	protected String methodName() {
+	public PrintGeneratedCombinationInferredSafetyTest() {
+	}
+	@Override
+	protected  String methodName() {
 		return methodName;
-	};
+	}
 	
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		try {
 			SocialDistanceUtilityProvided aSocialDistanceUilityProvided = (SocialDistanceUtilityProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceUtilityProvided.class);
-			Class aUilityClass = aSocialDistanceUilityProvided.getRequiredClass();
+			Class aUtilityClass = aSocialDistanceUilityProvided.getRequiredClass();
 			
 //			SocialDistanceClassRegistry aClassRegistry = aClassRegistryProvided.getTimingOutClassRegistryProxy();  
-		    if (aUilityClass == null) {
+		    if (aUtilityClass == null) {
 		    	return fail ("No utility class");
 		    }
-		    Class[] aParameterTypes = getParameterTypes();
-		    Method aMethod = aUilityClass.getMethod(methodName(), aParameterTypes);
-		    Object[][] anArguments = getArguments();
-		    Object[] aResults=getResult();
-		    int aNumSuccesses = 0;
-		    for (int anIndex = 0; anIndex < anArguments.length; anIndex++ ) {
-		    	Object[] anInputCombination = anArguments[anIndex];
-		    	Object anExpectedResult = aResults[anIndex];
-			    Boolean aRetVal =  (Boolean) BasicProjectExecution.timedInvoke(aUilityClass, aMethod, anInputCombination, TIME_OUT_MSECS);
-			    
-			    if (!anExpectedResult.equals(aRetVal )) {
-		    		System.out.println("Expected retVal with args " + Arrays.toString(anInputCombination) + " did not return " + anExpectedResult);
-			    } else {
-			    	aNumSuccesses++;
-			    }
-
+		    Class[] aParameterTypes = argumentTypes();
+		    Method aMethod = aUtilityClass.getMethod(methodName(), aParameterTypes);
+		    Object[] anArguments = getArguments();
+		    ResultWithOutput aResultWithOutput1 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
+		    
+		    String anOutput1 = aResultWithOutput1.getOutput();
+		    if (anOutput1 == null || anOutput1.isEmpty() ) {
+		    	return fail("No Output");
 		    }
-		    double aPercentage = ((double) aNumSuccesses)/aResults.length;
-		    return aPercentage == 1?pass():partialPass(aPercentage, aNumSuccesses + " tests passed out of " +   aResults.length);  
+		    
+//		    String[] anOutputLines = anOutput.split("\n");
+		    ResultWithOutput aResultWithOutput2 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
 
+		    String anOutput2 = aResultWithOutput2.getOutput();
+		    if (anOutput2 == null || anOutput2.isEmpty()) {
+		    	return fail("No Output");
+		    }
+		    
+		    if (anOutput1.equals(anOutput2)) {
+		    	return fail("Two successive calls return same output");
+		    }
+		    Method aVerifyingMethod =  aUtilityClass.getMethod(verifyingMethodName(), verifyingArgumentTypes()); 
+//		    Boolean aFirstValPassed = verify(anOutput1,aUtilityClass, aVerifyingMethod);
+		    
+		    if (verify(anOutput1,aUtilityClass, aVerifyingMethod) && verify(anOutput2, aUtilityClass, aVerifyingMethod)) {
+		    	return pass();
+		    }
+		    return fail("One or more outputs of " + methodName() + " not consistent with result of method:" + verifyingMethodName);
+//		    String[] anOutputLines = anOutput.split("\n");
+		    
 
 		} catch ( Throwable e) {
+			System.err.println(e);
 			throw new NotGradableException();
 		}
 	}
