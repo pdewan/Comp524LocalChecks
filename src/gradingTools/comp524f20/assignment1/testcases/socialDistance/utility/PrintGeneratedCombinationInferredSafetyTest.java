@@ -47,14 +47,57 @@ import util.trace.Tracer;
 public class PrintGeneratedCombinationInferredSafetyTest extends AbstractPrintDerivedSafetyValidator {
 	public static final int TIME_OUT_MSECS = 300; // secs
 	
-	protected final String methodName = "printGeneratedCombinationInferredSafety";
-
+	protected final String methodName = "printGivenAndGeneratedCombinationsInferredSafety";
+	protected final String aVerifyingMethodName="isInferredSafe";
 
 	public PrintGeneratedCombinationInferredSafetyTest() {
 	}
 	@Override
 	protected  String methodName() {
 		return methodName;
+	}
+	
+	@Override
+	protected String verifyingMethodName() {
+		return aVerifyingMethodName;
+	}
+	
+	protected static String[] anExpectedOutput= {
+			"Distance,Duration,Exhalation,IsSafe",
+			"13,30,30,true",
+			"6,30,10,true",
+			"27,30,50,true",
+			"13,15,50,true",
+			"13,120,10,true",
+			"27,120,30,true",
+			"6,15,30,true"
+	};
+	protected String[] anExpectedOutput() {
+		return anExpectedOutput;
+	}
+	
+	protected boolean isOutputValid(String[] anOutputLines,Class aUtilityClass,Method aVerifyingMethod) throws Throwable {
+		String [] anExpectedOutputList=anExpectedOutput();
+	    boolean passing=true;
+	    for(int i=0;i<anOutputLines.length;i++) {
+	    	if(i<anExpectedOutputList.length) {
+	    		if(!anExpectedOutputList[i].equals(anOutputLines[i])) {
+	    			passing=false;
+	    			System.err.println("Output line: \""+anOutputLines[i]+"\" does not match expected \""+anExpectedOutputList[i]+"\"");
+	    		}
+	    	}else if (i==anExpectedOutputList.length) {
+	    		if(!anOutputLines[i].matches("-+?")) {
+	    			passing=false;
+		    		System.err.println("Output line: \""+anOutputLines[i]+"\" does not match regex \"-+\"");
+	    		}
+	    	}else {
+	    		if(!verify(anOutputLines[i],aUtilityClass,aVerifyingMethod)){
+	    			passing=false;
+	    			System.err.println("Result on line: \""+anOutputLines[i]+"\" does not match expected result for method:\""+ verifyingMethodName() +"\"");
+	    		}
+	    	}
+	    }
+	    return passing;
 	}
 	
 	@Override
@@ -78,27 +121,32 @@ public class PrintGeneratedCombinationInferredSafetyTest extends AbstractPrintDe
 		    	return fail("No Output");
 		    }
 		    
-//		    String[] anOutputLines = anOutput.split("\n");
+		    String [] anOutputLines1 = anOutput1.split("\n");
+		    if (anOutputLines1.length != 19) {
+		    	return fail("Output does not match desired line length");
+		    }
+		    
 		    ResultWithOutput aResultWithOutput2 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
-
+		    
 		    String anOutput2 = aResultWithOutput2.getOutput();
-		    if (anOutput2 == null || anOutput2.isEmpty()) {
+		    if (anOutput2 == null || anOutput2.isEmpty() ) {
 		    	return fail("No Output");
+		    }
+		    
+		    String [] anOutputLines2 = anOutput2.split("\n");
+		    if (anOutputLines2.length != 19) {
+		    	return fail("Output does not match desired line length");
 		    }
 		    
 		    if (anOutput1.equals(anOutput2)) {
 		    	return fail("Two successive calls return same output");
 		    }
+		   
 		    Method aVerifyingMethod =  aUtilityClass.getMethod(verifyingMethodName(), verifyingArgumentTypes()); 
-//		    Boolean aFirstValPassed = verify(anOutput1,aUtilityClass, aVerifyingMethod);
 		    
-		    if (verify(anOutput1,aUtilityClass, aVerifyingMethod) && verify(anOutput2, aUtilityClass, aVerifyingMethod)) {
-		    	return pass();
-		    }
-		    return fail("One or more outputs of " + methodName() + " not consistent with result of method:" + verifyingMethodName);
-//		    String[] anOutputLines = anOutput.split("\n");
+		    boolean passing=isOutputValid(anOutputLines1,aUtilityClass,aVerifyingMethod)&&isOutputValid(anOutputLines2,aUtilityClass,aVerifyingMethod);
 		    
-
+		    return passing?pass():fail("View console output for more information");
 		} catch ( Throwable e) {
 			System.err.println(e);
 			throw new NotGradableException();

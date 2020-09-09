@@ -44,7 +44,7 @@ import main.ClassRegistry;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
 //@MaxValue(6)
-public class PrintGivenAndGeneratedCombinationTest extends AbstractPrintDerivedSafetyValidator {
+public class PrintGivenAndGeneratedCombinationDerivedTest extends AbstractPrintDerivedSafetyValidator {
 	public static final int TIME_OUT_MSECS = 300; // secs
 	
 	protected final String methodName = "printGivenAndGeneratedCombinationsDerivedSafety";
@@ -60,13 +60,14 @@ public class PrintGivenAndGeneratedCombinationTest extends AbstractPrintDerivedS
 			"27,120,30,true",
 			"6,15,30,true"
 	};
-
-	public PrintGivenAndGeneratedCombinationTest() {
-	}
-	
 	protected String[] anExpectedOutput() {
 		return anExpectedOutput;
 	}
+	
+	public PrintGivenAndGeneratedCombinationDerivedTest() {
+	}
+	
+
 	
 	@Override
 	protected  String methodName() {

@@ -48,7 +48,7 @@ public class PrintGeneratedCombinationDerivedSafetyTest extends AbstractPrintDer
 	public static final int TIME_OUT_MSECS = 300; // secs
 	
 	protected final String methodName = "printGeneratedCombinationDerivedSafety";
-	protected static  String verifyingMethodName = "isInferredSafe";
+	protected static  String verifyingMethodName = "isDerivedSafe";
 
 	public PrintGeneratedCombinationDerivedSafetyTest() {
 	}

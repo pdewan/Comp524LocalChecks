@@ -89,12 +89,8 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 			String dataValues=anOutputComponents[0]+","+anOutputComponents[1]+","+anOutputComponents[2]+",";
 			if(!(verify(dataValues+anOutputComponents[3],aUtilityClass,aDerivedVerifyingMethod)
 			    &verify(dataValues+anOutputComponents[4],aUtilityClass,aInferredVerifyingMethod)))
-				return false;
-			
-			
+				return false;	
 		}
-		
-		
 	    return true;
 	}
 	
@@ -103,6 +99,7 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 			NotGradableException {
 		try {
 			SocialDistanceUtilityProvided aSocialDistanceUilityProvided = (SocialDistanceUtilityProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceUtilityProvided.class);
+			
 			Class aUtilityClass = aSocialDistanceUilityProvided.getRequiredClass();
 			
 //			SocialDistanceClassRegistry aClassRegistry = aClassRegistryProvided.getTimingOutClassRegistryProxy();  

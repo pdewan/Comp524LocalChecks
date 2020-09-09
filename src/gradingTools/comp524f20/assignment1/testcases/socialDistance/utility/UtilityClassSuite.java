@@ -31,10 +31,11 @@ import util.annotations.MaxValue;
 	IsInterpolatedOneParameterSafetyTest.class,
 	DerivedSafetyTest.class,
 	PrintGeneratedCombinationDerivedSafetyTest.class,
-	PrintGivenAndGeneratedCombinationTest.class,
+	PrintGivenAndGeneratedCombinationDerivedTest.class,
 	GenerateSafeDistancesAndDurationsTest.class,
 	PrintSafeDistancesAndDurationsTest.class,
 	IsInferredSafeTest.class,
+	PrintGeneratedCombinationInferredSafetyTest.class,
 	CompareSafetyComputationsTest.class
 	
 })

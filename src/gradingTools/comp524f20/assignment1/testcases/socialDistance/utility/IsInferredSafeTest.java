@@ -1,5 +1,6 @@
 package gradingTools.comp524f20.assignment1.testcases.socialDistance.utility;
 
+import java.io.File;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
@@ -20,6 +21,8 @@ import grader.basics.project.source.ABasicTextManager;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp524f19.assignment1.testcases.MainClassProvided;
 import gradingTools.comp524f20.assignment1.SocialDistanceClassRegistry;
+import gradingTools.comp524f20.assignment1.WekaUtil;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SafeSocializationtxtProvided;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceClassRegistryProvided;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceUtilityProvided;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
@@ -40,30 +43,25 @@ import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import main.ClassRegistry;
 import util.annotations.MaxValue;
+import weka.classifiers.Classifier;
+import weka.classifiers.Evaluation;
+import weka.classifiers.trees.J48;
+import weka.core.Attribute;
+import weka.core.FastVector;
+import weka.core.Instance;
+import weka.core.Instances;
+import weka.core.converters.ArffLoader;
+import weka.filters.Filter;
 public class IsInferredSafeTest extends PassFailJUnitTestCase {
 	public static final int TIME_OUT_MSECS = 100; // secs
 	
 	protected Class[] parameterTypes= {Integer.TYPE,Integer.TYPE,Integer.TYPE};
-	protected Object[][] arguments={
-		{1,1,1},
-		{255,255,255},
-		
-	};
-	protected Object[] results={
-		true,
-		false,
-	
-	};
 	
 	protected String methodName="isInferredSafe";
 	
-	protected Object[] getResult() {
-		return results;
-	}
+	private final int LARGE_DISTANCE=27,LARGE_DURATION=120,LARGE_EXHALATION=50;
+	private double MODIFIER=1.5;
 	
-	protected Object[][] getArguments(){
-		return arguments;		
-	};
 	protected Class[] getParameterTypes() {
 		return parameterTypes;
 	};
@@ -76,29 +74,55 @@ public class IsInferredSafeTest extends PassFailJUnitTestCase {
 		return methodName;
 	};
 	
+	protected int aRandomNumber(int max, double modifier) {
+		return (int)(Math.random()*modifier*max);
+	}
+	
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		try {
+			
 			SocialDistanceUtilityProvided aSocialDistanceUilityProvided = (SocialDistanceUtilityProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceUtilityProvided.class);
 			Class aUilityClass = aSocialDistanceUilityProvided.getRequiredClass();
+			SafeSocializationtxtProvided aSafeSocializationFileProvided = (SafeSocializationtxtProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SafeSocializationtxtProvided.class);
+			
+			File aSafeSocilizationFile = aSafeSocializationFileProvided.getRequiredFile();
 			
 //			SocialDistanceClassRegistry aClassRegistry = aClassRegistryProvided.getTimingOutClassRegistryProxy();  
 		    if (aUilityClass == null) {
 		    	return fail ("No utility class");
 		    }
+		    if (aSafeSocilizationFile == null) {
+		    	return fail ("Missing SafeSocialization.txt");
+		    }
 		    
+		    Classifier classifier = new J48();
+		    WekaUtil.buildTreeModel(classifier, aSafeSocilizationFile.toString());
 		    
 		    
 		    Class[] aParameterTypes = getParameterTypes();
 		    Method aMethod = aUilityClass.getMethod(methodName(), aParameterTypes);
-		    Object[][] anArguments = getArguments();
-		    Object[] aResults=getResult();
+		   
 		    int aNumSuccesses = 0;
-		    for (int anIndex = 0; anIndex < anArguments.length; anIndex++ ) {
-		    	Object[] anInputCombination = anArguments[anIndex];
-		    	Object anExpectedResult = aResults[anIndex];
-			    Boolean aRetVal =  (Boolean) BasicProjectExecution.timedInvoke(aUilityClass, aMethod, anInputCombination, TIME_OUT_MSECS);
+		    int numTrials=50;
+		    for (int anIndex = 0; anIndex < numTrials; anIndex++ ) {
+		    	
+		    	
+		    	
+		    	
+		    	double[] anInputCombination = {aRandomNumber(LARGE_DISTANCE,MODIFIER),
+		    								   aRandomNumber(LARGE_DURATION,MODIFIER),
+		    								   aRandomNumber(LARGE_EXHALATION,MODIFIER)};
+		    	
+		    	Object anExpectedResult = "true".equals(WekaUtil.predictString(
+		    	          classifier,
+		    	          new String[] {"distance", "duration", "exhalation"},
+		    	          anInputCombination, //new double[] {(double)anInputCombination[0],(double)anInputCombination[1],(double)anInputCombination[2]},
+		    	          "safe",
+		    	          new String[] {"true", "false"}));
+		    	
+			    Boolean aRetVal =  (Boolean) BasicProjectExecution.timedInvoke(aUilityClass, aMethod,new Object[]{(int)anInputCombination[0],(int)anInputCombination[1],(int)anInputCombination[2]}, TIME_OUT_MSECS);
 			    
 			    if (!anExpectedResult.equals(aRetVal )) {
 		    		System.out.println("Expected retVal with args " + Arrays.toString(anInputCombination) + " did not return " + anExpectedResult);
@@ -107,8 +131,8 @@ public class IsInferredSafeTest extends PassFailJUnitTestCase {
 			    }
 
 		    }
-		    double aPercentage = ((double) aNumSuccesses)/aResults.length;
-		    return aPercentage == 1?pass():partialPass(aPercentage, aNumSuccesses + " tests passed out of " +   aResults.length);  
+		    double aPercentage = ((double) aNumSuccesses)/numTrials;
+		    return aPercentage == 1?pass():partialPass(aPercentage, aNumSuccesses + " tests passed out of " +   numTrials);  
 
 
 		} catch ( Throwable e) {
