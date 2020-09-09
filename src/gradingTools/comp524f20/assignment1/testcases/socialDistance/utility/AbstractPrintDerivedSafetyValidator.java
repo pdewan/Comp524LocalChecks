@@ -97,7 +97,7 @@ public abstract class AbstractPrintDerivedSafetyValidator extends PassFailJUnitT
 		Boolean anActualResult = anOutputComponents[3].toLowerCase().matches("true\n*?");
 		boolean aReturnValue = aResult.equals(anActualResult);
 		if (!aReturnValue) {
-			Tracer.info("Expected result:" + aResult + " not equal to actual result:" + anActualResult);
+			Tracer.info("Expected result:" + aResult + " not equal to actual result:" + anActualResult +" for values: "+anOutput);
 
 		}
 		return aReturnValue;

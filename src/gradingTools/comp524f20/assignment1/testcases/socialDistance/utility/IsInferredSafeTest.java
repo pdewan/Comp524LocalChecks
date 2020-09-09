@@ -52,15 +52,47 @@ import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader;
 import weka.filters.Filter;
-public class IsInferredSafeTest extends PassFailJUnitTestCase {
+public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 	public static final int TIME_OUT_MSECS = 100; // secs
 	
 	protected Class[] parameterTypes= {Integer.TYPE,Integer.TYPE,Integer.TYPE};
 	
 	protected String methodName="isInferredSafe";
 	
-	private final int LARGE_DISTANCE=27,LARGE_DURATION=120,LARGE_EXHALATION=50;
+	private static final int SMALL_DISTANCE=6,MEDIUM_DISTANCE=13,LARGE_DISTANCE=27;
+	private static final int SMALL_DURATION=15,MEDIUM_DURATION=30,LARGE_DURATION=120;
+	private static final int SMALL_EXHALATION=10,MEDIUM_EXHALATION=30,LARGE_EXHALATION=50;
 	private double MODIFIER=1.5;
+	
+	static Object[][] inputCombinations = {
+			{MEDIUM_DISTANCE,MEDIUM_DURATION,MEDIUM_EXHALATION}, //1
+			{SMALL_DISTANCE,MEDIUM_DURATION,SMALL_EXHALATION},
+			{LARGE_DISTANCE,MEDIUM_DURATION,LARGE_EXHALATION},
+			{MEDIUM_DISTANCE,SMALL_DURATION,LARGE_EXHALATION},
+			{MEDIUM_DISTANCE,LARGE_DURATION,SMALL_EXHALATION},
+			{LARGE_DISTANCE,LARGE_DURATION,MEDIUM_EXHALATION},
+			{SMALL_DISTANCE,SMALL_DURATION,MEDIUM_EXHALATION}, //all after here false for given
+			
+			{MEDIUM_DISTANCE+1,MEDIUM_DURATION,MEDIUM_EXHALATION}, //2
+			{SMALL_DISTANCE+1,MEDIUM_DURATION,SMALL_EXHALATION},
+			{LARGE_DISTANCE,MEDIUM_DURATION-1,LARGE_EXHALATION},
+			{MEDIUM_DISTANCE,SMALL_DURATION-1,LARGE_EXHALATION},
+			{MEDIUM_DISTANCE,LARGE_DURATION,SMALL_EXHALATION-1},
+			{LARGE_DISTANCE,LARGE_DURATION,MEDIUM_EXHALATION-1},
+			{SMALL_DISTANCE+1,SMALL_DURATION,MEDIUM_EXHALATION}, //single change right above
+			
+			{MEDIUM_DISTANCE+1,MEDIUM_DURATION-1,MEDIUM_EXHALATION-1}, //3
+			{SMALL_DISTANCE+1,MEDIUM_DURATION-1,SMALL_EXHALATION-1},
+			{LARGE_DISTANCE+1,MEDIUM_DURATION-1,LARGE_EXHALATION-1},
+			{MEDIUM_DISTANCE+1,SMALL_DURATION-1,LARGE_EXHALATION-1},
+			{MEDIUM_DISTANCE+1,LARGE_DURATION-1,SMALL_EXHALATION-1},
+			{LARGE_DISTANCE+1,LARGE_DURATION-1,MEDIUM_EXHALATION-1},
+			{SMALL_DISTANCE+1,SMALL_DURATION-1,MEDIUM_EXHALATION-1}
+		};
+	
+	protected Object[][] getSpecifiedTests(){
+		return inputCombinations;
+	}
 	
 	protected Class[] getParameterTypes() {
 		return parameterTypes;
@@ -86,8 +118,9 @@ public class IsInferredSafeTest extends PassFailJUnitTestCase {
 			SocialDistanceUtilityProvided aSocialDistanceUilityProvided = (SocialDistanceUtilityProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceUtilityProvided.class);
 			Class aUilityClass = aSocialDistanceUilityProvided.getRequiredClass();
 			SafeSocializationtxtProvided aSafeSocializationFileProvided = (SafeSocializationtxtProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SafeSocializationtxtProvided.class);
-			
 			File aSafeSocilizationFile = aSafeSocializationFileProvided.getRequiredFile();
+			DerivedSafetyTest derivedTest = (DerivedSafetyTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(DerivedSafetyTest.class);
+			
 			
 //			SocialDistanceClassRegistry aClassRegistry = aClassRegistryProvided.getTimingOutClassRegistryProxy();  
 		    if (aUilityClass == null) {
@@ -96,43 +129,59 @@ public class IsInferredSafeTest extends PassFailJUnitTestCase {
 		    if (aSafeSocilizationFile == null) {
 		    	return fail ("Missing SafeSocialization.txt");
 		    }
+		    if (derivedTest == null) {
+		    	return fail ("Derived Safety Test must past first");
+		    }
 		    
-		    Classifier classifier = new J48();
-		    WekaUtil.buildTreeModel(classifier, aSafeSocilizationFile.toString());
+//		    Classifier classifier = new J48();
+//		    WekaUtil.buildTreeModel(classifier, aSafeSocilizationFile.toString());
 		    
 		    
 		    Class[] aParameterTypes = getParameterTypes();
 		    Method aMethod = aUilityClass.getMethod(methodName(), aParameterTypes);
-		   
+		    Method aVerifyingMethod = aUilityClass.getMethod(verifyingMethodName(), verifyingArgumentTypes());
+		    
 		    int aNumSuccesses = 0;
-		    int numTrials=50;
+		    int numTrials=100;
+		    Object[][] presetInputs=getSpecifiedTests();
+		    
 		    for (int anIndex = 0; anIndex < numTrials; anIndex++ ) {
 		    	
+		    	Object[] anInputCombination;
 		    	
+		    	if(anIndex<presetInputs.length) {
+		    		anInputCombination=presetInputs[anIndex];
+		    	}else {
+		    		Object[] randomOutput= {aRandomNumber(LARGE_DISTANCE,MODIFIER),
+							   aRandomNumber(LARGE_DURATION,MODIFIER),
+							   aRandomNumber(LARGE_EXHALATION,MODIFIER)};
+		    		anInputCombination=randomOutput;
+		    	}
 		    	
+//		    	double[] anInputCombination = {aRandomNumber(LARGE_DISTANCE,MODIFIER),
+//		    								   aRandomNumber(LARGE_DURATION,MODIFIER),
+//		    								   aRandomNumber(LARGE_EXHALATION,MODIFIER)};
 		    	
-		    	double[] anInputCombination = {aRandomNumber(LARGE_DISTANCE,MODIFIER),
-		    								   aRandomNumber(LARGE_DURATION,MODIFIER),
-		    								   aRandomNumber(LARGE_EXHALATION,MODIFIER)};
+//		    	Object anExpectedResult = "true".equals(WekaUtil.predictString(
+//		    	          classifier,
+//		    	          new String[] {"distance", "duration", "exhalation"},
+//		    	          anInputCombination, //new double[] {(double)anInputCombination[0],(double)anInputCombination[1],(double)anInputCombination[2]},
+//		    	          "safe",
+//		    	          new String[] {"true", "false"}));
 		    	
-		    	Object anExpectedResult = "true".equals(WekaUtil.predictString(
-		    	          classifier,
-		    	          new String[] {"distance", "duration", "exhalation"},
-		    	          anInputCombination, //new double[] {(double)anInputCombination[0],(double)anInputCombination[1],(double)anInputCombination[2]},
-		    	          "safe",
-		    	          new String[] {"true", "false"}));
-		    	
-			    Boolean aRetVal =  (Boolean) BasicProjectExecution.timedInvoke(aUilityClass, aMethod,new Object[]{(int)anInputCombination[0],(int)anInputCombination[1],(int)anInputCombination[2]}, TIME_OUT_MSECS);
+//			    Boolean aRetVal =  (Boolean) BasicProjectExecution.timedInvoke(aUilityClass, aMethod,new Object[]{(int)anInputCombination[0],(int)anInputCombination[1],(int)anInputCombination[2]}, TIME_OUT_MSECS);
+		    	Boolean aRetVal =  (Boolean) BasicProjectExecution.timedInvoke(aUilityClass, aMethod,anInputCombination, TIME_OUT_MSECS);
 			    
-			    if (!anExpectedResult.equals(aRetVal )) {
-		    		System.out.println("Expected retVal with args " + Arrays.toString(anInputCombination) + " did not return " + anExpectedResult);
-			    } else {
+			    if (verify(anInputCombination[0].toString()+","
+			    		  +anInputCombination[1].toString()+","
+			    		  +anInputCombination[2].toString()+","
+			    		  +aRetVal,aUilityClass,aVerifyingMethod)) {
 			    	aNumSuccesses++;
 			    }
 
 		    }
 		    double aPercentage = ((double) aNumSuccesses)/numTrials;
-		    return aPercentage == 1?pass():partialPass(aPercentage, aNumSuccesses + " tests passed out of " +   numTrials);  
+		    return aPercentage >= 0.8?pass():partialPass(aPercentage, aNumSuccesses + " tests passed out of " +   numTrials);  
 
 
 		} catch ( Throwable e) {
