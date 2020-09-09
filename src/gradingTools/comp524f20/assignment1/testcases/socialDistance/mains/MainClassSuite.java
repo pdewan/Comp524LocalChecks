@@ -18,20 +18,22 @@ import gradingTools.comp524f20.assignment0_1.testcases.GreetingMainProvided;
 import gradingTools.comp524f20.assignment0_1.testcases.GreetingRun;
 import gradingTools.comp524f20.assignment0_1.testcases.socialDistance.SocialDistanceMainRuns;
 import gradingTools.comp524f20.assignment0_4.testcases.LispGreetingLoadAndRun;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceUtilityTesterMainProvided;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceUtilityTesterMainProvided;
 import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
+import util.annotations.MaxValue;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	BasicMainTest.class,
 	InterpolatingMainTest.class,
-	DerivingMainTest.class
+	DerivingMainTest.class,
+	InferringMainTest.class
 	
 })
 	
 
-//@MaxValue(50)
+@MaxValue(50)
 public class MainClassSuite {
 
 	public static void main (String[] args) {

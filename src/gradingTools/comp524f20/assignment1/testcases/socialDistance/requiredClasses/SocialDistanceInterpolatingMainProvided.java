@@ -13,7 +13,7 @@ import main.ClassRegistry;
 import main.lisp.parser.terms.BasicExpression;
 import main.lisp.parser.terms.SExpression;
 import util.annotations.MaxValue;
-@MaxValue(2)
+//@MaxValue(2)
 public class SocialDistanceInterpolatingMainProvided extends PassFailJUnitTestCase {
 	protected Class socialDistanceMain;
 

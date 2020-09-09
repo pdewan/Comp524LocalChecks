@@ -12,7 +12,7 @@ import gradingTools.comp524f20.assignment1.SocialDistanceClassRegistry;
 import gradingTools.shared.testcases.utils.ConfigurationWriter;
 import main.ClassRegistry;
 import util.annotations.MaxValue;
-@MaxValue(2)
+//@MaxValue(2)
 public class SocialDistanceClassRegistryProvided extends PassFailJUnitTestCase {
 	public static final Class REGISTRY_INTERFACE = SocialDistanceClassRegistry.class;
 	public SocialDistanceClassRegistry classRegistry;

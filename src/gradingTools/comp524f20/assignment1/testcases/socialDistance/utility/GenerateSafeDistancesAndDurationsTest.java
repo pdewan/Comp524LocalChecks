@@ -40,7 +40,7 @@ import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import main.ClassRegistry;
 import util.annotations.MaxValue;
-@MaxValue(6)
+//@MaxValue(6)
 public class GenerateSafeDistancesAndDurationsTest extends PassFailJUnitTestCase {
 	public static final int TIME_OUT_MSECS = 100; // secs
 	

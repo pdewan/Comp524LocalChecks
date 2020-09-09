@@ -87,6 +87,9 @@ public class IsInferredSafeTest extends PassFailJUnitTestCase {
 		    if (aUilityClass == null) {
 		    	return fail ("No utility class");
 		    }
+		    
+		    
+		    
 		    Class[] aParameterTypes = getParameterTypes();
 		    Method aMethod = aUilityClass.getMethod(methodName(), aParameterTypes);
 		    Object[][] anArguments = getArguments();

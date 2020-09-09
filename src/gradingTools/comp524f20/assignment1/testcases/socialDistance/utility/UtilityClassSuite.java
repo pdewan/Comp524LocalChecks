@@ -18,8 +18,9 @@ import gradingTools.comp524f20.assignment0_1.testcases.GreetingMainProvided;
 import gradingTools.comp524f20.assignment0_1.testcases.GreetingRun;
 import gradingTools.comp524f20.assignment0_1.testcases.socialDistance.SocialDistanceMainRuns;
 import gradingTools.comp524f20.assignment0_4.testcases.LispGreetingLoadAndRun;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceUtilityTesterMainProvided;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceUtilityTesterMainProvided;
 import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
+import util.annotations.MaxValue;
 
 
 @RunWith(Suite.class)
@@ -32,18 +33,19 @@ import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 	PrintGeneratedCombinationDerivedSafetyTest.class,
 	PrintGivenAndGeneratedCombinationTest.class,
 	GenerateSafeDistancesAndDurationsTest.class,
-	PrintSafeDistancesAndDurationsTest.class
+	PrintSafeDistancesAndDurationsTest.class,
+	IsInferredSafeTest.class,
+	CompareSafetyComputationsTest.class
 	
 })
 	
 
-//@MaxValue(50)
+@MaxValue(50)
 public class UtilityClassSuite {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
-
 			BasicJUnitUtils.interactiveTest(UtilityClassSuite.class);
 
 

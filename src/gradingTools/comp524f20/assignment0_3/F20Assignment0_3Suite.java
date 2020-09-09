@@ -20,7 +20,7 @@ import gradingTools.comp524f20.assignment0_1.testcases.socialDistance.SocialDist
 import gradingTools.comp524f20.assignment0_2.testcases.PrologGreetingLoadAndRun;
 import gradingTools.comp524f20.assignment0_3.testcases.SMLGreetingLoadAndRun;
 import gradingTools.comp524f20.assignment0_4.testcases.LispGreetingLoadAndRun;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.SocialDistanceUtilityTesterMainProvided;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceUtilityTesterMainProvided;
 import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 import gradingTools.shared.testcases.suites.InterpreterSuite;
 import gradingTools.shared.testcases.suites.SMLInterpreterSuite;

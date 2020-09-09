@@ -43,12 +43,13 @@ import gradingTools.utils.RunningProjectUtils;
 import main.ClassRegistry;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
-@MaxValue(6)
+//@MaxValue(6)
 public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyValidator {
 	public static final int TIME_OUT_MSECS = 300; // secs
 	
 	protected final String derivedMethodName = "isDerivedSafe";
 	protected final String inferredMethodName = "isInferredSafe";
+	protected final String methodName="compareSafetyComputations";
 	
 	public CompareSafetyComputationsTest() {
 	}	
@@ -59,13 +60,17 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 	
 	@Override
 	protected String methodName() {
-		return inferredMethodName;
+		return methodName;
 	}
 	
 	protected  String inferredMethodName() {
 		return inferredMethodName;
 	}
 
+	protected Double accuracy=null;
+	protected Double getAccuracy(){
+		return accuracy;
+	};
 	
 	protected boolean isOutputValid(String[] anOutputLines,Class aUtilityClass,Method aDerivedVerifyingMethod,Method aInferredVerifyingMethod) throws Throwable {
 		
@@ -82,8 +87,8 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 				throw new NotGradableException("Output does not have 5 command separated components");
 			
 			String dataValues=anOutputComponents[0]+","+anOutputComponents[1]+","+anOutputComponents[2]+",";
-			if(!(verify(dataValues+anOutputComponents[4],aUtilityClass,aDerivedVerifyingMethod)
-			    &verify(dataValues+anOutputComponents[5],aUtilityClass,aInferredVerifyingMethod)))
+			if(!(verify(dataValues+anOutputComponents[3],aUtilityClass,aDerivedVerifyingMethod)
+			    &verify(dataValues+anOutputComponents[4],aUtilityClass,aInferredVerifyingMethod)))
 				return false;
 			
 			
@@ -107,41 +112,70 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 		    Class[] aParameterTypes = argumentTypes();
 		    Method aMethod = aUtilityClass.getMethod(methodName(), aParameterTypes);
 		    Object[] anArguments = getArguments();
-		    ResultWithOutput aResultWithOutput1 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
 		    
-		    String anOutput1 = aResultWithOutput1.getOutput();
-		    if (anOutput1 == null || anOutput1.isEmpty() ) {
-		    	return fail("No Output");
-		    }
+//		    ResultWithOutput aResultWithOutput1 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
+//		    String anOutput1 = aResultWithOutput1.getOutput();
+//		    if (anOutput1 == null || anOutput1.isEmpty() ) {
+//		    	return fail("No Output");
+//		    }
+//		    
+//		    String [] anOutputLines1 = anOutput1.split("\n");
+//		    if (anOutputLines1.length != 11) {
+//		    	return fail("Output does not match desired line length");
+//		    }
+//		    
+//		    ResultWithOutput aResultWithOutput2 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
+//		    
+//		    String anOutput2 = aResultWithOutput2.getOutput();
+//		    if (anOutput2 == null || anOutput2.isEmpty() ) {
+//		    	return fail("No Output");
+//		    }
+//		    
+//		    String [] anOutputLines2 = anOutput2.split("\n");
+//		    if (anOutputLines2.length != 11) {
+//		    	return fail("Output does not match desired line length");
+//		    }
+//		    
+//		    if (anOutput1.equals(anOutput2)) {
+//		    	return fail("Two successive calls return same output");
+//		    }
 		    
-		    String [] anOutputLines1 = anOutput1.split("\n");
-		    if (anOutputLines1.length != 11) {
-		    	return fail("Output does not match desired line length");
-		    }
-		    
-		    ResultWithOutput aResultWithOutput2 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
-		    
-		    String anOutput2 = aResultWithOutput2.getOutput();
-		    if (anOutput2 == null || anOutput2.isEmpty() ) {
-		    	return fail("No Output");
-		    }
-		    
-		    String [] anOutputLines2 = anOutput2.split("\n");
-		    if (anOutputLines2.length != 11) {
-		    	return fail("Output does not match desired line length");
-		    }
-		    
-		    if (anOutput1.equals(anOutput2)) {
-		    	return fail("Two successive calls return same output");
-		    }
-		   
 		    Method aVerifyingMethodDerived =  aUtilityClass.getMethod(derivedMethodName(), verifyingArgumentTypes()); 
 		    Method aVerifyingMethodInferred=  aUtilityClass.getMethod(inferredMethodName(), verifyingArgumentTypes());
+		    String lastOutput=null;
+		    int numberCorrect=0;
+		   
+		    for(int i=0;i<10;i++) {
+		    	ResultWithOutput aResultWithOutput = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
+			    String anOutput = aResultWithOutput.getOutput();
+			    int retVal = (int) aResultWithOutput.getResult();
+			    
+			    String [] anOutputLines = anOutput.split("\n");
+			    if (anOutputLines.length != 11) 
+			    	return fail("Output does not match desired line length");
+			    
+			    if(lastOutput!=null&&lastOutput.equals(anOutput)) 
+				    return fail("Two successive calls return same output");
+			    lastOutput=anOutput;
+			    
+			    if(!isOutputValid(anOutputLines,aUtilityClass,aVerifyingMethodDerived,aVerifyingMethodInferred))
+			    	return fail("An output does not match expected from isInferredSafe and/or isDerivedSafe");
+			    
+			    int correctCheck=0;
+			    for(int j=1;j<anOutputLines.length;j++) {
+			    	String[] methodResults=anOutputLines[j].replaceAll("\\d+,\\d+\\d+,", "").split(",");
+			    	if(methodResults[1].startsWith(methodResults[0]))
+			    		correctCheck++;
+			    }
+			    
+			    if(correctCheck!=retVal) {
+			    	return fail("returned integer does not match determined correct values");
+			    }
+			    numberCorrect+=correctCheck;
+		    }
 		    
-		    boolean passing=isOutputValid(anOutputLines1,aUtilityClass,aVerifyingMethodDerived,aVerifyingMethodInferred)
-		    			  &&isOutputValid(anOutputLines2,aUtilityClass,aVerifyingMethodDerived,aVerifyingMethodInferred);
-		    
-		    return passing?pass():fail("View console output for more information");
+		    this.accuracy=numberCorrect/100.0;
+		    return pass();
 
 		} catch ( Throwable e) {
 			System.err.println(e);
