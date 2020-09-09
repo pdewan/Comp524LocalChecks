@@ -36,7 +36,7 @@ public class SocialDistanceUtilityTesterMainProvided extends PassFailJUnitTestCa
 //			sExpressionClass = (Class<? extends SExpression>) callGetterOnClassRegistry(aMethodName);
 			socialDistanceMain = aClassRegistry.getSocialDistanceUilityTesterMain();   
 		    if (socialDistanceMain == null) {	
-		    	return fail ("getSocialDistanceMain returns null in class registry");
+		    	return fail ("getSocialDistanceUilityTesterMain returns null in class registry");
 		    }	
 		    
 			return pass();		
