@@ -53,23 +53,23 @@ public class WekaFileSizeAndAccuracyTest extends PassFailJUnitTestCase {
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		try {
-			SafeSocializationtxtProvided aSafeSocializationFileProvided = (SafeSocializationtxtProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SafeSocializationtxtProvided.class);
-			CompareSafetyComputationsTest aSuccessfullComparison = (CompareSafetyComputationsTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(CompareSafetyComputationsTest.class);
-			
-			File aSafeSocilizationFile = aSafeSocializationFileProvided.getRequiredFile();
-			Double aPercentage=aSuccessfullComparison.getAccuracy();
-			
-//			SocialDistanceClassRegistry aClassRegistry = aClassRegistryProvided.getTimingOutClassRegistryProxy();  
-		    if (aPercentage == null) {
-		    	return fail ("Missing Results from CompareSafetyComputationsTest");
-		    }
-		    if (aSafeSocilizationFile == null) {
-		    	return fail ("Missing SafeSocialization.txt");
-		    }
-		    
-		    
-//		    double aPercentage = ((double) aNumSuccesses)/aResults.length;
-//		    return aPercentage == 1?pass():partialPass(aPercentage, aNumSuccesses + " tests passed out of " +   aResults.length);  
+//			SafeSocializationtxtProvided aSafeSocializationFileProvided = (SafeSocializationtxtProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SafeSocializationtxtProvided.class);
+//			CompareSafetyComputationsTest aSuccessfullComparison = (CompareSafetyComputationsTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(CompareSafetyComputationsTest.class);
+//			
+//			File aSafeSocilizationFile = aSafeSocializationFileProvided.getRequiredFile();
+//			Double aPercentage=aSuccessfullComparison.getAccuracy();
+//			
+////			SocialDistanceClassRegistry aClassRegistry = aClassRegistryProvided.getTimingOutClassRegistryProxy();  
+//		    if (aPercentage == null) {
+//		    	return fail ("Missing Results from CompareSafetyComputationsTest");
+//		    }
+//		    if (aSafeSocilizationFile == null) {
+//		    	return fail ("Missing SafeSocialization.txt");
+//		    }
+//		    
+//		    
+////		    double aPercentage = ((double) aNumSuccesses)/aResults.length;
+////		    return aPercentage == 1?pass():partialPass(aPercentage, aNumSuccesses + " tests passed out of " +   aResults.length);  
 
 		    return pass();
 

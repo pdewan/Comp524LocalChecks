@@ -141,8 +141,8 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 		    Method aVerifyingMethodInferred=  aUtilityClass.getMethod(inferredMethodName(), verifyingArgumentTypes());
 		    String lastOutput=null;
 		    int numberCorrect=0;
-		   
-		    for(int i=0;i<10;i++) {
+		    int trials=10;
+		    for(int i=0;i<trials;i++) {
 		    	ResultWithOutput aResultWithOutput = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
 			    String anOutput = aResultWithOutput.getOutput();
 			    int retVal = (int) aResultWithOutput.getResult();
@@ -160,8 +160,8 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 			    
 			    int correctCheck=0;
 			    for(int j=1;j<anOutputLines.length;j++) {
-			    	String[] methodResults=anOutputLines[j].replaceAll("\\d+,\\d+\\d+,", "").split(",");
-			    	if(methodResults[1].startsWith(methodResults[0]))
+			    	String[] methodResults=anOutputLines[j].split(",");
+			    	if(methodResults[3].startsWith(methodResults[4]))
 			    		correctCheck++;
 			    }
 			    
@@ -171,8 +171,12 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 			    numberCorrect+=correctCheck;
 		    }
 		    
-		    this.accuracy=numberCorrect/100.0;
-		    return pass();
+		    
+		    
+		    
+		    double accuracy=((double)numberCorrect)/(trials*10);
+		    return accuracy >= 0.8?pass():partialPass(accuracy, "accuracy for tests too low"); 
+		    
 
 		} catch ( Throwable e) {
 			System.err.println(e);
