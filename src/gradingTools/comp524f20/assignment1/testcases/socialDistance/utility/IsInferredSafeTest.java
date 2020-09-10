@@ -87,7 +87,23 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 			{MEDIUM_DISTANCE+1,SMALL_DURATION-1,LARGE_EXHALATION-1},
 			{MEDIUM_DISTANCE+1,LARGE_DURATION-1,SMALL_EXHALATION-1},
 			{LARGE_DISTANCE+1,LARGE_DURATION-1,MEDIUM_EXHALATION-1},
-			{SMALL_DISTANCE+1,SMALL_DURATION-1,MEDIUM_EXHALATION-1}
+			{SMALL_DISTANCE+1,SMALL_DURATION-1,MEDIUM_EXHALATION-1},
+			
+			{LARGE_DISTANCE-1,MEDIUM_DURATION,MEDIUM_EXHALATION}, //4
+			{MEDIUM_DISTANCE-1,MEDIUM_DURATION,SMALL_EXHALATION},
+			{LARGE_DISTANCE,SMALL_DURATION+1,LARGE_EXHALATION},
+			{MEDIUM_DISTANCE,0,LARGE_EXHALATION},
+			{MEDIUM_DISTANCE,LARGE_DURATION,0},
+			{LARGE_DISTANCE,LARGE_DURATION,SMALL_EXHALATION+1},
+			{MEDIUM_DISTANCE-1,SMALL_DURATION,MEDIUM_EXHALATION}, //single extreme change
+			
+			{LARGE_DISTANCE-1,SMALL_DURATION+1,SMALL_EXHALATION+1}, //5
+			{MEDIUM_DISTANCE-1,SMALL_DURATION+1,0},
+			{Integer.MAX_VALUE,SMALL_DURATION+1,MEDIUM_EXHALATION+1},
+			{LARGE_DISTANCE-1,0,MEDIUM_EXHALATION+1},
+			{LARGE_DISTANCE-1,MEDIUM_DURATION+1,0},
+			{Integer.MAX_VALUE,MEDIUM_DURATION+1,SMALL_EXHALATION+1},
+			{MEDIUM_DISTANCE-1,0,SMALL_EXHALATION+1}, //multi extreme change
 		};
 	
 	protected Object[][] getSpecifiedTests(){
@@ -141,7 +157,10 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 		    Method aMethod = aUilityClass.getMethod(methodName(), aParameterTypes);
 		    Method aVerifyingMethod = aUilityClass.getMethod(verifyingMethodName(), verifyingArgumentTypes());
 		    
-		    int aNumSuccesses = 0;
+		    int tableCorrect=0;
+		    int nearTableCorrect=0;
+		    int randomCorrect=0;
+		    
 		    int numTrials=100;
 		    Object[][] presetInputs=getSpecifiedTests();
 		    
@@ -176,12 +195,38 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 			    		  +anInputCombination[1].toString()+","
 			    		  +anInputCombination[2].toString()+","
 			    		  +aRetVal,aUilityClass,aVerifyingMethod)) {
-			    	aNumSuccesses++;
+			    	if(anIndex<7) {
+			    		tableCorrect++;
+			    	}else if(anIndex<presetInputs.length){
+			    		nearTableCorrect++;
+			    	}else {
+			    		randomCorrect++;
+			    	}
 			    }
 
 		    }
-		    double aPercentage = ((double) aNumSuccesses)/numTrials;
-		    return aPercentage >= 0.8?pass():partialPass(aPercentage, aNumSuccesses + " tests passed out of " +   numTrials);  
+		    
+		    double aTablePercent=((double)tableCorrect)/7;
+		    double aNearTablePercent=((double)nearTableCorrect)/(presetInputs.length-7);
+		    double aRandomPercent=((double)randomCorrect)/(numTrials-presetInputs.length);
+		    int failures=0;
+		    
+		    if(!(aTablePercent>=0.95)) {
+		    	System.out.println("Accuracy of table value tests does not pass required threshold");
+		    	failures++;
+		    }
+		    if(!(aNearTablePercent>=0.65)) {
+		    	System.out.println("Accuracy of near table value tests does not pass required threshold");
+		    	failures++;
+		    }
+		    if(!(aRandomPercent>=0.8)) {
+		    	System.out.println("Accuracy of random value tests does not pass required threshold");
+		    	failures++;
+		    }
+		    
+		    double aPercentage=1.0-(double)failures/3.0;
+		    
+		    return aPercentage == 1?pass():partialPass(aPercentage, "view console output");  
 
 
 		} catch ( Throwable e) {
