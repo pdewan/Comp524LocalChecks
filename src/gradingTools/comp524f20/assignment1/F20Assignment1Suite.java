@@ -18,6 +18,7 @@ import gradingTools.comp524f20.assignment0_1.testcases.GreetingMainProvided;
 import gradingTools.comp524f20.assignment0_1.testcases.GreetingRun;
 import gradingTools.comp524f20.assignment0_1.testcases.socialDistance.SocialDistanceMainRuns;
 import gradingTools.comp524f20.assignment0_4.testcases.LispGreetingLoadAndRun;
+import gradingTools.comp524f20.assignment1.socialDistance.factories.FactoriesSuite;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.BasicMainTest;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.MainClassSuite;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.RequiredClassesSuite;
@@ -36,7 +37,8 @@ import util.trace.uigen.UnknownPropertyNotification;
 	RequiredClassesSuite.class,
 	UtilityClassSuite.class,
 	MainClassSuite.class,
-	StyleSuite.class
+	StyleSuite.class,
+	FactoriesSuite.class
 	
 })
 	
