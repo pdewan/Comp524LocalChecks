@@ -43,7 +43,7 @@ import gradingTools.utils.RunningProjectUtils;
 import main.ClassRegistry;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
-//@MaxValue(6)
+@MaxValue(10)
 public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyValidator {
 	public static final int TIME_OUT_MSECS = 300; // secs
 	
@@ -174,13 +174,13 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 		    
 		    
 		    
-		    double accuracy=((double)numberCorrect)/(trials*10);
-		    return accuracy >= 0.8?pass():partialPass(accuracy, "accuracy for tests too low"); 
-		    
+//		    double accuracy=((double)numberCorrect)/(trials*10);
+//		    return accuracy >= 0.8?pass():partialPass(accuracy, "accuracy for tests too low"); 
+		    return pass();
 
 		} catch ( Throwable e) {
-			System.err.println(e);
-			throw new NotGradableException();
+			System.err.println(e.getMessage());
+			throw new NotGradableException(e.getMessage());
 		}
 	}
 //	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {

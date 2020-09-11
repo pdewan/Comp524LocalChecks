@@ -33,7 +33,7 @@ import util.annotations.MaxValue;
 })
 	
 
-@MaxValue(50)
+//@MaxValue(50)
 public class MainClassSuite {
 
 	public static void main (String[] args) {

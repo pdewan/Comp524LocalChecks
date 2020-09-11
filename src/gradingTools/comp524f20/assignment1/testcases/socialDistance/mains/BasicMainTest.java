@@ -36,7 +36,7 @@ import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
-//@MaxValue(6)
+@MaxValue(25)
 public class BasicMainTest extends PassFailJUnitTestCase {
 	public static final int TIME_OUT_SECS = 1; // secs
 	protected SubstringSequenceChecker checker = new ABasicMainChecker();	

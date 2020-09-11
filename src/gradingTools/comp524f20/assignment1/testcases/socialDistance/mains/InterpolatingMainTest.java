@@ -37,7 +37,7 @@ import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
-//@MaxValue(6)
+@MaxValue(10)
 public class InterpolatingMainTest extends PassFailJUnitTestCase {
 	public static final int TIME_OUT_SECS = 1; // secs
 	protected SubstringSequenceChecker checker = new AInterpolatingMainChecker();	

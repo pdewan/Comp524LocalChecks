@@ -40,7 +40,7 @@ import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import main.ClassRegistry;
 import util.annotations.MaxValue;
-//@MaxValue(6)
+@MaxValue(7)
 public class InterpolatedSafetyTest extends AbstractThreeParameterSafetyTest {
 	static Object[] results = {
 			true, //1

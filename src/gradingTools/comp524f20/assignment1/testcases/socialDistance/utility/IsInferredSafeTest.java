@@ -42,6 +42,7 @@ import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import main.ClassRegistry;
+import util.annotations.Explanation;
 import util.annotations.MaxValue;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
@@ -52,6 +53,8 @@ import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffLoader;
 import weka.filters.Filter;
+@MaxValue(45)
+@Explanation("Checks for table, table off by one, and Random Value inputs")
 public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 	public static final int TIME_OUT_MSECS = 100; // secs
 	
