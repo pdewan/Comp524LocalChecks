@@ -29,10 +29,11 @@ public class SafeSocializationtxtProvided extends PassFailJUnitTestCase {
 			throws NotAutomatableException, NotGradableException {	
 		 
 		 try {
-			File socialDistancefile = new File(project.getProjectFolder()+"/SafeSocialization.txt");
+			String socializationTextFile = "SafeSocialization.txt";
+			File socialDistancefile = new File(project.getProjectFolder()+"/"+socializationTextFile);
 		    
 			if(!socialDistancefile.exists()||!socialDistancefile.isFile())
-				return fail("SocialDistance.txt not found");
+				return fail(socializationTextFile+" not found");
 			
 			socialDistanceText=socialDistancefile;
 			
