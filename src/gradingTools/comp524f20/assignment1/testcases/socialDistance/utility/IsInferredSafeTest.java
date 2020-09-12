@@ -65,7 +65,7 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 	private static final int SMALL_DISTANCE=6,MEDIUM_DISTANCE=13,LARGE_DISTANCE=27;
 	private static final int SMALL_DURATION=15,MEDIUM_DURATION=30,LARGE_DURATION=120;
 	private static final int SMALL_EXHALATION=10,MEDIUM_EXHALATION=30,LARGE_EXHALATION=50;
-	private double MODIFIER=1.5;
+	private double MODIFIER=1.1;
 	
 	static Object[][] inputCombinations = {
 			{MEDIUM_DISTANCE,MEDIUM_DURATION,MEDIUM_EXHALATION}, //1
@@ -148,8 +148,9 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 		    if (aSafeSocilizationFile == null) {
 		    	return fail ("Missing SafeSocialization.txt");
 		    }
-		    if (derivedTest == null) {
-		    	return fail ("Derived Safety Test must past first");
+		    
+		    if (derivedTest == null || !derivedTest.allTestsPassed()) {
+		    	return fail ("DerivedSafetyTest must pass fully before this test can be properly executed");
 		    }
 		    
 //		    Classifier classifier = new J48();
@@ -198,6 +199,7 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 			    		  +anInputCombination[1].toString()+","
 			    		  +anInputCombination[2].toString()+","
 			    		  +aRetVal,aUilityClass,aVerifyingMethod)) {
+//			    		  +(anIndex%2==1?"false":"true"),aUilityClass,aVerifyingMethod)) {
 			    	if(anIndex<7) {
 			    		tableCorrect++;
 			    	}else if(anIndex<presetInputs.length){
@@ -209,26 +211,34 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 
 		    }
 		    
-		    double aTablePercent=((double)tableCorrect)/7;
-		    double aNearTablePercent=((double)nearTableCorrect)/(presetInputs.length-7);
-		    double aRandomPercent=((double)randomCorrect)/(numTrials-presetInputs.length);
-		    int failures=0;
+		    double aPercentage=0;
+		   	double [] resultPercentages= {
+		    		((double)tableCorrect)/7,
+		    		((double)nearTableCorrect)/(presetInputs.length-7),
+		    		((double)randomCorrect)/(numTrials-presetInputs.length)
+		    };
+		   	double [] thresholdPercentages= {
+		   			0.95,
+		   			0.65,
+		   			0.8
+		   	};
+		   	String [] testNames= {
+		   			"table value",
+		   			"near table value",
+		   			"random value",
+		   	};
 		    
-		    if(!(aTablePercent>=0.95)) {
-		    	System.out.println("Accuracy of table value tests does not pass required threshold");
-		    	failures++;
-		    }
-		    if(!(aNearTablePercent>=0.65)) {
-		    	System.out.println("Accuracy of near table value tests does not pass required threshold");
-		    	failures++;
-		    }
-		    if(!(aRandomPercent>=0.8)) {
-		    	System.out.println("Accuracy of random value tests does not pass required threshold");
-		    	failures++;
-		    }
-		    
-		    double aPercentage=1.0-(double)failures/3.0;
-		    
+		   	for(int i=0;i<resultPercentages.length;i++) {
+		   		if (resultPercentages[i]<thresholdPercentages[i]) {
+		   			System.out.println("When testing " + testNames[i]+" the accuracy was found to be "+resultPercentages[i]+" the minimum required accuracy threshold should be "+thresholdPercentages[i]);
+		   			aPercentage+=(1.0/resultPercentages.length)*(resultPercentages[i]/thresholdPercentages[i]);
+		   		}else {
+		   			aPercentage+=(1.0/resultPercentages.length);		   			
+		   		}
+//		   		System.out.println(resultPercentages[i]);
+		   	}
+		   	
+		   	
 		    return aPercentage == 1?pass():partialPass(aPercentage, "view console output");  
 
 

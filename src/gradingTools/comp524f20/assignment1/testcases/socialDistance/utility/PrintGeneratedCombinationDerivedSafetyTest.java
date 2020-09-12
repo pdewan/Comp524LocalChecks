@@ -62,6 +62,11 @@ public class PrintGeneratedCombinationDerivedSafetyTest extends AbstractPrintDer
 		return verifyingMethodName;
 	}
 	
+	protected boolean passing=false;
+	public boolean isPassing() {
+		return passing;
+	}
+	
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
@@ -97,7 +102,8 @@ public class PrintGeneratedCombinationDerivedSafetyTest extends AbstractPrintDer
 		    Method aVerifyingMethod =  aUtilityClass.getMethod(verifyingMethodName(), verifyingArgumentTypes()); 
 //		    Boolean aFirstValPassed = verify(anOutput1,aUtilityClass, aVerifyingMethod);
 		    
-		    if (verify(anOutput1,aUtilityClass, aVerifyingMethod) && verify(anOutput2, aUtilityClass, aVerifyingMethod)) {
+		    passing=verify(anOutput1,aUtilityClass, aVerifyingMethod) && verify(anOutput2, aUtilityClass, aVerifyingMethod);
+		    if (passing) {
 		    	return pass();
 		    }
 		    return fail("One or more outputs of " + methodName() + " not consistent with result of method:" + verifyingMethodName);

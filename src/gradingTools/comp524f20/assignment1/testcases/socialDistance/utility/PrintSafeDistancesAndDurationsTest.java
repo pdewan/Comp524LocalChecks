@@ -101,6 +101,10 @@ public class PrintSafeDistancesAndDurationsTest extends PassFailJUnitTestCase {
 		return results;
 	}
 	
+	protected boolean isPassing=false;
+	public boolean isPassing() {
+		return isPassing;
+	}
 	
 	protected Object[][] getArguments(){
 		return arguments;
@@ -173,6 +177,7 @@ public class PrintSafeDistancesAndDurationsTest extends PassFailJUnitTestCase {
 		    
 		   
 		    double aPercentage = ((double) aNumSuccesses)/anArguments.length;
+		    isPassing=aPercentage==1;
 		    return aPercentage == 1?pass():partialPass(aPercentage, aNumSuccesses + " tests passed out of " + anArguments.length);  
 
 		} catch ( Throwable e) {

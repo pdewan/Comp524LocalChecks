@@ -28,7 +28,8 @@ import util.annotations.MaxValue;
 	BasicMainTest.class,
 	InterpolatingMainTest.class,
 	DerivingMainTest.class,
-	InferringMainTest.class
+	InferringMainTest.class,
+	UtilityTesterMainTest.class
 	
 })
 	

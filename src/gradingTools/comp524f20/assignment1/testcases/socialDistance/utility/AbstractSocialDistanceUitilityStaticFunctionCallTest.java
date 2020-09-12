@@ -47,6 +47,12 @@ public abstract class AbstractSocialDistanceUitilityStaticFunctionCallTest exten
 	protected abstract Object[] getResults();
 	protected abstract Class[] getParameterTypes();
 
+
+	protected boolean allTestsPassed;
+	protected boolean allTestsPassed() {
+		return allTestsPassed;
+	}
+	
 	public AbstractSocialDistanceUitilityStaticFunctionCallTest() {
 	}
 
@@ -80,8 +86,8 @@ public abstract class AbstractSocialDistanceUitilityStaticFunctionCallTest exten
 
 		    }
 		    double aPercentage = ((double) aNumSuccesses)/aResults.length;
+		    allTestsPassed=aPercentage==1;
 		    return aPercentage == 1?pass():partialPass(aPercentage, aNumSuccesses + " tests passed out of " +   aResults.length);  
-
 		  
 
 		} catch ( Throwable e) {

@@ -76,6 +76,11 @@ public class PrintGeneratedCombinationInferredSafetyTest extends AbstractPrintDe
 		return anExpectedOutput;
 	}
 	
+	protected boolean isPassing=false;
+	public boolean isPassing() {
+		return isPassing;
+	}
+	
 	protected boolean isOutputValid(String[] anOutputLines,Class aUtilityClass,Method aVerifyingMethod) throws Throwable {
 		String [] anExpectedOutputList=anExpectedOutput();
 	    boolean passing=true;
@@ -144,9 +149,9 @@ public class PrintGeneratedCombinationInferredSafetyTest extends AbstractPrintDe
 		   
 		    Method aVerifyingMethod =  aUtilityClass.getMethod(verifyingMethodName(), verifyingArgumentTypes()); 
 		    
-		    boolean passing=isOutputValid(anOutputLines1,aUtilityClass,aVerifyingMethod)&&isOutputValid(anOutputLines2,aUtilityClass,aVerifyingMethod);
+		    isPassing=isOutputValid(anOutputLines1,aUtilityClass,aVerifyingMethod)&&isOutputValid(anOutputLines2,aUtilityClass,aVerifyingMethod);
 		    
-		    return passing?pass():fail("View console output for more information");
+		    return isPassing?pass():fail("View console output for more information");
 		} catch ( Throwable e) {
 			System.err.println(e);
 			throw new NotGradableException();

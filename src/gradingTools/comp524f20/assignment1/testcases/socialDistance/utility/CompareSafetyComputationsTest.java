@@ -72,6 +72,12 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 		return accuracy;
 	};
 	
+	protected boolean isPassing=false;
+	public boolean isPassing() {
+		return isPassing;
+	}
+	
+	
 	protected boolean isOutputValid(String[] anOutputLines,Class aUtilityClass,Method aDerivedVerifyingMethod,Method aInferredVerifyingMethod) throws Throwable {
 		
 		for(int i=0;i<anOutputLines.length;i++) {
@@ -173,7 +179,7 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 		    
 		    
 		    
-		    
+		    isPassing=true;
 //		    double accuracy=((double)numberCorrect)/(trials*10);
 //		    return accuracy >= 0.8?pass():partialPass(accuracy, "accuracy for tests too low"); 
 		    return pass();
