@@ -24,7 +24,7 @@ public class WekaUtil {
 		try {
 			String aLongName = CurrentProjectHolder.getProjectLocation().getCanonicalPath() + "/" + aFile;
 		    aLongName = aLongName.replaceAll(".bin", "");
-		    System.err.println("Reading weka file:" + aLongName);
+//		    System.err.println("Reading weka file:" + aLongName);
 //			System.err.println("Did not find weka file!!," + aLongName);
 
 //			String aLongName = CurrentProjectHolder.getCurrentProject().getProjectFolder().getCanonicalPath() + "/" + aFile;
@@ -35,8 +35,8 @@ public class WekaUtil {
 			File aWekaFile = new File(aLongName);
 			if (!aWekaFile.exists()) {
 				System.err.println("Did not find weka file!!," + aLongName);
-				System.err.println("project folder:" + CurrentProjectHolder.getCurrentProject().getProjectFolder());
-				System.err.println("build folder:" + CurrentProjectHolder.getCurrentProject().getBuildFolder());
+//				System.err.println("project folder:" + CurrentProjectHolder.getCurrentProject().getProjectFolder());
+//				System.err.println("build folder:" + CurrentProjectHolder.getCurrentProject().getBuildFolder());
 
 			}
 			
