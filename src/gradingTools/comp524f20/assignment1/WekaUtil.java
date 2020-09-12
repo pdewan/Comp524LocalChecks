@@ -1,5 +1,6 @@
 package gradingTools.comp524f20.assignment1;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -8,6 +9,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Random;
 
+import grader.basics.project.CurrentProjectHolder;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.core.Attribute;
@@ -20,7 +22,26 @@ public class WekaUtil {
 	public static void buildTreeModel(Classifier aClassifier, String aFile)  {
 		InputStream inputStream;
 		try {
-			inputStream = new FileInputStream(aFile);
+			String aLongName = CurrentProjectHolder.getProjectLocation().getCanonicalPath() + "/" + aFile;
+		    aLongName = aLongName.replaceAll(".bin", "");
+		    System.err.println("Reading weka file:" + aLongName);
+//			System.err.println("Did not find weka file!!," + aLongName);
+
+//			String aLongName = CurrentProjectHolder.getCurrentProject().getProjectFolder().getCanonicalPath() + "/" + aFile;
+//			System.err.println("Did not find weka file!!," + aLongName);
+//			System.err.println("project folder:" + CurrentProjectHolder.getCurrentProject().getProjectFolder());
+//			System.err.println("build folder:" + CurrentProjectHolder.getCurrentProject().getBuildFolder());
+//			inputStream = new FileInputStream(aFile);
+			File aWekaFile = new File(aLongName);
+			if (!aWekaFile.exists()) {
+				System.err.println("Did not find weka file!!," + aLongName);
+				System.err.println("project folder:" + CurrentProjectHolder.getCurrentProject().getProjectFolder());
+				System.err.println("build folder:" + CurrentProjectHolder.getCurrentProject().getBuildFolder());
+
+			}
+			
+			inputStream = new FileInputStream(aLongName);
+
 			Instances trainingSet = new Instances(new BufferedReader(new InputStreamReader(inputStream)));
 			trainingSet.setClassIndex(trainingSet.numAttributes() - 1);
 			aClassifier.buildClassifier(trainingSet);
