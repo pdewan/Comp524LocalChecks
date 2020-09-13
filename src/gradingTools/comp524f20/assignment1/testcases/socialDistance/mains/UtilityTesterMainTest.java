@@ -80,25 +80,17 @@ public class UtilityTesterMainTest extends PassFailJUnitTestCase {
 		    }
 		    
 			PrintGeneratedCombinationDerivedSafetyTest printedDerviedWorking = (PrintGeneratedCombinationDerivedSafetyTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(PrintGeneratedCombinationDerivedSafetyTest.class);
-			
 			PrintGeneratedCombinationInferredSafetyTest printedInferredWorking = (PrintGeneratedCombinationInferredSafetyTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(PrintGeneratedCombinationInferredSafetyTest.class);
-			
 			CompareSafetyComputationsTest compareWorking = (CompareSafetyComputationsTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(CompareSafetyComputationsTest.class);
-			
 			PrintSafeDistancesAndDurationsTest printedSafeDistancesWorking = (PrintSafeDistancesAndDurationsTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(PrintSafeDistancesAndDurationsTest.class);
-			
-		    if (!printedDerviedWorking.isPassing()) {
+			if (!printedDerviedWorking.isPassing())
 		    	return fail ("PrintGeneratedCombinationDerivedSafetyTest must first pass before this test can be ran");
-			}
-		    if (!printedInferredWorking.isPassing()) {
+		    if (!printedInferredWorking.isPassing()) 
 		    	return fail ("PrintGeneratedCombinationInferredSafetyTest must first pass before this test can be ran");
-		    }
-		    if (!compareWorking.isPassing()) {
+		    if (!compareWorking.isPassing()) 
 		    	return fail ("CompareSafetyComputationsTest must first pass in order for this test to be ran");
-		    }
-		    if (!printedSafeDistancesWorking.isPassing()) {
+		    if (!printedSafeDistancesWorking.isPassing()) 
 		    	return fail ("PrintSafeDistancesAndDurationsTest must first pass in order for this test to be ran");
-		    }
 		    
 		    System.out.println("---------------------");
 		    Class[] aParameterTypes = argumentTypes();
@@ -110,17 +102,16 @@ public class UtilityTesterMainTest extends PassFailJUnitTestCase {
 		    if (anOutput == null || anOutput.isEmpty() ) {
 		    	return fail("No Output");
 		    }
-		    
-		    boolean passing=true;
+
 		    String [] parsedOutput=anOutput.split("\n");
 		    int callsFound=0;
 		    String [] regexList= {
 		    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Ii]sSafe.*",
 		    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Ii]sSafe.*",
 		    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Dd]erived,[Ii]nferred.*",
-		    	"30,\\[\\{13,30\\},\\{27,120\\},\\{6,15\\}\\].*",
-		    	"29,\\[\\{13,30\\},\\{27,120\\},\\{6,15\\}\\].*",
-		    	"32,\\[\\{27,30\\},\\{13,15\\}\\].*"
+		    	"30,\\[\\{\\d+,\\d+\\},\\{\\d+,\\d+\\},\\{\\d+,\\d+\\}\\].*",
+		    	"29,\\[\\{\\d+,\\d+\\},\\{\\d+,\\d+\\},\\{\\d+,\\d+\\}\\].*",
+		    	"32,\\[\\{\\d+,\\d+\\},\\{\\d+,\\d+\\}\\].*"
 		    };
 		    String [] methodTestName= {
 		    		"PrintGeneratedCombinationDerivedSafety",
