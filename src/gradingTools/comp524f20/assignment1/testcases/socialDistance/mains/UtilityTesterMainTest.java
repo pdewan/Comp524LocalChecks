@@ -109,9 +109,9 @@ public class UtilityTesterMainTest extends PassFailJUnitTestCase {
 		    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Ii]sSafe.*",
 		    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Ii]sSafe.*",
 		    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Dd]erived,[Ii]nferred.*",
-		    	"30,\\[\\{\\d+,\\d+\\},\\{\\d+,\\d+\\},\\{\\d+,\\d+\\}\\].*",
-		    	"29,\\[\\{\\d+,\\d+\\},\\{\\d+,\\d+\\},\\{\\d+,\\d+\\}\\].*",
-		    	"32,\\[\\{\\d+,\\d+\\},\\{\\d+,\\d+\\}\\].*"
+		    	"30,\\[\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}\\].*",
+		    	"29,\\[\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}\\].*",
+		    	"32,\\[\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}\\].*"
 		    };
 		    String [] methodTestName= {
 		    		"PrintGeneratedCombinationDerivedSafety",
