@@ -113,38 +113,37 @@ public class UtilityTesterMainTest extends PassFailJUnitTestCase {
 		    
 		    boolean passing=true;
 		    String [] parsedOutput=anOutput.split("\n");
+		    int callsFound=0;
+		    String [] regexList= {
+		    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Ii]sSafe.*",
+		    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Ii]sSafe.*",
+		    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Dd]erived,[Ii]nferred.*",
+		    	"30,\\[\\{13,30\\},\\{27,120\\},\\{6,15\\}\\].*",
+		    	"29,\\[\\{13,30\\},\\{27,120\\},\\{6,15\\}\\].*",
+		    	"32,\\[\\{27,30\\},\\{13,15\\}\\].*"
+		    };
+		    String [] methodTestName= {
+		    		"PrintGeneratedCombinationDerivedSafety",
+		    		"PrintGeneratedCombinationInferredSafety",
+		    		"CompareSafetyComputations",
+		    		"PrintSafeDistancesAndDurations with args Medium exhalation",
+		    		"PrintSafeDistancesAndDurations with args Medium exhalation -1",
+		    		"PrintSafeDistancesAndDurations with args Medium exhalation +2"
+		    };
 		    
-		    if(!parsedOutput[0].matches("[Dd]istance,[Dd]uration,[Ee]xhalation,[Ii]sSafe.*")) {
-		    	System.out.println("Missing call to PrintGeneratedCombinationDerivedSafety");
-		    	passing=false;
-		    }
-		    if(!parsedOutput[19].matches("[Dd]istance,[Dd]uration,[Ee]xhalation,[Ii]sSafe.*")) {
-		    	System.out.println("Missing call to PrintGeneratedCombinationInferredSafety");
-		    	passing=false;
-		    }
-		    if(!parsedOutput[38].matches(".*[Dd]istance,[Dd]uration,[Ee]xhalation,[Dd]erived,[Ii]nferred.*")) {
-		    	System.out.println("Missing call to CompareSafetyComputations");
-		    	passing=false;
-		    }
-		    if(!parsedOutput[parsedOutput.length-3].matches(".*30,\\[\\{13,30\\},\\{27,120\\},\\{6,15\\}\\].*")) {
-		    	System.out.println("Missing call to PrintSafeDistancesAndDurations with args Medium exhalation");
-		    	passing=false;
-		    }
-		    if(!parsedOutput[parsedOutput.length-2].matches(".*29,\\[\\{13,30\\},\\{27,120\\},\\{6,15\\}\\].*")) {
-		    	System.out.println("Missing call to PrintSafeDistancesAndDurations with args Medium exhalation -1");
-		    	passing=false;
-		    }
-		    if(!parsedOutput[parsedOutput.length-1].matches(".*32,\\[\\{27,30\\},\\{13,15\\}\\].*")) {
-		    	System.out.println("Missing call to PrintSafeDistancesAndDurations with args Medium exhalation +2");
-		    	passing=false;
+		    for(String line:parsedOutput) {
+		    	if(line.matches(regexList[callsFound])) {
+		    		callsFound++;
+		    	}
 		    }
 
-		    if(!passing) {
+		    if(callsFound<regexList.length) {
+		    	System.out.println("Missing call to "+methodTestName[callsFound]);
 		    	System.out.println("Note make sure calls are in the order listed on the assingment document");
+		    	return fail("View console output for more information");
 		    }
 
-		    return passing?pass():fail("View console output for more information");
-		
+		    return pass();
 		} catch (Throwable e) {
 			throw new NotGradableException(e.getMessage());
 		}
