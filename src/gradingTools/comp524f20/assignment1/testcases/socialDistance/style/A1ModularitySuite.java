@@ -8,6 +8,7 @@ import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
+import gradingTools.basics.sharedTestCase.checkstyle.AccessModifiersMatched;
 import gradingTools.comp524f19.assignment1.requiredClasses.A1RequiredClassesSuite;
 import gradingTools.comp524f19.assignment1.testcases.load.A1LoadSuite;
 import gradingTools.comp524f19.assignment1.testcases.load.TestLispFileProvided;
@@ -24,25 +25,38 @@ import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	SocialDistanceNoCheckstyleWarnings.class
+//	A1NoCheckstyleWarnings.class,
+//	A1NamedConstants.class,
+//	A1PublicMethodsOverride.class,
+//	A1InterfaceAsType.class,
+//	A1MnemonicNames.class,
+//	A1AccessModifiersMatched.class,
+	InterpolatedReuse.class,
+	UtilityJavaDocs.class
 	
 	
 })
 	
 
 //@MaxValue(50)
-public class StyleSuite {
+public class A1ModularitySuite {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(StyleSuite.class);
+			BasicJUnitUtils.interactiveTest(A1ModularitySuite.class);
 
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+//	static {
+//		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+//		setCheckStyleConfiguration("unc_checks_524_A1.xml");
+//	}
 }
+
+	
+

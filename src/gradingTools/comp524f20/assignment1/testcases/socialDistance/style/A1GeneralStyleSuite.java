@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment1;
+package gradingTools.comp524f20.assignment1.testcases.socialDistance.style;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -8,6 +8,7 @@ import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
+import gradingTools.basics.sharedTestCase.checkstyle.AccessModifiersMatched;
 import gradingTools.comp524f19.assignment1.requiredClasses.A1RequiredClassesSuite;
 import gradingTools.comp524f19.assignment1.testcases.load.A1LoadSuite;
 import gradingTools.comp524f19.assignment1.testcases.load.TestLispFileProvided;
@@ -18,49 +19,44 @@ import gradingTools.comp524f20.assignment0_1.testcases.GreetingMainProvided;
 import gradingTools.comp524f20.assignment0_1.testcases.GreetingRun;
 import gradingTools.comp524f20.assignment0_1.testcases.socialDistance.SocialDistanceMainRuns;
 import gradingTools.comp524f20.assignment0_4.testcases.LispGreetingLoadAndRun;
-import gradingTools.comp524f20.assignment1.socialDistance.factories.FactoriesSuite;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.BasicMainTest;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.MainClassSuite;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.RequiredClassesSuite;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceClassRegistryProvided;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceUtilityTesterMainProvided;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.A1GeneralStyleSuite;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.A1ModularitySuite;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.UtilityClassSuite;
 import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
-import util.trace.TraceableWarning;
-import util.trace.Tracer;
-import util.trace.uigen.UnknownPropertyNotification;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	RequiredClassesSuite.class,
-	UtilityClassSuite.class,
-	MainClassSuite.class,
-	A1GeneralStyleSuite.class,
-	A1ModularitySuite.class,
-	FactoriesSuite.class
+	A1NoCheckstyleWarnings.class,
+	A1NamedConstants.class,
+	A1PublicMethodsOverride.class,
+	A1InterfaceAsType.class,
+	A1MnemonicNames.class,
+	A1AccessModifiersMatched.class,
+//	InterpolatedReuse.class,
+//	UtilityJavaDocs.class
+	
 	
 })
 	
 
 //@MaxValue(50)
-public class F20Assignment1Suite {
+public class A1GeneralStyleSuite {
 
 	public static void main (String[] args) {
 		try {
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-			setCheckStyleConfiguration("unc_checks_524_A1.xml");
-			TraceableWarning.doNotWarn(UnknownPropertyNotification.class);
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(F20Assignment1Suite.class);
+			BasicJUnitUtils.interactiveTest(A1GeneralStyleSuite.class);
 
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+//	static {
+//		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+//		setCheckStyleConfiguration("unc_checks_524_A1.xml");
+//	}
 }
+
+	
+

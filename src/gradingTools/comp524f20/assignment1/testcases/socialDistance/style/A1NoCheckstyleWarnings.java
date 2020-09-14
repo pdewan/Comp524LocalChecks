@@ -37,9 +37,9 @@ import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(0)
 @IsExtra(true)
-public class SocialDistanceNoCheckstyleWarnings extends PassFailJUnitTestCase {
+public class A1NoCheckstyleWarnings extends PassFailJUnitTestCase {
 
-	public SocialDistanceNoCheckstyleWarnings() {
+	public A1NoCheckstyleWarnings() {
 	}
 
 	
@@ -47,11 +47,15 @@ public class SocialDistanceNoCheckstyleWarnings extends PassFailJUnitTestCase {
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-		setCheckStyleConfiguration("unc_checks_524_A0_1.xml");
+//		System.out.println("hello");
+//		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+//		setCheckStyleConfiguration("unc_checks_524_A1.xml");
 		String aText = project.getCheckstyleText();
+		if (aText == null) {
+			return fail("Could not run checkstyle");
+		}
 		if (aText.contains("WARN")) {
-			System.out.println("Schectyle text");
+			System.out.println("chekstyle text");
 			System.out.println(aText);
 			return fail("Warnings found in checkstyle text, see output");
 		}

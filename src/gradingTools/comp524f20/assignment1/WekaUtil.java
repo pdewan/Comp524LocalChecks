@@ -20,6 +20,10 @@ import weka.core.converters.ArffLoader;
 import weka.filters.Filter;
 public class WekaUtil {	
 	public static void buildTreeModel(Classifier aClassifier, String aFile)  {
+		if (aFile.contains("/") || aFile.contains("\\")) {
+			System.err.println("buildTreeModel should be passed a file name that is relative to the project folder - it should not contains a / or \\");
+			return;
+		}
 		InputStream inputStream;
 		try {
 			String aLongName = CurrentProjectHolder.getProjectLocation().getCanonicalPath() + "/" + aFile;
