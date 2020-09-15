@@ -26,7 +26,7 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClas
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceUtilityTesterMainProvided;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.CompareSafetyComputationsTest;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.PrintGeneratedCombinationDerivedSafetyTest;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.PrintGeneratedCombinationInferredSafetyTest;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.PrintGivenAndGeneratedCombinationsInferredSafety;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.PrintSafeDistancesAndDurationsTest;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 import gradingTools.shared.testcases.openmp.OpenMPPragma;
@@ -80,7 +80,7 @@ public class UtilityTesterMainTest extends PassFailJUnitTestCase {
 		    }
 		    
 			PrintGeneratedCombinationDerivedSafetyTest printedDerviedWorking = (PrintGeneratedCombinationDerivedSafetyTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(PrintGeneratedCombinationDerivedSafetyTest.class);
-			PrintGeneratedCombinationInferredSafetyTest printedInferredWorking = (PrintGeneratedCombinationInferredSafetyTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(PrintGeneratedCombinationInferredSafetyTest.class);
+			PrintGivenAndGeneratedCombinationsInferredSafety printedInferredWorking = (PrintGivenAndGeneratedCombinationsInferredSafety) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(PrintGivenAndGeneratedCombinationsInferredSafety.class);
 			CompareSafetyComputationsTest compareWorking = (CompareSafetyComputationsTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(CompareSafetyComputationsTest.class);
 			PrintSafeDistancesAndDurationsTest printedSafeDistancesWorking = (PrintSafeDistancesAndDurationsTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(PrintSafeDistancesAndDurationsTest.class);
 			if (!printedDerviedWorking.isPassing())

@@ -35,7 +35,7 @@ import util.annotations.MaxValue;
 	GenerateSafeDistancesAndDurationsTest.class,
 	PrintSafeDistancesAndDurationsTest.class,
 	IsInferredSafeTest.class,
-	PrintGeneratedCombinationInferredSafetyTest.class,
+	PrintGivenAndGeneratedCombinationsInferredSafety.class,
 	CompareSafetyComputationsTest.class,
 	WekaFileSizeTest.class
 	

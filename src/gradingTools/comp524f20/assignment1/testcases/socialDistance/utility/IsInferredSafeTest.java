@@ -235,7 +235,7 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 		   		}else {
 		   			aPercentage+=(1.0/resultPercentages.length);		   			
 		   		}
-//		   		System.out.println(resultPercentages[i]);
+		   		System.out.println(resultPercentages[i]);
 		   	}
 		   	
 		   	

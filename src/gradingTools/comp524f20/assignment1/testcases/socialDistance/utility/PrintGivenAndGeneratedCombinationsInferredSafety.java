@@ -44,13 +44,13 @@ import main.ClassRegistry;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
 @MaxValue(7)
-public class PrintGeneratedCombinationInferredSafetyTest extends AbstractPrintDerivedSafetyValidator {
+public class PrintGivenAndGeneratedCombinationsInferredSafety extends AbstractPrintDerivedSafetyValidator {
 	public static final int TIME_OUT_MSECS = 300; // secs
 	
 	protected final String methodName = "printGivenAndGeneratedCombinationsInferredSafety";
 	protected final String aVerifyingMethodName="isInferredSafe";
 
-	public PrintGeneratedCombinationInferredSafetyTest() {
+	public PrintGivenAndGeneratedCombinationsInferredSafety() {
 	}
 	@Override
 	protected  String methodName() {
