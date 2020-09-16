@@ -27,6 +27,7 @@ import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 @Suite.SuiteClasses({
 
 	InterpolatedReuse.class,	
+	PrintingCodeReuse.class,
 	ExpectedSubtleJavaDocs.class,
 	ModelReuse.class,
 	MVCAndFactoryCalls.class
