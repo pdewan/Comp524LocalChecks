@@ -13,7 +13,7 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClas
 import gradingTools.shared.testcases.FactoryMethodTest;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
-@MaxValue(3)
+@MaxValue(2)
 @Explanation("Checks that a view factory is returned by the configuration and gets a view object")
 public class ViewFactory extends FactoryMethodTest {
 

@@ -14,7 +14,7 @@ import gradingTools.shared.testcases.FactoryMethodTest;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 import weka.classifiers.Classifier;
-@MaxValue(3)
+@MaxValue(2)
 @Explanation("Checks that a controller factory is returned by the registry and gets a controller object")
 public class ControllerFactory extends FactoryMethodTest {
 

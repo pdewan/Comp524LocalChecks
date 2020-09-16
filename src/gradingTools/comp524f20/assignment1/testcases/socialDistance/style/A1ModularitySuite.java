@@ -25,14 +25,11 @@ import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-//	A1NoCheckstyleWarnings.class,
-//	A1NamedConstants.class,
-//	A1PublicMethodsOverride.class,
-//	A1InterfaceAsType.class,
-//	A1MnemonicNames.class,
-//	A1AccessModifiersMatched.class,
-	InterpolatedReuse.class,
-	UtilityJavaDocs.class
+
+	InterpolatedReuse.class,	
+	ExpectedSubtleJavaDocs.class,
+	ModelReuse.class,
+	MVCAndFactoryCalls.class
 	
 	
 })

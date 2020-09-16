@@ -14,7 +14,7 @@ import gradingTools.shared.testcases.FactoryMethodTest;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 import weka.classifiers.Classifier;
-@MaxValue(7)
+@MaxValue(3)
 @Explanation("Checks that a classifier factory is returned by the registry and gets a classifier object")
 public class ClassifierFactory extends FactoryMethodTest {
 

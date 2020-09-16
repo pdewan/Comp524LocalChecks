@@ -1,15 +1,16 @@
 package gradingTools.comp524f20.assignment1.testcases.socialDistance.style;
 
 import gradingTools.basics.sharedTestCase.checkstyle.ExpectedCallsCheck;
-import gradingTools.basics.sharedTestCase.checkstyle.ExpectedJavaDocsCheck;
+import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(10)
+@MaxValue(15)
 @IsExtra(true)
-public class UtilityJavaDocs extends ExpectedJavaDocsCheck {
+@Explanation("Checks for expected MVC and Factory calls")
+public class MVCAndFactoryCalls extends ExpectedCallsCheck {
 	static String[][] tagAndMethods = {
-			{".BasicSocialDistanceUtility", ".*"},
-			{".BasicSocialDistanceUtility", ".*"},
+			{".SocialDistanceMVCInterpolatingMain", ""},
+			{".SocialDistanceController", ""},
 
 	};
 
@@ -20,7 +21,7 @@ public class UtilityJavaDocs extends ExpectedJavaDocsCheck {
 
 	@Override
 	protected int maxPositives() {
-		return 3;
+		return 5;
 	}
 
 }
