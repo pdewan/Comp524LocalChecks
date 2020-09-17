@@ -17,7 +17,7 @@ public abstract class AnAbstractRegexLineChecker extends PassFailJUnitTestCase{
 			if(outputLines[i].matches(regexList[numRegexFound])){
 				System.out.println("Output line: \""+i+"\" matches regex: "+regexList[numRegexFound]);
 				numRegexFound++;
-				if(numRegexFound==regexList.length-1)
+				if(numRegexFound==regexList.length)
 					return true;
 			}
 		}
