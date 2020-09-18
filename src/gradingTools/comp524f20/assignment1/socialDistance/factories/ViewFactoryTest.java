@@ -13,17 +13,16 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClas
 import gradingTools.shared.testcases.FactoryMethodTest;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
-import weka.classifiers.Classifier;
 @MaxValue(2)
-@Explanation("Checks that a controller factory is returned by the registry and gets a controller object")
-public class ControllerFactory extends FactoryMethodTest {
+@Explanation("Checks that a view factory is returned by the configuration and gets a view object")
+public class ViewFactoryTest extends FactoryMethodTest {
 
-	public Object getController() {
-		return getRootProxy();
+	public PropertyChangeListener getView() {
+		return (PropertyChangeListener) getRootProxy();
 	}
 	@Override
 	protected Class proxyClass() {
-		return Object.class;
+		return PropertyChangeListener.class;
 	}
 	@Override
 	protected String factoryMethodName() {
@@ -36,9 +35,9 @@ public class ControllerFactory extends FactoryMethodTest {
 		if (aTestMapReduceConfiguration == null) {
 			assertTrue("No class registry", false);
 		}
-		Class retVal = aTestMapReduceConfiguration.getSocialDistanceControllerFactory();
+		Class retVal = aTestMapReduceConfiguration.getSocialDistanceViewFactory();
 		if (retVal == null) {
-			assertTrue("Null controller factory in class registry", false);
+			assertTrue("Null view factory in class registry", false);
 		}
 		return retVal;
 	}

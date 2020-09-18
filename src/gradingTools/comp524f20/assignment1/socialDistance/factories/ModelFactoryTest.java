@@ -13,7 +13,7 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 @MaxValue(3)
 @Explanation("Checks that a model factory is returned by the registry and gets a model object")
-public class ModelFactory extends FactoryMethodTest {
+public class ModelFactoryTest extends FactoryMethodTest {
 
 	public TestModelInterface getModel() {
 		return (TestModelInterface) getRootProxy();

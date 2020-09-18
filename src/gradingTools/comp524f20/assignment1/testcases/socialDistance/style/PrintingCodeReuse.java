@@ -10,7 +10,9 @@ import util.annotations.MaxValue;
 @Explanation("Checks for reuse of print formats")
 public class PrintingCodeReuse extends ExpectedCommonCallsCheck {
 	static String[][] tagAndMethods = {
-			{".BasicSocialDistanceUtility", "printGivenAndGeneratedCombinationsDerivedSafety...void"},
+//			{".BasicSocialDistanceUtility", "printGivenAndGeneratedCombinationsDerivedSafety...void"},
+			{".BasicSocialDistanceUtility", 
+				"(printGivenAndGeneratedCombinationsDerivedSafety...void|printGivenAndGeneratedCombinationsInferredSafety...void)"},
 
 	};
 

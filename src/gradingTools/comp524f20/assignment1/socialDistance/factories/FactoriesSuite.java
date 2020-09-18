@@ -24,10 +24,10 @@ import util.annotations.MaxValue;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	ModelFactory.class,
-	ViewFactory.class,
-	ControllerFactory.class,
-	ClassifierFactory.class,
+	ModelFactoryTest.class,
+	ViewFactoryTest.class,
+	ControllerFactoryTest.class,
+	ClassifierFactoryTest.class,
 	
 })
 	

@@ -14,16 +14,16 @@ import gradingTools.shared.testcases.FactoryMethodTest;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 import weka.classifiers.Classifier;
-@MaxValue(3)
-@Explanation("Checks that a classifier factory is returned by the registry and gets a classifier object")
-public class ClassifierFactory extends FactoryMethodTest {
+@MaxValue(2)
+@Explanation("Checks that a controller factory is returned by the registry and gets a controller object")
+public class ControllerFactoryTest extends FactoryMethodTest {
 
-	public Classifier getClassifier() {
-		return (Classifier) getRootProxy();
+	public Object getController() {
+		return getRootProxy();
 	}
 	@Override
 	protected Class proxyClass() {
-		return Classifier.class;
+		return Object.class;
 	}
 	@Override
 	protected String factoryMethodName() {
@@ -36,9 +36,9 @@ public class ClassifierFactory extends FactoryMethodTest {
 		if (aTestMapReduceConfiguration == null) {
 			assertTrue("No class registry", false);
 		}
-		Class retVal = aTestMapReduceConfiguration.getSocialDistanceClassifierFactory();
+		Class retVal = aTestMapReduceConfiguration.getSocialDistanceControllerFactory();
 		if (retVal == null) {
-			assertTrue("Null classifier factory in class registry", false);
+			assertTrue("Null controller factory in class registry", false);
 		}
 		return retVal;
 	}
