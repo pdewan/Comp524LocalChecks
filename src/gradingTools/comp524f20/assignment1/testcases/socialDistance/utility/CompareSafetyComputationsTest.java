@@ -150,7 +150,7 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 		    int trials=10;
 		    for(int i=0;i<trials;i++) {
 		    	ResultWithOutput aResultWithOutput = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
-			    String anOutput = aResultWithOutput.getOutput();
+			    String anOutput = aResultWithOutput.getOutput().replaceAll("I\\*\\*\\*.*\n", "");
 			    int retVal = (int) aResultWithOutput.getResult();
 			    
 			    String [] anOutputLines = anOutput.split("\n");

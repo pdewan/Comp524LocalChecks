@@ -141,7 +141,7 @@ public class PrintSafeDistancesAndDurationsTest extends PassFailJUnitTestCase {
 		    OUTER:
 		    for(int i =0; i<anArguments.length;i++) {
 		    	ResultWithOutput aResultWithOutput = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments[i], TIME_OUT_MSECS);
-		    	String anOutput = aResultWithOutput.getOutput();
+		    	String anOutput = aResultWithOutput.getOutput().replaceAll("I\\*\\*\\*.*\n", "");
 		    	if (anOutput == null || anOutput.isEmpty() ) {
 			    	System.out.println("No output for arguments "+Arrays.toString(anArguments[i]));
 			    	continue;

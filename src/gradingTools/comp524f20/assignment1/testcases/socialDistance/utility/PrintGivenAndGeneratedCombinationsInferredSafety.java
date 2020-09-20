@@ -121,7 +121,7 @@ public class PrintGivenAndGeneratedCombinationsInferredSafety extends AbstractPr
 		    Object[] anArguments = getArguments();
 		    ResultWithOutput aResultWithOutput1 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
 		    
-		    String anOutput1 = aResultWithOutput1.getOutput();
+		    String anOutput1 = aResultWithOutput1.getOutput().replaceAll("I\\*\\*\\*.*\n", "");
 		    if (anOutput1 == null || anOutput1.isEmpty() ) {
 		    	return fail("No Output");
 		    }
@@ -133,7 +133,7 @@ public class PrintGivenAndGeneratedCombinationsInferredSafety extends AbstractPr
 		    
 		    ResultWithOutput aResultWithOutput2 = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
 		    
-		    String anOutput2 = aResultWithOutput2.getOutput();
+		    String anOutput2 = aResultWithOutput2.getOutput().replaceAll("I\\*\\*\\*.*\n", "");
 		    if (anOutput2 == null || anOutput2.isEmpty() ) {
 		    	return fail("No Output");
 		    }
