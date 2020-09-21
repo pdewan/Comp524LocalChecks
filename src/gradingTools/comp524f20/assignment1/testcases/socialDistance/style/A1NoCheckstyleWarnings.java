@@ -55,7 +55,7 @@ public class A1NoCheckstyleWarnings extends PassFailJUnitTestCase {
 			return fail("Could not run checkstyle");
 		}
 		if (aText.contains("WARN")) {
-			System.out.println("chekstyle text");
+			System.out.println("checkstyle text");
 			System.out.println(aText);
 			return fail("Warnings found in checkstyle text, see output");
 		}

@@ -176,6 +176,7 @@ public class GenerateSafeDistancesAndDurationsTest extends PassFailJUnitTestCase
 		    return aPercentage == 1?pass():partialPass(aPercentage, aNumSuccesses + " tests passed out of " +   aResults.length);  
 
 		} catch ( Throwable e) {
+			System.err.println("Not gradable cause:" + e);
 			throw new NotGradableException();
 		}
 	}
