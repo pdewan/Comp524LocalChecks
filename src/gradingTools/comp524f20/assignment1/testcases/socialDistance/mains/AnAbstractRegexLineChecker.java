@@ -27,10 +27,15 @@ public abstract class AnAbstractRegexLineChecker extends PassFailJUnitTestCase{
 		return false;
 	}
 	
+	protected boolean regexOutputChecks(String [] outputLines, String [] regexList, String [] inputList) {
+		return regexOutputChecks(outputLines,regexList,inputList,this.getClass().getSimpleName());
+	}
+	
+	
 	protected boolean regexOutputChecks(String [] outputLines, String [] regexList, String [] inputList, String testName) {
 		System.out.println("\nTesting "+testName+" with the following inputs:");
 		for(int i=0;i<inputList.length;i++)
-			System.out.print(inputList[i]+" ");
+			System.out.print("\""+inputList[i]+"\" ");
 		System.out.println("\n");
 		return regexOutputChecks(outputLines,regexList);
 	}
