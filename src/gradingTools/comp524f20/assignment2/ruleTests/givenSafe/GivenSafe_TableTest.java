@@ -45,13 +45,13 @@ public class GivenSafe_TableTest extends AnAbstractPrologRunningProject {
 	}
 	
 	private static String[] regexChecks={
-			"^true.*",
-			"^true.*",
-			"^true.*",
-			"^true.*",
-			"^true.*",
-			"^true.*",
-			"^true.*"
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
 	};
 
 	@Override

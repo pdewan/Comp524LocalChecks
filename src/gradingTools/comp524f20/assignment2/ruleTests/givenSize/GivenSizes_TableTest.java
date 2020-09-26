@@ -46,9 +46,9 @@ public class GivenSizes_TableTest extends AnAbstractPrologRunningProject {
 	
 	private static String[] regexChecks={
 
-			"^true false.*",
-			"^true false.*",
-			"^true.*"
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
 	};
 
 	@Override

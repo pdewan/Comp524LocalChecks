@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment2.ruleTests.derivedSafe;
+package gradingTools.comp524f20.assignment2.ruleTests.InterpolatedSafeThreeParam;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,44 +37,96 @@ import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
-@MaxValue(6)
-public class DerivedSafe_TableTest extends AnAbstractPrologRunningProject {
+@MaxValue(2)
+public class InterpolatedSafe_OutputGeneration extends AnAbstractPrologRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
 
-	public DerivedSafe_TableTest() {
+	public InterpolatedSafe_OutputGeneration() {
+	}
+
+	private final String [] givenSizesInputs= {
+			
+			"interpolatedSafe(13,30,30). ; .",
+			"interpolatedSafe(6,30,10). ; .",
+			"interpolatedSafe(27,30,50). ; .",
+			"interpolatedSafe(13,15,50). ; .",
+			"interpolatedSafe(13,120,10). ; .",
+			"interpolatedSafe(27,120,30). ; .",
+			"interpolatedSafe(6,15,30). ; .",
+
+			"write('Off Table True Tests below this\n---\n').",
+			
+			"interpolatedSafe(14,30,30). ; .",
+			"interpolatedSafe(7,30,10). ; .",
+			"interpolatedSafe(27,29,50). ; .",
+			"interpolatedSafe(14,14,49). ; .",
+			"interpolatedSafe(14,119,9). ; .",
+			"interpolatedSafe(28,119,29). ; .",
+			"interpolatedSafe(7,14,29). ; .",
+
+			"interpolatedSafe(26,30,30). ; .",
+			"interpolatedSafe(12,30,10). ; .",
+			"interpolatedSafe(27,16,50). ; .",
+			"interpolatedSafe(26,0,31). ; .",
+			"interpolatedSafe(26,31,0). ; .",
+			"interpolatedSafe(2147483647,31,11). ; .",
+			"interpolatedSafe(12,0,11). ; .",
+
+			"write('Off Table False Tests below this\n---\n').",
+			
+			"interpolatedSafe(27,2147483647,50).",
+			"interpolatedSafe(27,120,2147483647).",
+			"interpolatedSafe(5,15,30).",
+			"interpolatedSafe(13,121,10).",
+			"interpolatedSafe(27,120,31).",
+			"interpolatedSafe(0,15,10).",
+			"interpolatedSafe(6,15,2147483647).",
+
+			"interpolatedSafe(13,15,10). ; .",
+			"interpolatedSafe(13,15,30). ; .",
+			"interpolatedSafe(6,30,10). ; .",
+			"interpolatedSafe(6,30,50). ; .",
+			"interpolatedSafe(27,30,30). ; .",
+			"interpolatedSafe(27,120,10). ; .",
+			"interpolatedSafe(27,120,50). ; .",
+			
+			"halt."
+	};
+	
+	private String output=null;
+	
+	public String[] getInputs() {
+		return givenSizesInputs;
 	}
 	
-	private static String[] regexChecks={
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-	};
-
+	public String getOutput() {
+		return output;
+	}
+	
+	
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		try {
 
-			DerivedSafe_OutputGeneration outputGeneration = (DerivedSafe_OutputGeneration) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(DerivedSafe_OutputGeneration.class);			
-			String anOutput=outputGeneration.getOutput();
-
-			if (anOutput == null) {
-				return fail ("Could not generate output. See console messages.");
+			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
+			
+			String [] inputs=givenSizesInputs;
+			
+			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
+			if (aRunningProject == null) {
+				return fail ("Could not create project. See console messages.");
 			}
 
+			String anOutput = aRunningProject.await().replaceAll("\n\n", "\n").replaceAll("\n\n", "\n");
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-			String [] releventInputs=Arrays.copyOfRange(outputGeneration.getInputs(), 0,6);
 			
+			if(anOutput==null||anOutput.length()==0) {
+				return fail("output from running commands is null or empty");
+			}
 			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,releventInputs);
-
-			if (!aRetval) 
-				return fail("View console for more detail");
+			output=anOutput;
 			return pass();
 			
 

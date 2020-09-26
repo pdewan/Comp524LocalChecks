@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment2.ruleTests.derivedSafe;
+package gradingTools.comp524f20.assignment2.ruleTests.generateSafeDistancesAndDurations;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,44 +37,71 @@ import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
-@MaxValue(6)
-public class DerivedSafe_TableTest extends AnAbstractPrologRunningProject {
+@MaxValue(2)
+public class GenerateSafeDistancesAndDurations_OutputGeneration extends AnAbstractPrologRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
 
-	public DerivedSafe_TableTest() {
+	public GenerateSafeDistancesAndDurations_OutputGeneration() {
+	}
+
+	private final String [] givenSizesInputs= {
+			"generateSafeDistancesAndDurations(Distance,Duration,9). ;", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,0). ;", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,10). ;", "; .",//5
+			
+			"generateSafeDistancesAndDurations(Distance,Duration,11). ;", ";", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,29). ;", ";", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,30). ;", ";", "; .",//14
+			
+			"generateSafeDistancesAndDurations(Distance,Duration,31). ;", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,49). ;", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,50). ;", "; .",//20
+			
+			"write('generateSafeDistancesAndDurations false outputs below\n---\n').",
+			
+			"generateSafeDistancesAndDurations(Distance,Duration,51).",
+			"generateSafeDistancesAndDurations(Distance,Duration,70).",
+			"generateSafeDistancesAndDurations(Distance,Duration,101).",
+			"generateSafeDistancesAndDurations(Distance,Duration,2147483647).",
+			
+			"halt."
+			
+	};
+	
+	private String output=null;
+	
+	public String[] getInputs() {
+		return givenSizesInputs;
 	}
 	
-	private static String[] regexChecks={
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-	};
-
+	public String getOutput() {
+		return output;
+	}
+	
+	
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		try {
 
-			DerivedSafe_OutputGeneration outputGeneration = (DerivedSafe_OutputGeneration) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(DerivedSafe_OutputGeneration.class);			
-			String anOutput=outputGeneration.getOutput();
-
-			if (anOutput == null) {
-				return fail ("Could not generate output. See console messages.");
+			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
+			
+			String [] inputs=givenSizesInputs;
+			
+			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
+			if (aRunningProject == null) {
+				return fail ("Could not create project. See console messages.");
 			}
 
+			String anOutput = aRunningProject.await().replaceAll("\n\n", "\n");
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-			String [] releventInputs=Arrays.copyOfRange(outputGeneration.getInputs(), 0,6);
 			
+			if(anOutput==null||anOutput.length()==0) {
+				return fail("output from running commands is null or empty");
+			}
 			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,releventInputs);
-
-			if (!aRetval) 
-				return fail("View console for more detail");
+			output=anOutput;
 			return pass();
 			
 

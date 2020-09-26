@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment2.ruleTests.derivedSafe;
+package gradingTools.comp524f20.assignment2.ruleTests.generateSafeDistancesAndDurations;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,20 +38,52 @@ import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
 @MaxValue(6)
-public class DerivedSafe_TableTest extends AnAbstractPrologRunningProject {
+public class GenerateSafeDistancesAndDurations_TrueValueTest extends AnAbstractPrologRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
 
-	public DerivedSafe_TableTest() {
+	public GenerateSafeDistancesAndDurations_TrueValueTest() {
 	}
 	
 	private static String[] regexChecks={
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
-			"^true\\..*|^true f.*",
+			"^Distance = 6,.*",
+			"^Duration = 30 Distance = 13,.*",
+			"^Duration = 120 false\\..*",
+			
+			"^Distance = 6,.*",
+			"^Duration = 30 Distance = 13,.*",
+			"^Duration = 120 false\\..*",
+			
+			"^Distance = 6,.*",
+			"^Duration = 30 Distance = 13,.*",
+			"^Duration = 120 false\\..*",
+			
+			"Distance = 13,.*",
+			"Duration = 30 Distance = 27,.*", 
+			"Duration = 120 Distance = 6,.*",
+			"Duration = 15 false\\..*",
+			
+			"Distance = 13,.*",
+			"Duration = 30 Distance = 27,.*", 
+			"Duration = 120 Distance = 6,.*",
+			"Duration = 15 false\\..*",
+			
+			"Distance = 13,.*",
+			"Duration = 30 Distance = 27,.*", 
+			"Duration = 120 Distance = 6,.*",
+			"Duration = 15 false\\..*",
+			
+			"Distance = 27,.*",
+			"Duration = 30 Distance = 13,.*",
+			"Duration = 15 false\\..*",
+			
+			"Distance = 27,.*",
+			"Duration = 30 Distance = 13,.*",
+			"Duration = 15 false\\..*",
+			
+			"Distance = 27,.*",
+			"Duration = 30 Distance = 13,.*",
+			"Duration = 15 false\\..*",
+			
 	};
 
 	@Override
@@ -59,7 +91,7 @@ public class DerivedSafe_TableTest extends AnAbstractPrologRunningProject {
 			NotGradableException {
 		try {
 
-			DerivedSafe_OutputGeneration outputGeneration = (DerivedSafe_OutputGeneration) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(DerivedSafe_OutputGeneration.class);			
+			GenerateSafeDistancesAndDurations_OutputGeneration outputGeneration = (GenerateSafeDistancesAndDurations_OutputGeneration) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(GenerateSafeDistancesAndDurations_OutputGeneration.class);			
 			String anOutput=outputGeneration.getOutput();
 
 			if (anOutput == null) {
@@ -67,9 +99,7 @@ public class DerivedSafe_TableTest extends AnAbstractPrologRunningProject {
 			}
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
-			
-			String [] releventInputs=Arrays.copyOfRange(outputGeneration.getInputs(), 0,6);
-			
+			String [] releventInputs=Arrays.copyOfRange(outputGeneration.getInputs(), 7,  outputGeneration.getInputs().length);
 			
 			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,releventInputs);
 

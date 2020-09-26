@@ -45,48 +45,48 @@ public class DerivedSafe_OutputGeneration extends AnAbstractPrologRunningProject
 	}
 
 	private final String [] givenSizesInputs= {
-			"derivedSafe(13,30,30). ;",
-			"derivedSafe(6,30,10). ;",
-			"derivedSafe(27,30,50). ;",
-			"derivedSafe(13,15,50). ;",
-			"derivedSafe(13,120,10). ;",
-			"derivedSafe(27,120,30). ;",
-			"derivedSafe(6,15,30).", //6
+			"derivedSafe(13,30,30). ; .",
+			"derivedSafe(6,30,10). ; .",
+			"derivedSafe(27,30,50). ; .",
+			"derivedSafe(13,15,50). ; .",
+			"derivedSafe(13,120,10). ; .",
+			"derivedSafe(27,120,30). ; .",
+			"derivedSafe(6,15,30). ; .", //6
 			
 			"write('Off Table True Tests below this\n---\n').",
 			
-			"derivedSafe(14,30,30). ;",
-			"derivedSafe(7,30,10). ;",
-			"derivedSafe(27,29,50). ;",
-			"derivedSafe(13,14,50). ;",
-			"derivedSafe(13,120,9). ;",
-			"derivedSafe(27,120,29). ;",
-			"derivedSafe(7,15,30).", //14
+			"derivedSafe(14,30,30). ; .",
+			"derivedSafe(7,30,10). ; .",
+			"derivedSafe(27,29,50). ; .",
+			"derivedSafe(13,14,50). ; .",
+			"derivedSafe(13,120,9). ; .",
+			"derivedSafe(27,120,29). ; .",
+			"derivedSafe(7,15,30). ; .", //14
 			
-			"derivedSafe(14,29,29). ;",
-			"derivedSafe(7,29,9). ;",
-			"derivedSafe(28,29,49). ;",
-			"derivedSafe(14,14,49). ;",
-			"derivedSafe(14,119,9). ;",
-			"derivedSafe(28,119,29). ;",
-			"derivedSafe(7,14,29).",//21
+			"derivedSafe(14,29,29). ; .",
+			"derivedSafe(7,29,9). ; .",
+			"derivedSafe(28,29,49). ; .",
+			"derivedSafe(14,14,49). ; .",
+			"derivedSafe(14,119,9). ; .",
+			"derivedSafe(28,119,29). ; .",
+			"derivedSafe(7,14,29). ; .",//21
 			
 			"write('Off Table False Tests below this\n---\n').",
 			
-			"derivedSafe(12,30,30).",
-			"derivedSafe(5,30,10).",
-			"derivedSafe(27,31,50).",
-			"derivedSafe(13,16,50).",
-			"derivedSafe(13,120,11).",
-			"derivedSafe(27,120,31).",
-			"derivedSafe(5,15,30).",
-			"derivedSafe(12,31,31).",
-			"derivedSafe(5,31,11).",
-			"derivedSafe(26,31,51).",
-			"derivedSafe(12,16,51).",
-			"derivedSafe(12,121,11).",
-			"derivedSafe(26,121,31).",
-			"derivedSafe(5,16,31).",
+			"derivedSafe(12,30,30). ; .",
+			"derivedSafe(5,30,10). ; .",
+			"derivedSafe(27,31,50). ; .",
+			"derivedSafe(13,16,50). ; .",
+			"derivedSafe(13,120,11). ; .",
+			"derivedSafe(27,120,31). ; .",
+			"derivedSafe(5,15,30). ; .",
+			"derivedSafe(12,31,31). ; .",
+			"derivedSafe(5,31,11). ; .",
+			"derivedSafe(26,31,51). ; .",
+			"derivedSafe(12,16,51). ; .",
+			"derivedSafe(12,121,11). ; .",
+			"derivedSafe(26,121,31). ; .",
+			"derivedSafe(5,16,31). ; .",
 			
 			"halt."
 	};

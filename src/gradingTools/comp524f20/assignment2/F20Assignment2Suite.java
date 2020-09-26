@@ -21,7 +21,10 @@ import gradingTools.comp524f20.assignment0_2.testcases.PrologGreetingLoadAndRun;
 import gradingTools.comp524f20.assignment0_4.testcases.LispGreetingLoadAndRun;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceUtilityTesterMainProvided;
 import gradingTools.comp524f20.assignment2.requiredFiles.SocialDistancePlProvided;
+import gradingTools.comp524f20.assignment2.ruleTests.InterpolatedSafeOneTwoParam.InterpolatedSafeOneTwoParamTestSuite;
+import gradingTools.comp524f20.assignment2.ruleTests.InterpolatedSafeThreeParam.InterpolatedSafeTestSuite;
 import gradingTools.comp524f20.assignment2.ruleTests.derivedSafe.DerivedSafeTestSuite;
+import gradingTools.comp524f20.assignment2.ruleTests.generateSafeDistancesAndDurations.GenerateSafeDistancesAndDurationsTestSuite;
 import gradingTools.comp524f20.assignment2.ruleTests.givenSafe.GivenSafeTestSuite;
 import gradingTools.comp524f20.assignment2.ruleTests.givenSize.GivenSizesTestSuite;
 import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
@@ -34,7 +37,10 @@ import gradingTools.shared.testcases.suites.InterpreterSuite;
 	SocialDistancePlProvided.class,
 	GivenSizesTestSuite.class,
 	GivenSafeTestSuite.class,
-	DerivedSafeTestSuite.class
+	DerivedSafeTestSuite.class,
+	InterpolatedSafeTestSuite.class,
+	InterpolatedSafeOneTwoParamTestSuite.class,
+	GenerateSafeDistancesAndDurationsTestSuite.class
 	
 })
 	

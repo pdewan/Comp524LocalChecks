@@ -46,15 +46,15 @@ public class GivenSizes_OutputGeneration extends AnAbstractPrologRunningProject 
 
 	private final String [] givenSizesInputs= {
 			
-			"givenSizes(6, 15, 10). ;", 
-			"givenSizes(13, 30, 30). ;",
-			"givenSizes(27, 120, 50).",
+			"givenSizes(6, 15, 10). ; .", 
+			"givenSizes(13, 30, 30). ; .",
+			"givenSizes(27, 120, 50). ; .",
 			
 			"write('Off Table Tests below this\n---\n').",
 			
-			"givenSizes(6, 13, 27).", 
-			"givenSizes(99, 30, 50).",
-			"givenSizes(13, 29, 30).",
+			"givenSizes(6, 13, 27). ; .", 
+			"givenSizes(99, 30, 50). ; .",
+			"givenSizes(13, 29, 30). ; .",
 			"halt."
 	};
 	

@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment2.ruleTests.derivedSafe;
+package gradingTools.comp524f20.assignment2.ruleTests.InterpolatedSafeOneTwoParam;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,11 +37,11 @@ import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
-@MaxValue(6)
-public class DerivedSafe_TableTest extends AnAbstractPrologRunningProject {
+@MaxValue(2)
+public class InterpolatedSafe_TwoParamTrueValueTest extends AnAbstractPrologRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
 
-	public DerivedSafe_TableTest() {
+	public InterpolatedSafe_TwoParamTrueValueTest() {
 	}
 	
 	private static String[] regexChecks={
@@ -52,6 +52,19 @@ public class DerivedSafe_TableTest extends AnAbstractPrologRunningProject {
 			"^true\\..*|^true f.*",
 			"^true\\..*|^true f.*",
 			"^true\\..*|^true f.*",
+
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
+			"^true\\..*|^true f.*",
+			
+			"^---.*",
+			"^---.*",
+			"^---.*",
+			
 	};
 
 	@Override
@@ -59,7 +72,7 @@ public class DerivedSafe_TableTest extends AnAbstractPrologRunningProject {
 			NotGradableException {
 		try {
 
-			DerivedSafe_OutputGeneration outputGeneration = (DerivedSafe_OutputGeneration) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(DerivedSafe_OutputGeneration.class);			
+			InterpolatedSafe_OutputGeneration_OneTwoParam outputGeneration = (InterpolatedSafe_OutputGeneration_OneTwoParam) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(InterpolatedSafe_OutputGeneration_OneTwoParam.class);			
 			String anOutput=outputGeneration.getOutput();
 
 			if (anOutput == null) {
@@ -67,8 +80,7 @@ public class DerivedSafe_TableTest extends AnAbstractPrologRunningProject {
 			}
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
-			
-			String [] releventInputs=Arrays.copyOfRange(outputGeneration.getInputs(), 0,6);
+			String [] releventInputs=Arrays.copyOfRange(outputGeneration.getInputs(), 0,  13);
 			
 			
 			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,releventInputs);
