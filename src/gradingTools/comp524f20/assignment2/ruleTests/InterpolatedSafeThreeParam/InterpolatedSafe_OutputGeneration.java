@@ -85,13 +85,13 @@ public class InterpolatedSafe_OutputGeneration extends AnAbstractPrologRunningPr
 			"interpolatedSafe(0,15,10).",
 			"interpolatedSafe(6,15,2147483647).",
 
-			"interpolatedSafe(13,15,10). ; .",
-			"interpolatedSafe(13,15,30). ; .",
-			"interpolatedSafe(6,30,10). ; .",
-			"interpolatedSafe(6,30,50). ; .",
-			"interpolatedSafe(27,30,30). ; .",
-			"interpolatedSafe(27,120,10). ; .",
-			"interpolatedSafe(27,120,50). ; .",
+			"interpolatedSafe(13,15,10).",
+			"interpolatedSafe(13,15,30).",
+			"interpolatedSafe(6,15,50).",
+			"interpolatedSafe(6,30,50).",
+			"interpolatedSafe(27,30,30).",
+			"interpolatedSafe(27,120,10).",
+			"interpolatedSafe(27,120,50).",
 			
 			"halt."
 	};
