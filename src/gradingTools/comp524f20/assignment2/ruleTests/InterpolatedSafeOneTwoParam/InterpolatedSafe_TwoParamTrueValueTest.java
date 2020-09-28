@@ -80,10 +80,8 @@ public class InterpolatedSafe_TwoParamTrueValueTest extends AnAbstractPrologRunn
 			}
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
-			String [] releventInputs=Arrays.copyOfRange(outputGeneration.getInputs(), 0,  13);
 			
-			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,releventInputs);
+			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getTwoParamTrueInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

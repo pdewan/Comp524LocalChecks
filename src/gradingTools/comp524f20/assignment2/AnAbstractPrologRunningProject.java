@@ -1,5 +1,6 @@
 package gradingTools.comp524f20.assignment2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -52,5 +53,14 @@ public abstract class AnAbstractPrologRunningProject extends AnAbstractRegexLine
 		return aRunningProject;
 	}
 	
+	protected String [] combineArrays(String[]... arrays) {
+		List<String> combined = new ArrayList<String>();
+		for(String[] array:arrays)
+			for(String value:array)
+				combined.add(value);
+		String [] retVal = new String[combined.size()];
+		combined.toArray(retVal);
+		return retVal;
+	}
 
 }

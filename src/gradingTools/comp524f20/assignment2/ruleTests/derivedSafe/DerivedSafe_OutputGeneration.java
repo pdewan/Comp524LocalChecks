@@ -44,7 +44,8 @@ public class DerivedSafe_OutputGeneration extends AnAbstractPrologRunningProject
 	public DerivedSafe_OutputGeneration() {
 	}
 
-	private final String [] givenSizesInputs= {
+	
+	private final String [] tableValues= {
 			"derivedSafe(13,30,30). ; .",
 			"derivedSafe(6,30,10). ; .",
 			"derivedSafe(27,30,50). ; .",
@@ -52,7 +53,9 @@ public class DerivedSafe_OutputGeneration extends AnAbstractPrologRunningProject
 			"derivedSafe(13,120,10). ; .",
 			"derivedSafe(27,120,30). ; .",
 			"derivedSafe(6,15,30). ; .", //6
-			
+	};
+	
+	private final String [] offTableTrue= {
 			"write('Off Table True Tests below this\n---\n').",
 			
 			"derivedSafe(14,30,30). ; .",
@@ -70,7 +73,9 @@ public class DerivedSafe_OutputGeneration extends AnAbstractPrologRunningProject
 			"derivedSafe(14,119,9). ; .",
 			"derivedSafe(28,119,29). ; .",
 			"derivedSafe(7,14,29). ; .",//21
-			
+	};
+	
+	private final String [] offTableFalse= {
 			"write('Off Table False Tests below this\n---\n').",
 			
 			"derivedSafe(12,30,30). ; .",
@@ -91,11 +96,19 @@ public class DerivedSafe_OutputGeneration extends AnAbstractPrologRunningProject
 			"halt."
 	};
 	
+	protected String [] getTableValuesInput() {
+		return tableValues;
+	}
+	protected String [] getOffTableTrueInputs() {
+		return offTableTrue;
+	}
+	protected String[] getOffTableFalseInputs(){
+		return offTableFalse;
+	}
+	
+	
 	private String output=null;
 	
-	public String[] getInputs() {
-		return givenSizesInputs;
-	}
 	
 	public String getOutput() {
 		return output;
@@ -109,7 +122,7 @@ public class DerivedSafe_OutputGeneration extends AnAbstractPrologRunningProject
 
 			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
 			
-			String [] inputs=givenSizesInputs;
+			String [] inputs=combineArrays(getTableValuesInput(),getOffTableTrueInputs(),getOffTableFalseInputs());
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) {

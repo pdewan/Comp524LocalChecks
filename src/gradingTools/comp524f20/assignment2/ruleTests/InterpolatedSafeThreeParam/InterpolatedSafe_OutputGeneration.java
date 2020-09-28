@@ -43,9 +43,8 @@ public class InterpolatedSafe_OutputGeneration extends AnAbstractPrologRunningPr
 
 	public InterpolatedSafe_OutputGeneration() {
 	}
-
-	private final String [] givenSizesInputs= {
-			
+	
+	private final String [] tableValues= {
 			"interpolatedSafe(13,30,30). ; .",
 			"interpolatedSafe(6,30,10). ; .",
 			"interpolatedSafe(27,30,50). ; .",
@@ -53,7 +52,9 @@ public class InterpolatedSafe_OutputGeneration extends AnAbstractPrologRunningPr
 			"interpolatedSafe(13,120,10). ; .",
 			"interpolatedSafe(27,120,30). ; .",
 			"interpolatedSafe(6,15,30). ; .",
-
+	};
+	
+	private final String [] offTableTrue= {
 			"write('Off Table True Tests below this\n---\n').",
 			
 			"interpolatedSafe(14,30,30). ; .",
@@ -71,7 +72,9 @@ public class InterpolatedSafe_OutputGeneration extends AnAbstractPrologRunningPr
 			"interpolatedSafe(26,31,0). ; .",
 			"interpolatedSafe(2147483647,31,11). ; .",
 			"interpolatedSafe(12,0,11). ; .",
-
+	};
+	
+	private final String [] offTableFalse= {
 			"write('Off Table False Tests below this\n---\n').",
 			
 			"interpolatedSafe(27,2147483647,50).",
@@ -93,11 +96,17 @@ public class InterpolatedSafe_OutputGeneration extends AnAbstractPrologRunningPr
 			"halt."
 	};
 	
-	private String output=null;
-	
-	public String[] getInputs() {
-		return givenSizesInputs;
+	protected String [] getTableValuesInput() {
+		return tableValues;
 	}
+	protected String [] getOffTableTrueInputs() {
+		return offTableTrue;
+	}
+	protected String[] getOffTableFalseInputs(){
+		return offTableFalse;
+	}
+	
+	private String output=null;
 	
 	public String getOutput() {
 		return output;
@@ -111,7 +120,7 @@ public class InterpolatedSafe_OutputGeneration extends AnAbstractPrologRunningPr
 
 			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
 			
-			String [] inputs=givenSizesInputs;
+			String [] inputs=combineArrays(getTableValuesInput(),getOffTableTrueInputs(),getOffTableFalseInputs());
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) {

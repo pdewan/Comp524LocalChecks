@@ -44,26 +44,28 @@ public class GivenSizes_OutputGeneration extends AnAbstractPrologRunningProject 
 	public GivenSizes_OutputGeneration() {
 	}
 
-	private final String [] givenSizesInputs= {
-			
+	private final String[] tableTestInputs={
 			"givenSizes(6, 15, 10). ; .", 
 			"givenSizes(13, 30, 30). ; .",
 			"givenSizes(27, 120, 50). ; .",
-			
+	};
+	private final String[] offTableTestInputs= {
 			"write('Off Table Tests below this\n---\n').",
 			
 			"givenSizes(6, 13, 27). ; .", 
 			"givenSizes(99, 30, 50). ; .",
 			"givenSizes(13, 29, 30). ; .",
-			"halt."
+			"halt."	
 	};
 	
-	private String output=null;
-	
-	public String[] getInputs() {
-		return givenSizesInputs;
+	protected String[] getTableTestInput() {
+		return tableTestInputs;
 	}
-	
+	protected String[] getOffTableTestInput() {
+		return offTableTestInputs;
+	}
+	private String output=null;
+		
 	public String getOutput() {
 		return output;
 	}
@@ -76,7 +78,7 @@ public class GivenSizes_OutputGeneration extends AnAbstractPrologRunningProject 
 
 			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
 			
-			String [] inputs=givenSizesInputs;
+			String [] inputs=combineArrays(getTableTestInput(),getOffTableTestInput());
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) {

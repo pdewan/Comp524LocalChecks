@@ -45,10 +45,10 @@ public class GivenSizes_TableTest extends AnAbstractPrologRunningProject {
 	}
 	
 	private static String[] regexChecks={
-
 			"^true\\..*|^true f.*",
 			"^true\\..*|^true f.*",
 			"^true\\..*|^true f.*",
+			"^---.*",
 	};
 
 	@Override
@@ -65,10 +65,7 @@ public class GivenSizes_TableTest extends AnAbstractPrologRunningProject {
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-			String [] releventInputs=Arrays.copyOfRange(outputGeneration.getInputs(), 0, 5);
-			
-			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,releventInputs);
+			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getTableTestInput());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

@@ -78,10 +78,8 @@ public class InterpolatedSafe_OffTableFalseTest extends AnAbstractPrologRunningP
 			}
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
-			String [] releventInputs=Arrays.copyOfRange(outputGeneration.getInputs(), 22,  outputGeneration.getInputs().length);
 			
-			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,releventInputs);
+			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getOffTableFalseInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

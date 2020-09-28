@@ -43,9 +43,8 @@ public class InterpolatedSafe_OutputGeneration_OneTwoParam extends AnAbstractPro
 
 	public InterpolatedSafe_OutputGeneration_OneTwoParam() {
 	}
-
-	private final String [] givenSizesInputs= {
-			
+	
+	private final String [] twoParamTrueInputs= {
 			"interpolatedSafe(13,30). ; .",
 			"interpolatedSafe(27,120). ; .",
 			"interpolatedSafe(6,15). ; .",
@@ -61,7 +60,8 @@ public class InterpolatedSafe_OutputGeneration_OneTwoParam extends AnAbstractPro
 			"interpolatedSafe(13,16). ; .",
 			"interpolatedSafe(27,31). ; .",
 			"interpolatedSafe(6,0). ; .", //13
-
+	};
+	private final String [] twoParamFalseInputs= {
 			"write('InterpolatedSafeTwoParam false test below\n---\n').",
 			
 			"interpolatedSafe(6,120).",
@@ -76,14 +76,16 @@ public class InterpolatedSafe_OutputGeneration_OneTwoParam extends AnAbstractPro
 			"interpolatedSafe(6,16).",
 			"interpolatedSafe(12,30).",
 			"interpolatedSafe(26,120).",
-			"interpolatedSafe(5,15).", //26
-
+			"interpolatedSafe(5,15).", //26	
+	};
+	private final String [] oneParamTrueInputs= {
 			"write('InterpolatedSafeOneParam true test below\n---\n').",
 			
 			"interpolatedSafe(13). ; .",
 			"interpolatedSafe(14). ; .",
-			"interpolatedSafe(26). ; .", //30
-
+			"interpolatedSafe(26). ; .", //30	
+	};
+	private final String[] oneParamFalseInputs= {
 			"write('InterpolatedSafeOneParam false test below\n---\n').",
 			
 			"interpolatedSafe(6).",
@@ -97,11 +99,21 @@ public class InterpolatedSafe_OutputGeneration_OneTwoParam extends AnAbstractPro
 			"halt."
 	};
 	
+	protected final String[] getTwoParamTrueInputs() {
+		return twoParamTrueInputs;
+	}
+	protected final String[] getTwoParamFalseInputs() {
+		return twoParamFalseInputs;
+	}
+	protected final String[] getOneParamTrueInputs() {
+		return oneParamTrueInputs;
+	}
+	protected final String[] getOneParamFalseInputs() {
+		return oneParamFalseInputs;
+	}
+	
 	private String output=null;
 	
-	public String[] getInputs() {
-		return givenSizesInputs;
-	}
 	
 	public String getOutput() {
 		return output;
@@ -115,7 +127,7 @@ public class InterpolatedSafe_OutputGeneration_OneTwoParam extends AnAbstractPro
 
 			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
 			
-			String [] inputs=givenSizesInputs;
+			String [] inputs=combineArrays(getTwoParamTrueInputs(),getTwoParamFalseInputs(),getOneParamTrueInputs(),getOneParamFalseInputs());
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) {

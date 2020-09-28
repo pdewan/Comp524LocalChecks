@@ -83,7 +83,7 @@ public class GenerateSafeDistancesAndDurations_TrueValueTest extends AnAbstractP
 			"Distance = 27,.*",
 			"Duration = 30 Distance = 13,.*",
 			"Duration = 15 false\\..*",
-			
+			"^---.*",
 	};
 
 	@Override
@@ -99,9 +99,8 @@ public class GenerateSafeDistancesAndDurations_TrueValueTest extends AnAbstractP
 			}
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
-			String [] releventInputs=Arrays.copyOfRange(outputGeneration.getInputs(), 7,  outputGeneration.getInputs().length);
 			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,releventInputs);
+			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getTrueValueInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

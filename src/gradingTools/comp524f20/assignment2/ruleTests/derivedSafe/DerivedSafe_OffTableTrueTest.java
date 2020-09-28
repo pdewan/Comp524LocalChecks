@@ -63,7 +63,7 @@ public class DerivedSafe_OffTableTrueTest extends AnAbstractPrologRunningProject
 			"^true\\..*|^true f.*",
 			"^true\\..*|^true f.*",
 			"^true\\..*|^true f.*",
-			
+			"^---.*",
 	};
 
 	@Override
@@ -79,10 +79,8 @@ public class DerivedSafe_OffTableTrueTest extends AnAbstractPrologRunningProject
 			}
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
-			String [] releventInputs=Arrays.copyOfRange(outputGeneration.getInputs(), 7,  21);
-			
-			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,releventInputs);
+						
+			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getOffTableTrueInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

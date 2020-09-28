@@ -43,8 +43,8 @@ public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
 
 	public GivenSafe_OutputGeneration() {
 	}
-
-	private final String [] givenSizesInputs= {
+	
+	private String [] tableTestInputs= {
 			"givenSafe(13,30,30). ; .",
 			"givenSafe(6,30,10). ; .",
 			"givenSafe(27,30,50). ; .",
@@ -52,7 +52,9 @@ public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
 			"givenSafe(13,120,10). ; .",
 			"givenSafe(27,120,30). ; .",
 			"givenSafe(6,15,30). ; .",
-			
+	};
+	
+	private String[] offTableTestInputs= {
 			"write('Off Table Tests below this\n---\n').",
 			
 			"givenSafe(14,30,30). ; .",
@@ -71,14 +73,17 @@ public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
 			"givenSafe(7,14,29). ; .",
 			
 			"halt."
-			
 	};
+	
+	protected String[] getTableTestInputs() {
+		return tableTestInputs;
+	}
+	protected String[] getOffTableTestInputs() {
+		return offTableTestInputs;
+	}
 	
 	private String output=null;
 	
-	public String[] getInputs() {
-		return givenSizesInputs;
-	}
 	
 	public String getOutput() {
 		return output;
@@ -92,7 +97,7 @@ public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
 
 			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
 			
-			String [] inputs=givenSizesInputs;
+			String [] inputs=combineArrays(getTableTestInputs(),getOffTableTestInputs());
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) {

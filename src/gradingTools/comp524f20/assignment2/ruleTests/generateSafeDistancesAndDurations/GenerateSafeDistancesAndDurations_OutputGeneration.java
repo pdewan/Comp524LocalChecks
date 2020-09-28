@@ -43,8 +43,8 @@ public class GenerateSafeDistancesAndDurations_OutputGeneration extends AnAbstra
 
 	public GenerateSafeDistancesAndDurations_OutputGeneration() {
 	}
-
-	private final String [] givenSizesInputs= {
+	
+	private String [] trueValueInputs= {
 			"generateSafeDistancesAndDurations(Distance,Duration,9). ;", "; .",
 			"generateSafeDistancesAndDurations(Distance,Duration,0). ;", "; .",
 			"generateSafeDistancesAndDurations(Distance,Duration,10). ;", "; .",//5
@@ -56,7 +56,8 @@ public class GenerateSafeDistancesAndDurations_OutputGeneration extends AnAbstra
 			"generateSafeDistancesAndDurations(Distance,Duration,31). ;", "; .",
 			"generateSafeDistancesAndDurations(Distance,Duration,49). ;", "; .",
 			"generateSafeDistancesAndDurations(Distance,Duration,50). ;", "; .",//20
-			
+	};
+	private String [] falseValueInputs= {
 			"write('generateSafeDistancesAndDurations false outputs below\n---\n').",
 			
 			"generateSafeDistancesAndDurations(Distance,Duration,51).",
@@ -64,15 +65,17 @@ public class GenerateSafeDistancesAndDurations_OutputGeneration extends AnAbstra
 			"generateSafeDistancesAndDurations(Distance,Duration,101).",
 			"generateSafeDistancesAndDurations(Distance,Duration,2147483647).",
 			
-			"halt."
-			
+			"halt."	
 	};
 	
-	private String output=null;
-	
-	public String[] getInputs() {
-		return givenSizesInputs;
+	protected String [] getTrueValueInputs() {
+		return trueValueInputs;
 	}
+	protected String [] getFalseValueInputs() {
+		return falseValueInputs;
+	}
+	
+	private String output=null;
 	
 	public String getOutput() {
 		return output;
@@ -86,7 +89,7 @@ public class GenerateSafeDistancesAndDurations_OutputGeneration extends AnAbstra
 
 			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
 			
-			String [] inputs=givenSizesInputs;
+			String [] inputs=combineArrays(getTrueValueInputs(),getFalseValueInputs());
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) {
