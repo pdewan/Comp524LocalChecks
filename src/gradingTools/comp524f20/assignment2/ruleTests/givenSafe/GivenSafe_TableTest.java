@@ -52,7 +52,7 @@ public class GivenSafe_TableTest extends AnAbstractPrologRunningProject {
 			"^true\\..*|^true f.*",
 			"^true\\..*|^true f.*",
 			"^true\\..*|^true f.*",
-			"^---.*",
+//			"^---.*",
 	};
 
 	@Override

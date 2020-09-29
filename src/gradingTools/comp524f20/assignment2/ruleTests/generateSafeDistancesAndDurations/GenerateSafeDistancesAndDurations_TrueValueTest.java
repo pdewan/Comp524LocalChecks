@@ -37,7 +37,7 @@ import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
-@MaxValue(6)
+@MaxValue(8)
 public class GenerateSafeDistancesAndDurations_TrueValueTest extends AnAbstractPrologRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
 

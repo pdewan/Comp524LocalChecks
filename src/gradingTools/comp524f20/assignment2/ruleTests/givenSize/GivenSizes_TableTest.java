@@ -48,7 +48,7 @@ public class GivenSizes_TableTest extends AnAbstractPrologRunningProject {
 			"^true\\..*|^true f.*",
 			"^true\\..*|^true f.*",
 			"^true\\..*|^true f.*",
-			"^---.*",
+//			"^---.*",
 	};
 
 	@Override

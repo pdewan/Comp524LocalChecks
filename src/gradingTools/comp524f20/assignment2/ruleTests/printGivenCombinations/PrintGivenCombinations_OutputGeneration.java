@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment2.ruleTests.givenSafe;
+package gradingTools.comp524f20.assignment2.ruleTests.printGivenCombinations;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,53 +38,78 @@ import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
 @MaxValue(2)
-public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
+public class PrintGivenCombinations_OutputGeneration extends AnAbstractPrologRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
 
-	public GivenSafe_OutputGeneration() {
+	public PrintGivenCombinations_OutputGeneration() {
 	}
 	
-	private String [] tableTestInputs= {
-			"givenSafe(13,30,30). ; .",
-			"givenSafe(6,30,10). ; .",
-			"givenSafe(27,30,50). ; .",
-			"givenSafe(13,15,50). ; .",
-			"givenSafe(13,120,10). ; .",
-			"givenSafe(27,120,30). ; .",
-			"givenSafe(6,15,30). ; .",
-			"halt."
+	
+	private int [] tableSizeInputParams= {
+		7,
+		0,
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
 	};
 	
-	private String[] offTableTestInputs= {
-			"write('Off Table Tests below this\n---\n').",
-			
-			"givenSafe(14,30,30).",
-			"givenSafe(7,30,10).",
-			"givenSafe(27,29,50).",
-			"givenSafe(13,14,50).",
-			"givenSafe(13,120,9).",
-			"givenSafe(27,120,29).",
-			"givenSafe(7,15,30).",
-			"givenSafe(14,29,29).",
-			"givenSafe(7,29,9).",
-			"givenSafe(28,29,49).",
-			"givenSafe(14,14,49).",
-			"givenSafe(14,119,9).",
-			"givenSafe(28,119,29).",
-			"givenSafe(7,14,29).",
-			
-			"halt."
+	private int [] offTableSizeInputParams= {
+		8,
+		10,
+		100,
+		1000,
+		Integer.MAX_VALUE
 	};
 	
-	protected String[] getTableTestInputs() {
-		return tableTestInputs;
+	private String [] tableSizedInputs= {
+			"printGivenCombinations("+tableSizeInputParams[0]+").",
+			"printGivenCombinations("+tableSizeInputParams[1]+").",
+			"printGivenCombinations("+tableSizeInputParams[2]+").",
+			"printGivenCombinations("+tableSizeInputParams[3]+").",
+			"printGivenCombinations("+tableSizeInputParams[4]+").",
+			"printGivenCombinations("+tableSizeInputParams[5]+").",
+			"printGivenCombinations("+tableSizeInputParams[6]+").",
+			"printGivenCombinations("+tableSizeInputParams[7]+").",
+			"printGivenCombinations("+tableSizeInputParams[8]+").",
+	};
+	private String [] nonTableSizedInputs= {
+			"write('nonTableSizedInputs output below\n---\n').",
+			
+			"printGivenCombinations("+offTableSizeInputParams[0]+").",
+			"printGivenCombinations("+offTableSizeInputParams[1]+").",
+			"printGivenCombinations("+offTableSizeInputParams[2]+").",
+			"printGivenCombinations("+offTableSizeInputParams[3]+").",
+			"printGivenCombinations("+offTableSizeInputParams[4]+").",
+			
+			"halt."	
+	};
+	
+	private String [] outputOrder = null;
+	
+	protected int [] getTableSizeInputParams() {
+		return tableSizeInputParams;
 	}
-	protected String[] getOffTableTestInputs() {
-		return offTableTestInputs;
+	
+	protected int [] getNonTableSizedInputParams() {
+		return offTableSizeInputParams;
+	}
+	
+	protected String [] getOutputOrder() {
+		return outputOrder;
+	}
+	
+	protected String [] getTabledSizedInputs() {
+		return tableSizedInputs;
+	}
+	protected String [] getNonTableSizedInputs() {
+		return nonTableSizedInputs;
 	}
 	
 	private String output=null;
-	
 	
 	public String getOutput() {
 		return output;
@@ -98,16 +123,26 @@ public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
 
 			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
 			
-			String [] inputs=getTableTestInputs();//combineArrays(getTableTestInputs(),getOffTableTestInputs());
+			String [] inputs=combineArrays(getTabledSizedInputs(),getNonTableSizedInputs());
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) {
 				return fail ("Could not create project. See console messages.");
 			}
 
-			String anOutput = aRunningProject.await().replaceAll("\n\n", "\n");
+			String anOutput = aRunningProject.await().replaceAll("\n\n", "\n").replaceAll("\n\n", "\n");
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
+//			findOutputOrder(anOutput); //To ignore order of the outputs
+			String [] defaultOutputOrder = {
+					"30,13,30,true",
+					"30,6,10,true",
+					"30,27,50,true",
+					"15,13,50,true",
+					"120,13,10,true",
+					"120,27,30,true",
+					"15,6,30,true"};
+			outputOrder=defaultOutputOrder;
 			
 			if(anOutput==null||anOutput.length()==0) {
 				return fail("output from running commands is null or empty");
@@ -121,6 +156,57 @@ public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
 			throw new NotGradableException();
 		}
 	}
+	
+	private void findOutputOrder(String output) {
+		String [] combination=output.split("\n");
+		String [] foundOrder=new String[7];
+		String [] defaultOutputOrder = {
+				"30,13,30,true",
+				"30,6,10,true",
+				"30,27,50,true",
+				"15,13,50,true",
+				"120,13,10,true",
+				"120,27,30,true",
+				"15,6,30,true",
+		};
+		String [] testing=defaultOutputOrder.clone();
+		
+		int sequenceStart=0;
+		int numPassed=0;
+		for(int i=0;i<combination.length;i++) {
+			if(isValidOutput(combination[i],testing)) {
+				foundOrder[i-sequenceStart]=combination[i];
+				numPassed++;
+			}
+			else if(combination[i].matches("false.")||i-sequenceStart==foundOrder.length)
+				break;
+			else
+				sequenceStart++;
+		}
+		
+		if(numPassed==foundOrder.length) {
+			System.out.println("output order determined to be:");
+			this.outputOrder=foundOrder;
+		}else {
+			System.out.println("output order could not be determined, using default:");
+			this.outputOrder=defaultOutputOrder;
+		}
+			
+		
+		for(String order:outputOrder)
+			System.out.println(order);
+	}
+	
+	private boolean isValidOutput(String output,String[] validOutputs) {
+		for(int i=0;i<validOutputs.length;i++) 
+			if(validOutputs[i].equals(output)) {
+				validOutputs[i]="";
+				return true;
+			}
+		return false;
+	}
+	
+	
 //	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {
 //		for (SNode anSNode:aRootOfFileSNode.getChildren()) {
 //			if (anSNode instanceof ExternalMethodSNode) {

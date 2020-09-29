@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment2.ruleTests.givenSafe;
+package gradingTools.comp524f20.assignment2.ruleTests.listGenerateSafeDistancesAndDurations;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -24,20 +24,20 @@ import util.annotations.MaxValue;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	GivenSafe_OutputGeneration.class,
-	GivenSafe_TableTest.class,
-	//GivenSafe_OffTableTest.class,
+	ListGenerateSafeDistancesAndDurations_OutputGeneration.class,
+	ListGenerateSafeDistancesAndDurations_FalseValueTest.class,
+	ListGenerateSafeDistancesAndDurations_TrueValueTest.class,
 })
 	
 
 //@MaxValue(10)
-public class GivenSafeTestSuite {
+public class ListGenerateSafeDistancesAndDurationsTestSuite {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(GivenSafeTestSuite.class);
+			BasicJUnitUtils.interactiveTest(ListGenerateSafeDistancesAndDurationsTestSuite.class);
 
 
 		} catch (Exception e) {

@@ -27,6 +27,9 @@ import gradingTools.comp524f20.assignment2.ruleTests.derivedSafe.DerivedSafeTest
 import gradingTools.comp524f20.assignment2.ruleTests.generateSafeDistancesAndDurations.GenerateSafeDistancesAndDurationsTestSuite;
 import gradingTools.comp524f20.assignment2.ruleTests.givenSafe.GivenSafeTestSuite;
 import gradingTools.comp524f20.assignment2.ruleTests.givenSize.GivenSizesTestSuite;
+import gradingTools.comp524f20.assignment2.ruleTests.listGenerateSafeDistancesAndDurations.ListGenerateSafeDistancesAndDurationsTestSuite;
+import gradingTools.comp524f20.assignment2.ruleTests.listGivenSafeTests.ListGivenSafeTestSuite;
+import gradingTools.comp524f20.assignment2.ruleTests.printGivenCombinations.PrintGivenCombinationsTestSuite;
 import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 import gradingTools.shared.testcases.suites.InterpreterSuite;
 
@@ -40,7 +43,10 @@ import gradingTools.shared.testcases.suites.InterpreterSuite;
 	DerivedSafeTestSuite.class,
 	InterpolatedSafeTestSuite.class,
 	InterpolatedSafeOneTwoParamTestSuite.class,
-	GenerateSafeDistancesAndDurationsTestSuite.class
+	GenerateSafeDistancesAndDurationsTestSuite.class,
+	ListGivenSafeTestSuite.class,
+	PrintGivenCombinationsTestSuite.class,
+	ListGenerateSafeDistancesAndDurationsTestSuite.class
 	
 })
 	

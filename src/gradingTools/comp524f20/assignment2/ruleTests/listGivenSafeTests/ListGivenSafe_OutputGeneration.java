@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment2.ruleTests.givenSafe;
+package gradingTools.comp524f20.assignment2.ruleTests.listGivenSafeTests;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,53 +38,56 @@ import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
 @MaxValue(2)
-public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
+public class ListGivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
 
-	public GivenSafe_OutputGeneration() {
+	public ListGivenSafe_OutputGeneration() {
 	}
 	
-	private String [] tableTestInputs= {
-			"givenSafe(13,30,30). ; .",
-			"givenSafe(6,30,10). ; .",
-			"givenSafe(27,30,50). ; .",
-			"givenSafe(13,15,50). ; .",
-			"givenSafe(13,120,10). ; .",
-			"givenSafe(27,120,30). ; .",
-			"givenSafe(6,15,30). ; .",
-			"halt."
+	private String [] valuesTestInputs= {
+			"listGivenSafe([13,30,30]). ; .",
+			"listGivenSafe([6,30,10]). ; .",
+			"listGivenSafe([27,30,50]). ; .",
+			"listGivenSafe([13,15,50]). ; .",
+			"listGivenSafe([13,120,10]). ; .",
+			"listGivenSafe([27,120,30]). ; .",
+			"listGivenSafe([6,15,30]). ; .",
+			
+			"listGivenSafe([14,30,30]).",
+			"listGivenSafe([7,30,10]).",
+			"listGivenSafe([27,29,50]).",
+			"listGivenSafe([13,14,50]).",
+			"listGivenSafe([13,120,9]).",
+			"listGivenSafe([27,120,29]).",
+			"listGivenSafe([7,15,30]).",
+			"listGivenSafe([14,29,29]).",
+			
+			"listGivenSafe([13,Duration,Exhalation]). ;",";","; .",
+			"listGivenSafe([Distance,30,Exhalation]). ;",";",";",
+			"listGivenSafe([Distance,Duration,50]). ;",";"
+	};
+	private String [] safeTupleTestInputs= {
+			"write('safeTupleTest output below\n---\n').",
+			
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
+			
+			"halt."	
 	};
 	
-	private String[] offTableTestInputs= {
-			"write('Off Table Tests below this\n---\n').",
-			
-			"givenSafe(14,30,30).",
-			"givenSafe(7,30,10).",
-			"givenSafe(27,29,50).",
-			"givenSafe(13,14,50).",
-			"givenSafe(13,120,9).",
-			"givenSafe(27,120,29).",
-			"givenSafe(7,15,30).",
-			"givenSafe(14,29,29).",
-			"givenSafe(7,29,9).",
-			"givenSafe(28,29,49).",
-			"givenSafe(14,14,49).",
-			"givenSafe(14,119,9).",
-			"givenSafe(28,119,29).",
-			"givenSafe(7,14,29).",
-			
-			"halt."
-	};
-	
-	protected String[] getTableTestInputs() {
-		return tableTestInputs;
+	protected String [] getValueTestInputs() {
+		return valuesTestInputs;
 	}
-	protected String[] getOffTableTestInputs() {
-		return offTableTestInputs;
+	protected String [] getSafeTupleTestInputs() {
+		return safeTupleTestInputs;
 	}
 	
 	private String output=null;
-	
 	
 	public String getOutput() {
 		return output;
@@ -98,14 +101,14 @@ public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
 
 			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
 			
-			String [] inputs=getTableTestInputs();//combineArrays(getTableTestInputs(),getOffTableTestInputs());
+			String [] inputs=combineArrays(getValueTestInputs(),getSafeTupleTestInputs());
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) {
 				return fail ("Could not create project. See console messages.");
 			}
 
-			String anOutput = aRunningProject.await().replaceAll("\n\n", "\n");
+			String anOutput = aRunningProject.await().replaceAll("\n\n", "\n").replaceAll("\n\n", "\n");
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
 			

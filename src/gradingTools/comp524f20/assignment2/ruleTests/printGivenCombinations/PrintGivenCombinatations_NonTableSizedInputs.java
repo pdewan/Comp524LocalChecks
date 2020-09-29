@@ -1,5 +1,6 @@
-package gradingTools.comp524f20.assignment2.ruleTests.givenSafe;
+package gradingTools.comp524f20.assignment2.ruleTests.printGivenCombinations;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -37,83 +38,54 @@ import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
-@MaxValue(2)
-public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
+@MaxValue(18)
+public class PrintGivenCombinatations_NonTableSizedInputs extends AnAbstractPrologRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
 
-	public GivenSafe_OutputGeneration() {
+	public PrintGivenCombinatations_NonTableSizedInputs() {
 	}
 	
-	private String [] tableTestInputs= {
-			"givenSafe(13,30,30). ; .",
-			"givenSafe(6,30,10). ; .",
-			"givenSafe(27,30,50). ; .",
-			"givenSafe(13,15,50). ; .",
-			"givenSafe(13,120,10). ; .",
-			"givenSafe(27,120,30). ; .",
-			"givenSafe(6,15,30). ; .",
-			"halt."
-	};
+	private String[] regexChecks=null;
 	
-	private String[] offTableTestInputs= {
-			"write('Off Table Tests below this\n---\n').",
-			
-			"givenSafe(14,30,30).",
-			"givenSafe(7,30,10).",
-			"givenSafe(27,29,50).",
-			"givenSafe(13,14,50).",
-			"givenSafe(13,120,9).",
-			"givenSafe(27,120,29).",
-			"givenSafe(7,15,30).",
-			"givenSafe(14,29,29).",
-			"givenSafe(7,29,9).",
-			"givenSafe(28,29,49).",
-			"givenSafe(14,14,49).",
-			"givenSafe(14,119,9).",
-			"givenSafe(28,119,29).",
-			"givenSafe(7,14,29).",
-			
-			"halt."
-	};
-	
-	protected String[] getTableTestInputs() {
-		return tableTestInputs;
-	}
-	protected String[] getOffTableTestInputs() {
-		return offTableTestInputs;
+	private void generateRegexChecks(PrintGivenCombinations_OutputGeneration inputVals) {
+		if(regexChecks!=null)
+			return;
+		
+		List<String> regexChecks = new ArrayList<String>();
+		int [] inputs=inputVals.getNonTableSizedInputParams();
+		String [] verifiedOutputs=inputVals.getOutputOrder();
+		regexChecks.add("^---.*");
+		for(int input:inputs) {
+			regexChecks.add("^Duration.*Distance.*Exhalation.*IsSafe.*");
+			for(int i=0;i<input&&i<7;i++)
+				regexChecks.add(verifiedOutputs[i]+".*");
+			regexChecks.add("false.*");
+		}
+		this.regexChecks=new String[regexChecks.size()];
+		regexChecks.toArray(this.regexChecks);
 	}
 	
-	private String output=null;
-	
-	
-	public String getOutput() {
-		return output;
-	}
-	
-	
+
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		try {
 
-			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
-			
-			String [] inputs=getTableTestInputs();//combineArrays(getTableTestInputs(),getOffTableTestInputs());
-			
-			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
-			if (aRunningProject == null) {
-				return fail ("Could not create project. See console messages.");
+			PrintGivenCombinations_OutputGeneration outputGeneration = (PrintGivenCombinations_OutputGeneration) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(PrintGivenCombinations_OutputGeneration.class);			
+			String anOutput=outputGeneration.getOutput();
+
+			if (anOutput == null) {
+				return fail ("Could not generate output. See console messages.");
 			}
 
-			String anOutput = aRunningProject.await().replaceAll("\n\n", "\n");
+			generateRegexChecks(outputGeneration);
+			
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-			
-			if(anOutput==null||anOutput.length()==0) {
-				return fail("output from running commands is null or empty");
-			}
-			
-			output=anOutput;
+			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getTabledSizedInputs());
+
+			if (!aRetval) 
+				return fail("View console for more detail");
 			return pass();
 			
 

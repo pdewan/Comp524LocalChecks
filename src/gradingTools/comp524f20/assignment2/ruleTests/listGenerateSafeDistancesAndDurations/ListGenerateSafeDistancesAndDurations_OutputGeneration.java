@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment2.ruleTests.givenSafe;
+package gradingTools.comp524f20.assignment2.ruleTests.listGenerateSafeDistancesAndDurations;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,53 +38,45 @@ import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
 @MaxValue(2)
-public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
+public class ListGenerateSafeDistancesAndDurations_OutputGeneration extends AnAbstractPrologRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
 
-	public GivenSafe_OutputGeneration() {
+	public ListGenerateSafeDistancesAndDurations_OutputGeneration() {
 	}
 	
-	private String [] tableTestInputs= {
-			"givenSafe(13,30,30). ; .",
-			"givenSafe(6,30,10). ; .",
-			"givenSafe(27,30,50). ; .",
-			"givenSafe(13,15,50). ; .",
-			"givenSafe(13,120,10). ; .",
-			"givenSafe(27,120,30). ; .",
-			"givenSafe(6,15,30). ; .",
-			"halt."
+	private String [] trueValueInputs= {
+			
+			"listGenerateSafeDistancesAndDurations(9,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(0,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(10,GeneratedTable). ; .",
+			
+			"listGenerateSafeDistancesAndDurations(11,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(29,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(30,GeneratedTable). ; .",
+			
+			"listGenerateSafeDistancesAndDurations(31,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(49,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(50,GeneratedTable). ; .",
+	};
+	private String [] falseValueInputs= {
+			"write('ListGenerateSafeDistancesAndDurations false outputs below\n---\n').",
+			
+			"listGenerateSafeDistancesAndDurations(51,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(70,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(101,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(2147483647,GeneratedTable). ; .",
+			
+			"halt."	
 	};
 	
-	private String[] offTableTestInputs= {
-			"write('Off Table Tests below this\n---\n').",
-			
-			"givenSafe(14,30,30).",
-			"givenSafe(7,30,10).",
-			"givenSafe(27,29,50).",
-			"givenSafe(13,14,50).",
-			"givenSafe(13,120,9).",
-			"givenSafe(27,120,29).",
-			"givenSafe(7,15,30).",
-			"givenSafe(14,29,29).",
-			"givenSafe(7,29,9).",
-			"givenSafe(28,29,49).",
-			"givenSafe(14,14,49).",
-			"givenSafe(14,119,9).",
-			"givenSafe(28,119,29).",
-			"givenSafe(7,14,29).",
-			
-			"halt."
-	};
-	
-	protected String[] getTableTestInputs() {
-		return tableTestInputs;
+	protected String [] getTrueValueInputs() {
+		return trueValueInputs;
 	}
-	protected String[] getOffTableTestInputs() {
-		return offTableTestInputs;
+	protected String [] getFalseValueInputs() {
+		return falseValueInputs;
 	}
 	
 	private String output=null;
-	
 	
 	public String getOutput() {
 		return output;
@@ -98,7 +90,7 @@ public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
 
 			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
 			
-			String [] inputs=getTableTestInputs();//combineArrays(getTableTestInputs(),getOffTableTestInputs());
+			String [] inputs=combineArrays(getTrueValueInputs(),getFalseValueInputs());
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) {
