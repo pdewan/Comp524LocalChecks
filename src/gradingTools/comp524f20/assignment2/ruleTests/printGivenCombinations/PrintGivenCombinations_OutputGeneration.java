@@ -133,16 +133,16 @@ public class PrintGivenCombinations_OutputGeneration extends AnAbstractPrologRun
 			String anOutput = aRunningProject.await().replaceAll("\n\n", "\n").replaceAll("\n\n", "\n");
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-//			findOutputOrder(anOutput); //To ignore order of the outputs
-			String [] defaultOutputOrder = {
-					"30,13,30,true",
-					"30,6,10,true",
-					"30,27,50,true",
-					"15,13,50,true",
-					"120,13,10,true",
-					"120,27,30,true",
-					"15,6,30,true"};
-			outputOrder=defaultOutputOrder;
+			findOutputOrder(anOutput); //To ignore order of the outputs
+//			String [] defaultOutputOrder = {
+//					"13,30,30,true",
+//					"6,30,10,true",
+//					"27,30,50,true",
+//					"13,15,50,true",
+//					"13,120,10,true",
+//					"27,120,30,true",
+//					"6,15,30,true"};
+//			outputOrder=defaultOutputOrder;
 			
 			if(anOutput==null||anOutput.length()==0) {
 				return fail("output from running commands is null or empty");
@@ -161,14 +161,13 @@ public class PrintGivenCombinations_OutputGeneration extends AnAbstractPrologRun
 		String [] combination=output.split("\n");
 		String [] foundOrder=new String[7];
 		String [] defaultOutputOrder = {
-				"30,13,30,true",
-				"30,6,10,true",
-				"30,27,50,true",
-				"15,13,50,true",
-				"120,13,10,true",
-				"120,27,30,true",
-				"15,6,30,true",
-		};
+				"13,30,30,true",
+				"6,30,10,true",
+				"27,30,50,true",
+				"13,15,50,true",
+				"13,120,10,true",
+				"27,120,30,true",
+				"6,15,30,true"};
 		String [] testing=defaultOutputOrder.clone();
 		
 		int sequenceStart=0;

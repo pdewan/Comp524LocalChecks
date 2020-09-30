@@ -56,10 +56,10 @@ public class PrintGivenCombinatations_NonTableSizedInputs extends AnAbstractProl
 		String [] verifiedOutputs=inputVals.getOutputOrder();
 		regexChecks.add("^---.*");
 		for(int input:inputs) {
-			regexChecks.add("^Duration.*Distance.*Exhalation.*IsSafe.*");
+			regexChecks.add("^Distance.*Duration.*Exhalation.*IsSafe.*");
 			for(int i=0;i<input&&i<7;i++)
 				regexChecks.add(verifiedOutputs[i]+".*");
-			regexChecks.add("false.*");
+//			regexChecks.add("false.*");
 		}
 		this.regexChecks=new String[regexChecks.size()];
 		regexChecks.toArray(this.regexChecks);
@@ -82,7 +82,7 @@ public class PrintGivenCombinatations_NonTableSizedInputs extends AnAbstractProl
 			
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getTabledSizedInputs());
+			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getNonTableSizedInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");
