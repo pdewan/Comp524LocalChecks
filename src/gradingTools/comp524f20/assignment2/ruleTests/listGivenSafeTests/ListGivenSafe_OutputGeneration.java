@@ -69,13 +69,13 @@ public class ListGivenSafe_OutputGeneration extends AnAbstractPrologRunningProje
 	private String [] safeTupleTestInputs= {
 			"write('safeTupleTest output below\n---\n').",
 			
-			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
-			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
-			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
-			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
-			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
-			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
-			"listGivenSafe(SafeTuple). ;",";",";",";",";",";",";",
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";","; .",
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";","; .",
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";","; .",
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";","; .",
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";","; .",
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";","; .",
+			"listGivenSafe(SafeTuple). ;",";",";",";",";",";","; .",
 			
 			"halt."	
 	};
