@@ -51,7 +51,13 @@ public class ListGenerateSafeDistancesAndDurations_OutputGeneration extends AnAb
 			"listGenerateSafeDistancesAndDurations(10,GeneratedTable). ; .",
 			
 			"listGenerateSafeDistancesAndDurations(11,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(11,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(11,GeneratedTable). ; .",
 			"listGenerateSafeDistancesAndDurations(29,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(29,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(29,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(30,GeneratedTable). ; .",
+			"listGenerateSafeDistancesAndDurations(30,GeneratedTable). ; .",
 			"listGenerateSafeDistancesAndDurations(30,GeneratedTable). ; .",
 			
 			"listGenerateSafeDistancesAndDurations(31,GeneratedTable). ; .",
@@ -97,7 +103,7 @@ public class ListGenerateSafeDistancesAndDurations_OutputGeneration extends AnAb
 				return fail ("Could not create project. See console messages.");
 			}
 
-			String anOutput = aRunningProject.await().replaceAll("\n\n", "\n");
+			String anOutput = aRunningProject.await().replaceAll("\n\n", "\n").replaceAll("\n\n", "\n");
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
 			

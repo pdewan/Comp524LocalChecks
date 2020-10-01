@@ -45,17 +45,26 @@ public class ListGenerateSafeDistancesAndDurations_TrueValueTest extends AnAbstr
 	}
 	
 	private static String[] regexChecks={
-			"^GeneratedTable.*\\[\\[6, 30\\].*\\[13, 120\\]\\].*false.*",
-			"^GeneratedTable.*\\[\\[6, 30\\].*\\[13, 120\\]\\].*false.*",
-			"^GeneratedTable.*\\[\\[6, 30\\].*\\[13, 120\\]\\].*false.*",
+			"^GeneratedTable.*\\[(\\[6, 30\\].*\\[13, 120\\]|\\[13, 120\\].*\\[6, 30\\])].*",
+			"^GeneratedTable.*\\[(\\[6, 30\\].*\\[13, 120\\]|\\[13, 120\\].*\\[6, 30\\])].*",
+			"^GeneratedTable.*\\[(\\[6, 30\\].*\\[13, 120\\]|\\[13, 120\\].*\\[6, 30\\])].*",
 			
-			"^GeneratedTable.*\\[\\[13, 30\\].*\\[27, 120\\].*\\[6, 15\\]\\].*false.*",
-			"^GeneratedTable.*\\[\\[13, 30\\].*\\[27, 120\\].*\\[6, 15\\]\\].*false.*",
-			"^GeneratedTable.*\\[\\[13, 30\\].*\\[27, 120\\].*\\[6, 15\\]\\].*false.*",
+			"^GeneratedTable.*\\[.*\\[13, 30\\].*\\].*",
+			"^GeneratedTable.*\\[.*\\[27, 120\\].*\\].*",
+			"^GeneratedTable.*\\[.*\\[6, 15\\].*\\].*",
 			
-			"^GeneratedTable.*\\[\\[27, 30\\].*\\[13.*15\\]\\].*false.*",
-			"^GeneratedTable.*\\[\\[27, 30\\].*\\[13.*15\\]\\].*false.*",
-			"^GeneratedTable.*\\[\\[27, 30\\].*\\[13.*15\\]\\].*false.*",
+			"^GeneratedTable.*\\[.*\\[13, 30\\].*\\].*",
+			"^GeneratedTable.*\\[.*\\[27, 120\\].*\\].*",
+			"^GeneratedTable.*\\[.*\\[6, 15\\].*\\].*",
+
+			"^GeneratedTable.*\\[.*\\[13, 30\\].*\\].*",
+			"^GeneratedTable.*\\[.*\\[27, 120\\].*\\].*",
+			"^GeneratedTable.*\\[.*\\[6, 15\\].*\\].*",
+			
+			"^GeneratedTable.*\\[(\\[27, 30\\].*\\[13, 15\\]|\\[13, 15\\].*\\[27, 30\\])\\].*",
+			"^GeneratedTable.*\\[(\\[27, 30\\].*\\[13, 15\\]|\\[13, 15\\].*\\[27, 30\\])\\].*",
+			"^GeneratedTable.*\\[(\\[27, 30\\].*\\[13, 15\\]|\\[13, 15\\].*\\[27, 30\\])\\].*",
+			
 			
 			
 			"^---.*",

@@ -46,16 +46,38 @@ public class GenerateSafeDistancesAndDurations_OutputGeneration extends AnAbstra
 	
 	private String [] trueValueInputs= {
 			"generateSafeDistancesAndDurations(Distance,Duration,9). ;", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,9). ;", "; .",
+			
 			"generateSafeDistancesAndDurations(Distance,Duration,0). ;", "; .",
-			"generateSafeDistancesAndDurations(Distance,Duration,10). ;", "; .",//5
+			"generateSafeDistancesAndDurations(Distance,Duration,0). ;", "; .",
+			
+			"generateSafeDistancesAndDurations(Distance,Duration,10). ;", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,10). ;", "; .",
+			
+			
 			
 			"generateSafeDistancesAndDurations(Distance,Duration,11). ;", ";", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,11). ;", ";", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,11). ;", ";", "; .",
+			
 			"generateSafeDistancesAndDurations(Distance,Duration,29). ;", ";", "; .",
-			"generateSafeDistancesAndDurations(Distance,Duration,30). ;", ";", "; .",//14
+			"generateSafeDistancesAndDurations(Distance,Duration,29). ;", ";", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,29). ;", ";", "; .",
+			
+			"generateSafeDistancesAndDurations(Distance,Duration,30). ;", ";", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,30). ;", ";", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,30). ;", ";", "; .",
+			
+			
 			
 			"generateSafeDistancesAndDurations(Distance,Duration,31). ;", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,31). ;", "; .",
+			
 			"generateSafeDistancesAndDurations(Distance,Duration,49). ;", "; .",
-			"generateSafeDistancesAndDurations(Distance,Duration,50). ;", "; .",//20
+			"generateSafeDistancesAndDurations(Distance,Duration,49). ;", "; .",
+			
+			"generateSafeDistancesAndDurations(Distance,Duration,50). ;", "; .",
+			"generateSafeDistancesAndDurations(Distance,Duration,50). ;", "; .",
 	};
 	private String [] falseValueInputs= {
 			"write('generateSafeDistancesAndDurations false outputs below\n---\n').",

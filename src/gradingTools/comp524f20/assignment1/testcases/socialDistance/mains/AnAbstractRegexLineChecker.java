@@ -31,13 +31,20 @@ public abstract class AnAbstractRegexLineChecker extends PassFailJUnitTestCase{
 		return regexOutputChecks(outputLines,regexList,inputList,this.getClass().getSimpleName());
 	}
 	
-	
+	private int inputNewLine=25;
 	protected boolean regexOutputChecks(String [] outputLines, String [] regexList, String [] inputList, String testName) {
 		System.out.println("\nTesting "+testName+" with the following inputs:");
 		for(int i=0;i<inputList.length;i++)
-			System.out.print("\""+inputList[i]+"\" ");
+			if(i%inputNewLine==inputNewLine-1)
+				System.out.println("\""+inputList[i]+"\" ");
+			else
+				System.out.print("\""+inputList[i]+"\" ");
 		System.out.println("\n");
 		return regexOutputChecks(outputLines,regexList);
 	}
 
+	protected void setInputNewLine(int nl) {
+		inputNewLine=nl;
+	}
+	
 }

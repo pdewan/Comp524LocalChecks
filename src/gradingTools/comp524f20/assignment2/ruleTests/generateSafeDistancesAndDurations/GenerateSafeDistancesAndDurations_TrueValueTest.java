@@ -45,44 +45,60 @@ public class GenerateSafeDistancesAndDurations_TrueValueTest extends AnAbstractP
 	}
 	
 	private static String[] regexChecks={
-			"^Distance = 6,.*",
-			"^Duration = 30 Distance = 13,.*",
-			"^Duration = 120 false\\..*",
+			".*Distance = 6.*",
+			".*Duration = 30.*",
+			".*Distance = 13.*",
+			".*Duration = 120.*",
 			
-			"^Distance = 6,.*",
-			"^Duration = 30 Distance = 13,.*",
-			"^Duration = 120 false\\..*",
+			".*Distance = 6.*",
+			".*Duration = 30.*",
+			".*Distance = 13.*",
+			".*Duration = 120.*",
 			
-			"^Distance = 6,.*",
-			"^Duration = 30 Distance = 13,.*",
-			"^Duration = 120 false\\..*",
 			
-			"Distance = 13,.*",
-			"Duration = 30 Distance = 27,.*", 
-			"Duration = 120 Distance = 6,.*",
-			"Duration = 15 false\\..*",
 			
-			"Distance = 13,.*",
-			"Duration = 30 Distance = 27,.*", 
-			"Duration = 120 Distance = 6,.*",
-			"Duration = 15 false\\..*",
+			".*Distance = 6.*",
+			".*Duration = 30.*",
+			".*Distance = 13.*",
+			".*Duration = 120.*",
 			
-			"Distance = 13,.*",
-			"Duration = 30 Distance = 27,.*", 
-			"Duration = 120 Distance = 6,.*",
-			"Duration = 15 false\\..*",
+			".*Distance = 13.*",
+			".*Duration = 30.*",
+			".*Distance = 27.*", 
+			".*Duration = 120.*",
+			".*Distance = 6.*",
+			".*Duration = 15.*",
 			
-			"Distance = 27,.*",
-			"Duration = 30 Distance = 13,.*",
-			"Duration = 15 false\\..*",
+			".*Distance = 13.*",
+			".*Duration = 30.*",
+			".*Distance = 27.*", 
+			".*Duration = 120.*",
+			".*Distance = 6.*",
+			".*Duration = 15.*",
 			
-			"Distance = 27,.*",
-			"Duration = 30 Distance = 13,.*",
-			"Duration = 15 false\\..*",
+			".*Distance = 13.*",
+			".*Duration = 30.*",
+			".*Distance = 27.*", 
+			".*Duration = 120.*",
+			".*Distance = 6.*",
+			".*Duration = 15.*",
 			
-			"Distance = 27,.*",
-			"Duration = 30 Distance = 13,.*",
-			"Duration = 15 false\\..*",
+			
+			
+			".*Distance = 27.*",
+			".*Duration = 30.*",
+			".*Distance = 13.*",
+			".*Duration = 15.*",
+			
+			".*Distance = 27.*",
+			".*Duration = 30.*",
+			".*Distance = 13.*",
+			".*Duration = 15.*",
+			
+			".*Distance = 27.*",
+			".*Duration = 30.*",
+			".*Distance = 13.*",
+			".*Duration = 15.*",
 			"^---.*",
 	};
 

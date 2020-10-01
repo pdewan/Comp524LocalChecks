@@ -46,10 +46,10 @@ public class ListGenerateSafeDistancesAndDurations_FalseValueTest extends AnAbst
 	
 	private static String[] regexChecks={
 			"^---.*",
-			"^GeneratedTable.*\\[\\].*false.*",
-			"^GeneratedTable.*\\[\\].*false.*",
-			"^GeneratedTable.*\\[\\].*false.*",
-			"^GeneratedTable.*\\[\\].*false.*",
+			"^GeneratedTable.*\\[\\].*",
+			"^GeneratedTable.*\\[\\].*",
+			"^GeneratedTable.*\\[\\].*",
+			"^GeneratedTable.*\\[\\].*",
 	};
 
 	@Override
