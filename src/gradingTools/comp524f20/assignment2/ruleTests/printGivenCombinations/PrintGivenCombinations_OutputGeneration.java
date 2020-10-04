@@ -44,6 +44,21 @@ public class PrintGivenCombinations_OutputGeneration extends AnAbstractPrologRun
 	public PrintGivenCombinations_OutputGeneration() {
 	}
 	
+	private String [] recursionTestInput= {
+			"write('recursion validation below\n---\n').",
+			"trace(printGivenCombinations,call).",
+			"write('tracing was turned on\n').",
+			"printGivenCombinations(3).",
+			"halt."	
+	};
+	
+	private String [] recursionTestRegex={
+			"^---.*",
+			"^---.*",
+		".*Call.*printGivenCombinations.*",
+		".*Call.*printGivenCombinations.*",
+		".*Call.*printGivenCombinations.*",
+		};
 	
 	private int [] tableSizeInputParams= {
 		7,
@@ -66,6 +81,7 @@ public class PrintGivenCombinations_OutputGeneration extends AnAbstractPrologRun
 	};
 	
 	private String [] tableSizedInputs= {
+			
 			"printGivenCombinations("+tableSizeInputParams[0]+").",
 			"printGivenCombinations("+tableSizeInputParams[1]+").",
 			"printGivenCombinations("+tableSizeInputParams[2]+").",
@@ -85,7 +101,7 @@ public class PrintGivenCombinations_OutputGeneration extends AnAbstractPrologRun
 			"printGivenCombinations("+offTableSizeInputParams[3]+").",
 			"printGivenCombinations("+offTableSizeInputParams[4]+").",
 			
-			"halt."	
+			
 	};
 	
 	private String [] outputOrder = null;
@@ -123,7 +139,7 @@ public class PrintGivenCombinations_OutputGeneration extends AnAbstractPrologRun
 
 			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
 			
-			String [] inputs=combineArrays(getTabledSizedInputs(),getNonTableSizedInputs());
+			String [] inputs=combineArrays(getTabledSizedInputs(),getNonTableSizedInputs(),recursionTestInput);
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) {
@@ -143,6 +159,18 @@ public class PrintGivenCombinations_OutputGeneration extends AnAbstractPrologRun
 //					"27,120,30,true",
 //					"6,15,30,true"};
 //			outputOrder=defaultOutputOrder;
+			
+			String errOutput=aRunningProject.getOutputAndErrors().replaceAll("\n\n", "\n").replaceAll("\n\n", "\n");
+			boolean retVal=this.regexOutputChecks(errOutput.split("\n"), recursionTestRegex);
+			if(!retVal) {
+				anOutput=null;
+				return fail("recursion not detected in prolog traces");
+			}
+						
+			if(anOutput==null||anOutput.length()==0) {
+				return fail("output from running commands is null or empty");
+			}
+			
 			
 			if(anOutput==null||anOutput.length()==0) {
 				return fail("output from running commands is null or empty");

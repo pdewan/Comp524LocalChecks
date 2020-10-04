@@ -54,6 +54,7 @@ public class PrintGivenCombinations_TableSizedInputs extends AnAbstractPrologRun
 		List<String> regexChecks = new ArrayList<String>();
 		int [] inputs=inputVals.getTableSizeInputParams();
 		String [] verifiedOutputs=inputVals.getOutputOrder();	
+		
 		for(int input:inputs) {
 			regexChecks.add("^Distance.*Duration.*Exhalation.*IsSafe.*");
 			for(int i=0;i<input&&i<7;i++) {
@@ -61,6 +62,7 @@ public class PrintGivenCombinations_TableSizedInputs extends AnAbstractPrologRun
 			}
 //			regexChecks.add("false.*");
 		}
+		regexChecks.add("^---.*");
 		regexChecks.add("^---.*");
 		
 		this.regexChecks=new String[regexChecks.size()];

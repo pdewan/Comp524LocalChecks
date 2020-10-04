@@ -45,6 +45,7 @@ public class ListGivenSafe_ValuesTest extends AnAbstractPrologRunningProject {
 	}
 	
 	private static String[] regexChecks={
+
 			"^true\\..*|^true f.*",
 			"^true\\..*|^true f.*",
 			"^true\\..*|^true f.*",
@@ -79,7 +80,8 @@ public class ListGivenSafe_ValuesTest extends AnAbstractPrologRunningProject {
 			".*Duration = 30.*",
 			".*Distance = 13.*",
 			".*Duration = 15.*",
-			
+
+			"^---.*",
 			"^---.*",
 	};
 

@@ -45,6 +45,7 @@ public class ListGenerateSafeDistancesAndDurations_TrueValueTest extends AnAbstr
 	}
 	
 	private static String[] regexChecks={
+
 			"^GeneratedTable.*\\[(\\[6, 30\\].*\\[13, 120\\]|\\[13, 120\\].*\\[6, 30\\])].*",
 			"^GeneratedTable.*\\[(\\[6, 30\\].*\\[13, 120\\]|\\[13, 120\\].*\\[6, 30\\])].*",
 			"^GeneratedTable.*\\[(\\[6, 30\\].*\\[13, 120\\]|\\[13, 120\\].*\\[6, 30\\])].*",
@@ -66,7 +67,7 @@ public class ListGenerateSafeDistancesAndDurations_TrueValueTest extends AnAbstr
 			"^GeneratedTable.*\\[(\\[27, 30\\].*\\[13, 15\\]|\\[13, 15\\].*\\[27, 30\\])\\].*",
 			
 			
-			
+			"^---.*",
 			"^---.*",
 	};
 

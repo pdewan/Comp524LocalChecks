@@ -50,6 +50,7 @@ public class ListGenerateSafeDistancesAndDurations_FalseValueTest extends AnAbst
 			"^GeneratedTable.*\\[\\].*",
 			"^GeneratedTable.*\\[\\].*",
 			"^GeneratedTable.*\\[\\].*",
+			"^---.*",
 	};
 
 	@Override

@@ -55,12 +55,14 @@ public class PrintGivenCombinatations_NonTableSizedInputs extends AnAbstractProl
 		int [] inputs=inputVals.getNonTableSizedInputParams();
 		String [] verifiedOutputs=inputVals.getOutputOrder();
 		regexChecks.add("^---.*");
+		
 		for(int input:inputs) {
 			regexChecks.add("^Distance.*Duration.*Exhalation.*IsSafe.*");
 			for(int i=0;i<input&&i<7;i++)
 				regexChecks.add(verifiedOutputs[i]+".*");
 //			regexChecks.add("false.*");
 		}
+		regexChecks.add("^---.*");
 		this.regexChecks=new String[regexChecks.size()];
 		regexChecks.toArray(this.regexChecks);
 	}

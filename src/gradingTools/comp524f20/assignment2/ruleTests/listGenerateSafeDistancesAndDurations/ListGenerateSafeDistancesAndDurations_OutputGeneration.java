@@ -44,6 +44,23 @@ public class ListGenerateSafeDistancesAndDurations_OutputGeneration extends AnAb
 	public ListGenerateSafeDistancesAndDurations_OutputGeneration() {
 	}
 	
+	private String [] recursionTestInput= {
+			"write('recursion validation below\n---\n').",
+			"trace(listGenerateSafeDistancesAndDurations,call).",
+			"write('tracing was turned on\n').",
+			"listGenerateSafeDistancesAndDurations(12,GeneratedTable). ; .",
+			
+			"halt."	
+	};
+	
+	private String [] recursionTestRegex={
+		"^---.*",
+		"^---.*",
+		".*Call.*listGenerateSafeDistancesAndDurations.*",
+		".*Call.*listGenerateSafeDistancesAndDurations.*",
+		".*Call.*listGenerateSafeDistancesAndDurations.*"
+	};
+	
 	private String [] trueValueInputs= {
 			
 			"listGenerateSafeDistancesAndDurations(9,GeneratedTable). ; .",
@@ -72,7 +89,7 @@ public class ListGenerateSafeDistancesAndDurations_OutputGeneration extends AnAb
 			"listGenerateSafeDistancesAndDurations(101,GeneratedTable). ; .",
 			"listGenerateSafeDistancesAndDurations(2147483647,GeneratedTable). ; .",
 			
-			"halt."	
+			
 	};
 	
 	protected String [] getTrueValueInputs() {
@@ -96,7 +113,7 @@ public class ListGenerateSafeDistancesAndDurations_OutputGeneration extends AnAb
 
 			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
 			
-			String [] inputs=combineArrays(getTrueValueInputs(),getFalseValueInputs());
+			String [] inputs=combineArrays(getTrueValueInputs(),getFalseValueInputs(),recursionTestInput);
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) {
@@ -106,7 +123,13 @@ public class ListGenerateSafeDistancesAndDurations_OutputGeneration extends AnAb
 			String anOutput = aRunningProject.await().replaceAll("\n\n", "\n").replaceAll("\n\n", "\n");
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-			
+			String errOutput=aRunningProject.getOutputAndErrors().replaceAll("\n\n", "\n").replaceAll("\n\n", "\n");
+			boolean retVal=this.regexOutputChecks(errOutput.split("\n"), recursionTestRegex);
+			if(!retVal) {
+				anOutput=null;
+				return fail("recursion not detected in prolog traces");
+			}
+						
 			if(anOutput==null||anOutput.length()==0) {
 				return fail("output from running commands is null or empty");
 			}

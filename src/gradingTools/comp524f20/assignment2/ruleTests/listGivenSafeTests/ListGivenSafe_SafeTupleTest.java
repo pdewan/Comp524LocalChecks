@@ -45,6 +45,7 @@ public class ListGivenSafe_SafeTupleTest extends AnAbstractPrologRunningProject 
 	}
 	
 	private static String[] regexChecks={
+
 			"^---.*",
 			".*SafeTuple = \\[13, 30, 30\\].*",
 			".*SafeTuple = \\[6, 30, 10\\].*",
@@ -53,6 +54,8 @@ public class ListGivenSafe_SafeTupleTest extends AnAbstractPrologRunningProject 
 			".*SafeTuple = \\[13, 120, 10\\].*",
 			".*SafeTuple = \\[27, 120, 30\\].*",
 			".*SafeTuple = \\[6, 15, 30\\].*",
+			
+			"^---.*",
 	};
 
 	@Override

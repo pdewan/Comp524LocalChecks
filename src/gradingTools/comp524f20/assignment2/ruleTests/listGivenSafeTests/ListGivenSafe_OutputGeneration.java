@@ -44,7 +44,24 @@ public class ListGivenSafe_OutputGeneration extends AnAbstractPrologRunningProje
 	public ListGivenSafe_OutputGeneration() {
 	}
 	
+	private String [] recursionTestInput= {
+			"write('checking for recursion below:\n---\n').",
+			"trace(listGivenSafe, call).",
+			"write('tracing was turned on\n').",
+			"listGivenSafe([13,30,30]). ; .",
+			"halt."
+	};
+	
+	private String [] recursionTestRegex={
+			"^---.*",
+			"^---.*",
+		".*Call.*listGivenSafe.*",
+		".*Call.*listGivenSafe.*",
+		".*Call.*listGivenSafe.*"
+	};
+	
 	private String [] valuesTestInputs= {
+			
 			"listGivenSafe([13,30,30]). ; .",
 			"listGivenSafe([6,30,10]). ; .",
 			"listGivenSafe([27,30,50]). ; .",
@@ -85,7 +102,7 @@ public class ListGivenSafe_OutputGeneration extends AnAbstractPrologRunningProje
 			"listGivenSafe(SafeTuple). ;",";",";",";",";",";","; .",
 			"listGivenSafe(SafeTuple). ;",";",";",";",";",";","; .",
 			
-			"halt."	
+	
 	};
 	
 	protected String [] getValueTestInputs() {
@@ -109,7 +126,7 @@ public class ListGivenSafe_OutputGeneration extends AnAbstractPrologRunningProje
 
 			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
 			
-			String [] inputs=combineArrays(getValueTestInputs(),getSafeTupleTestInputs());
+			String [] inputs=combineArrays(getValueTestInputs(),getSafeTupleTestInputs(),recursionTestInput);
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) {
@@ -119,6 +136,13 @@ public class ListGivenSafe_OutputGeneration extends AnAbstractPrologRunningProje
 			String anOutput = aRunningProject.await().replaceAll("\n\n", "\n").replaceAll("\n\n", "\n");
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
+			String errOutput=aRunningProject.getOutputAndErrors().replaceAll("\n\n", "\n").replaceAll("\n\n", "\n");
+			boolean retVal=this.regexOutputChecks(errOutput.split("\n"), recursionTestRegex);
+			
+			if(!retVal) {
+				anOutput=null;
+				return fail("recursion not detected in prolog traces");
+			}
 			
 			if(anOutput==null||anOutput.length()==0) {
 				return fail("output from running commands is null or empty");
