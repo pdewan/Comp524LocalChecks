@@ -20,6 +20,7 @@ import gradingTools.comp524f20.assignment0_1.testcases.socialDistance.SocialDist
 import gradingTools.comp524f20.assignment0_2.testcases.PrologGreetingLoadAndRun;
 import gradingTools.comp524f20.assignment0_4.testcases.LispGreetingLoadAndRun;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceUtilityTesterMainProvided;
+import gradingTools.comp524f20.assignment2.requiredFiles.SocialDistanceFileTestSuite;
 import gradingTools.comp524f20.assignment2.requiredFiles.SocialDistancePlProvided;
 import gradingTools.comp524f20.assignment2.ruleTests.InterpolatedSafeOneTwoParam.InterpolatedSafeOneTwoParamTestSuite;
 import gradingTools.comp524f20.assignment2.ruleTests.InterpolatedSafeThreeParam.InterpolatedSafeTestSuite;
@@ -37,7 +38,8 @@ import gradingTools.shared.testcases.suites.InterpreterSuite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 
-	SocialDistancePlProvided.class,
+	//SocialDistancePlProvided.class,
+	SocialDistanceFileTestSuite.class,
 	GivenSizesTestSuite.class,
 	GivenSafeTestSuite.class,
 	DerivedSafeTestSuite.class,

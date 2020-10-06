@@ -24,18 +24,20 @@ import util.annotations.MaxValue;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	SocialDistancePlProvided.class
+	SocialDistancePlProvided.class,
+	SocialDiststancePlNoMagicNumbersTest.class,
+	SocialDiststancePlNoExternalFunctionsTest.class
 })
 	
 
-@MaxValue(10)
-public class RequiredClassesSuite {
+//@MaxValue(10)
+public class SocialDistanceFileTestSuite {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(RequiredClassesSuite.class);
+			BasicJUnitUtils.interactiveTest(SocialDistanceFileTestSuite.class);
 
 
 		} catch (Exception e) {

@@ -20,6 +20,7 @@ import gradingTools.comp524f19.assignment1.testcases.MainClassProvided;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SafeSocializationtxtProvided;
 import gradingTools.comp524f20.assignment2.AnAbstractPrologRunningProject;
 import gradingTools.comp524f20.assignment2.requiredFiles.SocialDistancePlProvided;
+import gradingTools.comp524f20.assignment2.requiredFiles.SocialDiststancePlNoExternalFunctionsTest;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 import gradingTools.shared.testcases.openmp.OpenMPPragma;
 import gradingTools.shared.testcases.openmp.OpenMPUtils;
@@ -99,6 +100,11 @@ public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
 			SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
 			
 			String [] inputs=getTableTestInputs();//combineArrays(getTableTestInputs(),getOffTableTestInputs());
+			
+			SocialDiststancePlNoExternalFunctionsTest externalFunctions = (SocialDiststancePlNoExternalFunctionsTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDiststancePlNoExternalFunctionsTest.class);			
+			if(!externalFunctions.hasPassed()) {
+				return fail("External functions present in code cannot proceed");
+			}
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) {
