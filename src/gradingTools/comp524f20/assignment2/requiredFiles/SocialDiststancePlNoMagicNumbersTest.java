@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import org.antlr.v4.runtime.ANTLRFileStream;
 import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
@@ -51,6 +52,7 @@ public class SocialDiststancePlNoMagicNumbersTest extends PassFailJUnitTestCase 
 			 
 			 
 			 CharStream input = new ANTLRFileStream(filePath);
+//			 CharStream input = CharStreams.fromFileName(filePath);
 			 PrologLexer lexer = new PrologLexer(input);
 			 CommonTokenStream tokens = new CommonTokenStream(lexer);
 			 PrologParser parser = new PrologParser(tokens);

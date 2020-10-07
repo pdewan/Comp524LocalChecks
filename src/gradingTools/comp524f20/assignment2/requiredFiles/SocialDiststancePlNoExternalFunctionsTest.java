@@ -70,7 +70,9 @@ public class SocialDiststancePlNoExternalFunctionsTest extends PassFailJUnitTest
 				        "=<",
 				        "-",
 				        "=",
-				        "\\="
+				        "\\=",
+				        "not",
+				        "\\+"
 				        );
 			 boolean noExternalFunctions=allowed.containsAll(
 			          program.undefined().stream()
@@ -82,8 +84,14 @@ public class SocialDiststancePlNoExternalFunctionsTest extends PassFailJUnitTest
 				 this.hasPassed=true;
 				 return pass();
 			 }
-			 else
-				 return fail("external functions found");
+			 
+			 System.out.println("Found external function(s):");
+			 program.undefined().stream().map(RuleInvocation::name).filter(n -> !allowed.contains(n)).forEach(System.out::println);
+			 
+			 return fail("external functions found");
+			 
+			 
+			 
 		 } 		 catch (Exception e) {
 			 return fail (e.getMessage());
 		 } catch (Throwable e) {
