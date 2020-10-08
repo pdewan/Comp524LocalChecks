@@ -88,7 +88,7 @@ public class SocialDiststancePlNoExternalFunctionsTest extends PassFailJUnitTest
 			 System.out.println("Found external function(s):");
 			 program.undefined().stream().map(RuleInvocation::name).filter(n -> !allowed.contains(n)).forEach(System.out::println);
 			 
-			 return fail("external functions found");
+			 return fail("external functions found (see console)");
 			 
 			 
 			 
