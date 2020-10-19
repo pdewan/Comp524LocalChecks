@@ -57,7 +57,7 @@ public class SocialDiststancePlNoMagicNumbersTest extends PassFailJUnitTestCase 
 			 PrologParser parser = new PrologParser(tokens);
 			 P_textContext tree = parser.p_text();
 
-			 RelationCollectorListener collector = new RelationCollectorListener(tokens, parser);
+			 RelationCollectorListener collector = new RelationCollectorListener(tokens, lexer, parser);
 			 ParseTreeWalker.DEFAULT.walk(collector, tree);
 			 Program program = collector.program();
 			 

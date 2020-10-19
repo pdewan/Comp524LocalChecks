@@ -55,7 +55,7 @@ public class SocialDiststancePlNoExternalFunctionsTest extends PassFailJUnitTest
 			 PrologParser parser = new PrologParser(tokens);
 			 P_textContext tree = parser.p_text();
 
-			 RelationCollectorListener collector = new RelationCollectorListener(tokens, parser);
+			 RelationCollectorListener collector = new RelationCollectorListener(tokens, lexer, parser);
 			 ParseTreeWalker.DEFAULT.walk(collector, tree);
 			 Program program = collector.program();
 			 
@@ -72,7 +72,8 @@ public class SocialDiststancePlNoExternalFunctionsTest extends PassFailJUnitTest
 				        "=",
 				        "\\=",
 				        "not",
-				        "\\+"
+				        "\\+",
+				        "|"
 				        );
 			 boolean noExternalFunctions=allowed.containsAll(
 			          program.undefined().stream()
