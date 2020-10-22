@@ -7,6 +7,7 @@ import java.util.List;
 import grader.basics.BasicLanguageDependencyManager;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.execution.RunningProject;
+import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.AnAbstractRegexLineChecker;
 import gradingTools.utils.RunningProjectUtils;
@@ -44,7 +45,13 @@ public abstract class AnAbstractSMLRunningProject extends AnAbstractRegexLineChe
 		for(int i=0;i<allOutput.length;i++)
 			if(allOutput[i].matches(".*Results.*"))
 				return Arrays.copyOfRange(allOutput, i-1, allOutput.length);
-		return null;		
+		
+		System.err.println("ERROR: Unable to find results of sperator print statment"); 
+		System.err.println("Please check your code in eclipse and see if it compiles with no errors.");
+		System.err.println("Here is the collected output:");
+		for(int i=0;i<allOutput.length;i++)
+			System.out.println(allOutput[i]);
+		throw new NotGradableException("potential error when compiling your sml file");
 	}
 
 	protected String [] boolToRegex(boolean [] list) {
