@@ -7,7 +7,9 @@ import grader.basics.BasicLanguageDependencyManager;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
+import gradingTools.comp524f20.assignment3.functionalPrograming.GivenSafeSML;
 import util.annotations.MaxValue;
+import util.trace.Tracer;
 
 
 @RunWith(Suite.class)
@@ -23,8 +25,9 @@ public class ListsAndRecursionTestSuite {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
+			
 			BasicJUnitUtils.interactiveTest(ListsAndRecursionTestSuite.class);
-
+			Tracer.setKeywordPrintStatus(ListDerivedSafeSML.class, true);
 
 		} catch (Exception e) {
 			e.printStackTrace();

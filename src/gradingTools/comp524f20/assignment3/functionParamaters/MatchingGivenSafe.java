@@ -23,6 +23,7 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClas
 import gradingTools.comp524f20.assignment2.AnAbstractPrologRunningProject;
 import gradingTools.comp524f20.assignment2.requiredFiles.SocialDistancePlProvided;
 import gradingTools.comp524f20.assignment3.AnAbstractThreeParameterSMLRunningProject;
+import gradingTools.comp524f20.assignment3.CorrectValues;
 import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceSMLProvided;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 import gradingTools.shared.testcases.openmp.OpenMPPragma;
@@ -49,92 +50,6 @@ public class MatchingGivenSafe extends AnAbstractThreeParameterSMLRunningProject
 	}
 	
 	private String functionName="matchingGivenSafe";
-	
-	public static boolean[] getRegexChecks() {
-		return regexChecks;
-	}
-	
-	private static boolean[] regexChecks= {
-			true, //1
-			true,
-			true,
-			true,
-			true,
-			true,
-			true,
-			
-			false, //2
-			false,
-			false,
-			false,
-			false,
-			false,
-			false,
-			
-			false, //3
-			false,
-			false,
-			false,
-			false,
-			false,
-			false,
-			
-			false, //4
-			false,
-			false,
-			false,
-			false,
-			false,
-			false,
-			
-			false, //5
-			false,
-			false,
-			false,
-			false,
-			false,
-			false,
-			
-			false, //6
-			false,
-			false,
-			false,
-			false,
-			false,
-			false,
-			
-			false, //7
-			false,
-			false,
-			false,
-			false,
-			false,
-			
-			false, //8
-			false,
-			false,
-			false,
-			false,
-			false,
-			false,
-			
-			false, //9
-			false,
-			false,
-			false,
-			false,
-			false,
-			false,
-			
-			false,	//10
-			false,
-			false,
-			false,
-			false,
-			false,
-			false
-	};
-	
 
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
@@ -159,7 +74,7 @@ public class MatchingGivenSafe extends AnAbstractThreeParameterSMLRunningProject
 				return fail("MatchingSafe Must Pass first");
 			
 			
-			boolean aRetval = regexOutputChecks(parseToReadable(output.split("\n")),boolToRegex(regexChecks),inputs);
+			boolean aRetval = regexOutputChecksTrace(parseToReadable(output.split("\n")),boolToRegex(CorrectValues.getGivenSafeRegexChecks()),inputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");

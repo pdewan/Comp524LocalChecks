@@ -8,6 +8,7 @@ import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
 import util.annotations.MaxValue;
+import util.trace.Tracer;
 
 
 @RunWith(Suite.class)
@@ -26,8 +27,9 @@ public class FunctionalProgrammingTestSuite {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
 			BasicJUnitUtils.interactiveTest(FunctionalProgrammingTestSuite.class);
-
-
+			Tracer.setKeywordPrintStatus(GivenSafeSML.class, true);
+			Tracer.setKeywordPrintStatus(InterpolatedSafeSML.class, true);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

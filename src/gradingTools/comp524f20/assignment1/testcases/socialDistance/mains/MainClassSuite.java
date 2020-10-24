@@ -21,6 +21,7 @@ import gradingTools.comp524f20.assignment0_4.testcases.LispGreetingLoadAndRun;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceUtilityTesterMainProvided;
 import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 import util.annotations.MaxValue;
+import util.trace.Tracer;
 
 
 @RunWith(Suite.class)
@@ -42,8 +43,13 @@ public class MainClassSuite {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
 			BasicJUnitUtils.interactiveTest(MainClassSuite.class);
-
-
+			Tracer.setKeywordPrintStatus(BasicMainTest.class, true);
+			Tracer.setKeywordPrintStatus(InterpolatingMainTest.class, true);
+			Tracer.setKeywordPrintStatus(DerivingMainTest.class, true);
+			Tracer.setKeywordPrintStatus(InferringMainTest.class, true);
+			Tracer.setKeywordPrintStatus(UtilityTesterMainTest.class, true);
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

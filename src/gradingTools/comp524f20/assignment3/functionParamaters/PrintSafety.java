@@ -24,6 +24,7 @@ import gradingTools.comp524f20.assignment2.AnAbstractPrologRunningProject;
 import gradingTools.comp524f20.assignment2.requiredFiles.SocialDistancePlProvided;
 import gradingTools.comp524f20.assignment3.AnAbstractSMLRunningProject;
 import gradingTools.comp524f20.assignment3.AnAbstractThreeParameterSMLRunningProject;
+import gradingTools.comp524f20.assignment3.CorrectValues;
 import gradingTools.comp524f20.assignment3.functionalPrograming.GivenSafeSML;
 import gradingTools.comp524f20.assignment3.functionalPrograming.InterpolatedSafeSML;
 import gradingTools.comp524f20.assignment3.listsAndRecursion.ListDerivedSafeSML;
@@ -76,11 +77,11 @@ public class PrintSafety extends AnAbstractTwoParameterPrint {
 
 			
 			String [] regexChecks=generateRegexs(
-					GivenSafeSML.getRegexChecks(),
-					InterpolatedSafeSML.getRegexChecks(),
-					ListDerivedSafeSML.getRegexChecks());
+					CorrectValues.getGivenSafeRegexChecks(),
+					CorrectValues.getInterpolatedRegexChecks(),
+					CorrectValues.getDerivedSafeRegexChecks());
 			
-			boolean aRetval = regexOutputChecks(parseToReadable(output.split("\n")),regexChecks,inputs);
+			boolean aRetval = regexOutputChecksTrace(parseToReadable(output.split("\n")),regexChecks,inputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");
