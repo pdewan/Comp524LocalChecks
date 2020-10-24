@@ -32,13 +32,13 @@ public class FunctionParametersTestSuite {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
 			BasicJUnitUtils.interactiveTest(FunctionParametersTestSuite.class);
-			Tracer.setKeywordPrintStatus(PrintSafety.class, true);
-			Tracer.setKeywordPrintStatus(ConcisePrintSafety.class, true);
-			Tracer.setKeywordPrintStatus(ListPrintSafety.class, true);
-			
-			Tracer.setKeywordPrintStatus(MatchingSafe.class, true);
-			Tracer.setKeywordPrintStatus(MatchingGivenSafe.class, true);
-			Tracer.setKeywordPrintStatus(MatchingDerivedSafe.class, true);
+//			Tracer.setKeywordPrintStatus(PrintSafety.class, true);
+//			Tracer.setKeywordPrintStatus(ConcisePrintSafety.class, true);
+//			Tracer.setKeywordPrintStatus(ListPrintSafety.class, true);
+//			
+//			Tracer.setKeywordPrintStatus(MatchingSafe.class, true);
+//			Tracer.setKeywordPrintStatus(MatchingGivenSafe.class, true);
+//			Tracer.setKeywordPrintStatus(MatchingDerivedSafe.class, true);
 
 		} catch (Exception e) {
 			e.printStackTrace();

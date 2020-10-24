@@ -27,8 +27,8 @@ public class FunctionalProgrammingTestSuite {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
 			BasicJUnitUtils.interactiveTest(FunctionalProgrammingTestSuite.class);
-			Tracer.setKeywordPrintStatus(GivenSafeSML.class, true);
-			Tracer.setKeywordPrintStatus(InterpolatedSafeSML.class, true);
+//			Tracer.setKeywordPrintStatus(GivenSafeSML.class, true);
+//			Tracer.setKeywordPrintStatus(InterpolatedSafeSML.class, true);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

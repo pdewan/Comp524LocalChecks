@@ -99,7 +99,7 @@ public class CurriedTwiceInterpolatedSafe extends AnAbstractSMLRunningProject {
 				return fail ("Could not generate output. See console messages.");
 			
 			
-			boolean aRetval = regexOutputChecksTrace(parseToReadable(output.split("\n")),boolToRegex(regexChecks),inputs);
+			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),boolToRegex(regexChecks),inputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");

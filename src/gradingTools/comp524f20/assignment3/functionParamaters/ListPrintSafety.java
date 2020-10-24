@@ -87,7 +87,7 @@ public class ListPrintSafety extends AnAbstractThreeParameterSMLRunningProject {
 					CorrectValues.getInterpolatedRegexChecks(),
 					CorrectValues.getDerivedSafeRegexChecks());
 			
-			boolean aRetval = regexOutputChecksTrace(parseToReadable(output.split("\n")),regexChecks,inputs);
+			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),regexChecks,inputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");

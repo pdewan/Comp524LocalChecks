@@ -75,7 +75,7 @@ public class CurriedMatchingGivenSafe extends AnAbstractThreeParameterSMLRunning
 				return fail ("Could not generate output. See console messages.");
 			
 	
-			boolean aRetval = regexOutputChecksTrace(parseToReadable(output.split("\n")),boolToRegex(CorrectValues.getGivenSafeRegexChecks()),inputs);
+			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),boolToRegex(CorrectValues.getGivenSafeRegexChecks()),inputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");

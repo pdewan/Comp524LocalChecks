@@ -1,5 +1,8 @@
 package gradingTools.comp524f20.assignment1.testcases.socialDistance.mains;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import grader.basics.testcase.PassFailJUnitTestCase;
 import util.trace.Tracer;
 
@@ -46,41 +49,72 @@ public abstract class AnAbstractRegexLineChecker extends PassFailJUnitTestCase{
 		inputNewLine=nl;
 	}
 	
-	protected boolean regexOutputChecksTrace(String [] outputLines, String [] regexList, String [] inputList, String testName) {
-		Tracer.info(this,"\nTesting "+testName+" with the following inputs:");
+	protected boolean regexOutputChecksFailurePrint(String [] outputLines, String [] regexList, String [] inputList, String testName) {
+		List<String> printLines = new ArrayList<String>();
+		
+		printLines.add("\nTesting "+testName+" with the following inputs:");
+		String singleLine="";
 		for(int i=0;i<inputList.length;i++)
-			if(i%inputNewLine==inputNewLine-1)
-				Tracer.info(this,"\""+inputList[i]+"\" ");
-			else
-				Tracer.info(this,"\""+inputList[i]+"\" ");
-		Tracer.info(this,"\n");
-		return regexOutputChecks(outputLines,regexList);
+			if(i%inputNewLine!=inputNewLine-1)
+				singleLine=singleLine.concat("\""+inputList[i]+"\" ");
+			else {
+				printLines.add(singleLine+"\""+inputList[i]+"\" ");
+				singleLine="";
+			}
+				
+		printLines.add("\n");
+		return regexOutputChecksFailurePrint(outputLines,regexList,printLines);
 	}
 	
-	protected boolean regexOutputChecksTrace(String [] outputLines, String [] regexList, String [] inputList) {
-		return regexOutputChecksTrace(outputLines,regexList,inputList,this.getClass().getSimpleName());
+	protected boolean regexOutputChecksFailurePrint(String [] outputLines, String [] regexList, String [] inputList) {
+		return regexOutputChecksFailurePrint(outputLines,regexList,inputList,this.getClass().getSimpleName());
 	}
 	
-	protected boolean regexOutputChecksTrace(String [] outputLines, String [] regexList) {
-		Tracer.info(this,"Collected output:");
+	protected boolean regexOutputChecksFailurePrint(String [] outputLines, String [] regexList) {
+		List<String> printLines = new ArrayList<String>();
+		printLines.add("Collected output:");
 		for(int i=0;i<outputLines.length;i++)
-			Tracer.info(this,i+" "+outputLines[i]);
-		Tracer.info(this,"");
+			printLines.add(i+" "+outputLines[i]);
+		printLines.add("");
 		
 		int numRegexFound=0;
 		for(int i=0;i<outputLines.length;i++) {
 			if(outputLines[i].matches(regexList[numRegexFound])){
-				Tracer.info(this,"Output line: \""+i+"\" matches regex: "+regexList[numRegexFound]);
+				printLines.add("Output line: \""+i+"\" matches regex: "+regexList[numRegexFound]);
 				numRegexFound++;
 				if(numRegexFound==regexList.length)
 					return true;
 			}
 		}
 		
-		Tracer.info(this,"Regex: \""+regexList[numRegexFound]+"\" not found, all following regexs not checked");
-		Tracer.info(this,"Note: All regex's are assumed to be in sequential order");
+		for(String line:printLines)
+			System.out.println(line);
+		System.out.println("Regex: \""+regexList[numRegexFound]+"\" not found, all following regexs not checked");
+		System.out.println("Note: All regex's are assumed to be in sequential order");
 		return false;
 	}
 	
+	protected boolean regexOutputChecksFailurePrint(String [] outputLines, String [] regexList,List<String> printLines) {
+		printLines.add("Collected output:");
+		for(int i=0;i<outputLines.length;i++)
+			printLines.add(i+" "+outputLines[i]);
+		printLines.add("");
+		
+		int numRegexFound=0;
+		for(int i=0;i<outputLines.length;i++) {
+			if(outputLines[i].matches(regexList[numRegexFound])){
+				printLines.add("Output line: \""+i+"\" matches regex: "+regexList[numRegexFound]);
+				numRegexFound++;
+				if(numRegexFound==regexList.length)
+					return true;
+			}
+		}
+		
+		for(String line:printLines)
+			System.out.println(line);
+		System.out.println("Regex: \""+regexList[numRegexFound]+"\" not found, all following regexs not checked");
+		System.out.println("Note: All regex's are assumed to be in sequential order");
+		return false;
+	}
 	
 }

@@ -76,7 +76,7 @@ public class CurriedMatchingDerivedSafe extends AnAbstractThreeParameterSMLRunni
 				return fail ("Could not generate output. See console messages.");
 			
 			
-			boolean aRetval = regexOutputChecksTrace(parseToReadable(output.split("\n")),boolToRegex(CorrectValues.getDerivedSafeRegexChecks()),inputs);
+			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),boolToRegex(CorrectValues.getDerivedSafeRegexChecks()),inputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");

@@ -27,7 +27,7 @@ public class ListsAndRecursionTestSuite {
 
 			
 			BasicJUnitUtils.interactiveTest(ListsAndRecursionTestSuite.class);
-			Tracer.setKeywordPrintStatus(ListDerivedSafeSML.class, true);
+//			Tracer.setKeywordPrintStatus(ListDerivedSafeSML.class, true);
 
 		} catch (Exception e) {
 			e.printStackTrace();

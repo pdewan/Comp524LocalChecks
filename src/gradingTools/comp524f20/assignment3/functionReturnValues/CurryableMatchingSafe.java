@@ -78,7 +78,7 @@ public class CurryableMatchingSafe extends AnAbstractThreeParameterSMLRunningPro
 		
 			String [] trimmedInputs=Arrays.copyOfRange(inputs, 2, inputs.length);
 			String [] outputLines=parseToReadable(output.split("\n"));
-			boolean aRetval = regexOutputChecksTrace(outputLines,boolToRegex(CorrectValues.getGivenSafeRegexChecks()),trimmedInputs);
+			boolean aRetval = regexOutputChecksFailurePrint(outputLines,boolToRegex(CorrectValues.getGivenSafeRegexChecks()),trimmedInputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");

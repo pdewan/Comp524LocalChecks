@@ -80,7 +80,7 @@ public class ConcisePrintSafety extends AnAbstractTwoParameterPrint {
 					CorrectValues.getInterpolatedRegexChecks(),
 					CorrectValues.getDerivedSafeRegexChecks());
 			
-			boolean aRetval = regexOutputChecksTrace(parseToReadable(output.split("\n")),regexChecks,inputs);
+			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),regexChecks,inputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");

@@ -34,13 +34,13 @@ public class FunctionReturnValuesTestSuite {
 
 			BasicJUnitUtils.interactiveTest(FunctionReturnValuesTestSuite.class);
 
-			Tracer.setKeywordPrintStatus(CurriedOnceInterpolatedSafe.class, true);
-			Tracer.setKeywordPrintStatus(CurriedTwiceInterpolatedSafe.class, true);
-			Tracer.setKeywordPrintStatus(CurryableInterpolatedSafe.class, true);
-			
-			Tracer.setKeywordPrintStatus(CurryableMatchingSafe.class, true);
-			Tracer.setKeywordPrintStatus(CurriedMatchingDerivedSafe.class, true);
-			Tracer.setKeywordPrintStatus(CurriedMatchingGivenSafe.class, true);
+//			Tracer.setKeywordPrintStatus(CurriedOnceInterpolatedSafe.class, true);
+//			Tracer.setKeywordPrintStatus(CurriedTwiceInterpolatedSafe.class, true);
+//			Tracer.setKeywordPrintStatus(CurryableInterpolatedSafe.class, true);
+//			
+//			Tracer.setKeywordPrintStatus(CurryableMatchingSafe.class, true);
+//			Tracer.setKeywordPrintStatus(CurriedMatchingDerivedSafe.class, true);
+//			Tracer.setKeywordPrintStatus(CurriedMatchingGivenSafe.class, true);
 			
 
 		} catch (Exception e) {

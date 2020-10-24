@@ -74,7 +74,7 @@ public class MatchingGivenSafe extends AnAbstractThreeParameterSMLRunningProject
 				return fail("MatchingSafe Must Pass first");
 			
 			
-			boolean aRetval = regexOutputChecksTrace(parseToReadable(output.split("\n")),boolToRegex(CorrectValues.getGivenSafeRegexChecks()),inputs);
+			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),boolToRegex(CorrectValues.getGivenSafeRegexChecks()),inputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");

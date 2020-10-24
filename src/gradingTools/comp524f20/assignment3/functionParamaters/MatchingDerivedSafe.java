@@ -76,7 +76,7 @@ public class MatchingDerivedSafe extends AnAbstractThreeParameterSMLRunningProje
 			
 			
 			
-			boolean aRetval = regexOutputChecksTrace(parseToReadable(output.split("\n")),boolToRegex(CorrectValues.getDerivedSafeRegexChecks()),inputs);
+			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),boolToRegex(CorrectValues.getDerivedSafeRegexChecks()),inputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");
