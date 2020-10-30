@@ -70,7 +70,7 @@ public class InterpolatedSafe_TableTest extends AnAbstractPrologRunningProject {
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getTableValuesInput());
+			boolean aRetval = regexOutputChecksFailurePrint(anOutput.split("\n"),regexChecks,outputGeneration.getTableValuesInput());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

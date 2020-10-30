@@ -168,7 +168,7 @@ public class PrintGivenCombinations_OutputGeneration extends AnAbstractPrologRun
 //			outputOrder=defaultOutputOrder;
 			
 			String errOutput=aRunningProject.getOutputAndErrors().replaceAll("\n\n", "\n").replaceAll("\n\n", "\n");
-			boolean retVal=this.regexOutputChecks(errOutput.split("\n"), recursionTestRegex);
+			boolean retVal=this.regexOutputChecksFailurePrint(errOutput.split("\n"), recursionTestRegex);
 			if(!retVal) {
 				anOutput=null;
 				return fail("recursion not detected in prolog traces");

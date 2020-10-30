@@ -80,7 +80,7 @@ public class InterpolatedSafe_TwoParamFalseValueTest extends AnAbstractPrologRun
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 						
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getTwoParamFalseInputs());
+			boolean aRetval = regexOutputChecksFailurePrint(anOutput.split("\n"),regexChecks,outputGeneration.getTwoParamFalseInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

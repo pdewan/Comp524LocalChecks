@@ -72,7 +72,7 @@ public class InterpolatedSafe_OneParamFalseValueTest extends AnAbstractPrologRun
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getOneParamFalseInputs());
+			boolean aRetval = regexOutputChecksFailurePrint(anOutput.split("\n"),regexChecks,outputGeneration.getOneParamFalseInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

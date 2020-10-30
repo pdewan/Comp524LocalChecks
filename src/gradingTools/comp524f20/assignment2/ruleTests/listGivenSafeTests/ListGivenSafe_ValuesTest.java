@@ -99,7 +99,7 @@ public class ListGivenSafe_ValuesTest extends AnAbstractPrologRunningProject {
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getValueTestInputs());
+			boolean aRetval = regexOutputChecksFailurePrint(anOutput.split("\n"),regexChecks,outputGeneration.getValueTestInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

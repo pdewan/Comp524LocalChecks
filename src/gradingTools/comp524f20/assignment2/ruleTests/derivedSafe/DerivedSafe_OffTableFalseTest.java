@@ -79,7 +79,7 @@ public class DerivedSafe_OffTableFalseTest extends AnAbstractPrologRunningProjec
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 						
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getOffTableFalseInputs());
+			boolean aRetval = regexOutputChecksFailurePrint(anOutput.split("\n"),regexChecks,outputGeneration.getOffTableFalseInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

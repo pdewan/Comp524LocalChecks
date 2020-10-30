@@ -69,7 +69,7 @@ public class GivenSafe_TableTest extends AnAbstractPrologRunningProject {
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 						
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getTableTestInputs());
+			boolean aRetval = regexOutputChecksFailurePrint(anOutput.split("\n"),regexChecks,outputGeneration.getTableTestInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

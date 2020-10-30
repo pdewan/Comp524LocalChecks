@@ -78,7 +78,7 @@ public class GivenSafe_OffTableTest extends AnAbstractPrologRunningProject {
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getOffTableTestInputs());
+			boolean aRetval = regexOutputChecksFailurePrint(anOutput.split("\n"),regexChecks,outputGeneration.getOffTableTestInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

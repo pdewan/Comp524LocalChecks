@@ -56,7 +56,7 @@ public class PrintGivenCombinations_TableSizedInputs extends AnAbstractPrologRun
 		String [] verifiedOutputs=inputVals.getOutputOrder();	
 		
 		for(int input:inputs) {
-			regexChecks.add("^Distance.*Duration.*Exhalation.*IsSafe.*");
+			regexChecks.add("^[Dd]istance.*[Dd]uration.*[Ee]xhalation.*[Ii]sSafe.*");
 			for(int i=0;i<input&&i<7;i++) {
 				regexChecks.add(verifiedOutputs[i]+".*");
 			}
@@ -86,7 +86,7 @@ public class PrintGivenCombinations_TableSizedInputs extends AnAbstractPrologRun
 			
 			generateRegexChecks(outputGeneration);
 			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getNonTableSizedInputs());
+			boolean aRetval = regexOutputChecksFailurePrint(anOutput.split("\n"),regexChecks,outputGeneration.getTabledSizedInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

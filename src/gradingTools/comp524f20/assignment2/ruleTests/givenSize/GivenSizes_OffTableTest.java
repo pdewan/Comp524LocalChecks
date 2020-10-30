@@ -65,7 +65,7 @@ public class GivenSizes_OffTableTest extends AnAbstractPrologRunningProject {
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getOffTableTestInput());
+			boolean aRetval = regexOutputChecksFailurePrint(anOutput.split("\n"),regexChecks,outputGeneration.getOffTableTestInput());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

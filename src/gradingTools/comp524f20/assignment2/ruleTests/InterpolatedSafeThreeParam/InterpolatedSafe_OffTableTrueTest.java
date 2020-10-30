@@ -80,7 +80,7 @@ public class InterpolatedSafe_OffTableTrueTest extends AnAbstractPrologRunningPr
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getOffTableTrueInputs());
+			boolean aRetval = regexOutputChecksFailurePrint(anOutput.split("\n"),regexChecks,outputGeneration.getOffTableTrueInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");

@@ -85,7 +85,7 @@ public class ListGenerateSafeDistancesAndDurations_TrueValueTest extends AnAbstr
 
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
-			boolean aRetval = regexOutputChecks(anOutput.split("\n"),regexChecks,outputGeneration.getTrueValueInputs());
+			boolean aRetval = regexOutputChecksFailurePrint(anOutput.split("\n"),regexChecks,outputGeneration.getTrueValueInputs());
 
 			if (!aRetval) 
 				return fail("View console for more detail");
