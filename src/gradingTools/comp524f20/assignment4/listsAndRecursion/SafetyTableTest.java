@@ -53,6 +53,7 @@ public class SafetyTableTest extends AnAbstractLispRunningProject {
 	}
 	
 	private final static String [] inputs = {
+			"(print \"Results:\")",
 			"SAFETY_TABLE",
 			"SAFETY_TABLE",
 			"SAFETY_TABLE",
@@ -91,7 +92,7 @@ public class SafetyTableTest extends AnAbstractLispRunningProject {
 				return fail ("Could not generate output. See console messages.");
 			
 			
-			boolean aRetval = regexOutputChecksFailurePrint(output.split("\n"),checks,inputs);
+			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),checks,inputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");

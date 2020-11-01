@@ -51,7 +51,7 @@ public abstract class AnAbstractLispRunningProject extends AnAbstractRegexLineCh
 		System.err.println("Here is the collected output:");
 		for(int i=0;i<allOutput.length;i++)
 			System.out.println(allOutput[i]);
-		throw new NotGradableException("potential error when compiling your sml file");
+		throw new NotGradableException("potential error when compiling your lisp file");
 	}
 
 	protected String [] boolToRegex(boolean [] list) {
