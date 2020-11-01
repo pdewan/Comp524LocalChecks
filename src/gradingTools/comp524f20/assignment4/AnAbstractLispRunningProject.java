@@ -19,7 +19,7 @@ public abstract class AnAbstractLispRunningProject extends AnAbstractRegexLineCh
 	public AnAbstractLispRunningProject() {
 	}
 	
-	private String forReadability = "print(\"Results:\");";
+	private String forReadability = "(print \"Results:\")";
 	protected String getReadabilityCommand() {
 		return forReadability;
 	}

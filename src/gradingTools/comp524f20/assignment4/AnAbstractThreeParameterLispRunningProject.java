@@ -94,9 +94,11 @@ public abstract class AnAbstractThreeParameterLispRunningProject extends AnAbstr
 	
 	protected String [] generateFunctionCalls(String functionName) {
 		setInputNewLine(8);
-		String [] retVal = new String[inputList.length];
+		String [] retVal = new String[inputList.length+2];
+		retVal[0] = getReadabilityCommand();
 		for(int i=0;i<inputList.length;i++) 
-			retVal[i]="(funcall "+functionName+" "+inputList[i][0]+" "+inputList[i][1]+" "+inputList[i][2]+")";
+			retVal[i+1]="(funcall "+functionName+" "+inputList[i][0]+" "+inputList[i][1]+" "+inputList[i][2]+")";
+		retVal[retVal.length-1] = "(exit)";
 		return retVal;
 	}
 	
