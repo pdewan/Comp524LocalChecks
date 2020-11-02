@@ -73,7 +73,7 @@ public class ListDerivedSafeLisp extends AnAbstractThreeParameterLispRunningProj
 				return fail ("Could not generate output. See console messages.");
 			
 			
-			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),boolToRegex(getChecks()),inputs);
+			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),boolToRegex(CorrectValues.getDerivedSafeRegexChecks()),inputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");
