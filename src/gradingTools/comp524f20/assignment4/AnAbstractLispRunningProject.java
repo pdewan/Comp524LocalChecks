@@ -13,9 +13,11 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.AnAbst
 import gradingTools.utils.RunningProjectUtils;
 
 public abstract class AnAbstractLispRunningProject extends AnAbstractRegexLineChecker {
-	public static final int TIME_OUT_SECS = 1; // secs
+	public static final int TIME_OUT_SECS = 4; // secs
 		
-
+	protected int getTimeout() {
+		return BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTimeOut();
+	}
 	public AnAbstractLispRunningProject() {
 	}
 	

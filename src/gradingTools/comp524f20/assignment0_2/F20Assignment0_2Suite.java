@@ -37,7 +37,7 @@ public class F20Assignment0_2Suite extends InterpreterSuite {
 
 	public static void main (String[] args) {
 		try {
-//			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.PROLOG_LANGUAGE);
+			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.PROLOG_LANGUAGE);
 
 			BasicJUnitUtils.interactiveTest(F20Assignment0_2Suite.class);
 
@@ -46,9 +46,9 @@ public class F20Assignment0_2Suite extends InterpreterSuite {
 			e.printStackTrace();
 		}
 	}
-	static {
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.PROLOG_LANGUAGE);
-
-	}
+//	static {
+//		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.PROLOG_LANGUAGE);
+//
+//	}
 	
 }

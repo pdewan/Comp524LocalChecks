@@ -47,7 +47,12 @@ import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
 @MaxValue(10)
 public class ListDerivedSafeLisp extends AnAbstractThreeParameterLispRunningProject {
-	public static final int TIME_OUT_SECS = 1; // secs	
+	public static final int TIME_OUT_SECS = 3; // secs
+	public static final int OUTPUT_WAIT_TIME = 3000; // ms
+	@Override
+	protected int getTimeout() {
+		return TIME_OUT_SECS;
+	}
 
 	public ListDerivedSafeLisp() {
 	}
@@ -67,7 +72,12 @@ public class ListDerivedSafeLisp extends AnAbstractThreeParameterLispRunningProj
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) 
 				return fail ("Could not create project. See console messages.");
-			
+//			int anOldTime = BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessOutputSleepTime();
+//			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessOutputWaitTime(OUTPUT_WAIT_TIME);
+
+			aRunningProject.await();
+//			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessOutputWaitTime(anOldTime);
+
 			String output = aRunningProject.getOutput();
 			if (output == null || output.length()==0) 
 				return fail ("Could not generate output. See console messages.");
