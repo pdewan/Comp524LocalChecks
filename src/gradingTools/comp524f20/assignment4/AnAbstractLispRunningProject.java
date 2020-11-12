@@ -18,6 +18,7 @@ public abstract class AnAbstractLispRunningProject extends AnAbstractRegexLineCh
 	protected int getTimeout() {
 		return BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTimeOut();
 	}
+	
 	public AnAbstractLispRunningProject() {
 	}
 	
@@ -29,9 +30,11 @@ public abstract class AnAbstractLispRunningProject extends AnAbstractRegexLineCh
 	
 	protected RunningProject createRunningProject (Project aProject, String fileName, String... inputs) {
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.LISP_LANGUAGE);
-		RunningProject aRunningProject = RunningProjectUtils.runProjectandWithMainFile(aProject, fileName, TIME_OUT_SECS,inputs);
+		RunningProject aRunningProject = RunningProjectUtils.runProjectandWithMainFile(aProject, fileName, getTimeout(),inputs);
 		return aRunningProject;
 	}
+	
+	
 	
 	protected String [] combineArrays(String[]... arrays) {
 		List<String> combined = new ArrayList<String>();

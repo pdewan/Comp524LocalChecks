@@ -48,6 +48,8 @@ import util.annotations.MaxValue;
 @MaxValue(10)
 public class SafetyTableTest extends AnAbstractLispRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
+	public static final int FIRST_INPUT_DELAY_TIME = 2000; // ms
+
 
 	public SafetyTableTest() {
 	}
@@ -78,6 +80,7 @@ public class SafetyTableTest extends AnAbstractLispRunningProject {
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		try {
+			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setFirstInputDelay(FIRST_INPUT_DELAY_TIME);
 
 			SocialDistanceLispProvided aSocialDistanceFileProvided = (SocialDistanceLispProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceLispProvided.class);			
 			if (aSocialDistanceFileProvided.getRequiredFile() == null) 
@@ -86,7 +89,7 @@ public class SafetyTableTest extends AnAbstractLispRunningProject {
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) 
 				return fail ("Could not create project. See console messages.");
-			
+			aRunningProject.await();
 			String output = aRunningProject.getOutput();
 			if (output == null || output.length()==0) 
 				return fail ("Could not generate output. See console messages.");

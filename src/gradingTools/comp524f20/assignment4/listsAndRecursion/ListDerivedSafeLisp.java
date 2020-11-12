@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import bus.uigen.controller.models.AFileOperationsModelAttributeRegisterer;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
@@ -47,8 +48,11 @@ import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
 @MaxValue(10)
 public class ListDerivedSafeLisp extends AnAbstractThreeParameterLispRunningProject {
-	public static final int TIME_OUT_SECS = 3; // secs
-	public static final int OUTPUT_WAIT_TIME = 3000; // ms
+	public static final int TIME_OUT_SECS = 8; // secs
+	public static final int OUTPUT_WAIT_TIME = 1000; // ms
+	public static final int FIRST_INPUT_DELAY_TIME = 2000; // ms
+	public static final int BETWEEN_INPUT_DELAY_TIME = 20; // ms
+
 	@Override
 	protected int getTimeout() {
 		return TIME_OUT_SECS;
@@ -69,14 +73,23 @@ public class ListDerivedSafeLisp extends AnAbstractThreeParameterLispRunningProj
 				return fail ("A Social Distance File not Found");
 			
 			String [] inputs = generateFunctionCalls(functionName);
+//			int anOldFirstInputDelayTime = BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getFirstInputDelay();
+			int anOldBetweenInputDelayTime = BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getBetweenInputDelay();
+
+			int anOldOutputDelayTime = BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessOutputSleepTime();
+			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessOutputWaitTime(OUTPUT_WAIT_TIME);
+			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setFirstInputDelay(FIRST_INPUT_DELAY_TIME);
+			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setBetweenInputDelay(BETWEEN_INPUT_DELAY_TIME);
+
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
 			if (aRunningProject == null) 
 				return fail ("Could not create project. See console messages.");
-//			int anOldTime = BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessOutputSleepTime();
-//			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessOutputWaitTime(OUTPUT_WAIT_TIME);
+			
 
 			aRunningProject.await();
-//			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessOutputWaitTime(anOldTime);
+			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessOutputWaitTime(anOldOutputDelayTime);
+//			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setFirstInputDelay(anOldFirstInputDelayTime);
+			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setBetweenInputDelay(anOldBetweenInputDelayTime);
 
 			String output = aRunningProject.getOutput();
 			if (output == null || output.length()==0) 
