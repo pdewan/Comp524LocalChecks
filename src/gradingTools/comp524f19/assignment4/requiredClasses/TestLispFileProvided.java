@@ -21,6 +21,12 @@ public class TestLispFileProvided extends PassFailJUnitTestCase{
 			if (aProjectFolder.isDirectory()) {
 				File[] aFiles = aProjectFolder.listFiles();
 				for (File aFile:aFiles) {
+					if (aFile.getName().endsWith("test.lisp")) {
+							lispFileName = aFile.getCanonicalPath();
+							return pass();
+					}
+				}
+				for (File aFile:aFiles) {
 					if (aFile.getName().endsWith(".lisp")) {
 							lispFileName = aFile.getCanonicalPath();
 							return pass();
