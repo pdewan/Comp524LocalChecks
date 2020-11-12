@@ -3,9 +3,8 @@ package gradingTools.comp524f19.assignment3.testcases.FunctionExpressionsChecker
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-import gradingTools.comp524f19.assignment2.testcases.LispFunctionCheckers.LoadLispChecker;
-import gradingTools.comp524f19.assignment2.testcases.LispFunctionCheckers.TestLispFileProvided;
-
+import gradingTools.comp524f19.assignment4.requiredClasses.LoadLispChecker;
+import gradingTools.comp524f19.assignment4.requiredClasses.TestLispFileProvided;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
