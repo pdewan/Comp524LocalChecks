@@ -70,6 +70,8 @@ public class PrintSafety extends AnAbstractTwoParameterPrint {
 			if (aRunningProject == null) 
 				return fail ("Could not create project. See console messages.");
 			
+			aRunningProject.await();
+			
 			String output = aRunningProject.getOutput();
 			if (output == null || output.length()==0) 
 				return fail ("Could not generate output. See console messages.");

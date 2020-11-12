@@ -9,7 +9,7 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp524f19.assignment2.testcases.LispFunctionCheckers.LoadLispChecker;
+import gradingTools.comp524f19.assignment4.requiredClasses.LoadLispChecker;
 import main.lisp.parser.terms.Atom;
 import main.lisp.parser.terms.NilAtom;
 import main.lisp.parser.terms.SExpression;
