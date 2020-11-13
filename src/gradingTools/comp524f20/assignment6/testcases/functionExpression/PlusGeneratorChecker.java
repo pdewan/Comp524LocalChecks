@@ -4,8 +4,8 @@ import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResul
 import util.annotations.MaxValue;
 @MaxValue(50)
 public class PlusGeneratorChecker extends AbstractLispExpressionResultChecker {
-	public static final String[] STUDENT_INPUT = {"(funcall ((lambda(x) (function (lambda (y) (+ x y))))2)3)"};
-	public static final String[] STUDENT_RESULT = {"12"};
+	public static final String[] STUDENT_INPUT = {"(funcall ((lambda (x) (function (lambda (y) (+ x y))))2)3)"};
+	public static final String[] STUDENT_RESULT = {"5"};
 	public static final String[] GRADER_INPUT = STUDENT_INPUT;
 	public static final String[] GRADER_RESULT = STUDENT_RESULT;
 	@Override
