@@ -10,7 +10,7 @@ public abstract class AnAbstractThreeParameterLispRunningProject extends AnAbstr
 		return inputList;
 	}
 	
-	private int [][] inputList = {	
+	protected int [][] inputList = {	
 			{MEDIUM_DISTANCE,MEDIUM_DURATION,MEDIUM_EXHALATION}, //1
 			{SMALL_DISTANCE,MEDIUM_DURATION,SMALL_EXHALATION},
 			{LARGE_DISTANCE,MEDIUM_DURATION,LARGE_EXHALATION},

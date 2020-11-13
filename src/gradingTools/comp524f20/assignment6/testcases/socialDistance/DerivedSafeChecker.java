@@ -3,13 +3,13 @@ package gradingTools.comp524f20.assignment6.testcases.socialDistance;
 import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
 
 public class DerivedSafeChecker extends AbstractLispExpressionResultChecker {
-	public static final String[] STUDENT_INPUT = {"(funcall (funcall funExpTraverseUseGenerator one sum) (list 2 (cons 4 5)))"};
-	public static final String[] STUDENT_TO_STRING = {"4"};
-	public static final String[] GRADER_INPUT = {"(funcall isList (cons 5 6))"};
+	public static String[] STUDENT_INPUT = null;
+	public static String[] STUDENT_TO_STRING = null;
+	public static final String[] GRADER_INPUT = {"(list \"this is a not test\")"};
 	public static final String[] GRADER_TO_STRING = {"NIL"};
 	@Override
 	protected String[] expectedStudentOutput() {
-		return STUDENT_TO_STRING;
+		return getStudentToString();
 	}
 	@Override
 	protected String[] expectedGraderOutput() {
@@ -17,11 +17,25 @@ public class DerivedSafeChecker extends AbstractLispExpressionResultChecker {
 	}
 	@Override
 	protected String[] studentInputLines() {
-		return STUDENT_INPUT;
+		return getStudent_Input();
 	}
 	@Override
 	protected String[] graderInputLines() {
 		// TODO Auto-generated method stub
 		return GRADER_INPUT;
 	}
+	
+	private String [] getStudent_Input() {
+		if(STUDENT_INPUT==null) {
+			STUDENT_INPUT = (new ATestGetableLispProject()).getTests();
+		}
+		return STUDENT_INPUT;
+	}
+	private String [] getStudentToString() {
+		if(STUDENT_TO_STRING==null) {
+			STUDENT_TO_STRING=(new ATestGetableLispProject()).getExpectedAnswers();
+		}
+		return STUDENT_TO_STRING;
+	}
+	
 }
