@@ -10,7 +10,6 @@ import util.annotations.IsExtra;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	SafetyTableChecker.class,
 	DerivedSafeChecker.class
 	
 })

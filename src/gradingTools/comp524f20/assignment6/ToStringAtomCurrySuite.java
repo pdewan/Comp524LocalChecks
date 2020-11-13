@@ -12,8 +12,8 @@ import util.annotations.IsExtra;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	TestLispFileProvided.class,
-	LoadLispChecker.class,
+//	TestLispFileProvided.class,
+//	LoadLispChecker.class,
 	CurriedNumAtomChecker.class,
 	CurriedToStringChecker.class
 
@@ -21,6 +21,6 @@ import util.annotations.IsExtra;
 })
 	
 @IsExtra(true)
-public class CurrySuite {
+public class ToStringAtomCurrySuite {
 	
 }

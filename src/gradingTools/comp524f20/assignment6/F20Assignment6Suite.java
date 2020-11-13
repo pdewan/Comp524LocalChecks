@@ -20,6 +20,8 @@ import gradingTools.comp524f19.assignment3.testcases.FunctionExpressionsCheckers
 import gradingTools.comp524f19.assignment3.testcases.HighOderFunctionCheckers.A3HighOrderFunctionSuite;
 import gradingTools.comp524f19.assignment3.testcases.LetCheckers.A3LetSuite;
 import gradingTools.comp524f19.assignment4.requiredClasses.A4RequiredClassesSuite;
+import gradingTools.comp524f20.assignment6.testcases.curry.BasicCurrySuite;
+import gradingTools.comp524f20.assignment6.testcases.functionExpression.BasicFunctionExpressionSuite;
 import gradingTools.comp524f20.assignment6.testcases.socialDistance.FuncallSocialDistanceSuite;
 import main.lisp.interpreter.InterpreterModelFactory;
 import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
@@ -31,13 +33,16 @@ import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 	BasicOperationSuite.class,
 	LogicalSuite.class,
 	RelationalSuite.class,
-	LispFunctionSuite.class,
+	LispToStringSuite.class,
 	LispSetqSuite.class,
 	LispLambdaSuite.class,
-	HighOrderFunctionSuite.class,
-	FunctionExpressionsSuite.class,
-	CurrySuite.class,
-	FuncallSocialDistanceSuite.class
+//	HighOrderFunctionSuite.class,
+//	TraverseFunctionExpressionsSuite.class,
+//	ToStringAtomCurrySuite.class,
+	FuncallSocialDistanceSuite.class,
+	BasicFunctionExpressionSuite.class,
+	BasicCurrySuite.class
+	
 })
 	
 

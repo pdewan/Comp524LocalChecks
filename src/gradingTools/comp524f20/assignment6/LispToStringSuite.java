@@ -13,11 +13,12 @@ import gradingTools.comp524f19.assignment2.testcases.LispFunctionCheckers.LispTo
 import gradingTools.comp524f19.assignment2.testcases.LispFunctionCheckers.LispToStringChecker4;
 import gradingTools.comp524f19.assignment4.requiredClasses.LoadLispChecker;
 import gradingTools.comp524f19.assignment4.requiredClasses.TestLispFileProvided;
+import util.annotations.IsExtra;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	TestLispFileProvided.class,
-	LoadLispChecker.class,
+//	TestLispFileProvided.class,
+//	LoadLispChecker.class,
 	LispIsListChecker.class,
 	LispIsListChecker2.class,
 	LispIsListChecker3.class,
@@ -29,7 +30,7 @@ import gradingTools.comp524f19.assignment4.requiredClasses.TestLispFileProvided;
 	
 })
 	
-
-public class LispFunctionSuite {
+@IsExtra(true)
+public class LispToStringSuite {
 	
 }

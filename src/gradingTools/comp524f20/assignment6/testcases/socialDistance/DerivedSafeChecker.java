@@ -1,7 +1,8 @@
 package gradingTools.comp524f20.assignment6.testcases.socialDistance;
 
 import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
-
+import util.annotations.MaxValue;
+@MaxValue(30)
 public class DerivedSafeChecker extends AbstractLispExpressionResultChecker {
 	public static String[] STUDENT_INPUT = null;
 	public static String[] STUDENT_TO_STRING = null;
