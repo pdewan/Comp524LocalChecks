@@ -14,19 +14,28 @@ import gradingTools.comp524f19.assignment2.testcases.LispLambdaCheckers.A2LispLa
 import gradingTools.comp524f19.assignment2.testcases.LispSetqCheckers.A2LispSetqSuite;
 import gradingTools.comp524f19.assignment2.testcases.LogicalCheckers.A2LogicalSuite;
 import gradingTools.comp524f19.assignment2.testcases.RelationalCheckers.A2RelationalSuite;
+import gradingTools.comp524f19.assignment3.requiredClasses.A3RequiredClassesSuite;
+import gradingTools.comp524f19.assignment3.testcases.CurryCheckers.A3CurrySuite;
+import gradingTools.comp524f19.assignment3.testcases.FunctionExpressionsCheckers.A3FunctionExpressionsSuite;
+import gradingTools.comp524f19.assignment3.testcases.HighOderFunctionCheckers.A3HighOrderFunctionSuite;
+import gradingTools.comp524f19.assignment3.testcases.LetCheckers.A3LetSuite;
+import gradingTools.comp524f19.assignment4.requiredClasses.A4RequiredClassesSuite;
 import main.lisp.interpreter.InterpreterModelFactory;
 import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	A2RequiredClassesSuite.class,
-	A2BasicOperationSuite.class,
-	A2LogicalSuite.class,
-	A2RelationalSuite.class,
-	A2LispFunctionSuite.class,
-	A2LispSetqSuite.class,
-	A2LispLambdaSuite.class
+	A6RequiredClassesSuite.class,
+	BasicOperationSuite.class,
+	LogicalSuite.class,
+	RelationalSuite.class,
+	LispFunctionSuite.class,
+	LispSetqSuite.class,
+	LispLambdaSuite.class,
+	HighOrderFunctionSuite.class,
+	FunctionExpressionsSuite.class,
+	CurrySuite.class
 })
 	
 
