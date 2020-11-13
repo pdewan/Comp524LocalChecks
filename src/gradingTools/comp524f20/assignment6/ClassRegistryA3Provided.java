@@ -12,13 +12,13 @@ import main.ClassRegistryA4;
 //@MaxValue(10)
 public class ClassRegistryA3Provided extends PassFailJUnitTestCase {
 	public static final Class REGISTRY_INTERFACE = ClassRegistryA3.class;
-	public ClassRegistryA4 classRegistry;
-	public ClassRegistryA4 timingOutClassRegistryProxy;
+	public ClassRegistryA3 classRegistry;
+	public ClassRegistryA3 timingOutClassRegistryProxy;
 
-	public ClassRegistryA4 getClassRegistry() {
+	public ClassRegistryA3 getClassRegistry() {
 		return classRegistry;
 	}
-	public ClassRegistryA4 getTimingOutClassRegistryProxy() {
+	public ClassRegistryA3 getTimingOutClassRegistryProxy() {
 		return timingOutClassRegistryProxy;
 	}
 	protected Class registryClass() {
@@ -28,12 +28,12 @@ public class ClassRegistryA3Provided extends PassFailJUnitTestCase {
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade)
 			throws NotAutomatableException, NotGradableException {		
-			classRegistry = (ClassRegistryA4) BasicProjectIntrospection.createInstanceOfPredefinedSupertype(REGISTRY_INTERFACE);
+			classRegistry = (ClassRegistryA3) BasicProjectIntrospection.createInstanceOfPredefinedSupertype(REGISTRY_INTERFACE);
 			if (classRegistry == null)	{
 				
 				return fail("No class implementing:" + registryClass().getCanonicalName() + " in class path:" + System.getProperty("java.class.path"));
 			}
-			timingOutClassRegistryProxy = (ClassRegistryA4) BasicProjectIntrospection.createTimingOutProxy(REGISTRY_INTERFACE, classRegistry);
+			timingOutClassRegistryProxy = (ClassRegistryA3) BasicProjectIntrospection.createTimingOutProxy(REGISTRY_INTERFACE, classRegistry);
 			return pass();		
 	}
 

@@ -12,6 +12,7 @@ import gradingTools.comp524f19.assignment4.requiredClasses.ClassRegistryA4Provid
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
+	ClassRegistryProvided.class,
 	ClassRegistryA3Provided.class,
 	MainClassProvided.class,
 	OperationRegistryProvided.class

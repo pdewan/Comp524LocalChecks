@@ -17,8 +17,8 @@ import util.annotations.IsExtra;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-//	TestLispFileProvided.class,
-//	LoadLispChecker.class,
+	TestLispFileProvided.class,
+	LoadLispChecker.class,
 	LispIsListChecker.class,
 	LispIsListChecker2.class,
 	LispIsListChecker3.class,

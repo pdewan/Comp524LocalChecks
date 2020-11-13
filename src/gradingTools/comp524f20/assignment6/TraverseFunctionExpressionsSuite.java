@@ -12,8 +12,8 @@ import gradingTools.comp524f19.assignment4.requiredClasses.TestLispFileProvided;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-//	TestLispFileProvided.class,
-//	LoadLispChecker.class,
+	TestLispFileProvided.class,
+	LoadLispChecker.class,
 	FunExpTraverseGenChecker.class,
 	FunExpTraverseGenChecker2.class,
 	FunExpGeneratedNumAtomChecker.class,
