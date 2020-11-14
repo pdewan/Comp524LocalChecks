@@ -14,7 +14,8 @@ import util.annotations.IsExtra;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 CurryOnceChecker.class,
-CurryTwiceChecker.class
+CurryTwiceChecker.class,
+CurryTwoArgsChecker.class
 
 	
 })

@@ -2,9 +2,9 @@ package gradingTools.comp524f20.assignment6.testcases.curry;
 
 import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
 import util.annotations.MaxValue;
-@MaxValue(25)
+@MaxValue(20)
 public class CurryOnceChecker extends AbstractLispExpressionResultChecker {
-	public static final String[] STUDENT_INPUT = {"(funcall (curry (curry product3 2) 3) 4)"};
+	public static final String[] STUDENT_INPUT = {"(funcall (curry product3 2) 3 4)"};
 	public static final String[] STUDENT_RESULT = {"24"};
 	public static final String[] GRADER_INPUT = STUDENT_INPUT;
 	public static final String[] GRADER_RESULT = STUDENT_RESULT;
