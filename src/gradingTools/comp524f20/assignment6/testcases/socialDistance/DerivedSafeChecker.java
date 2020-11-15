@@ -6,15 +6,15 @@ import util.annotations.MaxValue;
 public class DerivedSafeChecker extends AbstractLispExpressionResultChecker {
 	public static String[] STUDENT_INPUT = null;
 	public static String[] STUDENT_TO_STRING = null;
-	public static final String[] GRADER_INPUT = {"(list \"this is a not test\")"};
-	public static final String[] GRADER_TO_STRING = {"NIL"};
+//	public static final String[] GRADER_INPUT = {"(list \"this is a not test\")"};
+//	public static final String[] GRADER_TO_STRING = {"NIL"};
 	@Override
 	protected String[] expectedStudentOutput() {
 		return getStudentToString();
 	}
 	@Override
 	protected String[] expectedGraderOutput() {
-		return GRADER_TO_STRING;
+		return getStudentToString();
 	}
 	@Override
 	protected String[] studentInputLines() {
@@ -23,7 +23,7 @@ public class DerivedSafeChecker extends AbstractLispExpressionResultChecker {
 	@Override
 	protected String[] graderInputLines() {
 		// TODO Auto-generated method stub
-		return GRADER_INPUT;
+		return getStudent_Input();
 	}
 	
 	private String [] getStudent_Input() {
