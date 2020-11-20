@@ -12,6 +12,7 @@ import gradingTools.comp524f20.assignment3.functionalPrograming.FunctionalProgra
 import gradingTools.comp524f20.assignment3.functionalPrograming.GivenSafeSML;
 import gradingTools.comp524f20.assignment3.listsAndRecursion.ListsAndRecursionTestSuite;
 import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceFileTestSuite;
+import gradingTools.comp524f20.assignment3.styleParsing.StyleTest;
 import gradingTools.shared.testcases.suites.InterpreterSuite;
 import util.trace.Tracer;
 
@@ -22,7 +23,8 @@ import util.trace.Tracer;
 	FunctionalProgrammingTestSuite.class,
 	ListsAndRecursionTestSuite.class,
 	FunctionParametersTestSuite.class,
-	FunctionReturnValuesTestSuite.class
+	FunctionReturnValuesTestSuite.class,
+	StyleTest.class
 })
 	
 
