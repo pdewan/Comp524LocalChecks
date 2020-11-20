@@ -17,7 +17,25 @@ public class OperationRegistryProvided extends AbstractRegisteredClassProcessor 
 	public Class getOperationRegisterer() {
 		return operationRegistrerer;
 	}
-	
+	/*
+	 * This premamutrely creates an environment. So students real environment cannot be tested
+	 */
+	 TestCaseResult registerAndCheckOperations(OperationRegisterer oRegisterer) {
+//		 OperationRegisterer oRegisterer = aClassRegistry.getCustomOperationRegisterer().newInstance();
+			oRegisterer.registerOperations();
+		BasicOperationManager aBasicOperationManager = (BasicOperationManager) BuiltinOperationManagerSingleton.get();
+		String arr[] = {"cond","load","and","or","not","list","eval","quote",">","<","<=",">="};
+		for(String line:arr)
+		{
+			Evaluator aEvaluator = aBasicOperationManager.getEvaluator(line);
+			if(aEvaluator == null)
+			{
+				 
+				return fail ( line + " returns null in operation registry");
+			}
+		}
+		return pass();
+	}
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade)
 			throws NotAutomatableException, NotGradableException {	
@@ -33,17 +51,8 @@ public class OperationRegistryProvided extends AbstractRegisteredClassProcessor 
 //			sExpressionClass = (Class<? extends SExpression>) callGetterOnClassRegistry(aMethodName);
 			operationRegistrerer = aClassRegistry.getCustomOperationRegisterer();  
 			OperationRegisterer oRegisterer = aClassRegistry.getCustomOperationRegisterer().newInstance();
-			oRegisterer.registerOperations();
-			BasicOperationManager aBasicOperationManager = (BasicOperationManager) BuiltinOperationManagerSingleton.get();
-			String arr[] = {"cond","load","and","or","not","list","eval","quote",">","<","<=",">="};
-			for(String line:arr)
-			{
-				Evaluator aEvaluator = aBasicOperationManager.getEvaluator(line);
-				if(aEvaluator == null)
-				{
-					return fail ( line + " returns null in operation registry");
-				}
-			}
+//			return registerAndCheckOperations(oRegisterer);
+
 			return pass();		
 		 } 		 catch (Exception e) {
 			 return fail (e.getMessage());

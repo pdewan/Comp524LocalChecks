@@ -125,6 +125,9 @@ public  abstract class AbstractLispExpressionInputterAndEvaluatorRegisterer exte
     	InterpreterModelSingleton.get().clearPropertyChangeListeners();
 	 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
 	 	registerWithEvaluators();
+		Evaluator anEvaluator = BuiltinOperationManagerSingleton.get().getEvaluator("setq");
+//		System.out.println ("setq evaluator:" + anEvaluator);
+
 
 
     	provideInput(aLines);
