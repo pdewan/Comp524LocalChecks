@@ -20,11 +20,13 @@ import gradingTools.comp524f20.assignment1.SocialDistanceClassRegistry;
 import main.ClassRegistry;
 import main.lisp.parser.terms.BasicExpression;
 import main.lisp.parser.terms.SExpression;
+import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 import edu.unc.cs.comp524.parsers.prolog.*;
 import edu.unc.cs.comp524.parsers.prolog.PrologParser.P_textContext;
 
 @MaxValue(40)
+@IsExtra(true)
 public class SocialDiststancePlNoMagicNumbersTest extends PassFailJUnitTestCase {
 	
 	@Override
