@@ -1,11 +1,14 @@
 package gradingTools.comp524f20.assignment3.styleParsing;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import grader.basics.BasicLanguageDependencyManager;
 import grader.basics.config.BasicExecutionSpecificationSelector;
+import grader.basics.execution.GradingMode;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
 import grader.basics.junit.JUnitTestsEnvironment;
@@ -53,9 +56,25 @@ public class StyleTest extends AnAbstractSMLRunningProject {
 				return fail ("A Social Distance File not Found");
 			
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.SML_LANGUAGE);
-			
+
+//			GradingMode.getGraderRun();
 //			File test = Paths.get(StyleTest.class.getResource("smlnj-parser/524-f20-a3.cm").toURI()).toFile();
+
+//			File test = new File("config/524-f20-a3.cm");
 //			String unixifiedPath = test.getAbsolutePath().replaceFirst(".*Users\\\\", "/Users/").replaceAll("\\\\", "/");
+//			
+//			String [] paths= {
+//					test.getAbsolutePath(),
+//					test.getCanonicalPath(),
+//					test.getPath()
+//			};
+			
+//			String [] inputs = {
+//					"CM.make \""+ test.getCanonicalPath().replaceAll("\\\\", "\\\\\\\\").replaceFirst("C:","") +"\";",
+//	//				"CM.make \"C:"+ unixifiedPath +"\";",
+//					getReadabilityCommand(),
+//					"A3Grader.runall \"SocialDistance.sml\";",
+//			};
 			
 			RunningProject aRunningProject = RunningProjectUtils.runProject(project, TIME_OUT_SECS, inputs);
 			

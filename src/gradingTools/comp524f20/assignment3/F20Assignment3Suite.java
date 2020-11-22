@@ -24,7 +24,7 @@ import util.trace.Tracer;
 	ListsAndRecursionTestSuite.class,
 	FunctionParametersTestSuite.class,
 	FunctionReturnValuesTestSuite.class,
-	StyleTest.class
+	//StyleTest.class
 })
 	
 
