@@ -22,7 +22,7 @@ import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceSMLProvid
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(10)
+@MaxValue(25)
 @IsExtra(true)
 public class StyleTest extends AnAbstractSMLRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
@@ -87,6 +87,7 @@ public class StyleTest extends AnAbstractSMLRunningProject {
 			String [] inputs = {
 					"CM.make \"config/smlnj-parser-style/524-f20-a3.cm\";",
 					getReadabilityCommand(),
+//					"OS.FileSys.getDir();",
 					"A3Grader.runall \""+ aSocialDistanceFileProvided.getRequiredFile().getAbsolutePath().replaceAll("\\\\", "\\\\\\\\")+"\";",
 					"OS.Process.exit(OS.Process.success);"
 			};
