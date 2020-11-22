@@ -128,9 +128,14 @@ public class StyleTest extends AnAbstractSMLRunningProject {
 					break;
 				}
 		
+		System.out.println("The following output was collected:");
+		for(int i=0;i<outputLines.length;i++)
+			System.out.println(i+" "+outputLines[i]);
+		
 		System.err.println("The following tests were not passed:");
 		for(String failedTest:eachTest) 
 			System.err.println(failedTest);
+		
 		return ((double)regexList.length-eachTest.size())/regexList.length;
 	}
 }
