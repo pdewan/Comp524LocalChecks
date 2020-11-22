@@ -60,7 +60,7 @@ public class SMLGreetingLoadAndRun extends GreetingRun {
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryPoint(aTestFile);
 		 BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
 			setForkInProjectFolder(false);
-		RunningProject aRunningProject = RunningProjectUtils.runProjectandWithMainFile (aProject, "Greeting.sml",  TIME_OUT_SECS, "greeting();", "OS.Process.exit(OS.Process.success);");
+		RunningProject aRunningProject = RunningProjectUtils.runProjectandWithMainFile (aProject, "Greeting.sml",  TIME_OUT_SECS, "greeting();","OS.Process.exit(OS.Process.success);");
 		return aRunningProject;
 	}
 	

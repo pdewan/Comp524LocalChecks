@@ -20,20 +20,26 @@ import gradingTools.comp524f20.assignment3.AnAbstractSMLRunningProject;
 import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceSMLProvided;
 
 import gradingTools.utils.RunningProjectUtils;
+import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
+@IsExtra(true)
 public class StyleTest extends AnAbstractSMLRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
 
 	public StyleTest() {
 	}
 	
-	private final String [] inputs = {
-			"CM.make \"../config/smlnj-parser-style/524-f20-a3.cm\";",
-			getReadabilityCommand(),
-			"A3Grader.runall \"SocialDistance.sml\";",
-	};
+//	private final String [] inputs = {
+//			"CM.make \"../config/smlnj-parser-style/524-f20-a3.cm\";",
+//			getReadabilityCommand(),
+//			"A3Grader.runall \"SocialDistance.sml\";",
+//	};
 	
+	
+//	 getReadabilityCommand(),
+//	 "OS.FileSys.getDir();", 
+//	 "OS.Process.exit(OS.Process.success);"
 	
 	private final String [] results= {
 			"no disallowed functions: pass",
@@ -76,6 +82,17 @@ public class StyleTest extends AnAbstractSMLRunningProject {
 //					"A3Grader.runall \"SocialDistance.sml\";",
 //			};
 			
+//			RunningProject aRunningProject = RunningProjectUtils.runProject(project, TIME_OUT_SECS, inputs);
+			
+			String [] inputs = {
+					"CM.make \"config/smlnj-parser-style/524-f20-a3.cm\";",
+					getReadabilityCommand(),
+					"A3Grader.runall \""+ aSocialDistanceFileProvided.getRequiredFile().getAbsolutePath().replaceAll("\\\\", "\\\\\\\\")+"\";",
+					"OS.Process.exit(OS.Process.success);"
+			};
+			
+			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setForkInProjectFolder(false);
+//			RunningProject aRunningProject = RunningProjectUtils.runProjectandWithMainFile (project, "SocialDistance.sml",  TIME_OUT_SECS, inputs);
 			RunningProject aRunningProject = RunningProjectUtils.runProject(project, TIME_OUT_SECS, inputs);
 			
 			if (aRunningProject == null) 
