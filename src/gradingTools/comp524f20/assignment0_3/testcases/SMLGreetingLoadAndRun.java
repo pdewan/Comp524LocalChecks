@@ -47,6 +47,9 @@ public class SMLGreetingLoadAndRun extends GreetingRun {
 	public SMLGreetingLoadAndRun() {
 	}
 	protected RunningProject createRunningProject (Project aProject) {
+		File aFile = new File(".");
+		String aFullName = aFile.getAbsolutePath();
+		
 //		String aSourceFolder = aProject.getSourceFolder().getAbsolutePath();
 //		String aTestFile = aSourceFolder + "\\Greeting.sml";
 //		File aFile = new File(aTestFile);
@@ -55,6 +58,8 @@ public class SMLGreetingLoadAndRun extends GreetingRun {
 //			return null;
 //		}
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryPoint(aTestFile);
+		 BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+			setForkInProjectFolder(false);
 		RunningProject aRunningProject = RunningProjectUtils.runProjectandWithMainFile (aProject, "Greeting.sml",  TIME_OUT_SECS, "greeting();", "OS.Process.exit(OS.Process.success);");
 		return aRunningProject;
 	}
