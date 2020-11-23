@@ -2,7 +2,10 @@ package gradingTools.comp524f20.assignment3.styleParsing;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -83,11 +86,21 @@ public class StyleTest extends AnAbstractSMLRunningProject {
 //			};
 			
 //			RunningProject aRunningProject = RunningProjectUtils.runProject(project, TIME_OUT_SECS, inputs);
-			
+			File aFile = new File(".");
+			try {
+				Files.walk(Paths.get(aFile.toURI()))
+				.filter(Files::isRegularFile)
+				.forEach(System.out::println);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+//			System.out.println("Current directory:" + aFile.getAbsolutePath());
+//			System.out.println("Children of current directory:"+ Arrays.toString(aFile.list()));
 			String [] inputs = {
 					"CM.make \"config/smlnj-parser-style/524-f20-a3.cm\";",
 					getReadabilityCommand(),
-//					"OS.FileSys.getDir();",
+					"OS.FileSys.getDir();",
 					"A3Grader.runall \""+ aSocialDistanceFileProvided.getRequiredFile().getAbsolutePath().replaceAll("\\\\", "\\\\\\\\")+"\";",
 					"OS.Process.exit(OS.Process.success);"
 			};
