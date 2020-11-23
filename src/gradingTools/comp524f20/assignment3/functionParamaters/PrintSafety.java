@@ -46,6 +46,7 @@ import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
+import util.trace.Tracer;
 @MaxValue(10)
 public class PrintSafety extends AnAbstractTwoParameterPrint {
 	public static final int TIME_OUT_SECS = 1; // secs	
@@ -54,13 +55,18 @@ public class PrintSafety extends AnAbstractTwoParameterPrint {
 	}
 	
 	private String functionName="printSafety";
-
+	private int traceNum;
+	private static int setTraceNum=3000;
+	
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		try {
-
+			traceNum=Tracer.getMaxTraces();
+			Tracer.setMaxTraces(setTraceNum);
+			
 			SocialDistanceSMLProvided aSocialDistanceFileProvided = (SocialDistanceSMLProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceSMLProvided.class);			
+			
 			if (aSocialDistanceFileProvided.getRequiredFile() == null) 
 				return fail ("A Social Distance File not Found");
 			
@@ -85,9 +91,17 @@ public class PrintSafety extends AnAbstractTwoParameterPrint {
 			
 			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),regexChecks,inputs);
 
-			if (!aRetval) 
-				return fail("View console for more detail");
-			return pass();
+//			int test=Tracer.getNumTraces();
+			
+			
+			TestCaseResult result = aRetval ? pass() : fail("View console for more detail");
+			Tracer.setMaxTraces(traceNum);
+			return result;
+			
+//			if (!aRetval) 
+//				return fail("View console for more detail");
+//			Tracer.clearTracedMessages();
+//			return pass();
 			
 
 		} catch (NotRunnableException e) {
