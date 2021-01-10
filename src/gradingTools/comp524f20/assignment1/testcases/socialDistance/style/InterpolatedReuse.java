@@ -1,11 +1,11 @@
 package gradingTools.comp524f20.assignment1.testcases.socialDistance.style;
 
-import gradingTools.basics.sharedTestCase.checkstyle.ExpectedCallsCheck;
+import gradingTools.basics.sharedTestCase.checkstyle.ExpectedCallsKnownMax;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
 @IsExtra(true)
-public class InterpolatedReuse extends ExpectedCallsCheck {
+public class InterpolatedReuse extends ExpectedCallsKnownMax {
 	static String[][] tagAndMethods = {
 			{".BasicSocialDistanceUtility", "isInterpolatedSafe.int.int..boolean"},
 			{".BasicSocialDistanceUtility", "isInterpolatedSafe.int..boolean"},
