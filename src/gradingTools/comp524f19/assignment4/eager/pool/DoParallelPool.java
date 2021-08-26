@@ -1,8 +1,6 @@
 package gradingTools.comp524f19.assignment4.eager.pool;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.lang.StringUtils;
@@ -13,7 +11,6 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp524f19.assignment1.testcases.load.LoadChecker;
 import main.lisp.evaluator.parallel.pool.AbstractThreadPool;
 import main.lisp.evaluator.parallel.pool.ThreadPool;
 import util.annotations.IsExtra;

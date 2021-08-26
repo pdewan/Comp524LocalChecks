@@ -1,6 +1,7 @@
 package gradingTools.comp524f19.assignment3;
 
 import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
@@ -10,8 +11,6 @@ import gradingTools.comp524f19.assignment3.testcases.CurryCheckers.A3CurrySuite;
 import gradingTools.comp524f19.assignment3.testcases.FunctionExpressionsCheckers.A3FunctionExpressionsSuite;
 import gradingTools.comp524f19.assignment3.testcases.HighOderFunctionCheckers.A3HighOrderFunctionSuite;
 import gradingTools.comp524f19.assignment3.testcases.LetCheckers.A3LetSuite;
-
-import org.junit.runners.Suite;
 import main.lisp.interpreter.InterpreterModelFactory;
 import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 

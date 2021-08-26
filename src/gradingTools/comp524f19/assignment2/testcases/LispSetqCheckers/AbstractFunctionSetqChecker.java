@@ -11,7 +11,6 @@ import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp524f19.assignment4.requiredClasses.LoadLispChecker;
 import main.lisp.parser.terms.Atom;
 import main.lisp.parser.terms.SExpression;
-import util.trace.Tracer;
 
 public abstract class AbstractFunctionSetqChecker extends PassFailJUnitTestCase {
 	protected abstract String functionName();

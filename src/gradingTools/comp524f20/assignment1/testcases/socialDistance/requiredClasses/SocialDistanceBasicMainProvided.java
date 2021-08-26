@@ -6,13 +6,7 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp524f20.assignment0_1.GreetingClassRegistry;
-import gradingTools.comp524f20.assignment0_1.GreetingClassRegistryProvided;
 import gradingTools.comp524f20.assignment1.SocialDistanceClassRegistry;
-import main.ClassRegistry;
-import main.lisp.parser.terms.BasicExpression;
-import main.lisp.parser.terms.SExpression;
-import util.annotations.MaxValue;
 //@MaxValue(2)
 public class SocialDistanceBasicMainProvided extends PassFailJUnitTestCase {
 	protected Class socialDistanceMain;

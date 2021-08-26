@@ -8,8 +8,8 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.logs.DifficultyContext;
 import gradingTools.logs.DifficultyCommandsExtractor;
+import gradingTools.logs.DifficultyContext;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 @MaxValue(50)

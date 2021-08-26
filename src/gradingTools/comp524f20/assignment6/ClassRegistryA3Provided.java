@@ -6,9 +6,7 @@ import grader.basics.project.BasicProjectIntrospection;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import main.ClassRegistry;
 import main.ClassRegistryA3;
-import main.ClassRegistryA4;
 //@MaxValue(10)
 public class ClassRegistryA3Provided extends PassFailJUnitTestCase {
 	public static final Class REGISTRY_INTERFACE = ClassRegistryA3.class;

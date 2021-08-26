@@ -1,6 +1,5 @@
 package gradingTools.comp524f20.assignment1.testcases.socialDistance.style;
 
-import java.beans.PropertyChangeListener;
 import java.lang.reflect.Method;
 
 import grader.basics.junit.JUnitTestsEnvironment;
@@ -10,13 +9,10 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp524f20.assignment1.SocialDistanceClassRegistry;
-import gradingTools.comp524f20.assignment1.socialDistance.testInterfaces.TestModelInterface;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceClassRegistryProvided;
-import gradingTools.shared.testcases.FactoryMethodTest;
 import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-import weka.classifiers.Classifier;
 @IsExtra(true)
 @MaxValue(10)
 @Explanation("Checks model code usage")

@@ -5,10 +5,7 @@ import java.lang.reflect.Modifier;
 
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
-import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
-import grader.basics.project.Project;
-import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp524f19.assignment4.requiredClasses.ClassRegistryA4Provided;
 import gradingTools.shared.testcases.MethodExecutionTest;
 import main.ClassRegistryA4;

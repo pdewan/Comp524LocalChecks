@@ -1,6 +1,5 @@
 package gradingTools.comp524f20.assignment1.testcases.socialDistance.style;
 
-import gradingTools.basics.sharedTestCase.checkstyle.ExpectedCallsKnownMax;
 import gradingTools.basics.sharedTestCase.checkstyle.ExpectedJavaDocsCheck;
 import util.annotations.Explanation;
 import util.annotations.IsExtra;

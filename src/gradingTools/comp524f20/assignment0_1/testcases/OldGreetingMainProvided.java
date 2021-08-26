@@ -6,14 +6,11 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp524f20.assignment0_1.GreetingClassRegistry;
-import gradingTools.comp524f20.assignment0_1.GreetingClassRegistryProvided;
-import main.ClassRegistry;
-import main.lisp.parser.terms.BasicExpression;
-import main.lisp.parser.terms.SExpression;
+import gradingTools.shared.testcases.greeting.GreetingClassRegistry;
+import gradingTools.shared.testcases.greeting.GreetingClassRegistryProvided;
 import util.annotations.MaxValue;
 @MaxValue(2)
-public class GreetingMainProvided extends PassFailJUnitTestCase {
+public class OldGreetingMainProvided extends PassFailJUnitTestCase {
 	public Class greetingMain;
 
 	public Class getGreetingMain() {

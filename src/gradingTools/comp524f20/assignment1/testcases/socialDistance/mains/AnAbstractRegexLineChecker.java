@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import grader.basics.testcase.PassFailJUnitTestCase;
-import util.trace.Tracer;
 
 public abstract class AnAbstractRegexLineChecker extends PassFailJUnitTestCase{
 

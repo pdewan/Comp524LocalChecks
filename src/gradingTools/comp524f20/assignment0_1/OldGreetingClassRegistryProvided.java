@@ -1,18 +1,16 @@
 package gradingTools.comp524f20.assignment0_1;
 
-import java.io.File;
-
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.BasicProjectIntrospection;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.shared.testcases.greeting.GreetingClassRegistry;
 import gradingTools.shared.testcases.utils.ConfigurationWriter;
-import main.ClassRegistry;
 import util.annotations.MaxValue;
 @MaxValue(2)
-public class GreetingClassRegistryProvided extends PassFailJUnitTestCase {
+public class OldGreetingClassRegistryProvided extends PassFailJUnitTestCase {
 	public static final Class REGISTRY_INTERFACE = GreetingClassRegistry.class;
 	public GreetingClassRegistry classRegistry;
 	public GreetingClassRegistry timingOutClassRegistryProxy;

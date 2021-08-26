@@ -1,21 +1,6 @@
 package gradingTools.comp524f19.assignment4.eager.basic.logical;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
-import grader.basics.execution.BasicProjectExecution;
-import grader.basics.execution.GradingMode;
-import grader.basics.junit.TestCaseResult;
-import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
 import gradingTools.comp524f19.assignment4.eager.basic.EagerBasicChecker;
-import gradingTools.interpreter.checkers.ADiffPatchChecker;
-import gradingTools.interpreter.checkers.CheckerResult;
-import main.lisp.evaluator.BuiltinOperationManagerSingleton;
-import main.lisp.evaluator.Evaluator;
-import main.lisp.evaluator.OperationRegisterer;
-import main.lisp.parser.terms.SExpression;
-import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(5)

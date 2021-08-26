@@ -1,17 +1,11 @@
 package gradingTools.comp524f20.assignment3.styleParsing;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import grader.basics.BasicLanguageDependencyManager;
 import grader.basics.config.BasicExecutionSpecificationSelector;
-import grader.basics.execution.GradingMode;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
 import grader.basics.junit.JUnitTestsEnvironment;
@@ -21,7 +15,6 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import gradingTools.comp524f20.assignment3.AnAbstractSMLRunningProject;
 import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceSMLProvided;
-
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;

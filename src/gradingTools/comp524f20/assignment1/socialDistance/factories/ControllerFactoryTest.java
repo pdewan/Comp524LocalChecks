@@ -1,19 +1,15 @@
 package gradingTools.comp524f20.assignment1.socialDistance.factories;
 
-import java.beans.PropertyChangeListener;
-
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import gradingTools.comp524f20.assignment1.SocialDistanceClassRegistry;
-import gradingTools.comp524f20.assignment1.socialDistance.testInterfaces.TestModelInterface;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceClassRegistryProvided;
 import gradingTools.shared.testcases.FactoryMethodTest;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
-import weka.classifiers.Classifier;
 @MaxValue(2)
 @Explanation("Checks that a controller factory is returned by the registry and gets a controller object")
 public class ControllerFactoryTest extends FactoryMethodTest {

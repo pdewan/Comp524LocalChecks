@@ -8,7 +8,6 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import gradingTools.comp524f20.assignment1.SocialDistanceClassRegistry;
-import gradingTools.comp524f20.assignment1.socialDistance.testInterfaces.TestModelInterface;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceClassRegistryProvided;
 import gradingTools.shared.testcases.FactoryMethodTest;
 import util.annotations.Explanation;

@@ -1,7 +1,6 @@
 package gradingTools.comp524f20.assignment2.requiredFiles;
 
 import java.io.File;
-import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -10,21 +9,19 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
+import edu.unc.cs.comp524.parsers.prolog.Program;
+import edu.unc.cs.comp524.parsers.prolog.PrologLexer;
+import edu.unc.cs.comp524.parsers.prolog.PrologParser;
+import edu.unc.cs.comp524.parsers.prolog.PrologParser.P_textContext;
+import edu.unc.cs.comp524.parsers.prolog.RelationCollectorListener;
+import edu.unc.cs.comp524.parsers.prolog.RuleInvocation;
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp524f20.assignment0_1.GreetingClassRegistry;
-import gradingTools.comp524f20.assignment0_1.GreetingClassRegistryProvided;
-import gradingTools.comp524f20.assignment1.SocialDistanceClassRegistry;
-import main.ClassRegistry;
-import main.lisp.parser.terms.BasicExpression;
-import main.lisp.parser.terms.SExpression;
 import util.annotations.MaxValue;
-import edu.unc.cs.comp524.parsers.prolog.*;
-import edu.unc.cs.comp524.parsers.prolog.PrologParser.P_textContext;
 
 @MaxValue(0)
 public class SocialDiststancePlNoExternalFunctionsTest extends PassFailJUnitTestCase {

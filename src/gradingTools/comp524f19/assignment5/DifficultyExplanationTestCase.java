@@ -6,7 +6,6 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp524f19.assignment1.testcases.ClassRegistryProvided;
 import gradingTools.logs.DifficultyCommandsExtractor;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;

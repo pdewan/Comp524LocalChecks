@@ -1,10 +1,6 @@
 package gradingTools.comp524f20.assignment1.testcases.socialDistance.mains;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.regex.Pattern;
 
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.execution.NotRunnableException;
@@ -14,25 +10,8 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import grader.basics.project.source.ABasicTextManager;
-import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp524f19.assignment1.testcases.MainClassProvided;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceBasicMainProvided;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceUtilityTesterMainProvided;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
-import gradingTools.shared.testcases.openmp.OpenMPPragma;
-import gradingTools.shared.testcases.openmp.OpenMPUtils;
-import gradingTools.shared.testcases.openmp.scannedTree.AssignmentSNode;
-import gradingTools.shared.testcases.openmp.scannedTree.ExternalMethodSNode;
-import gradingTools.shared.testcases.openmp.scannedTree.ForSNode;
-import gradingTools.shared.testcases.openmp.scannedTree.MethodSNode;
-import gradingTools.shared.testcases.openmp.scannedTree.OMPForSNode;
-import gradingTools.shared.testcases.openmp.scannedTree.OMPParallelSNode;
-import gradingTools.shared.testcases.openmp.scannedTree.OMPSNodeUtils;
-import gradingTools.shared.testcases.openmp.scannedTree.RootOfFileSNode;
-import gradingTools.shared.testcases.openmp.scannedTree.RootOfProgramSNode;
-import gradingTools.shared.testcases.openmp.scannedTree.SNode;
-import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;

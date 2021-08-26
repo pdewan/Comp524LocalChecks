@@ -6,12 +6,6 @@ import org.junit.runners.Suite;
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
-import gradingTools.comp524f19.assignment1.requiredClasses.A1RequiredClassesSuite;
-import gradingTools.comp524f19.assignment1.testcases.load.A1LoadSuite;
-import gradingTools.comp524f19.assignment1.testcases.load.TestLispFileProvided;
-import gradingTools.comp524f19.assignment1.testcases.loadLogical.A1LoadLogicalSuite;
-import gradingTools.comp524f19.assignment1.testcases.loadRelation.A1LoadRelationSuite;
-import gradingTools.comp524f19.assignment1.testcases.toString.A1ToStringSuite;
 
 
 @RunWith(Suite.class)

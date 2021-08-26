@@ -12,7 +12,6 @@ import gradingTools.comp524f19.assignment1.testcases.load.A1LoadSuite;
 import gradingTools.comp524f19.assignment1.testcases.load.TestLispFileProvided;
 import gradingTools.comp524f19.assignment1.testcases.loadLogical.A1LoadLogicalSuite;
 import gradingTools.comp524f19.assignment1.testcases.loadRelation.A1LoadRelationSuite;
-import gradingTools.comp524f19.assignment1.testcases.toString.A1ToStringSuite;
 import gradingTools.comp524f20.assignment5.testcases.toString.ToStringSuite_Updated;
 
 

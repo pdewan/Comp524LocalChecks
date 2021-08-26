@@ -1,7 +1,5 @@
 package gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses;
 
-import java.io.File;
-
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.BasicProjectIntrospection;
@@ -11,8 +9,6 @@ import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp524f20.assignment1.SocialDistanceClassRegistry;
 import gradingTools.comp524f20.assignment1.socialDistance.testInterfaces.TestModelInterface;
 import gradingTools.shared.testcases.utils.ConfigurationWriter;
-import main.ClassRegistry;
-import util.annotations.MaxValue;
 //@MaxValue(2)
 public class SocialDistanceClassRegistryProvided2 extends PassFailJUnitTestCase {
 	public static final Class REGISTRY_INTERFACE = SocialDistanceClassRegistry.class;

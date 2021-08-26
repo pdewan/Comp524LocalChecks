@@ -1,7 +1,6 @@
 package gradingTools.comp524f19.assignment4.testcases.CurryCheckers;
 
 import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
-import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)

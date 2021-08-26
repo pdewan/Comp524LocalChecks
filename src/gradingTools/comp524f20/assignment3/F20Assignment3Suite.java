@@ -9,12 +9,10 @@ import grader.basics.junit.BasicJUnitUtils;
 import gradingTools.comp524f20.assignment3.functionParamaters.FunctionParametersTestSuite;
 import gradingTools.comp524f20.assignment3.functionReturnValues.FunctionReturnValuesTestSuite;
 import gradingTools.comp524f20.assignment3.functionalPrograming.FunctionalProgrammingTestSuite;
-import gradingTools.comp524f20.assignment3.functionalPrograming.GivenSafeSML;
 import gradingTools.comp524f20.assignment3.listsAndRecursion.ListsAndRecursionTestSuite;
 import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceFileTestSuite;
 import gradingTools.comp524f20.assignment3.styleParsing.StyleTest;
 import gradingTools.shared.testcases.suites.InterpreterSuite;
-import util.trace.Tracer;
 
 
 @RunWith(Suite.class)

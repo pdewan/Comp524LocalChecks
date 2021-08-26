@@ -1,14 +1,6 @@
 package gradingTools.comp524f19.assignment4.lazy;
 
-import grader.basics.execution.BasicProjectExecution;
-import grader.basics.execution.GradingMode;
 import grader.basics.junit.TestCaseResult;
-import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
-import gradingTools.interpreter.checkers.ADiffPatchChecker;
-import gradingTools.interpreter.checkers.CheckerResult;
-import main.LispInterpreterSettings;
-import main.lisp.evaluator.lazy.Thunk;
-import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(30)

@@ -1,30 +1,15 @@
 package gradingTools.comp524f19.assignment4.eager.pool;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.commons.lang.StringUtils;
 
-import grader.basics.execution.BasicProjectExecution;
-import grader.basics.execution.GradingMode;
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.TestCaseResult;
-import grader.basics.project.BasicProjectIntrospection;
-import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
 import gradingTools.comp524f19.assignment4.eager.basic.EagerBasicChecker;
-import gradingTools.comp524f19.assignment4.eager.basic.EagerBasicList;
-import gradingTools.interpreter.checkers.ADiffPatchChecker;
-import gradingTools.interpreter.checkers.CheckerResult;
-import main.lisp.evaluator.BuiltinOperationManagerSingleton;
-import main.lisp.evaluator.Evaluator;
-import main.lisp.evaluator.OperationRegisterer;
 import main.lisp.evaluator.parallel.pool.AbstractThreadPool;
-import main.lisp.evaluator.parallel.pool.ThreadPool;
 import main.lisp.parser.terms.SExpression;
-import util.annotations.Explanation;
-import util.annotations.IsExtra;
-import util.annotations.MaxValue;
 import util.misc.ThreadSupport;
 import util.trace.Tracer;
 

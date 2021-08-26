@@ -9,7 +9,6 @@ import grader.basics.junit.BasicJUnitUtils;
 import gradingTools.comp524f20.assignment4.listsAndRecursion.ListsAndRecursionTestSuite;
 import gradingTools.comp524f20.assignment4.requiredFiles.SocialDistanceFileTestSuite;
 import gradingTools.shared.testcases.suites.InterpreterSuite;
-import util.trace.Tracer;
 
 
 @RunWith(Suite.class)

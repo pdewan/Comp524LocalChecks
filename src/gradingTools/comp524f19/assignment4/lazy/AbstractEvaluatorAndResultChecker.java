@@ -1,13 +1,9 @@
 package gradingTools.comp524f19.assignment4.lazy;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import grader.basics.junit.TestCaseResult;
 import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
-import main.lisp.parser.terms.SExpression;
-import util.trace.Tracer;
 
 public abstract class AbstractEvaluatorAndResultChecker extends AbstractLispExpressionResultChecker {
 	protected abstract String[] expectedEvaluatorOutput();

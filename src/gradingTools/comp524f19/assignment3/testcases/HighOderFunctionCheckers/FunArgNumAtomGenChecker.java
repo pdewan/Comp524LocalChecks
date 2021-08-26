@@ -1,7 +1,6 @@
 package gradingTools.comp524f19.assignment3.testcases.HighOderFunctionCheckers;
 
 import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
-import util.annotations.Explanation;
 import util.annotations.MaxValue;
 @MaxValue(10)
 public class FunArgNumAtomGenChecker extends AbstractLispExpressionResultChecker {

@@ -5,10 +5,7 @@ import org.junit.runners.Suite;
 
 import grader.basics.BasicLanguageDependencyManager;
 import grader.basics.config.BasicExecutionSpecificationSelector;
-import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
-import grader.basics.project.BasicProjectIntrospection;
-import gradingTools.comp524f20.assignment4.lisp.testcases.LispTestCase;
 import gradingTools.comp524f20.assignment4.listsAndRecursion.ListsAndRecursionTestSuite;
 import gradingTools.comp524f20.assignment4.requiredFiles.SocialDistanceFileTestSuite;
 

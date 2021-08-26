@@ -11,7 +11,6 @@ import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp524f19.assignment1.testcases.load.LoadChecker;
 import main.lisp.parser.terms.Atom;
 import main.lisp.parser.terms.SExpression;
-import util.trace.Tracer;
 
 public abstract class AbstractDefiniationChecker extends PassFailJUnitTestCase {
 	protected abstract String functionName();

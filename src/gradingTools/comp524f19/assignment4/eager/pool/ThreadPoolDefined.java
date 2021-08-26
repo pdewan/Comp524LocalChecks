@@ -8,11 +8,9 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp524f19.assignment4.eager.basic.EagerBasicList;
-import main.ClassRegistry;
 import main.lisp.evaluator.parallel.pool.NullThreadPool;
 import main.lisp.evaluator.parallel.pool.ThreadPool;
 import main.lisp.evaluator.parallel.pool.ThreadPoolSingleton;
-import main.lisp.evaluator.parallel.pool.ThreadPoolWorker;
 import util.annotations.MaxValue;
 @MaxValue(0)
 public class ThreadPoolDefined extends PassFailJUnitTestCase {

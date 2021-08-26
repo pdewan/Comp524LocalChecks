@@ -2,7 +2,6 @@ package gradingTools.comp524f19.assignment2.testcases.LispLambdaCheckers;
 
 import java.util.List;
 
-import bus.uigen.attributes.AnInheritedAttributeValue;
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
@@ -13,7 +12,6 @@ import gradingTools.comp524f19.assignment4.requiredClasses.LoadLispChecker;
 import main.lisp.parser.terms.Atom;
 import main.lisp.parser.terms.NilAtom;
 import main.lisp.parser.terms.SExpression;
-import util.trace.Tracer;
 
 public abstract class AbstractFunctionLambdaChecker extends PassFailJUnitTestCase {
 	protected abstract String functionName();

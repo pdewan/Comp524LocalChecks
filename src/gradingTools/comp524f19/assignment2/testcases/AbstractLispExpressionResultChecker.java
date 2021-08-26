@@ -2,10 +2,8 @@ package gradingTools.comp524f19.assignment2.testcases;
 
 import java.util.List;
 
-import grader.basics.execution.BasicProjectExecution;
 import main.LispInterpreterSettings;
 import main.lisp.evaluator.lazy.Thunk;
-import util.trace.Tracer;
 
 public abstract class AbstractLispExpressionResultChecker extends AbstractLispExpressionChecker {
 	public static final String DEFAULT_INPUT_SEPARATOR = "\n";

@@ -2,6 +2,7 @@ package gradingTools.comp524f19.assignment2.testcases.LispFunctionCheckers;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+
 import gradingTools.comp524f19.assignment4.requiredClasses.LoadLispChecker;
 import gradingTools.comp524f19.assignment4.requiredClasses.TestLispFileProvided;
 
