@@ -9,7 +9,7 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SafeSocializationtxtProvided;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SafeSocializationTxtProvided;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceUtilityProvided;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
@@ -96,7 +96,7 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 			
 			SocialDistanceUtilityProvided aSocialDistanceUilityProvided = (SocialDistanceUtilityProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistanceUtilityProvided.class);
 			Class aUilityClass = aSocialDistanceUilityProvided.getRequiredClass();
-			SafeSocializationtxtProvided aSafeSocializationFileProvided = (SafeSocializationtxtProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SafeSocializationtxtProvided.class);
+			SafeSocializationTxtProvided aSafeSocializationFileProvided = (SafeSocializationTxtProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SafeSocializationTxtProvided.class);
 			File aSafeSocilizationFile = aSafeSocializationFileProvided.getRequiredFile();
 			DerivedSafetyTest derivedTest = (DerivedSafetyTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(DerivedSafetyTest.class);
 			

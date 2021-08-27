@@ -1,13 +1,14 @@
 package gradingTools.comp524f20.assignment1.testcases.socialDistance.utility;
 
+import gradingTools.comp524f20.assignment1.SocialDistanceInputOutputFactory;
 import util.annotations.MaxValue;
 @MaxValue(2)
 public class IsInterpolatedOneParameterSafetyTest extends AbstractSocialDistanceUitilityStaticFunctionCallTest {
 	public static final int TIME_OUT_SECS = 1; // secs
 	
-	private static final int SMALL_DISTANCE=6,MEDIUM_DISTANCE=13,LARGE_DISTANCE=27;
-	private static final int SMALL_DURATION=15,MEDIUM_DURATION=30,LARGE_DURATION=120;
-	private static final int SMALL_EXHALATION=10,MEDIUM_EXHALATION=30,LARGE_EXHALATION=50;
+	private static int SMALL_DISTANCE = SocialDistanceInputOutputFactory.SMALL_DISTANCE,
+			   MEDIUM_DISTANCE = SocialDistanceInputOutputFactory.MEDIUM_DISTANCE,
+			   LARGE_DISTANCE = SocialDistanceInputOutputFactory.LARGE_DISTANCE;
 	
 	
 	static Object[][] inputCombinations = {

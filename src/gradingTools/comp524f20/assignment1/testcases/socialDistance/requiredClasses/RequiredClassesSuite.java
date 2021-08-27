@@ -16,7 +16,7 @@ import util.annotations.MaxValue;
 	SocialDistanceInterpolatingMainProvided.class,
 	SocialDistanceDerivingMainProvided.class,
 	SocialDistanceInferringMainProvided.class,
-	SafeSocializationtxtProvided.class
+	SafeSocializationTxtProvided.class
 })
 	
 

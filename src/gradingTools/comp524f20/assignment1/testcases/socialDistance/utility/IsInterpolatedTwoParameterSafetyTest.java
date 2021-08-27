@@ -1,15 +1,18 @@
 package gradingTools.comp524f20.assignment1.testcases.socialDistance.utility;
 
 import util.annotations.MaxValue;
+import gradingTools.comp524f20.assignment1.SocialDistanceInputOutputFactory;
+
 @MaxValue(3)
 public class IsInterpolatedTwoParameterSafetyTest extends AbstractSocialDistanceUitilityStaticFunctionCallTest {
 	public static final int TIME_OUT_SECS = 1; // secs
 	
-	private static final int SMALL_DISTANCE=6,MEDIUM_DISTANCE=13,LARGE_DISTANCE=27;
-	private static final int SMALL_DURATION=15,MEDIUM_DURATION=30,LARGE_DURATION=120;
-	private static final int SMALL_EXHALATION=10,MEDIUM_EXHALATION=30,LARGE_EXHALATION=50;
-	
-	
+	private static int SMALL_DISTANCE = SocialDistanceInputOutputFactory.SMALL_DISTANCE,
+					   MEDIUM_DISTANCE = SocialDistanceInputOutputFactory.MEDIUM_DISTANCE,
+					   LARGE_DISTANCE = SocialDistanceInputOutputFactory.LARGE_DISTANCE,
+					   SMALL_DURATION = SocialDistanceInputOutputFactory.SMALL_DURATION,
+					   MEDIUM_DURATION = SocialDistanceInputOutputFactory.MEDIUM_DURATION,
+					   LARGE_DURATION = SocialDistanceInputOutputFactory.LARGE_DURATION;
 	static Object[][] inputCombinations = {
 			{MEDIUM_DISTANCE,MEDIUM_DURATION}, //1
 			{LARGE_DISTANCE,LARGE_DURATION},
@@ -83,6 +86,7 @@ public class IsInterpolatedTwoParameterSafetyTest extends AbstractSocialDistance
 	
 	@Override
 	protected  Object[][] getArguments() {
+		
 		return inputCombinations;
 	}
 	

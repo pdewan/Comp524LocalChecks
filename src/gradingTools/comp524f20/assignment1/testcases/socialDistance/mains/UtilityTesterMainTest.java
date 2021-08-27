@@ -96,6 +96,8 @@ public class UtilityTesterMainTest extends PassFailJUnitTestCase {
 		    for(String line:parsedOutput) {
 		    	if(line.matches(regexList[callsFound])) {
 		    		callsFound++;
+		    		if(callsFound==regexList.length)
+		    			break;
 		    	}
 		    }
 

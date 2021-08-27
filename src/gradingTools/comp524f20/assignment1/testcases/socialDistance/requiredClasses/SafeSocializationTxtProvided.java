@@ -8,7 +8,7 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 //@MaxValue(2)
-public class SafeSocializationtxtProvided extends PassFailJUnitTestCase {
+public class SafeSocializationTxtProvided extends PassFailJUnitTestCase {
 	protected File socialDistanceText;
 
 	public File getRequiredFile() {

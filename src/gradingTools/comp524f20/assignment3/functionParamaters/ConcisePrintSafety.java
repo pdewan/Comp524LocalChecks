@@ -7,7 +7,7 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp524f20.assignment3.CorrectValues;
+import gradingTools.comp524f20.assignment1.SocialDistanceInputOutputFactory;
 import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceSMLProvided;
 import util.annotations.MaxValue;
 @MaxValue(10)
@@ -42,9 +42,9 @@ public class ConcisePrintSafety extends AnAbstractTwoParameterPrint {
 			
 
 			String [] regexChecks=generateRegexs(
-					CorrectValues.getGivenSafeRegexChecks(),
-					CorrectValues.getInterpolatedRegexChecks(),
-					CorrectValues.getDerivedSafeRegexChecks());
+					SocialDistanceInputOutputFactory.getGivenSafeRegexChecks(),
+					SocialDistanceInputOutputFactory.getInterpolatedRegexChecks(),
+					SocialDistanceInputOutputFactory.getDerivedSafeRegexChecks());
 			
 			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),regexChecks,inputs);
 

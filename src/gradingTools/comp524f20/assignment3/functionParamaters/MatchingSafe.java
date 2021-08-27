@@ -9,8 +9,8 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
+import gradingTools.comp524f20.assignment1.SocialDistanceInputOutputFactory;
 import gradingTools.comp524f20.assignment3.AnAbstractThreeParameterSMLRunningProject;
-import gradingTools.comp524f20.assignment3.CorrectValues;
 import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceSMLProvided;
 import util.annotations.MaxValue;
 @MaxValue(10)
@@ -51,7 +51,7 @@ public class MatchingSafe extends AnAbstractThreeParameterSMLRunningProject {
 		
 			String [] trimmedInputs=Arrays.copyOfRange(inputs, 2, inputs.length);
 			String [] outputLines=parseToReadable(output.split("\n"));
-			boolean aRetval = regexOutputChecksFailurePrint(outputLines,boolToRegex(CorrectValues.getGivenSafeRegexChecks()),trimmedInputs);
+			boolean aRetval = regexOutputChecksFailurePrint(outputLines,boolToRegex(SocialDistanceInputOutputFactory.getGivenSafeRegexChecks()),trimmedInputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");

@@ -4,7 +4,7 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp524f20.assignment3.CorrectValues;
+import gradingTools.comp524f20.assignment1.SocialDistanceInputOutputFactory;
 import gradingTools.comp524f20.assignment4.AnAbstractThreeParameterLispRunningProject;
 
 public class ATestGetableLispProject extends AnAbstractThreeParameterLispRunningProject{
@@ -25,7 +25,7 @@ public class ATestGetableLispProject extends AnAbstractThreeParameterLispRunning
 	}
 	
 	protected String [] getExpectedAnswers() {
-		boolean [] list = CorrectValues.getDerivedSafeRegexChecks();
+		boolean [] list = SocialDistanceInputOutputFactory.getDerivedSafeRegexChecks();
 		String [] retVal =new String[list.length];
 		for(int i=0;i<list.length;i++)
 			if(list[i])

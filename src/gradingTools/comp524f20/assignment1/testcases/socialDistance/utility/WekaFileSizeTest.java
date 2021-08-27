@@ -9,7 +9,7 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SafeSocializationtxtProvided;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SafeSocializationTxtProvided;
 import util.annotations.MaxValue;
 @MaxValue(10)
 public class WekaFileSizeTest extends PassFailJUnitTestCase {
@@ -24,7 +24,7 @@ public class WekaFileSizeTest extends PassFailJUnitTestCase {
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		try {
-			SafeSocializationtxtProvided aSafeSocializationFileProvided = (SafeSocializationtxtProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SafeSocializationtxtProvided.class);			
+			SafeSocializationTxtProvided aSafeSocializationFileProvided = (SafeSocializationTxtProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SafeSocializationTxtProvided.class);			
 			File aSafeSocilizationFile = aSafeSocializationFileProvided.getRequiredFile();
 
 			

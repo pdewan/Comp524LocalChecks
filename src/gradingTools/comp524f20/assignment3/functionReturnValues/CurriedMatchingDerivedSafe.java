@@ -7,8 +7,8 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
+import gradingTools.comp524f20.assignment1.SocialDistanceInputOutputFactory;
 import gradingTools.comp524f20.assignment3.AnAbstractThreeParameterSMLRunningProject;
-import gradingTools.comp524f20.assignment3.CorrectValues;
 import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceSMLProvided;
 import util.annotations.MaxValue;
 @MaxValue(10)
@@ -46,7 +46,7 @@ public class CurriedMatchingDerivedSafe extends AnAbstractThreeParameterSMLRunni
 				return fail ("Could not generate output. See console messages.");
 			
 			
-			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),boolToRegex(CorrectValues.getDerivedSafeRegexChecks()),inputs);
+			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),boolToRegex(SocialDistanceInputOutputFactory.getDerivedSafeRegexChecks()),inputs);
 
 			if (!aRetval) 
 				return fail("View console for more detail");
