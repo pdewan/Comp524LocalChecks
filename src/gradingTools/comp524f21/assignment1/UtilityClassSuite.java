@@ -4,6 +4,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import grader.basics.junit.BasicJUnitUtils;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.UtilityTesterMainTest;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.CompareSafetyComputationsTest;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.DerivedSafetyTest;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.GenerateSafeDistancesAndDurationsTest;
@@ -32,7 +33,7 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.Weka
 	PrintSafeDistancesAndDurationsTest.class,
 	PrintGivenAndGeneratedCombinationsInferredSafety.class,
 	CompareSafetyComputationsTest.class,
-	
+	UtilityTesterMainTest.class,
 })
 	
 

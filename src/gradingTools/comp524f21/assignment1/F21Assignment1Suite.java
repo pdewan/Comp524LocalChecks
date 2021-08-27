@@ -6,6 +6,7 @@ import org.junit.runners.Suite;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.junit.BasicJUnitUtils;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.MainClassSuite;
+import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.UtilityTesterMainTest;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.A1GeneralStyleSuite;
 
 
@@ -14,7 +15,7 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.A1Gene
 @Suite.SuiteClasses({
 	RequiredClassesSuite.class,
 	UtilityClassSuite.class,
-	MainClassSuite.class,
+	
 	A1GeneralStyleSuite.class,
 	A1ModularitySuite.class
 })
@@ -35,8 +36,8 @@ public class F21Assignment1Suite {
 		}
 	}
 	static {
-//		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-//		setCheckStyleConfiguration("unc_checks_524_A0_1.xml");
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+		setCheckStyleConfiguration("unc_checks_524_A1.xml");
 	}
 	
 }

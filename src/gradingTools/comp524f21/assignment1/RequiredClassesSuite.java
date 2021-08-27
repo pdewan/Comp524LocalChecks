@@ -19,14 +19,14 @@ import util.annotations.MaxValue;
 	SocialDistanceClassRegistryProvided.class,
 	SocialDistanceUtilityTesterMainProvided.class,
 	SocialDistanceUtilityProvided.class,
-	SocialDistanceBasicMainProvided.class,
-	SocialDistanceInterpolatingMainProvided.class,
-	SocialDistanceDerivingMainProvided.class,
-	SocialDistanceInferringMainProvided.class,
+//	SocialDistanceBasicMainProvided.class,
+//	SocialDistanceInterpolatingMainProvided.class,
+//	SocialDistanceDerivingMainProvided.class,
+//	SocialDistanceInferringMainProvided.class,
 })
 	
 
-@MaxValue(10)
+@MaxValue(5)
 public class RequiredClassesSuite {
 
 	public static void main (String[] args) {

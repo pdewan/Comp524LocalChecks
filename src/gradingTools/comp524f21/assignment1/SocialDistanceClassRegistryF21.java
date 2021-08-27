@@ -8,17 +8,10 @@ public interface SocialDistanceClassRegistryF21 extends SocialDistanceClassRegis
 //	public Class<?> getBasicSocialDistanceUtility();
 //	public Class<?> getSocialDistanceUilityTesterMain();
 	
-	public Class<?> getSocialDistanceBasicMain();
-	public Class<?> getSocialDistanceInterpolatingMain();
-	public Class<?> getSocialDistanceDerivingMain();
-	public Class<?> getSocialDistanceInferringMain();
-
-	
-	
-	public default Class<?> getSocialDistanceMVCBasicMain(){return getSocialDistanceBasicMain();};
-	public default Class<?> getSocialDistanceMVCInterpolatingMain(){return getSocialDistanceInterpolatingMain();};;
-	public default Class<?> getSocialDistanceMVCDerivingMain(){return getSocialDistanceDerivingMain();};
-	public default Class<?> getSocialDistanceMVCInferringMain(){return getSocialDistanceInferringMain();};
+	public default Class<?> getSocialDistanceMVCBasicMain(){return null;};
+	public default Class<?> getSocialDistanceMVCInterpolatingMain(){return null;};
+	public default Class<?> getSocialDistanceMVCDerivingMain(){return null;};
+	public default Class<?> getSocialDistanceMVCInferringMain(){return null;};
 	public default Class<?> getSocialDistanceBasicModel(){return null;};
 	public default Class<?> getSocialDistanceInterpolatingModel(){return null;};
 	public default Class<?> getSocialDistancDerivingModel(){return null;};
