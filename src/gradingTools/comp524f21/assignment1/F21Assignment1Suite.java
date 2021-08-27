@@ -6,7 +6,6 @@ import org.junit.runners.Suite;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.junit.BasicJUnitUtils;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.MainClassSuite;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.RequiredClassesSuite;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.A1GeneralStyleSuite;
 
 

@@ -30,7 +30,6 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.Weka
 	PrintGivenAndGeneratedCombinationDerivedTest.class,
 	GenerateSafeDistancesAndDurationsTest.class,
 	PrintSafeDistancesAndDurationsTest.class,
-	IsInferredSafeTest.class,
 	PrintGivenAndGeneratedCombinationsInferredSafety.class,
 	CompareSafetyComputationsTest.class,
 	
