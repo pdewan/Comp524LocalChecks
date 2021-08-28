@@ -62,7 +62,7 @@ public abstract class AbstractSocialDistanceUitilityStaticFunctionCallTest exten
 		  
 
 		} catch ( Throwable e) {
-			throw new NotGradableException(e.getMessage());
+			throw new NotGradableException(e.toString());
 		}
 	}
 //	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {

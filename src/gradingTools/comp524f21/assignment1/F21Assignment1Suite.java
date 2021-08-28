@@ -5,19 +5,16 @@ import org.junit.runners.Suite;
 
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.junit.BasicJUnitUtils;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.MainClassSuite;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.UtilityTesterMainTest;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.A1GeneralStyleSuite;
+import gradingTools.comp524f21.assignment1.testcases.sociatDistance.style.F21A1GeneralStyleSuite;
 
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	RequiredClassesSuite.class,
-	UtilityClassSuite.class,
-	
-	A1GeneralStyleSuite.class,
-	A1ModularitySuite.class
+	F21A1UtilityClassSuite.class,	
+	F21A1GeneralStyleSuite.class,
+	F21A1ModularitySuite.class,
 })
 	
 

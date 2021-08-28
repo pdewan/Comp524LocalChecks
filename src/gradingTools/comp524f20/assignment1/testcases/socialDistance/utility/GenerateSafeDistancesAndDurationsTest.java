@@ -150,7 +150,7 @@ public class GenerateSafeDistancesAndDurationsTest extends PassFailJUnitTestCase
 
 		} catch ( Throwable e) {
 			System.err.println("Not gradable cause:" + e);
-			throw new NotGradableException();
+			throw new NotGradableException("caused by:" +e.toString());
 		}
 	}
 //	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {

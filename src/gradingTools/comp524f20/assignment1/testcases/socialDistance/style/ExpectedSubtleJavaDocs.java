@@ -13,7 +13,10 @@ public class ExpectedSubtleJavaDocs extends ExpectedJavaDocsCheck {
 			{".BasicSocialDistanceUtility", ".*"},
 
 	};
+/*
+ *  method interpolateDistance in class matching [@BasicSocialDistanceUtility] has JavaDoc then it is interpolated low. Good! [ExpectedMethodJavaDoc]
 
+ */
 	@Override
 	protected String[][] tagAndMethods() {
 		return tagAndMethods;

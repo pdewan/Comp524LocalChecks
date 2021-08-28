@@ -122,7 +122,7 @@ public class PrintGivenAndGeneratedCombinationsInferredSafety extends AbstractPr
 		    return isPassing?pass():fail("View console output for more information");
 		} catch ( Throwable e) {
 			System.err.println(e);
-			throw new NotGradableException();
+			throw new NotGradableException("caused by:" + e.toString());
 		}
 	}
 //	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {

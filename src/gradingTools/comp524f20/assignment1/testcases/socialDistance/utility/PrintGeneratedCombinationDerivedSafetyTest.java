@@ -80,7 +80,7 @@ public class PrintGeneratedCombinationDerivedSafetyTest extends AbstractPrintDer
 
 		} catch ( Throwable e) {
 			System.err.println(e);
-			throw new NotGradableException();
+			throw new NotGradableException(e.toString());
 		}
 	}
 //	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {

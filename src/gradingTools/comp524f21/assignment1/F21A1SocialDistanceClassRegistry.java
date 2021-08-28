@@ -2,7 +2,7 @@ package gradingTools.comp524f21.assignment1;
 
 import gradingTools.comp524f20.assignment1.SocialDistanceClassRegistry;
 
-public interface SocialDistanceClassRegistryF21 extends SocialDistanceClassRegistry {
+public interface F21A1SocialDistanceClassRegistry extends SocialDistanceClassRegistry {
 
 	//From Last Registry do not need to be changed
 //	public Class<?> getBasicSocialDistanceUtility();

@@ -116,7 +116,7 @@ public class PrintGivenAndGeneratedCombinationDerivedTest extends AbstractPrintD
 
 		} catch ( Throwable e) {
 			System.err.println(e);
-			throw new NotGradableException();
+			throw new NotGradableException("caused by:" + e.toString());
 		}
 	}
 //	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {
