@@ -27,7 +27,7 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.Prin
 	PrintGivenAndGeneratedCombinationDerivedTest.class,
 	GenerateSafeDistancesAndDurationsTest.class,
 	PrintSafeDistancesAndDurationsTest.class,
-	PrintGivenAndGeneratedCombinationsInferredSafety.class,
+//	PrintGivenAndGeneratedCombinationsInferredSafety.class,
 //	CompareSafetyComputationsTest.class,
 	UtilityTesterMainTest.class,
 })
