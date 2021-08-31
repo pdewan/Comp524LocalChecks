@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/GraderBasics"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/GraderBasics"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/LispInterpreterRelease"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-10.0.2">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="/GraderBasics/lib/commons-configuration-1.9.jar"/>
 	<classpathentry kind="lib" path="/GraderBasics/lib/commons-lang-2.6.jar"/>
 	<classpathentry kind="lib" path="/GraderBasics/lib/commons-logging-1.1.1.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/LispInterpreterRelease"/>
 	<classpathentry kind="lib" path="/GraderBasics/lib/diff_match_patch-current.jar"/>
 	<classpathentry kind="lib" path="/GraderBasics/lib/opencsv-2.3.jar"/>
 	<classpathentry kind="lib" path="/GraderBasics/lib/oeall22.jar" sourcepath="/util/src"/>
@@ -14,6 +19,5 @@
 	<classpathentry kind="lib" path="/GraderBasics/lib/UNCChecks-8.jar"/>
 	<classpathentry kind="lib" path="/GraderBasics/lib/weka3_6.jar"/>
 	<classpathentry kind="lib" path="/GraderBasics/lib/prolog-with-dependencies.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-10.0.2"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
