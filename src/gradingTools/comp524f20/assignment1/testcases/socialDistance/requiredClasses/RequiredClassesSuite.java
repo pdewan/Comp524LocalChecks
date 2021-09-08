@@ -10,7 +10,7 @@ import util.annotations.MaxValue;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	SocialDistanceClassRegistryProvided.class,
-	SocialDistanceUtilityTesterMainProvided.class,
+//	SocialDistanceUtilityTesterMainProvided.class,
 	SocialDistanceUtilityProvided.class,
 	SocialDistanceBasicMainProvided.class,
 	SocialDistanceInterpolatingMainProvided.class,
@@ -20,7 +20,7 @@ import util.annotations.MaxValue;
 })
 	
 
-@MaxValue(10)
+@MaxValue(5)
 public class RequiredClassesSuite {
 
 	public static void main (String[] args) {

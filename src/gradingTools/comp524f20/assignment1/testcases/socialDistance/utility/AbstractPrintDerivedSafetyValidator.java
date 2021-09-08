@@ -41,15 +41,8 @@ public abstract class AbstractPrintDerivedSafetyValidator extends PassFailJUnitT
 
 	protected boolean verify (String anOutput, Class aStaticClass, Method aVerifyingMethod) throws Throwable {
 		String[] anOutputComponents = anOutput.split(",");
-		if (anOutputComponents.length != 4) {
-//			System.err.println("Output does not have 4 command separated components");
+		if (anOutputComponents.length != 4) 
 			throw new NotGradableException("Output does not have 4 command separated components");
-		}
-		
-		//might be pointless, goal is to prevent multiple true/false statements in output
-//		if (anOutputComponents[3].length()>7) {
-//			throw new NotGradableException("Result output, \""+anOutputComponents[3]+"\" exceeds reasonably expected character length.");
-//		}	
 		
 		Integer aDistance = Integer.parseInt(anOutputComponents[0]);
 		Integer aDuration = Integer.parseInt(anOutputComponents[1]);
@@ -57,67 +50,16 @@ public abstract class AbstractPrintDerivedSafetyValidator extends PassFailJUnitT
 		Object[] anArgs = {aDistance, aDuration, anExhalationLevel};
 		Boolean aResult = (Boolean) BasicProjectExecution.timedInvoke(aStaticClass, aVerifyingMethod, anArgs, TIME_OUT_MSECS);		
 
-//		Boolean anActualResult = Boolean.parseBoolean(anOutputComponents[3]);
-//		new line character is captured in the output. This had caused it to default to false.
-		
+
+//		new line character is captured in the output. This had caused it to default to false.	
 		Boolean anActualResult = anOutputComponents[3].toLowerCase().matches("true\n*?");
 		boolean aReturnValue = aResult.equals(anActualResult);
-		if (!aReturnValue) {
+		if (!aReturnValue) 
 			Tracer.info("Expected result:" + aResult + " not equal to actual result:" + anActualResult +" for values: "+anOutput);
-
-		}
 		return aReturnValue;
 	}
-	
-	
 
 	@Override
 	public abstract TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException;
-//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {
-//		for (SNode anSNode:aRootOfFileSNode.getChildren()) {
-//			if (anSNode instanceof ExternalMethodSNode) {
-//				processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);
-//			}
-//		}
-//	}
-//	public static void processExternalMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {
-//		MethodSNode aMethodSNode = aRootOfProgramSNode.getExternalToInternalMethod().get(anExternalMethodSNode.toString());
-//		if (aMethodSNode == null) {
-//			aMethodSNode = findMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, anExternalMethodSNode);
-//			if (aMethodSNode != null) {
-//				aRootOfProgramSNode.getExternalToInternalMethod().put(anExternalMethodSNode.toString(),aMethodSNode );
-//			}
-//		}
-//		if (aMethodSNode != null) {
-//			anExternalMethodSNode.setActualMethodSNode(aMethodSNode);
-//		}
-//	}
-//	public static MethodSNode findMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {
-////		MethodSNode foundMethodSNode = null;
-//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {
-//			if (aFileName.equals(aRootOfFileSNode.getFileName()))
-//				continue;
-//			
-//			RootOfFileSNode aSearchedRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);
-//			 for (SNode anSNode:aSearchedRootOfFileSNode.getChildren()) {
-//				if (anSNode instanceof MethodSNode && !(anSNode instanceof ExternalMethodSNode)) {
-//					if (anSNode.toString().equals(anExternalMethodSNode)) {
-//						return (MethodSNode) anSNode;
-//						
-//					}
-////					processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);
-//				}
-//			}
-//		}
-//		return null;
-//	}
-//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode) {
-//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {
-//			RootOfFileSNode aRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);
-//			processExternalMethodSNodes(aRootOfProgramSNode, aRootOfFileSNode);
-//			
-//		}
-//
-//	}
 }

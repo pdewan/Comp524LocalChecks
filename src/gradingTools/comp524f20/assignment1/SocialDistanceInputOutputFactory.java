@@ -131,7 +131,7 @@ public class SocialDistanceInputOutputFactory {
 			false,
 			false,
 			false,
-			false
+//			false
 		};
 		return temp;
 	}
@@ -215,7 +215,7 @@ public class SocialDistanceInputOutputFactory {
 			false,
 			false,
 			false,
-			false
+//			false
 		};
 		return temp;
 	}
@@ -299,7 +299,7 @@ public class SocialDistanceInputOutputFactory {
 			false,
 			false,
 			false,
-			false
+//			false
 		};
 		return temp;
 	}
@@ -384,7 +384,7 @@ public class SocialDistanceInputOutputFactory {
 			{MEDIUM_DISTANCE,0,LARGE_EXHALATION+1},
 			{0,0,0},
 			{(LARGE_DISTANCE+MEDIUM_DISTANCE)/2,(MEDIUM_DURATION+SMALL_DURATION)/2,LARGE_EXHALATION},
-			{LARGE_DISTANCE-1,LARGE_DURATION+1,LARGE_EXHALATION+1}
+//			{LARGE_DISTANCE-1,LARGE_DURATION+1,LARGE_EXHALATION+1}
 		};
 		return temp;
 	}

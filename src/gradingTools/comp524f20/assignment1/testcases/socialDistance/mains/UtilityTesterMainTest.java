@@ -23,6 +23,19 @@ public class UtilityTesterMainTest extends PassFailJUnitTestCase {
 	public UtilityTesterMainTest() {
 	}
 	
+	protected Class [] PRECEDING_TESTS = {
+			PrintGeneratedCombinationDerivedSafetyTest.class,
+			PrintSafeDistancesAndDurationsTest.class,
+			CompareSafetyComputationsTest.class,
+			PrintSafeDistancesAndDurationsTest.class
+		};
+		
+	@Override
+	protected Class [] precedingTests() {
+		return PRECEDING_TESTS;
+	}
+	
+	
 	protected Class[] argumentTypes= {String[].class};
 	protected Class[] argumentTypes() {
 		return argumentTypes;
@@ -39,6 +52,30 @@ public class UtilityTesterMainTest extends PassFailJUnitTestCase {
 		return methodName;
 	}
 	
+	protected String [] regexList= {
+	    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Ii]sSafe.*",
+	    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Ii]sSafe.*",
+	    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Dd]erived,[Ii]nferred.*",
+	    	"30,\\[\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}\\].*",
+	    	"29,\\[\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}\\].*",
+	    	"32,\\[\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}\\].*"
+	    };
+	protected String [] getRegexList() {
+	    return regexList;
+	}
+	
+    protected String [] methodTestName= {
+    		"PrintGeneratedCombinationDerivedSafety",
+    		"PrintGeneratedCombinationInferredSafety",
+    		"CompareSafetyComputations",
+    		"PrintSafeDistancesAndDurations with args Medium exhalation",
+    		"PrintSafeDistancesAndDurations with args Medium exhalation -1",
+    		"PrintSafeDistancesAndDurations with args Medium exhalation +2"
+    };
+	protected String[] getMethodNameList() {
+		return methodTestName;
+	}
+	
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
@@ -50,19 +87,7 @@ public class UtilityTesterMainTest extends PassFailJUnitTestCase {
 		    	return fail ("No utility class");
 		    }
 		    
-			PrintGeneratedCombinationDerivedSafetyTest printedDerviedWorking = (PrintGeneratedCombinationDerivedSafetyTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(PrintGeneratedCombinationDerivedSafetyTest.class);
-			PrintGivenAndGeneratedCombinationsInferredSafety printedInferredWorking = (PrintGivenAndGeneratedCombinationsInferredSafety) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(PrintGivenAndGeneratedCombinationsInferredSafety.class);
-			CompareSafetyComputationsTest compareWorking = (CompareSafetyComputationsTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(CompareSafetyComputationsTest.class);
-			PrintSafeDistancesAndDurationsTest printedSafeDistancesWorking = (PrintSafeDistancesAndDurationsTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(PrintSafeDistancesAndDurationsTest.class);
-			if (!printedDerviedWorking.isPassing())
-		    	return fail ("PrintGeneratedCombinationDerivedSafetyTest must first pass before this test can be ran");
-		    if (!printedInferredWorking.isPassing()) 
-		    	return fail ("PrintGeneratedCombinationInferredSafetyTest must first pass before this test can be ran");
-		    if (!compareWorking.isPassing()) 
-		    	return fail ("CompareSafetyComputationsTest must first pass in order for this test to be ran");
-		    if (!printedSafeDistancesWorking.isPassing()) 
-		    	return fail ("PrintSafeDistancesAndDurationsTest must first pass in order for this test to be ran");
-		    
+
 		    System.out.println("---------------------");
 		    Class[] aParameterTypes = argumentTypes();
 		    Method aMethod = aUtilityTesterMainClass.getMethod(methodName(), aParameterTypes);
@@ -76,22 +101,8 @@ public class UtilityTesterMainTest extends PassFailJUnitTestCase {
 
 		    String [] parsedOutput=anOutput.split("\n");
 		    int callsFound=0;
-		    String [] regexList= {
-		    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Ii]sSafe.*",
-		    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Ii]sSafe.*",
-		    	"[Dd]istance,[Dd]uration,[Ee]xhalation,[Dd]erived,[Ii]nferred.*",
-		    	"30,\\[\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}\\].*",
-		    	"29,\\[\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}\\].*",
-		    	"32,\\[\\{\\d+,\\d+\\}[,]*\\{\\d+,\\d+\\}\\].*"
-		    };
-		    String [] methodTestName= {
-		    		"PrintGeneratedCombinationDerivedSafety",
-		    		"PrintGeneratedCombinationInferredSafety",
-		    		"CompareSafetyComputations",
-		    		"PrintSafeDistancesAndDurations with args Medium exhalation",
-		    		"PrintSafeDistancesAndDurations with args Medium exhalation -1",
-		    		"PrintSafeDistancesAndDurations with args Medium exhalation +2"
-		    };
+		    String [] regexList=getRegexList();
+		    String [] methodTestName= getMethodNameList();
 		    
 		    for(String line:parsedOutput) {
 		    	if(line.matches(regexList[callsFound])) {
@@ -112,50 +123,5 @@ public class UtilityTesterMainTest extends PassFailJUnitTestCase {
 			throw new NotGradableException(e.getMessage());
 		}
 	}
-//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {
-//		for (SNode anSNode:aRootOfFileSNode.getChildren()) {
-//			if (anSNode instanceof ExternalMethodSNode) {
-//				processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);
-//			}
-//		}
-//	}
-//	public static void processExternalMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {
-//		MethodSNode aMethodSNode = aRootOfProgramSNode.getExternalToInternalMethod().get(anExternalMethodSNode.toString());
-//		if (aMethodSNode == null) {
-//			aMethodSNode = findMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, anExternalMethodSNode);
-//			if (aMethodSNode != null) {
-//				aRootOfProgramSNode.getExternalToInternalMethod().put(anExternalMethodSNode.toString(),aMethodSNode );
-//			}
-//		}
-//		if (aMethodSNode != null) {
-//			anExternalMethodSNode.setActualMethodSNode(aMethodSNode);
-//		}
-//	}
-//	public static MethodSNode findMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {
-////		MethodSNode foundMethodSNode = null;
-//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {
-//			if (aFileName.equals(aRootOfFileSNode.getFileName()))
-//				continue;
-//			
-//			RootOfFileSNode aSearchedRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);
-//			 for (SNode anSNode:aSearchedRootOfFileSNode.getChildren()) {
-//				if (anSNode instanceof MethodSNode && !(anSNode instanceof ExternalMethodSNode)) {
-//					if (anSNode.toString().equals(anExternalMethodSNode)) {
-//						return (MethodSNode) anSNode;
-//						
-//					}
-////					processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);
-//				}
-//			}
-//		}
-//		return null;
-//	}
-//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode) {
-//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {
-//			RootOfFileSNode aRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);
-//			processExternalMethodSNodes(aRootOfProgramSNode, aRootOfFileSNode);
-//			
-//		}
-//
-//	}
+
 }

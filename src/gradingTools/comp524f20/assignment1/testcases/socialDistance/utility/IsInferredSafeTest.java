@@ -9,6 +9,7 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
+import gradingTools.comp524f20.assignment1.SocialDistanceInputOutputFactory;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SafeSocializationTxtProvided;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceUtilityProvided;
 import util.annotations.Explanation;
@@ -22,55 +23,14 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 	
 	protected String methodName="isInferredSafe";
 	
-	private static final int SMALL_DISTANCE=6,MEDIUM_DISTANCE=13,LARGE_DISTANCE=27;
-	private static final int SMALL_DURATION=15,MEDIUM_DURATION=30,LARGE_DURATION=120;
-	private static final int SMALL_EXHALATION=10,MEDIUM_EXHALATION=30,LARGE_EXHALATION=50;
-	private double MODIFIER=1.1;
-	
-	static Object[][] inputCombinations = {
-			{MEDIUM_DISTANCE,MEDIUM_DURATION,MEDIUM_EXHALATION}, //1
-			{SMALL_DISTANCE,MEDIUM_DURATION,SMALL_EXHALATION},
-			{LARGE_DISTANCE,MEDIUM_DURATION,LARGE_EXHALATION},
-			{MEDIUM_DISTANCE,SMALL_DURATION,LARGE_EXHALATION},
-			{MEDIUM_DISTANCE,LARGE_DURATION,SMALL_EXHALATION},
-			{LARGE_DISTANCE,LARGE_DURATION,MEDIUM_EXHALATION},
-			{SMALL_DISTANCE,SMALL_DURATION,MEDIUM_EXHALATION}, //all after here false for given
-			
-			{MEDIUM_DISTANCE+1,MEDIUM_DURATION,MEDIUM_EXHALATION}, //2
-			{SMALL_DISTANCE+1,MEDIUM_DURATION,SMALL_EXHALATION},
-			{LARGE_DISTANCE,MEDIUM_DURATION-1,LARGE_EXHALATION},
-			{MEDIUM_DISTANCE,SMALL_DURATION-1,LARGE_EXHALATION},
-			{MEDIUM_DISTANCE,LARGE_DURATION,SMALL_EXHALATION-1},
-			{LARGE_DISTANCE,LARGE_DURATION,MEDIUM_EXHALATION-1},
-			{SMALL_DISTANCE+1,SMALL_DURATION,MEDIUM_EXHALATION}, //single change right above
-			
-			{MEDIUM_DISTANCE+1,MEDIUM_DURATION-1,MEDIUM_EXHALATION-1}, //3
-			{SMALL_DISTANCE+1,MEDIUM_DURATION-1,SMALL_EXHALATION-1},
-			{LARGE_DISTANCE+1,MEDIUM_DURATION-1,LARGE_EXHALATION-1},
-			{MEDIUM_DISTANCE+1,SMALL_DURATION-1,LARGE_EXHALATION-1},
-			{MEDIUM_DISTANCE+1,LARGE_DURATION-1,SMALL_EXHALATION-1},
-			{LARGE_DISTANCE+1,LARGE_DURATION-1,MEDIUM_EXHALATION-1},
-			{SMALL_DISTANCE+1,SMALL_DURATION-1,MEDIUM_EXHALATION-1},
-			
-			{LARGE_DISTANCE-1,MEDIUM_DURATION,MEDIUM_EXHALATION}, //4
-			{MEDIUM_DISTANCE-1,MEDIUM_DURATION,SMALL_EXHALATION},
-			{LARGE_DISTANCE,SMALL_DURATION+1,LARGE_EXHALATION},
-			{MEDIUM_DISTANCE,0,LARGE_EXHALATION},
-			{MEDIUM_DISTANCE,LARGE_DURATION,0},
-			{LARGE_DISTANCE,LARGE_DURATION,SMALL_EXHALATION+1},
-			{MEDIUM_DISTANCE-1,SMALL_DURATION,MEDIUM_EXHALATION}, //single extreme change
-			
-			{LARGE_DISTANCE-1,SMALL_DURATION+1,SMALL_EXHALATION+1}, //5
-			{MEDIUM_DISTANCE-1,SMALL_DURATION+1,0},
-			{Integer.MAX_VALUE,SMALL_DURATION+1,MEDIUM_EXHALATION+1},
-			{LARGE_DISTANCE-1,0,MEDIUM_EXHALATION+1},
-			{LARGE_DISTANCE-1,MEDIUM_DURATION+1,0},
-			{Integer.MAX_VALUE,MEDIUM_DURATION+1,SMALL_EXHALATION+1},
-			{MEDIUM_DISTANCE-1,0,SMALL_EXHALATION+1}, //multi extreme change
-		};
+	private static final int LARGE_DISTANCE=SocialDistanceInputOutputFactory.LARGE_DISTANCE;
+	private static final int LARGE_DURATION=SocialDistanceInputOutputFactory.LARGE_DURATION;
+	private static final int LARGE_EXHALATION=SocialDistanceInputOutputFactory.LARGE_EXHALATION;
+	private static final double MODIFIER=1.1;
 	
 	protected Object[][] getSpecifiedTests(){
-		return inputCombinations;
+		int [][] inputs = SocialDistanceInputOutputFactory.getInputs();
+		return SocialDistanceInputOutputFactory.intToObjs(inputs);
 	}
 	
 	protected Class[] getParameterTypes() {
@@ -89,6 +49,11 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 		return (int)(Math.random()*modifier*max);
 	}
 	
+	protected boolean verifyDerivedSafe() {
+		DerivedSafetyTest derivedTest = (DerivedSafetyTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(DerivedSafetyTest.class);
+		return derivedTest == null || !derivedTest.allTestsPassed();
+	}
+	
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
@@ -98,7 +63,7 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 			Class aUilityClass = aSocialDistanceUilityProvided.getRequiredClass();
 			SafeSocializationTxtProvided aSafeSocializationFileProvided = (SafeSocializationTxtProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SafeSocializationTxtProvided.class);
 			File aSafeSocilizationFile = aSafeSocializationFileProvided.getRequiredFile();
-			DerivedSafetyTest derivedTest = (DerivedSafetyTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(DerivedSafetyTest.class);
+			
 			
 			
 //			SocialDistanceClassRegistry aClassRegistry = aClassRegistryProvided.getTimingOutClassRegistryProxy();  
@@ -109,7 +74,7 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 		    	return fail ("Missing SafeSocialization.txt");
 		    }
 		    
-		    if (derivedTest == null || !derivedTest.allTestsPassed()) {
+		    if (verifyDerivedSafe()) {
 		    	return fail ("DerivedSafetyTest must pass fully before this test can be properly executed");
 		    }
 		    
@@ -206,50 +171,4 @@ public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
 			throw new NotGradableException();
 		}
 	}
-//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {
-//		for (SNode anSNode:aRootOfFileSNode.getChildren()) {
-//			if (anSNode instanceof ExternalMethodSNode) {
-//				processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);
-//			}
-//		}
-//	}
-//	public static void processExternalMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {
-//		MethodSNode aMethodSNode = aRootOfProgramSNode.getExternalToInternalMethod().get(anExternalMethodSNode.toString());
-//		if (aMethodSNode == null) {
-//			aMethodSNode = findMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, anExternalMethodSNode);
-//			if (aMethodSNode != null) {
-//				aRootOfProgramSNode.getExternalToInternalMethod().put(anExternalMethodSNode.toString(),aMethodSNode );
-//			}
-//		}
-//		if (aMethodSNode != null) {
-//			anExternalMethodSNode.setActualMethodSNode(aMethodSNode);
-//		}
-//	}
-//	public static MethodSNode findMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {
-////		MethodSNode foundMethodSNode = null;
-//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {
-//			if (aFileName.equals(aRootOfFileSNode.getFileName()))
-//				continue;
-//			
-//			RootOfFileSNode aSearchedRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);
-//			 for (SNode anSNode:aSearchedRootOfFileSNode.getChildren()) {
-//				if (anSNode instanceof MethodSNode && !(anSNode instanceof ExternalMethodSNode)) {
-//					if (anSNode.toString().equals(anExternalMethodSNode)) {
-//						return (MethodSNode) anSNode;
-//						
-//					}
-////					processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);
-//				}
-//			}
-//		}
-//		return null;
-//	}
-//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode) {
-//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {
-//			RootOfFileSNode aRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);
-//			processExternalMethodSNodes(aRootOfProgramSNode, aRootOfFileSNode);
-//			
-//		}
-//
-//	}
 }
