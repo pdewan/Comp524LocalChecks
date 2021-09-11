@@ -16,6 +16,9 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClas
 	F21A2UtilityClassSuite.class,
 	F21A2MainClassSuite.class,
 	FactoriesSuite.class,
+	F21A2SourceCode.class,
+	F21A2Modularity.class,
+	F21A2GeneralStyle.class
 	
 	
 })

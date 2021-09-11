@@ -17,7 +17,7 @@ import util.annotations.MaxValue;
 @MaxValue(45)
 @Explanation("Checks for table, table off by one, and Random Value inputs")
 public class IsInferredSafeTest extends AbstractPrintDerivedSafetyValidator {
-	public static final int TIME_OUT_MSECS = 100; // secs
+	public static final int TIME_OUT_MSECS = 300; // secs
 	
 	protected Class[] parameterTypes= {Integer.TYPE,Integer.TYPE,Integer.TYPE};
 	

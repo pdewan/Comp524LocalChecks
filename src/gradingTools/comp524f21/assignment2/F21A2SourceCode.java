@@ -9,30 +9,40 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.Interp
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.MVCAndFactoryCalls;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.ModelReuse;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.PrintingCodeReuse;
+import gradingTools.comp524f21.assignment2.source.BasicModelRegistersObserver;
+import gradingTools.comp524f21.assignment2.source.DerivingModelRegistersObserver;
+import gradingTools.comp524f21.assignment2.source.InferringModelRegistersObserver;
+import gradingTools.comp524f21.assignment2.source.InterpolatingModelRegistersObserver;
+import gradingTools.comp524f21.assignment2.source.SocialDistanceControllerFetchesModelSingleton;
+import gradingTools.comp524f21.assignment2.source.SocialDistanceControllerWritesModel;
+import gradingTools.comp524f21.assignment2.source.SocialDistanceViewISAPropertyListener;
 import util.annotations.IsExtra;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	
-	InterpolatedReuse.class,	
-	PrintingCodeReuse.class,
-	ExpectedSubtleJavaDocs.class,
-	ModelReuse.class,
-	MVCAndFactoryCalls.class
+
+	SocialDistanceControllerFetchesModelSingleton.class,
+	SocialDistanceControllerWritesModel.class,
+	SocialDistanceViewISAPropertyListener.class,
+	BasicModelRegistersObserver.class,
+	DerivingModelRegistersObserver.class,	
+	InterpolatingModelRegistersObserver.class,
+	InferringModelRegistersObserver.class
 	
 })
 	
 
 //@MaxValue(50)
 @IsExtra(true)
-public class F21A2ModularitySuite {
+public class F21A2SourceCode {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(F21A2ModularitySuite.class);
+			BasicJUnitUtils.interactiveTest(F21A2SourceCode.class);
 
 
 		} catch (Exception e) {

@@ -29,10 +29,10 @@ public class ModelReuse extends PassFailJUnitTestCase {
 		if (aTestMapReduceConfiguration == null) {
 			assertTrue("No class registry", false);
 		}
-		Class retVal = aTestMapReduceConfiguration.getSocialDistanceControllerFactory();
-		if (retVal == null) {
-			assertTrue("Null controller factory in class registry", false);
-		}
+//		Class retVal = aTestMapReduceConfiguration.getSocialDistanceControllerFactory();
+//		if (retVal == null) {
+//			assertTrue("Null controller factory in class registry", false);
+//		}
 		Class aDerivedModelClass = aTestMapReduceConfiguration.getSocialDistancDerivingModel();
 		Class aBasicModelClass = aTestMapReduceConfiguration.getSocialDistanceBasicModel();
 		Class anInferringModelClass = aTestMapReduceConfiguration.getSocialDistancInferringModel();
@@ -45,7 +45,7 @@ public class ModelReuse extends PassFailJUnitTestCase {
 		Class anInferringSuperClass = anInferringModelClass.getSuperclass();
 		Class anInterpolatingSuperClass = anInterpolatingModelClass.getSuperclass();
 		if (aDerivedSuperClass == null || aBasicSuperClass == null || anInferringSuperClass == null || anInterpolatingModelClass == null) {
-			return fail ("Model class code reuse not as expected, let us know if you are using delegation");
+			return fail ("Model class code not reused using inheritance, as expected, let us know if you are using delegation for reuse");
 		}
 		Method[] aDeclaredMethods = aDerivedModelClass.getDeclaredMethods();
 		if (aDerivedModelClass.getDeclaredMethods().length != 1 ||

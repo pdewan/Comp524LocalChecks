@@ -67,7 +67,7 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 		}
 	    return true;
 	}
-	
+	public static final int EXPECTED_NUM_LINES = 11;
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
@@ -119,11 +119,17 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 		    for(int i=0;i<trials;i++) {
 		    	ResultWithOutput aResultWithOutput = BasicProjectExecution.timedInteractiveInvoke(aUtilityClass, aMethod, anArguments, TIME_OUT_MSECS);
 			    String anOutput = aResultWithOutput.getOutput().replaceAll("I\\*\\*\\*.*\n", "");
+			    Object result =  aResultWithOutput.getResult();
+			    if (result == null || !(result instanceof Integer)) {
+			    	return fail ("compareSafetyComputations does not return an int and returns instead a value of type " + result.getClass());
+			    }
 			    int retVal = (int) aResultWithOutput.getResult();
 			    
 			    String [] anOutputLines = anOutput.split("\n");
-			    if (anOutputLines.length != 11) 
-			    	return fail("Output does not match desired line length");
+			    if (anOutputLines.length != EXPECTED_NUM_LINES) 
+//			    	return fail("Output does not match desired line length");
+		    	return fail("Actual number of output lines :" +  anOutputLines.length + " != expected number" + EXPECTED_NUM_LINES);
+
 			    
 			    if(lastOutput!=null&&lastOutput.equals(anOutput)) 
 				    return fail("Two successive calls return same output");
@@ -153,8 +159,9 @@ public class CompareSafetyComputationsTest extends AbstractPrintDerivedSafetyVal
 		    return pass();
 
 		} catch ( Throwable e) {
-			System.err.println(e.getMessage());
-			throw new NotGradableException(e.getMessage());
+			e.printStackTrace();
+//			System.err.println(e.getMessage());
+			throw new NotGradableException("caused by " + e + ":" + e.getMessage());
 		}
 	}
 
