@@ -24,7 +24,7 @@ import util.annotations.IsExtra;
 	DerivedPrintIsNotDirect.class,
 	InferredPrintIsNotDirect.class,
 //	ExpectedSubtleJavaDocs.class,
-	SocialDistanceControllerFetchesModelSingleton.class,
+//	SocialDistanceControllerFetchesModelSingleton.class,
 	ModelReuse.class,
 //	MVCAndFactoryCalls.class
 	

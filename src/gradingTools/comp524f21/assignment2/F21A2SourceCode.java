@@ -13,8 +13,11 @@ import gradingTools.comp524f21.assignment2.source.BasicModelRegistersObserver;
 import gradingTools.comp524f21.assignment2.source.DerivingModelRegistersObserver;
 import gradingTools.comp524f21.assignment2.source.InferringModelRegistersObserver;
 import gradingTools.comp524f21.assignment2.source.InterpolatingModelRegistersObserver;
+import gradingTools.comp524f21.assignment2.source.SocialDistanceMainSetsModelSingleton;
 import gradingTools.comp524f21.assignment2.source.SocialDistanceControllerFetchesModelSingleton;
 import gradingTools.comp524f21.assignment2.source.SocialDistanceControllerWritesModel;
+import gradingTools.comp524f21.assignment2.source.SocialDistanceMainCallsControllerMethod;
+import gradingTools.comp524f21.assignment2.source.SocialDistanceMainFetchesViewSingleton;
 import gradingTools.comp524f21.assignment2.source.SocialDistanceViewISAPropertyListener;
 import util.annotations.IsExtra;
 
@@ -22,10 +25,13 @@ import util.annotations.IsExtra;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	
-
+	SocialDistanceMainSetsModelSingleton.class,
+	SocialDistanceMainFetchesViewSingleton.class,
+	SocialDistanceMainCallsControllerMethod.class,
 	SocialDistanceControllerFetchesModelSingleton.class,
 	SocialDistanceControllerWritesModel.class,
 	SocialDistanceViewISAPropertyListener.class,
+	
 	BasicModelRegistersObserver.class,
 	DerivingModelRegistersObserver.class,	
 	InterpolatingModelRegistersObserver.class,
