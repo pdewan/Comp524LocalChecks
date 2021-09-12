@@ -10,6 +10,7 @@ import grader.basics.testcase.PassFailJUnitTestCase;
 //@MaxValue(2)
 public class SafeSocializationTxtProvided extends PassFailJUnitTestCase {
 	protected File socialDistanceText;
+	public static final String SOCIALIZATION_FILE_NAME = "SafeSocialization.txt";
 
 	public File getRequiredFile() {
 		return socialDistanceText;
@@ -20,7 +21,10 @@ public class SafeSocializationTxtProvided extends PassFailJUnitTestCase {
 			throws NotAutomatableException, NotGradableException {	
 		 
 		 try {
-			String socializationTextFile = "SafeSocialization.txt";
+//			String socializationTextFile = "SafeSocialization.txt";
+			String socializationTextFile = SOCIALIZATION_FILE_NAME;
+
+			
 			File socialDistancefile = new File(project.getProjectFolder()+"/"+socializationTextFile);
 		    
 			if(!socialDistancefile.exists()||!socialDistancefile.isFile())

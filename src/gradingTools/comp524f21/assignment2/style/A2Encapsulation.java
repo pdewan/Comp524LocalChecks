@@ -6,11 +6,8 @@ import util.annotations.MaxValue;
 
 @MaxValue(3)
 public class A2Encapsulation extends EncapsulationTestCase {
-static final Class[] PRECEDING_TESTS = {
-		SocialDistanceClassRegistryProvided.class,
-};
-@Override
+;
 protected Class[] precedingTests() {
-	return PRECEDING_TESTS;
+	return A2CommonPropertiesInherited.PRECEDING_TESTS;
 }
 }

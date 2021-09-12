@@ -34,7 +34,6 @@ A2NonPublicAccessModifiersMatched.class,
 A2PublicMethodsOverride.class,
 A2NoStarImports.class,
 A2PackageDeclarations.class,
-A2PublicMethodsOverride.class,
 F21A2NoCheckstyleWarnings.class,
 
 	
