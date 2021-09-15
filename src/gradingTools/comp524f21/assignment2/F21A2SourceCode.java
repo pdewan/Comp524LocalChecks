@@ -41,7 +41,6 @@ import util.annotations.IsExtra;
 	
 
 //@MaxValue(50)
-@IsExtra(true)
 public class F21A2SourceCode {
 
 	public static void main (String[] args) {
