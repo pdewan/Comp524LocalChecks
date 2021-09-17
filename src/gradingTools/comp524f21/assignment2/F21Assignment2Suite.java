@@ -6,13 +6,12 @@ import org.junit.runners.Suite;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.junit.BasicJUnitUtils;
 import gradingTools.comp524f20.assignment1.socialDistance.factories.FactoriesSuite;
-import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.RequiredClassesSuite;
 
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	RequiredClassesSuite.class,
+	F21A2RequiredClassesSuite.class,
 	F21A2UtilityClassSuite.class,
 	F21A2MainClassSuite.class,
 	FactoriesSuite.class,
