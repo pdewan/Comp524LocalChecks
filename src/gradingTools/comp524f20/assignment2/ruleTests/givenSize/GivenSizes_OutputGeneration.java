@@ -58,7 +58,6 @@ public class GivenSizes_OutputGeneration extends AnAbstractPrologRunningProject 
 			SocialDiststancePlNoExternalFunctionsTest externalFunctions = (SocialDiststancePlNoExternalFunctionsTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDiststancePlNoExternalFunctionsTest.class);			
 			if(!externalFunctions.hasPassed()) {
 				System.err.println("WARNING EXTERNAL FUNCTIONS FOUND IN FILE SocialDistance.pl");
-				//return fail("External functions present in code cannot proceed");
 			}
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
@@ -67,8 +66,6 @@ public class GivenSizes_OutputGeneration extends AnAbstractPrologRunningProject 
 			}
 
 			String anOutput = aRunningProject.await().replaceAll("\n\n", "\n");
-//			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
-			
 			
 			if(anOutput==null||anOutput.length()==0) {
 				return fail("output from running commands is null or empty");
@@ -77,55 +74,9 @@ public class GivenSizes_OutputGeneration extends AnAbstractPrologRunningProject 
 			output=anOutput;
 			return pass();
 			
-
 		} catch (NotRunnableException e) {
 			throw new NotGradableException();
 		}
 	}
-//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {
-//		for (SNode anSNode:aRootOfFileSNode.getChildren()) {
-//			if (anSNode instanceof ExternalMethodSNode) {
-//				processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);
-//			}
-//		}
-//	}
-//	public static void processExternalMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {
-//		MethodSNode aMethodSNode = aRootOfProgramSNode.getExternalToInternalMethod().get(anExternalMethodSNode.toString());
-//		if (aMethodSNode == null) {
-//			aMethodSNode = findMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, anExternalMethodSNode);
-//			if (aMethodSNode != null) {
-//				aRootOfProgramSNode.getExternalToInternalMethod().put(anExternalMethodSNode.toString(),aMethodSNode );
-//			}
-//		}
-//		if (aMethodSNode != null) {
-//			anExternalMethodSNode.setActualMethodSNode(aMethodSNode);
-//		}
-//	}
-//	public static MethodSNode findMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {
-////		MethodSNode foundMethodSNode = null;
-//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {
-//			if (aFileName.equals(aRootOfFileSNode.getFileName()))
-//				continue;
-//			
-//			RootOfFileSNode aSearchedRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);
-//			 for (SNode anSNode:aSearchedRootOfFileSNode.getChildren()) {
-//				if (anSNode instanceof MethodSNode && !(anSNode instanceof ExternalMethodSNode)) {
-//					if (anSNode.toString().equals(anExternalMethodSNode)) {
-//						return (MethodSNode) anSNode;
-//						
-//					}
-////					processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);
-//				}
-//			}
-//		}
-//		return null;
-//	}
-//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode) {
-//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {
-//			RootOfFileSNode aRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);
-//			processExternalMethodSNodes(aRootOfProgramSNode, aRootOfFileSNode);
-//			
-//		}
-//
-//	}
+
 }

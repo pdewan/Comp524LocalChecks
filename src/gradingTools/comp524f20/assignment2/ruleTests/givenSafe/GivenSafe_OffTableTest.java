@@ -8,7 +8,7 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import gradingTools.comp524f20.assignment2.AnAbstractPrologRunningProject;
 import util.annotations.MaxValue;
-@MaxValue(6)
+@MaxValue(2)
 public class GivenSafe_OffTableTest extends AnAbstractPrologRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
 

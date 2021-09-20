@@ -10,7 +10,7 @@ import grader.basics.junit.BasicJUnitUtils;
 @Suite.SuiteClasses({
 	GivenSafe_OutputGeneration.class,
 	GivenSafe_TableTest.class,
-	//GivenSafe_OffTableTest.class,
+//	GivenSafe_OffTableTest.class,
 })
 	
 

@@ -32,11 +32,11 @@ public class GivenSafe_OutputGeneration extends AnAbstractPrologRunningProject {
 	private String[] offTableTestInputs= {
 			"write('Off Table Tests below this\n---\n').",
 			
-			"givenSafe(14,30,30).",
-			"givenSafe(7,30,10).",
-			"givenSafe(27,29,50).",
+			"givenSafe(27,30,30).",
+			"givenSafe(13,30,10).",
+			"givenSafe(27,15,50).",
 			"givenSafe(13,14,50).",
-			"givenSafe(13,120,9).",
+			"givenSafe(13,120,50).",
 			"givenSafe(27,120,29).",
 			"givenSafe(7,15,30).",
 			"givenSafe(14,29,29).",
