@@ -1,8 +1,6 @@
-package gradingTools.comp524f20.assignment2.requiredFiles;
+package gradingTools.comp524f21.assignment3.prologStaticChecks;
 
 import java.io.File;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.antlr.v4.runtime.ANTLRFileStream;
 import org.antlr.v4.runtime.CharStream;
@@ -14,22 +12,25 @@ import edu.unc.cs.comp524.parsers.prolog.PrologLexer;
 import edu.unc.cs.comp524.parsers.prolog.PrologParser;
 import edu.unc.cs.comp524.parsers.prolog.PrologParser.P_textContext;
 import edu.unc.cs.comp524.parsers.prolog.RelationCollectorListener;
-import edu.unc.cs.comp524.parsers.prolog.RuleInvocation;
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp524f20.assignment2.requiredFiles.SocialDistancePlProvided;
+import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 
 @MaxValue(0)
-public class SocialDiststancePlNoExternalFunctionsTest extends PassFailJUnitTestCase {
-	
-	boolean hasPassed=false;
-	public boolean hasPassed() {
-		return hasPassed;
+@IsExtra(true)
+public class APrologProgramGenerator extends PassFailJUnitTestCase {
+
+	private Program prog;
+	public Program getProgram() {
+		return prog;
 	}
+	
 	
 	
 	@Override
@@ -54,49 +55,15 @@ public class SocialDiststancePlNoExternalFunctionsTest extends PassFailJUnitTest
 
 			 RelationCollectorListener collector = new RelationCollectorListener(tokens, lexer, parser);
 			 ParseTreeWalker.DEFAULT.walk(collector, tree);
-			 Program program = collector.program();
+			 prog = collector.program();
 			 
-			 Set<String> allowed = Set.of(
-				        "write",
-				        ";",
-				        ",",
-				        "is",
-				        ">",
-				        "<",
-				        ">=",
-				        "*",
-				        "/",
-				        "=<",
-				        "-",
-				        "=",
-				        "\\=",
-				        "not",
-				        "\\+",
-				        "|"
-				        );
-			 boolean noExternalFunctions=allowed.containsAll(
-			          program.undefined().stream()
-			          .map(RuleInvocation::name)
-			          .collect(Collectors.toSet()));
+			 return pass();
 			 
-			 
-			 if(noExternalFunctions) {
-				 this.hasPassed=true;
-				 return pass();
-			 }
-			 
-			 System.out.println("Found external function(s):");
-			 program.undefined().stream().map(RuleInvocation::name).filter(n -> !allowed.contains(n)).forEach(System.out::println);
-			 
-			 return fail("external functions found (see console)");
-			 
-			 
-			 
-		 } 		 catch (Exception e) {
+		 }catch (Exception e) {
 			 return fail (e.getMessage());
 		 } catch (Throwable e) {
-			 	return fail(e.getMessage());
+			 return fail(e.getMessage());
 		}
 	}
-
+	
 }

@@ -7,7 +7,6 @@ import grader.basics.BasicLanguageDependencyManager;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.junit.BasicJUnitUtils;
 import gradingTools.comp524f20.assignment0_2.testcases.PrologGreetingLoadAndRun;
-import gradingTools.comp524f20.assignment2.requiredFiles.SocialDistanceFileTestSuite;
 import gradingTools.comp524f20.assignment2.ruleTests.InterpolatedSafeOneTwoParam.InterpolatedSafeOneTwoParamTestSuite;
 import gradingTools.comp524f20.assignment2.ruleTests.InterpolatedSafeThreeParam.InterpolatedSafeTestSuite;
 import gradingTools.comp524f20.assignment2.ruleTests.derivedSafe.DerivedSafeTestSuite;
@@ -17,11 +16,13 @@ import gradingTools.comp524f20.assignment2.ruleTests.givenSize.GivenSizesTestSui
 import gradingTools.comp524f20.assignment2.ruleTests.listGenerateSafeDistancesAndDurations.ListGenerateSafeDistancesAndDurationsTestSuite;
 import gradingTools.comp524f20.assignment2.ruleTests.listGivenSafeTests.ListGivenSafeTestSuite;
 import gradingTools.comp524f20.assignment2.ruleTests.printGivenCombinations.PrintGivenCombinationsTestSuite;
+import gradingTools.comp524f21.assignment3.prologStaticChecks.PrologStyleChecksTestSuite;
 import gradingTools.shared.testcases.suites.InterpreterSuite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	PrologGreetingLoadAndRun.class,
+	PrologStyleChecksTestSuite.class,
 	SocialDistanceFileTestSuite.class,
 	GivenSizesTestSuite.class,
 	GivenSafeTestSuite.class,
