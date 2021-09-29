@@ -7,6 +7,15 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp524f20.assignment2.ruleTests.listGenerateSafeDistancesAndDurations.ListGenerateSafeDistancesAndDurations_FalseValueTest;
+import gradingTools.comp524f20.assignment2.ruleTests.listGenerateSafeDistancesAndDurations.ListGenerateSafeDistancesAndDurations_OutputGeneration;
+import gradingTools.comp524f20.assignment2.ruleTests.listGenerateSafeDistancesAndDurations.ListGenerateSafeDistancesAndDurations_TrueValueTest;
+import gradingTools.comp524f20.assignment2.ruleTests.listGivenSafeTests.ListGivenSafe_OutputGeneration;
+import gradingTools.comp524f20.assignment2.ruleTests.listGivenSafeTests.ListGivenSafe_SafeTupleTest;
+import gradingTools.comp524f20.assignment2.ruleTests.listGivenSafeTests.ListGivenSafe_ValuesTest;
+import gradingTools.comp524f20.assignment2.ruleTests.printGivenCombinations.PrintGivenCombinatations_NonTableSizedInputs;
+import gradingTools.comp524f20.assignment2.ruleTests.printGivenCombinations.PrintGivenCombinations_OutputGeneration;
+import gradingTools.comp524f20.assignment2.ruleTests.printGivenCombinations.PrintGivenCombinations_TableSizedInputs;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 
@@ -14,6 +23,28 @@ import util.annotations.MaxValue;
 @IsExtra(true)
 public class SocialDistanceRecursiveTest extends PassFailJUnitTestCase{
 
+	private Class [] PRECEDING_TESTS = {
+			ListGivenSafe_OutputGeneration.class,
+			ListGivenSafe_SafeTupleTest.class,
+			ListGivenSafe_ValuesTest.class,
+			PrintGivenCombinations_OutputGeneration.class,
+			PrintGivenCombinations_TableSizedInputs.class,
+			PrintGivenCombinatations_NonTableSizedInputs.class,
+			ListGenerateSafeDistancesAndDurations_OutputGeneration.class,
+			ListGenerateSafeDistancesAndDurations_FalseValueTest.class,
+			ListGenerateSafeDistancesAndDurations_TrueValueTest.class,
+	};
+	
+	@Override
+	protected boolean failedTestVetoes() {
+		return false;
+	}
+	
+	@Override
+	protected Class [] precedingTests() {
+		return PRECEDING_TESTS;
+	}
+	
 	private final String [] recursiveFunctionNames = {
 		"listGenerateSafeDistancesAndDurations",
 		"printGivenCombinations",
@@ -30,15 +61,18 @@ public class SocialDistanceRecursiveTest extends PassFailJUnitTestCase{
 				return fail("APrologProgramGenerator did not pass successfully");
 			
 			int count = 0;
-			for(String function:recursiveFunctionNames) 
+			for(String function:recursiveFunctionNames) { 
 				if(program.containsRecursive(function))
 					count++;
 				else
 					System.out.println("The function: \""+function+"\" is expected to contain recursion");
-			
+			}
+			TestCaseResult aResult;
 			if(count == recursiveFunctionNames.length)
-				 return pass();
-			return partialPass(count/((double)recursiveFunctionNames.length),"See console for info");
+				aResult= pass();
+			else
+				aResult=partialPass(count/((double)recursiveFunctionNames.length),"See console for info");
+			return scaleResult(aResult);
 		} catch (Exception e) {
 			return fail(e.getMessage());
 		}

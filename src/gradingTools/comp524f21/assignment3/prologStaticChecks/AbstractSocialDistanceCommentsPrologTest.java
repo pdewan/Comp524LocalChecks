@@ -17,6 +17,11 @@ public abstract class AbstractSocialDistanceCommentsPrologTest extends PassFailJ
 	public abstract String [] getCommentRegex();
 	
 	@Override
+	protected boolean failedTestVetoes() {
+		return false;
+	}
+	
+	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException, NotGradableException {
 		try {
 			APrologProgramGenerator generator = (APrologProgramGenerator) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(APrologProgramGenerator.class);	
@@ -40,9 +45,12 @@ public abstract class AbstractSocialDistanceCommentsPrologTest extends PassFailJ
 					}
 				}
 			}
+			TestCaseResult result;
 			if(found==methodNames.length)
-				return pass();
-			return fail("Expected documentation was not found, check method names and documentation text");
+				result=pass();
+			else
+				result=fail("Expected documentation was not found, check method names and documentation text");
+			return scaleResult(result);
 		}catch(Exception e) {
 			return fail(e.getMessage());
 		}
