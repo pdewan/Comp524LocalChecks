@@ -21,6 +21,7 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp524f21.assignment3.prologStaticChecks.APrologProgramGenerator;
 import util.annotations.MaxValue;
 
 @MaxValue(0)
@@ -37,25 +38,33 @@ public class SocialDiststancePlNoExternalFunctionsTest extends PassFailJUnitTest
 			throws NotAutomatableException, NotGradableException {	
 		 
 		 try {
-			 SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
-			 File aSocialDistanceFile = aSocialDistanceFileProvided.getRequiredFile();
-			 if(aSocialDistanceFile==null) {
-				 return fail("a social distance file not found");
-			 }
-			 
-			 String filePath=aSocialDistanceFile.getAbsolutePath();
-			
-			 
-			 CharStream input = new ANTLRFileStream(filePath);
-			 PrologLexer lexer = new PrologLexer(input);
-			 CommonTokenStream tokens = new CommonTokenStream(lexer);
-			 PrologParser parser = new PrologParser(tokens);
-			 P_textContext tree = parser.p_text();
+			 Program program;
+			 try {
+				APrologProgramGenerator generator = (APrologProgramGenerator) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(APrologProgramGenerator.class);	
+				program = generator.getProgram();
+				if(program == null) 
+					return fail("APrologProgramGenerator did not pass successfully");
+			 }catch(Exception e) {
+				 SocialDistancePlProvided aSocialDistanceFileProvided = (SocialDistancePlProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDistancePlProvided.class);			
+				 File aSocialDistanceFile = aSocialDistanceFileProvided.getRequiredFile();
+				 if(aSocialDistanceFile==null) {
+					 return fail("a social distance file not found");
+				 }
+				 
+				 String filePath=aSocialDistanceFile.getAbsolutePath();
+				
+				 
+				 CharStream input = new ANTLRFileStream(filePath);
+				 PrologLexer lexer = new PrologLexer(input);
+				 CommonTokenStream tokens = new CommonTokenStream(lexer);
+				 PrologParser parser = new PrologParser(tokens);
+				 P_textContext tree = parser.p_text();
 
-			 RelationCollectorListener collector = new RelationCollectorListener(tokens, lexer, parser);
-			 ParseTreeWalker.DEFAULT.walk(collector, tree);
-			 Program program = collector.program();
-			 
+				 RelationCollectorListener collector = new RelationCollectorListener(tokens, lexer, parser);
+				 ParseTreeWalker.DEFAULT.walk(collector, tree);
+				 program = collector.program();
+			 }
+				
 			 Set<String> allowed = Set.of(
 				        "write",
 				        ";",

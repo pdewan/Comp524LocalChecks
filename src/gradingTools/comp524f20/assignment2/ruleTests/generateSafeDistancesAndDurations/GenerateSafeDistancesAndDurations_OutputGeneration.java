@@ -89,8 +89,8 @@ public class GenerateSafeDistancesAndDurations_OutputGeneration extends AnAbstra
 			
 			SocialDiststancePlNoExternalFunctionsTest externalFunctions = (SocialDiststancePlNoExternalFunctionsTest) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(SocialDiststancePlNoExternalFunctionsTest.class);			
 			if(!externalFunctions.hasPassed()) {
-				System.err.println("WARNING EXTERNAL FUNCTIONS FOUND IN FILE SocialDistance.pl");
-				//return fail("External functions present in code cannot proceed");
+				//System.err.println("WARNING EXTERNAL FUNCTIONS FOUND IN FILE SocialDistance.pl");
+				return fail("External functions present in code cannot proceed");
 			}
 			
 			RunningProject aRunningProject = createRunningProject(project,aSocialDistanceFileProvided.getFileName(),inputs);
