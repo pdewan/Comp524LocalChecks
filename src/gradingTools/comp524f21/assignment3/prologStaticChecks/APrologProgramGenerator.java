@@ -47,15 +47,18 @@ public class APrologProgramGenerator extends PassFailJUnitTestCase {
 			 String filePath=aSocialDistanceFile.getAbsolutePath();
 			
 			 
+			 System.out.println("Generating prolog parser:");
 			 CharStream input = new ANTLRFileStream(filePath);
 			 PrologLexer lexer = new PrologLexer(input);
 			 CommonTokenStream tokens = new CommonTokenStream(lexer);
 			 PrologParser parser = new PrologParser(tokens);
+			 System.out.print("Creating context tree (This takes a bit)");
 			 P_textContext tree = parser.p_text();
-
+			 System.out.print("-done\nEvaluating context tree");
 			 RelationCollectorListener collector = new RelationCollectorListener(tokens, lexer, parser);
 			 ParseTreeWalker.DEFAULT.walk(collector, tree);
 			 prog = collector.program();
+			 System.out.println("-done\nProgram Generated");
 			 
 			 return pass();
 			 
