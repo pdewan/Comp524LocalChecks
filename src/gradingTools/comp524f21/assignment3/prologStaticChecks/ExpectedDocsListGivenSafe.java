@@ -21,7 +21,7 @@ public class ExpectedDocsListGivenSafe extends AbstractSocialDistanceCommentsPro
 		return PRECEDING_TESTS;
 	}
 	
-	private final String base = ".*Call another query to create the fully safety table, and"
+	private final String base = ".*Call another query to create the full safety table, and then"
 			+ " recursively process the table.*";
 	
 	private final String [] regex = {base,base};

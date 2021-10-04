@@ -21,7 +21,7 @@ public class ExpectedDocsPrintGivenCombinations extends AbstractSocialDistanceCo
 		return PRECEDING_TESTS;
 	}
 	
-	private final String [] regex = {".*You will need to recursively reduce both the safety table and N*"};
+	private final String [] regex = {".*You will need to recursively reduce both the safety table and N.*"};
 	
 	private final String [] methodName = {".*[Pp]rintGivenCombinations.*"};
 	
