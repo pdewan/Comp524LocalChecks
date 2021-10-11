@@ -6,6 +6,7 @@ import org.junit.runners.Suite;
 import grader.basics.BasicLanguageDependencyManager;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.junit.BasicJUnitUtils;
+import gradingTools.comp524f20.assignment0_3.testcases.SMLGreetingLoadAndRun;
 import gradingTools.comp524f20.assignment3.functionParamaters.FunctionParametersTestSuite;
 import gradingTools.comp524f20.assignment3.functionReturnValues.FunctionReturnValuesTestSuite;
 import gradingTools.comp524f20.assignment3.functionalPrograming.FunctionalProgrammingTestSuite;
@@ -22,7 +23,8 @@ import gradingTools.shared.testcases.suites.InterpreterSuite;
 	ListsAndRecursionTestSuite.class,
 	FunctionParametersTestSuite.class,
 	FunctionReturnValuesTestSuite.class,
-	StyleTest.class
+	StyleTest.class,
+	SMLGreetingLoadAndRun.class
 })
 	
 
