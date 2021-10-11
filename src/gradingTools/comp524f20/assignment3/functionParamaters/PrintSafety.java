@@ -11,7 +11,7 @@ import gradingTools.comp524f20.assignment1.SocialDistanceInputOutputFactory;
 import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceSMLProvided;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
-@MaxValue(10)
+@MaxValue(20)
 public class PrintSafety extends AnAbstractTwoParameterPrint {
 	public static final int TIME_OUT_SECS = 1; // secs	
 
@@ -55,17 +55,12 @@ public class PrintSafety extends AnAbstractTwoParameterPrint {
 			
 			boolean aRetval = regexOutputChecksFailurePrint(parseToReadable(output.split("\n")),regexChecks,inputs);
 
-//			int test=Tracer.getNumTraces();
 			
 			
 			TestCaseResult result = aRetval ? pass() : fail("View console for more detail");
 			Tracer.setMaxTraces(traceNum);
 			return result;
 			
-//			if (!aRetval) 
-//				return fail("View console for more detail");
-//			Tracer.clearTracedMessages();
-//			return pass();
 			
 
 		} catch (NotRunnableException e) {

@@ -10,7 +10,7 @@ import grader.basics.project.Project;
 import gradingTools.comp524f20.assignment3.AnAbstractSMLRunningProject;
 import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceSMLProvided;
 import util.annotations.MaxValue;
-@MaxValue(10)
+@MaxValue(7)
 public class CurriedOnceInterpolatedSafe extends AnAbstractSMLRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
 

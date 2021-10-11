@@ -18,7 +18,7 @@ import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceSMLProvid
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(25)
+@MaxValue(40)
 @IsExtra(true)
 public class StyleTest extends AnAbstractSMLRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	

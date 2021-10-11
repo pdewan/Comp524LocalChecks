@@ -11,7 +11,7 @@ import gradingTools.comp524f20.assignment1.SocialDistanceInputOutputFactory;
 import gradingTools.comp524f20.assignment3.AnAbstractThreeParameterSMLRunningProject;
 import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceSMLProvided;
 import util.annotations.MaxValue;
-@MaxValue(10)
+@MaxValue(15)
 public class MatchingGivenSafe extends AnAbstractThreeParameterSMLRunningProject {
 	public static final int TIME_OUT_SECS = 1; // secs	
 
