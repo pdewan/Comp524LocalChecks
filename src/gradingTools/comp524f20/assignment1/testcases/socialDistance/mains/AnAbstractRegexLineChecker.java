@@ -61,7 +61,7 @@ public abstract class AnAbstractRegexLineChecker extends PassFailJUnitTestCase{
 				singleLine="";
 			}
 				
-		printLines.add("\n");
+		printLines.add(singleLine+"\n");
 		return regexOutputChecksFailurePrint(outputLines,regexList,printLines);
 	}
 	
