@@ -117,7 +117,7 @@ public class ListGivenSafe_OutputGeneration extends AnAbstractPrologRunningProje
 //			LinesMatcher aLinesMatcher = aRunningProject.getLinesMatcher();
 			
 			String errOutput=aRunningProject.getOutputAndErrors().replaceAll("\n\n", "\n").replaceAll("\n\n", "\n");
-			boolean retVal=regexOutputChecksFailurePrint(errOutput.split("\n"), recursionTestRegex);
+			boolean retVal=regexOutputChecksFailurePrint(errOutput.split("\n"), recursionTestRegex,recursionTestInput);
 			
 			if(!retVal) {
 				anOutput=null;

@@ -18,6 +18,6 @@ import gradingTools.comp524f19.assignment1.testcases.SExpressionClassProvided;
 	
 
 //@MaxValue(50)
-public class A1RequiredClassesSuite {
+public class LispInterpreterRequiredClassesSuite {
 	
 }

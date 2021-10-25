@@ -6,8 +6,8 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	TestLispFileProvided.class,
-	LoadChecker.class,
+//	TestLispFileProvided.class,
+//	LoadChecker.class,
 	GreaterTestedChecker.class,
 	GreaterTestedTwoResultsChecker.class,
 	LessTestedChecker.class,
@@ -21,6 +21,6 @@ import org.junit.runners.Suite;
 	
 
 //@MaxValue(50)
-public class A1LoadRelationSuite {
+public class LispInterpreterLoadRelationSuite {
 	
 }

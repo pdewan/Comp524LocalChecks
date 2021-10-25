@@ -1,4 +1,4 @@
-package gradingTools.comp524f20.assignment5;
+package gradingTools.comp524f21.assignment5;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -28,7 +28,7 @@ import gradingTools.comp524f20.assignment5.testcases.toString.ToStringSuite_Upda
 	
 
 //@MaxValue(50)
-public class F20Assignment5Suite {
+public class F21Assignment5Suite {
 
 	public static void main (String[] args) {
 		try {
@@ -38,7 +38,7 @@ public class F20Assignment5Suite {
 //			BasicStaticConfigurationUtils.setProblem("Assignment1");
 //			BasicStaticConfigurationUtils.setModuleProblemAndTest(Assignment1Suite.class);
 			Assignment1TraceUtility.setTracing();
-			BasicJUnitUtils.interactiveTest(F20Assignment5Suite.class);
+			BasicJUnitUtils.interactiveTest(F21Assignment5Suite.class);
 
 
 		} catch (Exception e) {

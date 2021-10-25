@@ -6,7 +6,7 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	TestLispFileProvided.class,
+//	TestLispFileProvided.class,
 	LoadChecker.class,
 	ConsTestedChecker.class,
 	QuoteTestedChecker.class,
@@ -23,6 +23,6 @@ import org.junit.runners.Suite;
 	
 
 //@MaxValue(50)
-public class A1LoadSuite {
+public class LispInterpreterLoadSuite {
 	
 }

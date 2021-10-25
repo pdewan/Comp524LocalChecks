@@ -6,22 +6,22 @@ import org.junit.runners.Suite;
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
-import gradingTools.comp524f19.assignment1.requiredClasses.A1RequiredClassesSuite;
-import gradingTools.comp524f19.assignment1.testcases.load.A1LoadSuite;
-import gradingTools.comp524f19.assignment1.testcases.loadLogical.A1LoadLogicalSuite;
-import gradingTools.comp524f19.assignment1.testcases.loadRelation.A1LoadRelationSuite;
+import gradingTools.comp524f19.assignment1.requiredClasses.LispInterpreterRequiredClassesSuite;
+import gradingTools.comp524f19.assignment1.testcases.load.LispInterpreterLoadSuite;
+import gradingTools.comp524f19.assignment1.testcases.loadLogical.LispInterpreterLoadLogicalSuite;
+import gradingTools.comp524f19.assignment1.testcases.loadRelation.LispInterpreterLoadRelationSuite;
 import gradingTools.comp524f19.assignment1.testcases.toString.A1ToStringSuite;
 import gradingTools.comp524f19.assignment4.requiredClasses.TestLispFileProvided;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	A1RequiredClassesSuite.class,
+	LispInterpreterRequiredClassesSuite.class,
 	A1ToStringSuite.class,
 	TestLispFileProvided.class,
-	A1LoadSuite.class,
-	A1LoadLogicalSuite.class,
-	A1LoadRelationSuite.class
+	LispInterpreterLoadSuite.class,
+	LispInterpreterLoadLogicalSuite.class,
+	LispInterpreterLoadRelationSuite.class
 	
 })
 	
