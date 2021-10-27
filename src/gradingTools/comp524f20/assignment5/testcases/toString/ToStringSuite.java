@@ -18,6 +18,6 @@ import gradingTools.comp524f19.assignment1.testcases.toString.ListToStringChecke
 })
 	
 
-public class ToStringSuite_Updated {
+public class ToStringSuite {
 	
 }

@@ -14,6 +14,7 @@ import gradingTools.comp524f20.assignment3.listsAndRecursion.ListsAndRecursionTe
 import gradingTools.comp524f20.assignment3.requiredFiles.SocialDistanceFileTestSuite;
 import gradingTools.comp524f20.assignment3.styleParsing.StyleTest;
 import gradingTools.shared.testcases.suites.InterpreterSuite;
+import gradingTools.shared.testcases.suites.SMLInterpreterSuite;
 
 
 @RunWith(Suite.class)
@@ -29,7 +30,7 @@ import gradingTools.shared.testcases.suites.InterpreterSuite;
 	
 
 //@MaxValue(50)
-public class F21Assignment4Suite extends InterpreterSuite {
+public class F21Assignment4Suite extends SMLInterpreterSuite {
 
 	public static void main (String[] args) {
 		try {

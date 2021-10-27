@@ -3,6 +3,7 @@ package gradingTools.comp524f21.assignment5;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
@@ -12,18 +13,18 @@ import gradingTools.comp524f19.assignment1.testcases.load.LispInterpreterLoadSui
 import gradingTools.comp524f19.assignment1.testcases.load.TestLispFileProvided;
 import gradingTools.comp524f19.assignment1.testcases.loadLogical.LispInterpreterLoadLogicalSuite;
 import gradingTools.comp524f19.assignment1.testcases.loadRelation.LispInterpreterLoadRelationSuite;
-import gradingTools.comp524f20.assignment5.testcases.toString.ToStringSuite_Updated;
+import gradingTools.comp524f20.assignment5.testcases.toString.ToStringSuite;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	LispInterpreterRequiredClassesSuite.class,
-	ToStringSuite_Updated.class,
+	ToStringSuite.class,
 	TestLispFileProvided.class,
 	LispInterpreterLoadSuite.class,
 	LispInterpreterLoadLogicalSuite.class,
-	LispInterpreterLoadRelationSuite.class
-	
+	LispInterpreterLoadRelationSuite.class,
+	F21A5GeneralStyle.class
 })
 	
 
@@ -51,5 +52,9 @@ public class F21Assignment5Suite {
 
 
 
+	}
+	static {
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+		setCheckStyleConfiguration("unc_checks_524_A5.xml");
 	}
 }

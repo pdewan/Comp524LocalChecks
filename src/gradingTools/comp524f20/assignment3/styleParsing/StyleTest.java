@@ -21,7 +21,7 @@ import util.annotations.MaxValue;
 @MaxValue(40)
 @IsExtra(true)
 public class StyleTest extends AnAbstractSMLRunningProject {
-	public static final int TIME_OUT_SECS = 1; // secs	
+	public static final int TIME_OUT_SECS = 10; // secs	
 
 	public StyleTest() {
 	}
@@ -90,11 +90,15 @@ public class StyleTest extends AnAbstractSMLRunningProject {
 //			}
 //			System.out.println("Current directory:" + aFile.getAbsolutePath());
 //			System.out.println("Children of current directory:"+ Arrays.toString(aFile.list()));
+			
+			String readabilityCommand = getReadabilityCommand();
+			String socialDistanceFile = aSocialDistanceFileProvided.getRequiredFile().getAbsolutePath().replaceAll("\\\\", "\\\\\\\\");
+			
 			String [] inputs = {
 					"CM.make \"config/smlnj-parser-style/524-f20-a3.cm\";",
-					getReadabilityCommand(),
+					readabilityCommand,
 //					"OS.FileSys.getDir();",
-					"A3Grader.runall \""+ aSocialDistanceFileProvided.getRequiredFile().getAbsolutePath().replaceAll("\\\\", "\\\\\\\\")+"\";",
+					"A3Grader.runall \""+ socialDistanceFile +"\";",
 					"OS.Process.exit(OS.Process.success);"
 			};
 			

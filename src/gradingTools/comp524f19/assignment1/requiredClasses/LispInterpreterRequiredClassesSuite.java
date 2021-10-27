@@ -11,7 +11,7 @@ import gradingTools.comp524f19.assignment1.testcases.SExpressionClassProvided;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	ClassRegistryProvided.class,
-	SExpressionClassProvided.class,
+//	SExpressionClassProvided.class,
 	MainClassProvided.class
 	
 })

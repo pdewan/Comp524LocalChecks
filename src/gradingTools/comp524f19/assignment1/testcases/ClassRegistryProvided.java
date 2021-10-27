@@ -6,6 +6,7 @@ import grader.basics.project.BasicProjectIntrospection;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.shared.testcases.utils.ConfigurationWriter;
 import main.ClassRegistry;
 //@MaxValue(10)
 public class ClassRegistryProvided extends PassFailJUnitTestCase {
@@ -29,6 +30,7 @@ public class ClassRegistryProvided extends PassFailJUnitTestCase {
 				return fail("No registry class in classa path:" + System.getProperty("java.class.path"));
 			}
 			timingOutClassRegistryProxy = (ClassRegistry) BasicProjectIntrospection.createTimingOutProxy(REGISTRY_INTERFACE, classRegistry);
+			ConfigurationWriter.writeConfiguration(project, classRegistry);
 			return pass();		
 	}
 
