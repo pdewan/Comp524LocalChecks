@@ -8,11 +8,9 @@ import util.annotations.MaxValue;
 @MaxValue(5)
 @IsExtra(true)
 public class A5NonPublicAccessModifiersMatched extends MethodAccessModifierRatioCheck {
-	static final Class[] PRECEDING_TESTS = {
-			SocialDistanceClassRegistryProvided.class,
-	};
+
 @Override
 protected Class[] precedingTests() {
-	return PRECEDING_TESTS;
+	return A5CommonPropertiesInherited.PRECEDING_TESTS;
 }
 }

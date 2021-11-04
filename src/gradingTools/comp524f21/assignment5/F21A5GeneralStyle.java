@@ -23,7 +23,7 @@ import util.annotations.IsExtra;
 A5CommonPropertiesInherited.class,
 A5CommonSignaturesAreInherited.class,
 A5Encapsulation.class,
-A5InterfaceAsType.class,
+//A5InterfaceAsType.class,
 A5NoHiddenFields.class,
 A5NonPublicAccessModifiersMatched.class,
 A5PublicMethodsOverride.class,

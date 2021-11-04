@@ -8,11 +8,9 @@ import util.annotations.MaxValue;
 @MaxValue(2)
 @IsExtra(true)
 public class A5PackageDeclarations extends PackageDeclarationTestCase {
-	static final Class[] PRECEDING_TESTS = {
-			SocialDistanceClassRegistryProvided.class,
-	};
+
 @Override
 protected Class[] precedingTests() {
-	return PRECEDING_TESTS;
+	return A5CommonPropertiesInherited.PRECEDING_TESTS;
 }
 }

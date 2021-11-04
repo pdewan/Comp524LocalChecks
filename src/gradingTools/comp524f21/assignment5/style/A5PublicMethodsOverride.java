@@ -7,11 +7,9 @@ import util.annotations.MaxValue;
 @MaxValue(5)
 @IsExtra(true)
 public class A5PublicMethodsOverride extends PublicMethodsOverrideRatioCheck{
-	static final Class[] PRECEDING_TESTS = {
-			SocialDistanceClassRegistryProvided.class,
-	};
+
 	@Override
 	protected Class[] precedingTests() {
-		return PRECEDING_TESTS;
+		return A5CommonPropertiesInherited.PRECEDING_TESTS;
 	}
 }

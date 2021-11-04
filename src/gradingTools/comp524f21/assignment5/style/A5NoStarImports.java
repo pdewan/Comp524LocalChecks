@@ -13,12 +13,10 @@ public class A5NoStarImports extends StarImportTestCase {
 		super("", "");
 		// TODO Auto-generated constructor stub
 	}
-	static final Class[] PRECEDING_TESTS = {
-			SocialDistanceClassRegistryProvided.class,
-	};
+
 	@Override
 	protected Class[] precedingTests() {
-		return PRECEDING_TESTS;
+		return A5CommonPropertiesInherited.PRECEDING_TESTS;
 	}
 
 }
