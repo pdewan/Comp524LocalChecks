@@ -4,7 +4,7 @@ import gradingTools.basics.sharedTestCase.checkstyle.CheckstyleMethodCalledTestC
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(2)
-@IsExtra(true)
+//@IsExtra(true)
 public class LoadCallsInterpreterModelSingleton extends CheckstyleMethodCalledTestCase{
 	@Override
 	protected Class[] precedingTests() {

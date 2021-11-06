@@ -4,7 +4,7 @@ import gradingTools.basics.sharedTestCase.checkstyle.CommonSignaturesAreInherite
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 
-@MaxValue(5)
+@MaxValue(3)
 @IsExtra(true)
 public class A5CommonSignaturesAreInherited extends CommonSignaturesAreInheritedRatioTestCase {
 

@@ -33,7 +33,7 @@ import gradingTools.comp524f20.assignment5.testcases.toString.ListToStringDeepCh
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 
-@MaxValue(5)
+@MaxValue(1)
 @IsExtra(true)
 public class A5CommonPropertiesInherited extends CommonPropertiesAreInheritedTestCase {
 static final Class[] PRECEDING_TESTS = {

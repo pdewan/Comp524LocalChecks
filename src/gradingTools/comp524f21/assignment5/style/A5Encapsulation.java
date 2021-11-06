@@ -5,7 +5,7 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClas
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 
-@MaxValue(3)
+@MaxValue(2)
 @IsExtra(true)
 public class A5Encapsulation extends EncapsulationTestCase {
 ;

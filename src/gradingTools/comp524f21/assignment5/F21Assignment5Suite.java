@@ -25,7 +25,7 @@ import gradingTools.comp524f20.assignment5.testcases.toString.ToStringSuite;
 	LispInterpreterLoadLogicalSuite.class,
 	LispInterpreterLoadRelationSuite.class,
 	F21A5GeneralStyle.class,
-	F21A5AssignmentSpecificStyle.class,
+	F21A5AssignmentSpecificSourceChecks.class,
 })
 	
 

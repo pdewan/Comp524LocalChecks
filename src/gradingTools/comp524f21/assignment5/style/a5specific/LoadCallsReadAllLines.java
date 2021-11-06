@@ -3,8 +3,8 @@ package gradingTools.comp524f21.assignment5.style.a5specific;
 import gradingTools.basics.sharedTestCase.checkstyle.CheckstyleMethodCalledTestCase;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(2)
-@IsExtra(true)
+@MaxValue(0)
+//@IsExtra(true)
 public class LoadCallsReadAllLines extends CheckstyleMethodCalledTestCase{
 	@Override
 	protected Class[] precedingTests() {
