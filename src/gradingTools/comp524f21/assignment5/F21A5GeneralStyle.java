@@ -15,6 +15,7 @@ import gradingTools.comp524f21.assignment5.style.A5NonPublicAccessModifiersMatch
 import gradingTools.comp524f21.assignment5.style.A5PackageDeclarations;
 import gradingTools.comp524f21.assignment5.style.A5PublicMethodsOverride;
 import gradingTools.comp524f21.assignment5.style.F21A5NoCheckstyleWarnings;
+import gradingTools.comp524f21.assignment5.style.fileStructureTests.ProjectMatchesTemplate;
 import util.annotations.IsExtra;
 
 
@@ -30,7 +31,7 @@ A5PublicMethodsOverride.class,
 A5NoStarImports.class,
 A5PackageDeclarations.class,
 F21A5NoCheckstyleWarnings.class,
-
+//ProjectMatchesTemplate.class,
 	
 })
 	

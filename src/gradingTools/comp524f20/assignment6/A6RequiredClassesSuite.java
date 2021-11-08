@@ -11,9 +11,9 @@ import gradingTools.comp524f19.assignment2.testcases.OperationRegistryProvided;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	ClassRegistryProvided.class,
-	ClassRegistryA3Provided.class,
+//	ClassRegistryA3Provided.class,
 	MainClassProvided.class,
-	OperationRegistryProvided.class
+//	OperationRegistryProvided.class
 	
 })
 	
