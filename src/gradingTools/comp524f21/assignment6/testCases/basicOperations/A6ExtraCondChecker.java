@@ -1,20 +1,29 @@
-package gradingTools.comp524f21.assignment6.tests.let;
+package gradingTools.comp524f21.assignment6.testCases.basicOperations;
 
 import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
+import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
 @IsExtra(true)
-public class BasicLetTest extends AbstractLispExpressionResultChecker {
+@Explanation("Checks if COND works for edge cases")
+public class A6ExtraCondChecker extends AbstractLispExpressionResultChecker {
 	public static final String[] STUDENT_INPUT = {
-			"(setq letTestVar1 10)",
-			"(let ((letTestVar1 42)) letTestVar1)",
+			"(cond)",
+			"(cond (T nil))",
+			"(cond (T))",
+			"(cond (nil) ((+ 11 12)))",
+			"(cond (nil))",
 	};
-	public static final String[] STUDENT_TO_STRING = {"10","42"};
+	
+	public static final String[] STUDENT_TO_STRING = {
+			"NIL",
+			"NIL",
+			"T",
+			"23",
+			"NIL",
+	};
 
-	
-	
-	
 	@Override
 	protected String[] expectedStudentOutput() {
 		return STUDENT_TO_STRING;

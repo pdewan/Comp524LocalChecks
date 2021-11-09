@@ -8,7 +8,6 @@ import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
 import gradingTools.comp524f19.assignment2.Assignment2TraceUtility;
 import gradingTools.comp524f20.assignment6.A6RequiredClassesSuite;
-import gradingTools.comp524f20.assignment6.BasicOperationSuite;
 import gradingTools.comp524f20.assignment6.LispLambdaSuite;
 import gradingTools.comp524f20.assignment6.LispSetqSuite;
 import gradingTools.comp524f20.assignment6.LispToStringSuite;
@@ -17,7 +16,8 @@ import gradingTools.comp524f20.assignment6.RelationalSuite;
 import gradingTools.comp524f20.assignment6.testcases.curry.BasicCurrySuite;
 import gradingTools.comp524f20.assignment6.testcases.functionExpression.BasicFunctionExpressionSuite;
 import gradingTools.comp524f20.assignment6.testcases.socialDistance.FuncallSocialDistanceSuite;
-import gradingTools.comp524f21.assignment6.tests.let.A6LetSuite;
+import gradingTools.comp524f21.assignment6.testCases.basicOperations.A6BasicOperationSuite;
+import gradingTools.comp524f21.assignment6.testCases.let.A6LetSuite;
 import main.lisp.interpreter.InterpreterModelFactory;
 import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 
@@ -25,7 +25,7 @@ import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	A6RequiredClassesSuite.class,
-	BasicOperationSuite.class,
+	A6BasicOperationSuite.class,
 	LogicalSuite.class,
 	RelationalSuite.class,
 	LispToStringSuite.class,

@@ -1,4 +1,4 @@
-package gradingTools.comp524f21.assignment6.tests.let;
+package gradingTools.comp524f21.assignment6.testCases.let;
 
 import gradingTools.comp524f19.assignment2.testcases.AbstractLispExpressionResultChecker;
 import util.annotations.IsExtra;

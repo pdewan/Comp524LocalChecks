@@ -1,4 +1,4 @@
-package gradingTools.comp524f21.assignment6.tests.let;
+package gradingTools.comp524f21.assignment6.testCases.let;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
