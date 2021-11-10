@@ -34,7 +34,7 @@ import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 //	HighOrderFunctionSuite.class,
 //	TraverseFunctionExpressionsSuite.class,
 //	ToStringAtomCurrySuite.class,
-	FuncallSocialDistanceSuite.class,
+	A6FuncallSocialDistanceSuite.class,
 	BasicFunctionExpressionSuite.class,
 	BasicCurrySuite.class,
 	A6LetSuite.class
