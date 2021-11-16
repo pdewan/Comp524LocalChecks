@@ -3,6 +3,7 @@ package gradingTools.comp524f21.assignment6;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
@@ -15,7 +16,8 @@ import gradingTools.comp524f20.assignment6.LogicalSuite;
 import gradingTools.comp524f20.assignment6.RelationalSuite;
 import gradingTools.comp524f20.assignment6.testcases.curry.BasicCurrySuite;
 import gradingTools.comp524f20.assignment6.testcases.functionExpression.BasicFunctionExpressionSuite;
-import gradingTools.comp524f20.assignment6.testcases.socialDistance.FuncallSocialDistanceSuite;
+import gradingTools.comp524f21.assignment6.specificStyle.F21A6SpecificStyle;
+import gradingTools.comp524f21.assignment6.style.F21A6GeneralStyle;
 import gradingTools.comp524f21.assignment6.testCases.basicOperations.A6BasicOperationSuite;
 import gradingTools.comp524f21.assignment6.testCases.let.A6LetSuite;
 import main.lisp.interpreter.InterpreterModelFactory;
@@ -31,14 +33,12 @@ import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 	LispToStringSuite.class,
 	LispSetqSuite.class,
 	LispLambdaSuite.class,
-//	HighOrderFunctionSuite.class,
-//	TraverseFunctionExpressionsSuite.class,
-//	ToStringAtomCurrySuite.class,
 	A6FuncallSocialDistanceSuite.class,
 	BasicFunctionExpressionSuite.class,
 	BasicCurrySuite.class,
-	A6LetSuite.class
-	
+	A6LetSuite.class,
+	F21A6GeneralStyle.class,
+	F21A6SpecificStyle.class,
 })
 	
 
@@ -65,7 +65,8 @@ public class F21Assignment6Suite {
 	static {
 		BasicProjectIntrospection.setCheckAllSpecifiedTags(true);
 		BasicStaticConfigurationUtils.setUseProjectConfiguration(true);
-
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+		setCheckStyleConfiguration("unc_checks_524_A6.xml");
 
 
 	}
