@@ -12,7 +12,7 @@ import util.annotations.IsExtra;
 	ProjectStructureOrganizesEvaluators.class,
 	EnvironmentCallsGetParent.class,
 	EnvironmentCallsPut.class,
-	FunctionCallsFunctionFactory.class,
+	FuncallCallsExpressionFactory.class,
 	IdentifierCallsEnvironmentLookup.class,
 	IdentifierCallsOptionalGet.class,
 	LambdaCallsLambdaFactory.class,

@@ -10,15 +10,15 @@ import gradingTools.comp524f19.assignment2.testcases.LispLambdaCheckers.LoadLamb
 import util.annotations.MaxValue;
 @MaxValue(2)
 //@IsExtra(true)
-public class FunctionCallsFunctionFactory extends CheckstyleMethodCalledTestCase{
+public class FuncallCallsExpressionFactory extends CheckstyleMethodCalledTestCase{
 	
 	@Override
 	protected Class[] precedingTests() {
 			return LambdaCallsLambdaFactory.prereq;
 	}
 	
-	public FunctionCallsFunctionFactory() {
-		super("FunctionEvaluator", "main.lisp.evaluator.function.FunctionFactory!newInstance:main.lisp.evaluator.function.Lambda;main.lisp.evaluator.Environment->Function");
+	public FuncallCallsExpressionFactory() {
+		super("BasicFuncallEvaluator", "main.lisp.parser.terms.ExpressionFactory!newInstance:main.lisp.parser.terms.SExpression;main.lisp.parser.terms.SExpression->SExpression");
 	}
 	
 }
