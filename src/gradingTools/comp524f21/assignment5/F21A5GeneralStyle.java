@@ -31,7 +31,7 @@ A5NonPublicAccessModifiersMatched.class,
 A5PublicMethodsOverride.class,
 A5NoStarImports.class,
 A5PackageDeclarations.class,
-ProjectStructureOrganizesEvaluators.class,
+//ProjectStructureOrganizesEvaluators.class,
 F21A5NoCheckstyleWarnings.class,
 //ProjectMatchesTemplate.class,
 	
