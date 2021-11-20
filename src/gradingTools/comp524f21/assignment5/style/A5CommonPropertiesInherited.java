@@ -28,15 +28,17 @@ import gradingTools.comp524f19.assignment1.testcases.loadRelation.LorETestedChec
 import gradingTools.comp524f19.assignment1.testcases.loadRelation.LorETestedTwoResultsChecker;
 import gradingTools.comp524f19.assignment1.testcases.toString.BaseCaseListToStringChecker;
 import gradingTools.comp524f19.assignment1.testcases.toString.BaseCaseSExpressionToStringChecker;
-import gradingTools.comp524f19.assignment1.testcases.toString.ListToStringChecker;
-import gradingTools.comp524f20.assignment5.testcases.toString.ListToStringDeepChecker;
+import gradingTools.comp524f21.assignment5.toString.ListToStringCheckerAdvanced;
+import gradingTools.comp524f21.assignment5.toString.ListToStringCheckerBasic;
+import gradingTools.comp524f21.assignment5.toString.ListToStringDeepCheckerAdvanced;
+import gradingTools.comp524f21.assignment5.toString.ListToStringDeepCheckerBasic;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 
 @MaxValue(1)
 @IsExtra(true)
 public class A5CommonPropertiesInherited extends CommonPropertiesAreInheritedTestCase {
-static final Class[] PRECEDING_TESTS = {
+public static final Class[] PRECEDING_TESTS = {
 		GreaterTestedChecker.class,
 		GreaterTestedTwoResultsChecker.class,
 		LessTestedChecker.class,
@@ -64,8 +66,10 @@ static final Class[] PRECEDING_TESTS = {
 		CondTestedResultsChecker.class,
 		BaseCaseSExpressionToStringChecker.class,
 		BaseCaseListToStringChecker.class,
-		ListToStringChecker.class,
-		ListToStringDeepChecker.class
+		ListToStringCheckerBasic.class,
+		ListToStringCheckerAdvanced.class,
+		ListToStringDeepCheckerBasic.class,
+		ListToStringDeepCheckerAdvanced.class,
 		
 };
 @Override

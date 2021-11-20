@@ -11,7 +11,7 @@ public class ListToStringDeepCheckerAdvanced extends AbstractLispExpressionResul
 
 	@Override
 	protected String[] expectedStudentOutput() {
-		return STUDENT_TO_STRING;
+		return GRADER_TO_STRING;
 	}
 	@Override
 	protected String[] expectedGraderOutput() {
@@ -19,11 +19,10 @@ public class ListToStringDeepCheckerAdvanced extends AbstractLispExpressionResul
 	}
 	@Override
 	protected String[] studentInputLines() {
-		return STUDENT_INPUT;
+		return GRADER_INPUT;
 	}
 	@Override
 	protected String[] graderInputLines() {
-		// TODO Auto-generated method stub
 		return GRADER_INPUT;
 	}
 
