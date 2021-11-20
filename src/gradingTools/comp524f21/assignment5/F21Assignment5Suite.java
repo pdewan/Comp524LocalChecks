@@ -13,13 +13,13 @@ import gradingTools.comp524f19.assignment1.testcases.load.LispInterpreterLoadSui
 import gradingTools.comp524f19.assignment1.testcases.load.TestLispFileProvided;
 import gradingTools.comp524f19.assignment1.testcases.loadLogical.LispInterpreterLoadLogicalSuite;
 import gradingTools.comp524f19.assignment1.testcases.loadRelation.LispInterpreterLoadRelationSuite;
-import gradingTools.comp524f20.assignment5.testcases.toString.ToStringSuite;
+import gradingTools.comp524f21.assignment5.toString.A5ToStringSuite;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	LispInterpreterRequiredClassesSuite.class,
-	ToStringSuite.class,
+	A5ToStringSuite.class,
 	TestLispFileProvided.class,
 	LispInterpreterLoadSuite.class,
 	LispInterpreterLoadLogicalSuite.class,
