@@ -45,7 +45,15 @@ public abstract class AbstractFunctionTestedChecker extends PassFailJUnitTestCas
 		List<SExpression> aResultSExpressions = aLoadChecker.getResultSExpressions();
 		String aMessage = null;
 		for (int i = 0; i < anInputSExpressions.size(); i++) {
-			 aMessage = check(anInputSExpressions.get(i), aResultSExpressions.get(i));
+			try {
+				aMessage = check(anInputSExpressions.get(i), aResultSExpressions.get(i));
+			}catch(IndexOutOfBoundsException e) {
+				aMessage="Encountered an unexpected error, see console for potential fixes";
+				System.err.println("\nError finding call to "+functionName()+" try:");
+				System.err.println("Make sure your load evaluator works properly");
+				System.err.println("Check your lisp file for errors (extra parenthesis, misspellings, etc)");
+				System.err.println("Try running your main class running the command \"(load \"<filename>.lisp\")\n");
+			}
 			 if (aMessage.isEmpty()) {
 				 //System.out.println("Found a call to " + functionName() + " : " + anInputSExpressions.get(i).toString());
 				 Tracer.info(this, "Found a call to " + functionName() + " : " + anInputSExpressions.get(i).toString());
