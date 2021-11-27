@@ -21,7 +21,6 @@ import util.annotations.IsExtra;
 	
 
 //@MaxValue(50)
-@IsExtra(true)
 public class F21A6SpecificStyle {
 
 	public static void main (String[] args) {
