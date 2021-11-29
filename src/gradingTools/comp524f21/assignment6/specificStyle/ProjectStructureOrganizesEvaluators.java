@@ -39,16 +39,6 @@ public class ProjectStructureOrganizesEvaluators extends AbstractFolderMatchesTe
 	private final Template template = new Template(rawTemplate, "Organized Evaluators");
 	
 	@Override
-	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException, NotGradableException {
-		TestCaseResult retval = super.test(project, autoGrade);
-		if(!retval.isPass()) {
-			System.out.println("Expected format:");
-			System.out.println(template.getTemplateFileTree());
-		}
-		return retval;
-	}
-	
-	@Override
 	protected Template getTemplate() {
 		return template;
 	}
