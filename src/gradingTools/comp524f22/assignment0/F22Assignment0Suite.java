@@ -33,7 +33,7 @@ public class F22Assignment0Suite {
 	}
 	static {
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-		setCheckStyleConfiguration("unc_checks_524_A0_1.xml");
+		setCheckStyleConfiguration("unc_checks_524_A0.xml");
 	}
 	
 }
