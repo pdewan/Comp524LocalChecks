@@ -41,13 +41,13 @@ import util.annotations.IsExtra;
 
 //@MaxValue(50)
 @IsExtra(true)
-public class F21A1ModularitySuite {
+public class A1ModularitySuite {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(F21A1ModularitySuite.class);
+			BasicJUnitUtils.interactiveTest(A1ModularitySuite.class);
 
 
 		} catch (Exception e) {

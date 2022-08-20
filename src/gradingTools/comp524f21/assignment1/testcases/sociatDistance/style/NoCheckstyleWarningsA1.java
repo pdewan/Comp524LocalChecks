@@ -5,6 +5,6 @@ import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
 @IsExtra(true)
-public class F21A1NoCheckstyleWarnings extends A1NoCheckstyleWarnings {
+public class NoCheckstyleWarningsA1 extends A1NoCheckstyleWarnings {
 
 }

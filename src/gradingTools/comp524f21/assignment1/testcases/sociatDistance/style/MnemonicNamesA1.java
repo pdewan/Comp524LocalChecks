@@ -5,6 +5,6 @@ import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(5)
 @IsExtra(true)
-public class F21A1MnemonicNames extends A1MnemonicNames {
+public class MnemonicNamesA1 extends A1MnemonicNames {
 
 }

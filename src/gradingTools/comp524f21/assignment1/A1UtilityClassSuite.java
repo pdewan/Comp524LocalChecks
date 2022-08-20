@@ -13,7 +13,7 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.Prin
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.PrintGivenAndGeneratedCombinationDerivedTest;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.PrintGivenAndGeneratedCombinationsInferredSafety;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.PrintSafeDistancesAndDurationsTest;
-import gradingTools.comp524f21.assignment1.mains.F21A1UtilityTesterMainTest;
+import gradingTools.comp524f21.assignment1.mains.A1UtilityTesterMainTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
@@ -28,8 +28,8 @@ import gradingTools.comp524f21.assignment1.mains.F21A1UtilityTesterMainTest;
 	PrintSafeDistancesAndDurationsTest.class,
 //	PrintGivenAndGeneratedCombinationsInferredSafety.class,
 //	CompareSafetyComputationsTest.class,
-	F21A1UtilityTesterMainTest.class,
+	A1UtilityTesterMainTest.class,
 })
-public class F21A1UtilityClassSuite {
+public class A1UtilityClassSuite {
 
 }

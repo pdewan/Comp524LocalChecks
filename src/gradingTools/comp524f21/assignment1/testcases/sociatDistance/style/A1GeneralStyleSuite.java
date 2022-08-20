@@ -12,14 +12,10 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.A1Publ
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	F21A1NoCheckstyleWarnings.class,
-	F21A1NamedConstants.class,
-	F21A1MnemonicNames.class,
-//	InterpolatedReuse.class,
-//	UtilityJavaDocs.class
-	
-	
+	A1NoCheckstyleWarnings.class,
+	A1NamedConstants.class,
+	A1MnemonicNames.class,
 })
-public class F21A1GeneralStyleSuite {
+public class A1GeneralStyleSuite {
 
 }

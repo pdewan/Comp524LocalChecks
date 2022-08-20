@@ -18,7 +18,7 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.Prin
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.PrintSafeDistancesAndDurationsTest;
 import util.annotations.MaxValue;
 @MaxValue(5)
-public class F21A1UtilityTesterMainTest extends UtilityTesterMainTest {
+public class A1UtilityTesterMainTest extends UtilityTesterMainTest {
 	public static final int TIME_OUT_MSECS = 300; // secs
 	
 	protected Class [] PRECEDING_TESTS = {
@@ -31,7 +31,7 @@ public class F21A1UtilityTesterMainTest extends UtilityTesterMainTest {
 		return PRECEDING_TESTS;
 	}
 	
-	public F21A1UtilityTesterMainTest() {
+	public A1UtilityTesterMainTest() {
 	}
 	
 	

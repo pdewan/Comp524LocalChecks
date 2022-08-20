@@ -1,10 +1,13 @@
-package gradingTools.comp524f21.assignment1;
+package gradingTools.comp524f22.assignment1;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.junit.BasicJUnitUtils;
+import gradingTools.comp524f21.assignment1.A1ModularitySuite;
+import gradingTools.comp524f21.assignment1.A1UtilityClassSuite;
+import gradingTools.comp524f21.assignment1.RequiredClassesSuite;
 import gradingTools.comp524f21.assignment1.testcases.sociatDistance.style.A1GeneralStyleSuite;
 
 
@@ -19,13 +22,13 @@ import gradingTools.comp524f21.assignment1.testcases.sociatDistance.style.A1Gene
 	
 
 //@MaxValue(50)
-public class F21Assignment1Suite {
+public class F22Assignment1Suite {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(F21Assignment1Suite.class);
+			BasicJUnitUtils.interactiveTest(F22Assignment1Suite.class);
 
 
 		} catch (Exception e) {
