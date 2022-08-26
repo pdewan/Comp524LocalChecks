@@ -16,7 +16,7 @@ public class DerivedAndInferredPrintCallSharedProcedure extends CheckstyleCommon
 			return PRECEDING_TESTS;
 	}
 	public DerivedAndInferredPrintCallSharedProcedure() {
-		super("@BasicSocialDistanceUtility", "printGivenAndGeneratedCombinationsDerivedSafety:->void", "printGivenAndGeneratedCombinationsInferredSafety:->void", "\\.\\*:\\.\\*->void");
+		super("@BasicSocialDistanceUtility", "printGivenAndGeneratedCombinationsDerivedSafety:->void", "printGivenAndGeneratedCombinationsInferredSafety:->void", ".*:.*->void");
 		// TODO Auto-generated constructor stub
 	}
 

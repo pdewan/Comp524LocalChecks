@@ -18,6 +18,6 @@ import gradingTools.comp524f21.assignment2.testcases.F21A2IsInferredSafeTest;
 	WekaFileSizeTest.class
 	
 })
-public class F21A2UtilityClassSuite {
+public class A2UtilityClassSuite {
 
 }

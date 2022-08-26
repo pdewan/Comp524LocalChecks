@@ -28,7 +28,7 @@ import util.annotations.MaxValue;
 		
 
 	@MaxValue(7)
-	public class F21A2RequiredClassesSuite {
+	public class A2RequiredClassesSuite {
 
 		
 }

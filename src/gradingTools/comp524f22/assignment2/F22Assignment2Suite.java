@@ -1,4 +1,4 @@
-package gradingTools.comp524f21.assignment2;
+package gradingTools.comp524f22.assignment2;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -6,6 +6,12 @@ import org.junit.runners.Suite;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.junit.BasicJUnitUtils;
 import gradingTools.comp524f20.assignment1.socialDistance.factories.FactoriesSuite;
+import gradingTools.comp524f21.assignment2.A2GeneralStyle;
+import gradingTools.comp524f21.assignment2.A2MainClassSuite;
+import gradingTools.comp524f21.assignment2.A2Modularity;
+import gradingTools.comp524f21.assignment2.A2RequiredClassesSuite;
+import gradingTools.comp524f21.assignment2.A2SourceCode;
+import gradingTools.comp524f21.assignment2.A2UtilityClassSuite;
 
 
 
@@ -24,13 +30,13 @@ import gradingTools.comp524f20.assignment1.socialDistance.factories.FactoriesSui
 	
 
 //@MaxValue(50)
-public class F21Assignment2Suite {
+public class F22Assignment2Suite {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(F21Assignment2Suite.class);
+			BasicJUnitUtils.interactiveTest(F22Assignment2Suite.class);
 
 
 		} catch (Exception e) {

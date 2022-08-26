@@ -50,8 +50,6 @@ public abstract class AbstractPrintDerivedSafetyValidator extends PassFailJUnitT
 		Object[] anArgs = {aDistance, aDuration, anExhalationLevel};
 		Boolean aResult = (Boolean) BasicProjectExecution.timedInvoke(aStaticClass, aVerifyingMethod, anArgs, TIME_OUT_MSECS);		
 
-
-//		new line character is captured in the output. This had caused it to default to false.	
 		Boolean anActualResult = anOutputComponents[3].toLowerCase().matches("true\n*?");
 		boolean aReturnValue = aResult.equals(anActualResult);
 		if (!aReturnValue) 

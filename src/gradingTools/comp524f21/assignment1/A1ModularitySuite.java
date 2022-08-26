@@ -11,8 +11,8 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.ModelR
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.style.PrintingCodeReuse;
 import gradingTools.comp524f21.assignment1.testcases.sociatDistance.style.ExpectedJavaDocGivenSafe;
 import gradingTools.comp524f21.assignment1.testcases.sociatDistance.style.ExpectedJavaDocHighInterpolation;
-import gradingTools.comp524f21.assignment1.testcases.sociatDistance.style.ExpectedJavaDocHighInterpolationCaller;
-import gradingTools.comp524f21.assignment1.testcases.sociatDistance.style.ExpectedJavaDocLowInterpolationCaller;
+import gradingTools.comp524f21.assignment1.testcases.sociatDistance.style.ExpectedJavaDocHighInterpolationHelper;
+import gradingTools.comp524f21.assignment1.testcases.sociatDistance.style.ExpectedJavaDocLowInterpolationHelper;
 import gradingTools.comp524f21.assignment1.testcases.sociatDistance.style.ExpectedJavaDocLowInterpolation;
 import gradingTools.comp524f21.assignment1.testcases.sociatDistance.style.Interpolated2Reuse;
 import gradingTools.comp524f21.assignment1.testcases.sociatDistance.style.Interpolated3Reuse;
@@ -29,8 +29,8 @@ import util.annotations.IsExtra;
 	
 	ExpectedJavaDocLowInterpolation.class,
 	ExpectedJavaDocHighInterpolation.class,
-	ExpectedJavaDocHighInterpolationCaller.class,
-	ExpectedJavaDocLowInterpolationCaller.class,
+	ExpectedJavaDocHighInterpolationHelper.class,
+	ExpectedJavaDocLowInterpolationHelper.class,
 	ExpectedJavaDocGivenSafe.class,
 
 //	ExpectedSubtleJavaDocs.class,

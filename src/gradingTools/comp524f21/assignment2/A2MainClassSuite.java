@@ -22,13 +22,13 @@ import util.trace.Tracer;
 	
 
 //@MaxValue(50)
-public class F21A2MainClassSuite {
+public class A2MainClassSuite {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(F21A2MainClassSuite.class);
+			BasicJUnitUtils.interactiveTest(A2MainClassSuite.class);
 			Tracer.setKeywordPrintStatus(BasicMainTest.class, true);
 			Tracer.setKeywordPrintStatus(InterpolatingMainTest.class, true);
 			Tracer.setKeywordPrintStatus(DerivingMainTest.class, true);

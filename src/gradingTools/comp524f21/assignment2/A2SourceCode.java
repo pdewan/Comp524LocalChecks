@@ -41,13 +41,13 @@ import util.annotations.IsExtra;
 	
 
 //@MaxValue(50)
-public class F21A2SourceCode {
+public class A2SourceCode {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(F21A2SourceCode.class);
+			BasicJUnitUtils.interactiveTest(A2SourceCode.class);
 
 
 		} catch (Exception e) {
