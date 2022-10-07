@@ -7,7 +7,7 @@ import gradingTools.comp524f20.assignment3.AnAbstractThreeParameterSMLRunningPro
 
 public abstract class AnAbstractTwoParameterPrint extends AnAbstractThreeParameterSMLRunningProject {
 
-	private String [] functions= {"givenSafe", "interpolatedSafe", "listDerivedSafe"};
+	protected String [] functions= {"givenSafe", "interpolatedSafe", "listDerivedSafe"};
 	
 	@Override
 	protected String [] generateFunctionCalls(String functionName) {

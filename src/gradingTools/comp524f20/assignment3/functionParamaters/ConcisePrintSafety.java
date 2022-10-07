@@ -58,8 +58,7 @@ public class ConcisePrintSafety extends AnAbstractTwoParameterPrint {
 		}
 	}
 	
-	private String[] generateRegexs(boolean[]... expectedValues ) {
-		
+	protected String[] generateRegexs(boolean[]... expectedValues ) {
 		int [][] inputList = this.getInputList();
 		if(inputList.length!=expectedValues[0].length)
 			return null;
