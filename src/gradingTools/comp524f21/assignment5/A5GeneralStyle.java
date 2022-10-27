@@ -40,13 +40,13 @@ F21A5NoCheckstyleWarnings.class,
 
 //@MaxValue(50)
 @IsExtra(true)
-public class F21A5GeneralStyle {
+public class A5GeneralStyle {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(F21A5GeneralStyle.class);
+			BasicJUnitUtils.interactiveTest(A5GeneralStyle.class);
 
 
 		} catch (Exception e) {

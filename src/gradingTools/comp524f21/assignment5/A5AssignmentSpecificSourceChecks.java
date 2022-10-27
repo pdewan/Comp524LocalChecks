@@ -44,10 +44,10 @@ ToStringAsListHelperIsRecursive.class,
 
 //@MaxValue(50)
 @IsExtra(true)
-public class F21A5AssignmentSpecificSourceChecks {
+public class A5AssignmentSpecificSourceChecks {
 	public static void main (String[] args) {
 		try {
-			BasicJUnitUtils.interactiveTest(F21A5AssignmentSpecificSourceChecks.class);
+			BasicJUnitUtils.interactiveTest(A5AssignmentSpecificSourceChecks.class);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

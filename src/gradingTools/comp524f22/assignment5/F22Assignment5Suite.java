@@ -1,4 +1,4 @@
-package gradingTools.comp524f21.assignment5;
+package gradingTools.comp524f22.assignment5;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -13,6 +13,8 @@ import gradingTools.comp524f19.assignment1.testcases.load.LispInterpreterLoadSui
 import gradingTools.comp524f19.assignment1.testcases.load.TestLispFileProvided;
 import gradingTools.comp524f19.assignment1.testcases.loadLogical.LispInterpreterLoadLogicalSuite;
 import gradingTools.comp524f19.assignment1.testcases.loadRelation.LispInterpreterLoadRelationSuite;
+import gradingTools.comp524f21.assignment5.A5AssignmentSpecificSourceChecks;
+import gradingTools.comp524f21.assignment5.A5GeneralStyle;
 import gradingTools.comp524f21.assignment5.toString.A5ToStringSuite;
 
 
@@ -30,7 +32,7 @@ import gradingTools.comp524f21.assignment5.toString.A5ToStringSuite;
 	
 
 //@MaxValue(50)
-public class F21Assignment5Suite {
+public class F22Assignment5Suite {
 
 	public static void main (String[] args) {
 		try {
@@ -40,7 +42,7 @@ public class F21Assignment5Suite {
 //			BasicStaticConfigurationUtils.setProblem("Assignment1");
 //			BasicStaticConfigurationUtils.setModuleProblemAndTest(Assignment1Suite.class);
 			Assignment1TraceUtility.setTracing();
-			BasicJUnitUtils.interactiveTest(F21Assignment5Suite.class);
+			BasicJUnitUtils.interactiveTest(F22Assignment5Suite.class);
 
 
 		} catch (Exception e) {
