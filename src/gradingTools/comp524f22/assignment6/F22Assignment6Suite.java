@@ -8,6 +8,7 @@ import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
 import gradingTools.comp524f19.assignment2.Assignment2TraceUtility;
+import gradingTools.comp524f19.assignment4.lazy.LazinessSensitiveFunSuite;
 import gradingTools.comp524f20.assignment6.A6RequiredClassesSuite;
 import gradingTools.comp524f20.assignment6.LispLambdaSuite;
 import gradingTools.comp524f20.assignment6.LispSetqSuite;
@@ -40,6 +41,7 @@ import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 	A6LetSuite.class,
 	F21A6GeneralStyle.class,
 	F21A6SpecificStyle.class,
+	LazinessSensitiveFunSuite.class,
 })
 	
 
