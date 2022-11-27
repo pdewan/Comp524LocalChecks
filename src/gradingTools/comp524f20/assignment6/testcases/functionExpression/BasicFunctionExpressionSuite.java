@@ -12,7 +12,7 @@ PlusGeneratorChecker.class
 
 	
 })
-	
+@IsExtra(true)	
 public class BasicFunctionExpressionSuite {
 	
 }

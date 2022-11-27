@@ -43,7 +43,7 @@ public class ListDerivedSafeLisp extends AnAbstractThreeParameterLispRunningProj
 			int anOldBetweenInputDelayTime = BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getBetweenInputDelay();
 
 			int anOldOutputDelayTime = BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessOutputSleepTime();
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessOutputWaitTime(OUTPUT_WAIT_TIME);
+			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessOutputSleepTime(OUTPUT_WAIT_TIME);
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setFirstInputDelay(FIRST_INPUT_DELAY_TIME);
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setBetweenInputDelay(BETWEEN_INPUT_DELAY_TIME);
 
@@ -53,7 +53,7 @@ public class ListDerivedSafeLisp extends AnAbstractThreeParameterLispRunningProj
 			
 
 			aRunningProject.await();
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessOutputWaitTime(anOldOutputDelayTime);
+			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessOutputSleepTime(anOldOutputDelayTime);
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setFirstInputDelay(anOldFirstInputDelayTime);
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setBetweenInputDelay(anOldBetweenInputDelayTime);
 
