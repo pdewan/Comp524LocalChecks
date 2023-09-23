@@ -15,7 +15,7 @@ import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @IsExtra(true)
 @MaxValue(10)
-@Explanation("Checks model code usage")
+@Explanation("Checks model code sharing through inheritance")
 public class ModelReuse extends PassFailJUnitTestCase {
 
 	
