@@ -16,6 +16,8 @@ import gradingTools.comp524f21.assignment2.A2Modularity;
 import gradingTools.comp524f21.assignment2.A2RequiredClassesSuite;
 import gradingTools.comp524f21.assignment2.A2SourceCode;
 import gradingTools.comp524f21.assignment2.A2UtilityClassSuite;
+import gradingTools.shared.testcases.concurrency.oddNumbers.LargerNumberOfRandoms;
+import gradingTools.shared.testcases.concurrency.oddNumbers.SmallNumberOfRandoms;
 
 
 
@@ -28,11 +30,11 @@ import gradingTools.comp524f21.assignment2.A2UtilityClassSuite;
 
 //@MaxValue(50)
 public class F23Assignment0_1Suite {
-	public static final String ROOT_CLASS = "ConcurrentOddNumbers";
-	public static final String DISPATCHER_CLASS = "OddNumbersDispatcher";
-
-//	public static final String WORKER_CLASS = "OddNumbersWorke";
-	public static final String WORKER_CLASS = "OddNumbersWorkerCode";
+//	public static final String ROOT_CLASS = "ConcurrentOddNumbers";
+//	public static final String DISPATCHER_CLASS = "OddNumbersDispatcher";
+//
+////	public static final String WORKER_CLASS = "OddNumbersWorke";
+//	public static final String WORKER_CLASS = "OddNumbersWorkerCode";
 
 	public static void main (String[] args) {
 		try {

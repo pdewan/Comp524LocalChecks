@@ -90,7 +90,7 @@ public class SocialDistanceMagicNumbersTest extends PassFailJUnitTestCase{
 	}
 	
 	@Override
-	protected boolean failedTestVetoes() {
+	protected boolean failedTestVetoes(Class aClass) {
 		return false;
 	}
 	
