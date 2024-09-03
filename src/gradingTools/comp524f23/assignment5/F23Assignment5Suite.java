@@ -29,7 +29,8 @@ import gradingTools.comp524f21.assignment5.toString.A5ToStringSuite;
 	A5GeneralStyle.class,
 	A5AssignmentSpecificSourceChecks.class,
 })
-	
+//1.1, 2.2, 3.16, 4.6, 5.11, 6.6, 7.7, 8.8, 9.1
+// 58
 
 //@MaxValue(50)
 public class F23Assignment5Suite {

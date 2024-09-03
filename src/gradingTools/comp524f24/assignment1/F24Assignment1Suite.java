@@ -1,4 +1,4 @@
-package gradingTools.comp524f23.assignment1;
+package gradingTools.comp524f24.assignment1;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -23,13 +23,13 @@ import gradingTools.comp524f21.assignment1.testcases.sociatDistance.style.A1Gene
 //23
 
 //@MaxValue(50)
-public class F23Assignment1Suite {
+public class F24Assignment1Suite {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(F23Assignment1Suite.class);
+			BasicJUnitUtils.interactiveTest(F24Assignment1Suite.class);
 
 
 		} catch (Exception e) {

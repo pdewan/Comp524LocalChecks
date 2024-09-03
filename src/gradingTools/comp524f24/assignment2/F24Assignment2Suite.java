@@ -1,4 +1,4 @@
-package gradingTools.comp524f23.assignment2;
+package gradingTools.comp524f24.assignment2;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -29,13 +29,13 @@ import gradingTools.comp524f21.assignment2.A2UtilityClassSuite;
 //45
 
 //@MaxValue(50)
-public class F23Assignment2Suite {
+public class F24Assignment2Suite {
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
 
-			BasicJUnitUtils.interactiveTest(F23Assignment2Suite.class);
+			BasicJUnitUtils.interactiveTest(F24Assignment2Suite.class);
 
 
 		} catch (Exception e) {

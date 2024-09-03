@@ -8,6 +8,7 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.Prin
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.utility.WekaFileSizeTest;
 import gradingTools.comp524f21.assignment2.testcases.F21A2DerivedSafetyVerifier;
 import gradingTools.comp524f21.assignment2.testcases.F21A2IsInferredSafeTest;
+import util.annotations.IsExtra;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
@@ -18,6 +19,7 @@ import gradingTools.comp524f21.assignment2.testcases.F21A2IsInferredSafeTest;
 	WekaFileSizeTest.class
 	
 })
+@IsExtra(true) // F24
 public class A2UtilityClassSuite {
 
 }

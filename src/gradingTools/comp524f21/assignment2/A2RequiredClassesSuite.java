@@ -11,6 +11,7 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClas
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceInferringMainProvided;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceInterpolatingMainProvided;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.requiredClasses.SocialDistanceUtilityProvided;
+import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 
 
@@ -26,7 +27,7 @@ import util.annotations.MaxValue;
 		SafeSocializationTxtProvided.class
 	})
 		
-
+	@IsExtra(true) // F24
 	@MaxValue(7)
 	public class A2RequiredClassesSuite {
 

@@ -35,7 +35,8 @@ import gradingTools.shared.testcases.suites.InterpreterSuite;
 	PrintGivenCombinationsTestSuite.class,
 	ListGenerateSafeDistancesAndDurationsTestSuite.class,
 })
-	
+//1.2, 2.4, 3.5, 4.3, 5.7, 6.4, 7.3, 8.2, 9.3, 10.1, 11.3, 12.2, 13.1
+//40
 //@MaxValue(50)
 public class F23Assignment3Suite extends InterpreterSuite {
 	public static void main (String[] args) {

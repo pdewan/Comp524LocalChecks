@@ -8,6 +8,7 @@ import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.BasicM
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.DerivingMainTest;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.InferringMainTest;
 import gradingTools.comp524f20.assignment1.testcases.socialDistance.mains.InterpolatingMainTest;
+import util.annotations.IsExtra;
 import util.trace.Tracer;
 
 
@@ -22,6 +23,7 @@ import util.trace.Tracer;
 	
 
 //@MaxValue(50)
+@IsExtra(true) // F24
 public class A2MainClassSuite {
 
 	public static void main (String[] args) {

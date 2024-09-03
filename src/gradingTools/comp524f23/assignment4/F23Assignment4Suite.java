@@ -26,7 +26,8 @@ import gradingTools.shared.testcases.suites.SMLInterpreterSuite;
 	StyleTest.class,
 	SMLGreetingLoadAndRun.class
 })
-	
+//1.6, 2.1, 3.6, 4.2, 5.1, 6.1, 7.1, 8.1
+//19
 
 //@MaxValue(50)
 public class F23Assignment4Suite extends SMLInterpreterSuite {

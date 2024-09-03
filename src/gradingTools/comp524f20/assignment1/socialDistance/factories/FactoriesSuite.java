@@ -4,6 +4,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import grader.basics.junit.BasicJUnitUtils;
+import util.annotations.IsExtra;
 
 
 @RunWith(Suite.class)
@@ -15,7 +16,7 @@ import grader.basics.junit.BasicJUnitUtils;
 	
 })
 	
-
+@IsExtra(true) // F24
 public class FactoriesSuite {
 
 	public static void main (String[] args) {

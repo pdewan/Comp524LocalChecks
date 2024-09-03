@@ -43,7 +43,8 @@ import main.lisp.interpreter.ObservableLispInterpreterWithEnvironment;
 	F21A6SpecificStyle.class,
 	LazinessSensitiveFunSuite.class,
 })
-	
+// 1.9, 2.5, 3.10, 4.6, 5.4, 6.3, 7.2, 8.1, 9.4, 10.2, 11.7, 12.2, 13.5, 14.7, 15.1
+//68
 
 //@MaxValue(50)
 public class F23Assignment6Suite {

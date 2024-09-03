@@ -1,4 +1,4 @@
-package gradingTools.comp524f23.assignment0;
+package gradingTools.comp524f24.assignment0;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -21,11 +21,11 @@ import gradingTools.shared.testcases.greeting.GreetingRun;
 })
 //1.2, 2.1, 3.1, 4.1, 5.1
 //6s
-public class F23Assignment0Suite {
+public class F24Assignment0Suite {
 
 	public static void main (String[] args) {
 		try {
-			BasicJUnitUtils.interactiveTest(F23Assignment0Suite.class);
+			BasicJUnitUtils.interactiveTest(F24Assignment0Suite.class);
 
 
 		} catch (Exception e) {
