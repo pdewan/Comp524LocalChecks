@@ -8,6 +8,7 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp524f19.assignment4.requiredClasses.LoadLispChecker;
 import main.lisp.parser.terms.Atom;
 import main.lisp.parser.terms.SExpression;
 import util.trace.Tracer;
@@ -40,7 +41,9 @@ public abstract class AbstractFunctionTestedChecker extends PassFailJUnitTestCas
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade)
 			throws NotAutomatableException, NotGradableException {
-		LoadChecker aLoadChecker = (LoadChecker) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(LoadChecker.class);
+//		LoadChecker aLoadChecker = (LoadChecker) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(LoadChecker.class);
+		LoadLispChecker aLoadChecker = (LoadLispChecker) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(LoadLispChecker.class);
+
 		List<SExpression> anInputSExpressions = aLoadChecker.getInputSExpressions();
 		List<SExpression> aResultSExpressions = aLoadChecker.getResultSExpressions();
 		String aMessage = null;

@@ -28,6 +28,20 @@ import gradingTools.comp524f19.assignment1.testcases.loadRelation.LorETestedChec
 import gradingTools.comp524f19.assignment1.testcases.loadRelation.LorETestedTwoResultsChecker;
 import gradingTools.comp524f19.assignment1.testcases.toString.BaseCaseListToStringChecker;
 import gradingTools.comp524f19.assignment1.testcases.toString.BaseCaseSExpressionToStringChecker;
+import gradingTools.comp524f19.assignment2.testcases.BasicOperationCheckers.CombinationChecker;
+import gradingTools.comp524f19.assignment2.testcases.BasicOperationCheckers.CondChecker;
+import gradingTools.comp524f19.assignment2.testcases.BasicOperationCheckers.EvalChecker;
+import gradingTools.comp524f19.assignment2.testcases.BasicOperationCheckers.ListChecker;
+import gradingTools.comp524f19.assignment2.testcases.BasicOperationCheckers.ListChecker2;
+import gradingTools.comp524f19.assignment2.testcases.BasicOperationCheckers.QuoteChecker;
+import gradingTools.comp524f19.assignment2.testcases.LogicalCheckers.BasicAndChecker;
+import gradingTools.comp524f19.assignment2.testcases.LogicalCheckers.BasicOrChecker;
+import gradingTools.comp524f19.assignment2.testcases.LogicalCheckers.NotChecker;
+import gradingTools.comp524f19.assignment2.testcases.RelationalCheckers.GreaterChecker;
+import gradingTools.comp524f19.assignment2.testcases.RelationalCheckers.GreaterOrEqualChecker;
+import gradingTools.comp524f19.assignment2.testcases.RelationalCheckers.LessChecker;
+import gradingTools.comp524f19.assignment2.testcases.RelationalCheckers.LessOrEqualChecker;
+import gradingTools.comp524f19.assignment4.requiredClasses.LoadLispChecker;
 import gradingTools.comp524f21.assignment5.toString.ListToStringCheckerAdvanced;
 import gradingTools.comp524f21.assignment5.toString.ListToStringCheckerBasic;
 import gradingTools.comp524f21.assignment5.toString.ListToStringDeepCheckerAdvanced;
@@ -53,7 +67,8 @@ public static final Class[] PRECEDING_TESTS = {
 		NotTestedTwoResultsChecker.class,
 		OrTestedChecker.class,
 		OrTestedTwoResultsChecker.class,
-		LoadChecker.class,
+//		LoadChecker.class,
+		LoadLispChecker.class,
 		ConsTestedChecker.class,
 		QuoteTestedChecker.class,
 		ListTestedChecker.class,
@@ -70,6 +85,21 @@ public static final Class[] PRECEDING_TESTS = {
 		ListToStringCheckerAdvanced.class,
 		ListToStringDeepCheckerBasic.class,
 		ListToStringDeepCheckerAdvanced.class,
+		
+		// added F24
+		CondChecker.class,
+		QuoteChecker.class,
+		EvalChecker.class,
+		ListChecker.class,
+		ListChecker2.class,
+		CombinationChecker.class,
+		BasicAndChecker.class,
+		BasicOrChecker.class,
+		NotChecker.class,
+		GreaterChecker.class,
+		GreaterOrEqualChecker.class,
+		LessChecker.class,
+		LessOrEqualChecker.class,
 		
 };
 @Override

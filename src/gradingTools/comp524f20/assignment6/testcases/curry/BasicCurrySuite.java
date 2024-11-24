@@ -14,7 +14,7 @@ CurryTwoArgsChecker.class
 	
 })
 	
-@IsExtra(true)
+//@IsExtra(true)
 public class BasicCurrySuite {
 	
 }

@@ -10,6 +10,7 @@ import java.util.Set;
 
 import grader.basics.execution.BasicProjectExecution;
 import grader.basics.execution.GradingMode;
+import grader.basics.junit.GradableJUnitTest;
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import main.lisp.evaluator.AbstractEvaluator;
@@ -81,8 +82,49 @@ public  abstract class AbstractLispExpressionInputterAndEvaluatorRegisterer exte
 
     	}
     }
+    
+    protected Class getA1OrA2MainClass() throws Throwable {
+    	Class anA1MainClassProvided = gradingTools.comp524f19.assignment1.testcases.MainClassProvided.class;
+    	Class anA2MainClassProvided = gradingTools.comp524f19.assignment2.testcases.MainClassProvided.class;
+    	GradableJUnitTest anA1GradableJUnitTest = JUnitTestsEnvironment.getGradableJUnitTest(anA1MainClassProvided);
+    	GradableJUnitTest anA2GradableJUnitTest = JUnitTestsEnvironment.getGradableJUnitTest(anA2MainClassProvided);
+    	
+//    	gradingTools.comp524f19.assignment1.testcases.MainClassProvided anA1MainClassProvided = 
+//    			(gradingTools.comp524f19.assignment1.testcases.MainClassProvided)
+//    			JUnitTestsEnvironment.getGradableJUnitTest(anA1Main);
+//    	gradingTools.comp524f19.assignment2.testcases.MainClassProvided anA2MainClassProvided = 
+//    			(gradingTools.comp524f19.assignment2.testcases.MainClassProvided)
+//    			JUnitTestsEnvironment.getGradableJUnitTest(anA2Main);
+    	if (anA2GradableJUnitTest != null) {
+    		gradingTools.comp524f19.assignment2.testcases.MainClassProvided aMainClassProcessor = 
+    				(gradingTools.comp524f19.assignment2.testcases.MainClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(anA2MainClassProvided);
+//    	 	ExpressionFactory.setClass(anSExpressionClass);
+//    	 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
+    	    return aMainClassProcessor.getMainClass();
+    	} else {
+    		gradingTools.comp524f19.assignment1.testcases.MainClassProvided aMainClassProcessor = 
+    				(gradingTools.comp524f19.assignment1.testcases.MainClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(anA1MainClassProvided);
+//    	 	ExpressionFactory.setClass(anSExpressionClass);
+//    	 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
+    	    return aMainClassProcessor.getMainClass();
+    	}
+    }
    
     protected void callMain(String[] aLines) throws Throwable {
+//    	MainClassProvided aMainClassProcessor = (MainClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(MainClassProvided.class);
+////	 	ExpressionFactory.setClass(anSExpressionClass);
+////	 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
+//	Class aMainClass = aMainClassProcessor.getMainClass();
+    	Class aMainClass = getA1OrA2MainClass();
+	 	initialized = true;
+	 	BasicProjectExecution.invokeMain(aMainClass, emptyStrings, ".");
+//		Evaluator anEvaluator = BuiltinOperationManagerSingleton.get().getEvaluator("print");
+
+//	 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);
+//	 	registerWithEvaluators();
+    }
+    
+    protected void callMainOld(String[] aLines) throws Throwable {
     	MainClassProvided aMainClassProcessor = (MainClassProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(MainClassProvided.class);
 //	 	ExpressionFactory.setClass(anSExpressionClass);
 //	 	InterpreterModelSingleton.get().registerPropertyChangeListener(this);

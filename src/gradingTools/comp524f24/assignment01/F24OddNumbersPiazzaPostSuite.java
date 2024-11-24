@@ -1,0 +1,43 @@
+package gradingTools.comp524f24.assignment01;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+import grader.basics.config.BasicExecutionSpecificationSelector;
+import grader.basics.junit.BasicJUnitUtils;
+import gradingTools.shared.testcases.ConcurrencySuiteSkeleton;
+import gradingTools.shared.testcases.concurrency.oddNumbers.FairAllocationSmallProblem;
+import gradingTools.shared.testcases.concurrency.oddNumbers.ForkJoinSmallProblem;
+import gradingTools.shared.testcases.concurrency.oddNumbers.SmallNumberOfRandoms;
+import gradingTools.shared.testcases.concurrency.oddNumbers.context.FairAllocationProblemPiazzaMessage;
+import gradingTools.shared.testcases.concurrency.oddNumbers.context.ForkJoinProblemPiazzaMessage;
+import gradingTools.shared.testcases.concurrency.oddNumbers.context.SynchronizationProblemPiazzaMessage;
+import util.annotations.Explanation;
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+	ForkJoinProblemPiazzaMessage.class,
+	FairAllocationProblemPiazzaMessage.class,
+	SynchronizationProblemPiazzaMessage.class
+//	FairAllocationHints.class
+//	FairAllocationHint1OnOutput.class,
+//	FairAllocationHint2OnOutput.class,
+//	FairAllocationHint3OnError.class,
+//	FairAllocationHint5OnCode.class,
+//	FairAllocationHint6OnCode.class		
+})
+
+public class F24OddNumbersPiazzaPostSuite extends ConcurrencySuiteSkeleton {
+	public static void main (String[] args) {
+		try {
+			BasicJUnitUtils.interactiveTest(F24OddNumbersPiazzaPostSuite.class);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+//	static {
+//		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+//		setCheckStyleConfiguration("unc_checks_533_A0_1.xml");
+//	}
+}
+
