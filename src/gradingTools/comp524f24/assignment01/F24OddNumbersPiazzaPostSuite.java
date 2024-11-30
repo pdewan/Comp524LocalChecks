@@ -6,10 +6,14 @@ import org.junit.runners.Suite;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.junit.BasicJUnitUtils;
 import gradingTools.shared.testcases.ConcurrencySuiteSkeleton;
+import gradingTools.shared.testcases.concurrency.oddNumbers.BasicsLargerProblem;
 import gradingTools.shared.testcases.concurrency.oddNumbers.FairAllocationSmallProblem;
 import gradingTools.shared.testcases.concurrency.oddNumbers.ForkJoinSmallProblem;
 import gradingTools.shared.testcases.concurrency.oddNumbers.SmallNumberOfRandoms;
-import gradingTools.shared.testcases.concurrency.oddNumbers.context.FairAllocationProblemPiazzaMessage;
+import gradingTools.shared.testcases.concurrency.oddNumbers.context.BasicsLargerProblemPiazzaMessage;
+import gradingTools.shared.testcases.concurrency.oddNumbers.context.BasicsSmallProblemPiazzaMessage;
+import gradingTools.shared.testcases.concurrency.oddNumbers.context.FairAllocationLargerProblemPiazzaMessage;
+import gradingTools.shared.testcases.concurrency.oddNumbers.context.FairAllocationSmallProblemPiazzaMessage;
 import gradingTools.shared.testcases.concurrency.oddNumbers.context.ForkJoinProblemPiazzaMessage;
 import gradingTools.shared.testcases.concurrency.oddNumbers.context.SynchronizationProblemPiazzaMessage;
 import util.annotations.Explanation;
@@ -17,7 +21,10 @@ import util.annotations.Explanation;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	ForkJoinProblemPiazzaMessage.class,
-	FairAllocationProblemPiazzaMessage.class,
+	FairAllocationSmallProblemPiazzaMessage.class,
+	FairAllocationLargerProblemPiazzaMessage.class,
+	BasicsSmallProblemPiazzaMessage.class,
+	BasicsLargerProblemPiazzaMessage.class,
 	SynchronizationProblemPiazzaMessage.class
 //	FairAllocationHints.class
 //	FairAllocationHint1OnOutput.class,
